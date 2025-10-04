@@ -1,0 +1,6 @@
+sphinx==8.2.3
+sphinx-git==11.0.0
+sphinxext-rediraffe==0.2.7
+sphinx-last-updated-by-git==0.3.8
+sphinx-autobuild==2025.8.25
+sphinx-rtd-theme==3.0.2
