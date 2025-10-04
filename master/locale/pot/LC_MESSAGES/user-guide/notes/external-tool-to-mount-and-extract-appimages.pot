@@ -1,0 +1,31 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2022, The AppImage project
+# This file is distributed under the same license as the AppImage package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AppImage master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-04 12:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/user-guide/notes/external-tool-to-mount-and-extract-appimages.rst:2
+msgid ""
+"There is currently no way to use the former method without calling the "
+"target AppImage. This might not always be appropriate, e.g., if the AppImage "
+"is not trustworthy."
+msgstr ""
+
+#: ../../../source/user-guide/notes/external-tool-to-mount-and-extract-appimages.rst:4
+msgid ""
+"The AppImage team is working on implementing a mount option in :ref:`ref-"
+"appimagetool`. Please see the related `GitHub issue <https://github.com/"
+"AppImage/AppImageKit/issues/830>`__ for progress on this."
+msgstr ""

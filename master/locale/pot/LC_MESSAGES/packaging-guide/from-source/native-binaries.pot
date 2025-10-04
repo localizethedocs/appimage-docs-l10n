@@ -1,0 +1,706 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2022, The AppImage project
+# This file is distributed under the same license as the AppImage package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AppImage master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-04 12:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:4
+msgid "Packaging native binaries"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:6
+msgid ""
+"The easiest packaging methods are available for *native binaries*, like e."
+"g., produced when compiling C++ or C code. Native binaries have a well "
+"defined and reliable behavior to find their runtime dependencies, the so-"
+"called shared libraries. These are the primary dependencies you will have to "
+"ship with your application. Of course, some applications might require "
+"additional resources, e.g., icon files. Also, some applications try to load "
+"libraries dynamically during the runtime. But for now, let's assume we have "
+"a basic binary application (this is the most common type)."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:8
+msgid ""
+"The AppImage team provides tools that simplify the packaging process "
+"significantly. These tools are semi-automatic, and ship with various "
+"features needed to bundle said shared library dependencies correctly. The "
+"one we are going to use in this guide is linuxdeploy_."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:12
+msgid ""
+"linuxdeploy is an AppDir maintenance tool. Its primary focus is on AppDirs, "
+"AppImage is just one possible output format. It features a plugin system for "
+"greater flexibility in use. Plugins can either bundle additional resources "
+"for e.g., frameworks such as `Qt <https://github.com/linuxdeploy/linuxdeploy-"
+"plugin-qt>`__, toolkits such as `GTK <https://github.com/linuxdeploy/"
+"linuxdeploy-plugin-gtk>`__, but are also used to provide output generators, "
+"e.g., for `AppImages <https://github.com/linuxdeploy/linuxdeploy-plugin-"
+"appimage>`__."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:18
+msgid "Contents"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:21
+msgid "Packaging from source"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:23
+msgid ""
+"Building applications from source and packaging them as AppImages is the "
+"most common scenario. In this section, it is described how apps that were "
+"built from source can be packaged into AppDirs, from which AppImages are "
+"being generated."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:29
+msgid "Using the build system to build the basic AppDir"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:31
+msgid ""
+"If you use a modern build system (such as for instance CMake_ or qmake_), "
+"you can use the provided `make install` commands to create an AppDir-like "
+"directory that can be used with linuxdeploy."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:33
+msgid ""
+"As install configurations usually install all binaries, libraries, resources "
+"etc. in a way defined by the application author, this method provides a very "
+"easy and fast way to set up the basic AppDir."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:36
+msgid ""
+"Of course, the application authors need to set up install configurations in "
+"their buildsystem, otherwise this method is not usable. Many applications "
+"have working install configurations, though. If not, you should ask the "
+"authors to add the relevant code to their build system."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:40
+msgid "CMake"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:42
+msgid ""
+"CMake provides an additional parameter to configure where the files are "
+"installed when running ``make install`` called |destdir|. If |destdir| is "
+"specified, CMake will \"install\" the files into the given directory instead "
+"of the filesystem root (:code:`/`)."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:45
+msgid ""
+"By default, CMake sets an internal variable called |cmake-install-prefix| to "
+"a path other than ``/usr`` to prevent users calling e.g., :code:`sudo make "
+"install` from damaging their system. The variable must explicitly be set to "
+"``/usr`` therefore."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:50
+msgid "Here's an example how to use this method:"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:52
+msgid ""
+"# fetch sources (you could as well use a tarball etc.)\n"
+"> git clone https://github.com/linuxdeploy/QtQuickApp.git\n"
+"> cd QtQuickApp\n"
+"\n"
+"# build out of source\n"
+"> mkdir build\n"
+"> cd build\n"
+"\n"
+"# configure build system\n"
+"# the flags below are the bare minimum that is needed, the app might define "
+"additional variables that might have to be set\n"
+"> cmake .. -DCMAKE_INSTALL_PREFIX=/usr\n"
+"\n"
+"# build the application on all CPU cores\n"
+"> make -j$(nproc)\n"
+"\n"
+"# now \"install\" resources into future AppDir\n"
+"> make install DESTDIR=AppDir"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:72
+msgid ""
+"Now, ideally all the binaries and libraries the app needs are installed into "
+"a new directory called :code:`AppDir` in your build directory."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:75
+msgid ""
+"The quality of the install configurations will vary from app to app. Please "
+"don't be surprised if the application is installed partially only. If the "
+"command doesn't exist at all, please fall back to bundling manually, which "
+"is described below."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:79
+msgid "qmake"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:81
+msgid ""
+"Qt's qmake_ also provides a variable to change the \"target\" of :code:`make "
+"install` calls called :code:`INSTALL_ROOT`. The qmake-based method is very "
+"similar to the CMake one. There's just one major difference: qmake does "
+"install into ``/usr`` by default already."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:83
+msgid ""
+"Preparing a basic application is very simple, as the following example "
+"illustrates:"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:85
+msgid ""
+"# get the source code\n"
+"> git clone https://github.com/linuxdeploy/QtQuickApp.git\n"
+"> cd QtQuickApp\n"
+"\n"
+"# create out-of-source build dir and run qmake to prepare the Makefile\n"
+"> mkdir build\n"
+"> cd build\n"
+"> qmake ..\n"
+"\n"
+"# build the application on all CPU cores\n"
+"> make -j$(nproc)\n"
+"\n"
+"# use make install to prepare the AppDir\n"
+"> make install INSTALL_ROOT=AppDir"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:102
+msgid ""
+"Now, you have a new directory ``AppDir`` which ideally contains all the "
+"binaries, shared libraries etc., just like after finishing the CMake method."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:106
+msgid "Using linuxdeploy for building AppImages"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:108
+msgid ""
+"Now that we have the basic AppDir, we need to bundle dependencies into it to "
+"make the AppDir self-contained in preparation to make an AppImage from it. "
+"The following guide shows how linuxdeploy_ is used for this purpose."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:110
+msgid ""
+"linuxdeploy describes itself as an `\"AppDir maintenance tool\" <https://"
+"github.com/linuxdeploy/linuxdeploy/blob/master/README.md>`__. Its primary "
+"focus is on AppDirs, and it uses plugins to create output formats such as "
+"AppImages."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:112
+msgid ""
+"The following section describes how it can be used to deploy dependencies of "
+"applications into an AppDir that was created using the methods described in "
+"the :ref:`previous section <ref-make-install-workflow>`, and shows how this "
+"AppDir can eventually be packaged as an AppImage."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:115
+msgid ""
+"Please see :ref:`ref-linuxdeploy` for more information on how to use "
+"linuxdeploy."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:119
+msgid "Bundling resources into the AppDir"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:121
+msgid ""
+"Start by downloading linuxdeploy. The recommended way to get it is to use "
+"the AppImages provided on the `GitHub release page`_."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:124
+msgid ""
+"At the moment, AppImages are provided for :code:`x86/i386` and :code:`x86_64/"
+"amd64` architectures, as other platforms cannot be targeted properly on the "
+"build service. The tool itself should support all major platforms, including "
+"ARM. You can compile linuxdeploy yourself to test it. Contributions adding "
+"new platforms welcome!"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:128
+msgid ""
+"After downloading the AppImage, you have to make it executable, as usual. "
+"Then, you can first run linuxdeploy on your AppDir:"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:130
+msgid "> ./linuxdeploy-x86_64.AppImage --appdir AppDir"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:134
+msgid ""
+"This creates :code:`AppDir` if it doesn't exist yet. Inside :code:`AppDir` "
+"some basic directory structure is created that isn't necessarily required, "
+"but might be handy when adding resources manually to the AppImage."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:137
+msgid ""
+"linuxdeploy supports an iterative workflow, i.e., you run it, and it will "
+"start to bundle resources. If there is a problem, it will show a detailed "
+"error message, and exit with an error code. You can then fix the issue, and "
+"call it again to try again. See :ref:`ref-linuxdeploy-iterative-workflow` "
+"for more information."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:139
+msgid ""
+"If your application has installed itself properly, it should have installed "
+"a desktop file and an icon as well. The desktop file is used for :ref:"
+"`AppImage desktop integration <ref-desktop-integration>`, and since desktop "
+"files require icons, an icon is always required, too."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:141
+msgid "Example:"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:143
+msgid ""
+"# get linuxdeploy's AppImage\n"
+"> wget https://github.com/linuxdeploy/linuxdeploy/releases/download/"
+"continuous/linuxdeploy-x86_64.AppImage\n"
+"> chmod +x linuxdeploy-x86_64.AppImage\n"
+"\n"
+"# run linuxdeploy and generate an AppDir\n"
+"> ./linuxdeploy-x86_64.AppImage --appdir AppDir"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:152
+msgid ""
+"You can bundle additional resources such as icon files, executable and "
+"desktop files using the respective flags described in the ``--help`` text or "
+"on linuxdeploy's `homepage <https://github.com/linuxdeploy/linuxdeploy>`__."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:155
+msgid ""
+"Desktop file and icon are used for so-called :ref:`desktop integration <ref-"
+"desktop-integration>`. If your build system didn't install such files into "
+"the right location, you can have linuxdeploy put your own files into the "
+"right places. Please see :ref:`ref-linuxdeploy-bundle-manually` for more "
+"information."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:161
+msgid "Packaging existing binaries (or: manually packaging everything)"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:163
+msgid ""
+"Packaging existing binaries is very simple as well. As the existing binaries "
+"don't provide facilities to :ref:`create a basic AppDir with the build "
+"system <ref-make-install-workflow>`, you have to package everything into the "
+"right place manually."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:165
+msgid ""
+"Luckily, linuxdeploy supports such a workflow as well. It provides "
+"functionalities to automatically put the most common resources an "
+"application might use (such as binaries, libraries, desktop files and icons) "
+"into the right places without having the user to create any sort of "
+"structure or know where to put files. This is described in :ref:`ref-"
+"linuxdeploy-package-manually`."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:168
+msgid ""
+"Many applications require more resources during runtime than just the "
+"binaries and libraries. Often, they require graphics for drawing a UI, or "
+"other files that are normally in a \"known good location\" on the system. "
+"These resources should be bundled into the AppImage as well to make sure the "
+"AppImage is as standalone as possible. However, linuxdeploy cannot know "
+"which files to bundle."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:170
+msgid ""
+"Please consult the applications' documentation (e.g., homepage or man pages) "
+"to see what kinds of resources must be put into the AppImage. This can "
+"involve some trial-and-error, as you need to :ref:`test your AppImages on "
+"different systems <ref-testing-appimages>` to find possible errors."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:173
+msgid ""
+"In order to be packaged as AppImages, applications must load the resources "
+"relative to their main binary, and not from a hardcoded path (usually ``/"
+"usr/...``). This is called :ref:`relocatability <ref-relocatablility>`."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:175
+msgid ""
+"If your app doesn't load resources from the AppImage, but e.g., shows errors "
+"it couldn't find resources, it is most likely not relocatable. In this case, "
+"you must ask the author of the application to make it relocatable. Many "
+"modern frameworks such as Qt even provide functionality to implement this "
+"easily. In some cases, there's also flags you can specify when building from "
+"source to make applications relocatable."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:179
+msgid "Bundling additional resources using linuxdeploy plugins"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:181
+msgid ""
+"As mentioned previously, linuxdeploy provides a plugin system. So-called "
+"\"input\" plugins can be used to bundle additional resources, such as Qt "
+"plugins, translations, etc."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:183
+msgid "Please see :ref:`ref-linuxdeploy-input-plugins` for more information."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:189
+msgid "Build AppImages from AppDir using linuxdeploy"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:191
+msgid ""
+"As mentioned previously, linuxdeploy uses plugins to create actual output "
+"files from AppDirs. For AppImages, there's `linuxdeploy-plugin-appimage "
+"<https://github.com/linuxdeploy/linuxdeploy-plugin-appimage>`__."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:193
+msgid ""
+"To create AppImages, just add ``--output appimage`` to your linuxdeploy call "
+"to enable the plugin. An AppImage will be created using :ref:`ref-"
+"appimagetool`."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:195
+msgid "Minimal example:"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:197
+msgid "> ./linuxdeploy-x86_64.AppImage --appdir AppDir --output appimage"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:201
+msgid ""
+"As most plugins, linuxdeploy-plugin-appimage provides some environment "
+"variables to enable additional functionality, such as:"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:203
+msgid "``SIGN=1``"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:204
+msgid "Sign AppImage. See :ref:`ref-signing-appimages` for more information."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:206
+msgid "``UPDATE_INFORMATION=zsync|...``"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:207
+msgid "Add update information to the AppImage, and generate a ``.zsync`` file."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:210
+msgid ""
+"More information on the environment variables can be found in the `README "
+"<https://github.com/linuxdeploy/linuxdeploy-plugin-appimage/blob/master/"
+"README.md>`__, including a complete (and up to date) list of supported "
+"environment variables."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:214
+msgid "Examples"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:216
+msgid "In this section, some examples how linuxdeploy can be used are shown."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:219
+msgid "QtQuickApp"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:221
+msgid ""
+"This section contains a few example scripts that showcase how AppImages can "
+"be built for `QtQuickApp <https://github.com/linuxdeploy/QtQuickApp>`__, a "
+"basic demonstration app based on QtQuick, using some QML internally. It can "
+"be built using both CMake and qmake. We use it to show some example scripts "
+"how AppImages can be built for it, using the methods introduced in this "
+"guide."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:225
+msgid "Using qmake and ``make install``"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:227
+msgid ""
+"The following script might be used to create AppImages for QtQuickApp, using "
+"qmake and ``make install`` strategy."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:229
+msgid ":code:`travis/build-with-qmake.sh`"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:229
+msgid ""
+"#! /bin/bash\n"
+"\n"
+"set -x\n"
+"set -e\n"
+"\n"
+"# building in temporary directory to keep system clean\n"
+"# use RAM disk if possible (as in: not building on CI system like Travis, "
+"and RAM disk is available)\n"
+"if [ \"$CI\" == \"\" ] && [ -d /dev/shm ]; then\n"
+"    TEMP_BASE=/dev/shm\n"
+"else\n"
+"    TEMP_BASE=/tmp\n"
+"fi\n"
+"\n"
+"BUILD_DIR=$(mktemp -d -p \"$TEMP_BASE\" appimage-build-XXXXXX)\n"
+"\n"
+"# make sure to clean up build dir, even if errors occur\n"
+"cleanup () {\n"
+"    if [ -d \"$BUILD_DIR\" ]; then\n"
+"        rm -rf \"$BUILD_DIR\"\n"
+"    fi\n"
+"}\n"
+"trap cleanup EXIT\n"
+"\n"
+"# store repo root as variable\n"
+"REPO_ROOT=$(readlink -f $(dirname $(dirname $0)))\n"
+"OLD_CWD=$(readlink -f .)\n"
+"\n"
+"# switch to build dir\n"
+"pushd \"$BUILD_DIR\"\n"
+"\n"
+"# configure build files with qmake\n"
+"# we need to explicitly set the install prefix, as CMake's default is /usr/"
+"local for some reason...\n"
+"qmake \"$REPO_ROOT\"\n"
+"\n"
+"# build project and install files into AppDir\n"
+"make -j$(nproc)\n"
+"make install INSTALL_ROOT=AppDir\n"
+"\n"
+"# now, build AppImage using linuxdeploy and linuxdeploy-plugin-qt\n"
+"# download linuxdeploy and its Qt plugin\n"
+"wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/"
+"linuxdeploy-x86_64.AppImage\n"
+"wget https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/"
+"continuous/linuxdeploy-plugin-qt-x86_64.AppImage\n"
+"\n"
+"# make them executable\n"
+"chmod +x linuxdeploy*.AppImage\n"
+"\n"
+"# make sure Qt plugin finds QML sources so it can deploy the imported files\n"
+"export QML_SOURCES_PATHS=\"$REPO_ROOT\"/src\n"
+"\n"
+"# QtQuickApp does support \"make install\", but we don't use it because we "
+"want to show the manual packaging approach in this example\n"
+"# initialize AppDir, bundle shared libraries, add desktop file and icon, use "
+"Qt plugin to bundle additional resources, and build AppImage, all in one "
+"command\n"
+"./linuxdeploy-x86_64.AppImage --appdir AppDir -e QtQuickApp -i "
+"\"$REPO_ROOT\"/resources/qtquickapp.png -d \"$REPO_ROOT\"/resources/"
+"qtquickapp.desktop --plugin qt --output appimage\n"
+"\n"
+"# move built AppImage back into original CWD\n"
+"mv QtQuickApp*.AppImage \"$OLD_CWD\"\n"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:236
+msgid ""
+"We're using a separate bash script that runs in an isolated, temporary "
+"directory to prevent modifications to the existing source code or the system."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:238
+msgid ""
+"Many examples \"hack\" those instructions directly into their CI "
+"configuration, e.g., ``.travis.yml``. This approach has many problems, most "
+"notably that it's impossible to test those scripts locally. By extracting "
+"the whole process into a script, it becomes quite simple to test the build "
+"script locally as well as run it in the CI system."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:240
+msgid ""
+"An example :code:`.travis.yml` is included in a later section, showing how "
+"the script can be run on Travis CI. It's quite generic, you should be able "
+"to copy it without having to make too many modifications."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:244
+msgid "Using CMake and ``make install``"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:246
+msgid ""
+"The following script might be used to create AppImages for QtQuickApp, using "
+"CMake and ``make install`` strategy. It is effectively the same script as "
+"the ``qmake`` one, but uses CMake instead of qmake to build the binaries and "
+"install the data into the AppDir."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:248
+msgid ":code:`travis/build-with-cmake.sh`"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:248
+msgid ""
+"#! /bin/bash\n"
+"\n"
+"set -x\n"
+"set -e\n"
+"\n"
+"# building in temporary directory to keep system clean\n"
+"# use RAM disk if possible (as in: not building on CI system like Travis, "
+"and RAM disk is available)\n"
+"if [ \"$CI\" == \"\" ] && [ -d /dev/shm ]; then\n"
+"    TEMP_BASE=/dev/shm\n"
+"else\n"
+"    TEMP_BASE=/tmp\n"
+"fi\n"
+"\n"
+"BUILD_DIR=$(mktemp -d -p \"$TEMP_BASE\" appimage-build-XXXXXX)\n"
+"\n"
+"# make sure to clean up build dir, even if errors occur\n"
+"cleanup () {\n"
+"    if [ -d \"$BUILD_DIR\" ]; then\n"
+"        rm -rf \"$BUILD_DIR\"\n"
+"    fi\n"
+"}\n"
+"trap cleanup EXIT\n"
+"\n"
+"# store repo root as variable\n"
+"REPO_ROOT=$(readlink -f $(dirname $(dirname $0)))\n"
+"OLD_CWD=$(readlink -f .)\n"
+"\n"
+"# switch to build dir\n"
+"pushd \"$BUILD_DIR\"\n"
+"\n"
+"# configure build files with CMake\n"
+"# we need to explicitly set the install prefix, as CMake's default is /usr/"
+"local for some reason...\n"
+"cmake \"$REPO_ROOT\" -DCMAKE_INSTALL_PREFIX=/usr\n"
+"\n"
+"# build project and install files into AppDir\n"
+"make -j$(nproc)\n"
+"make install DESTDIR=AppDir\n"
+"\n"
+"# now, build AppImage using linuxdeploy and linuxdeploy-plugin-qt\n"
+"# download linuxdeploy and its Qt plugin\n"
+"wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/"
+"linuxdeploy-x86_64.AppImage\n"
+"wget https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/"
+"continuous/linuxdeploy-plugin-qt-x86_64.AppImage\n"
+"\n"
+"# make them executable\n"
+"chmod +x linuxdeploy*.AppImage\n"
+"\n"
+"# make sure Qt plugin finds QML sources so it can deploy the imported files\n"
+"export QML_SOURCES_PATHS=\"$REPO_ROOT\"/src\n"
+"\n"
+"# initialize AppDir, bundle shared libraries for QtQuickApp, use Qt plugin "
+"to bundle additional resources, and build AppImage, all in one single "
+"command\n"
+"./linuxdeploy-x86_64.AppImage --appdir AppDir --plugin qt --output appimage\n"
+"\n"
+"# move built AppImage back into original CWD\n"
+"mv QtQuickApp*.AppImage \"$OLD_CWD\"\n"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:256
+msgid "Integrate build scripts into CI systems"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:259
+msgid "Travis CI"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:261
+msgid ""
+"The scripts introduced in the previous subsections will move the files back "
+"into the directory where they're called. Therefore, the :code:`.travis.yml` "
+"and especially the :code:`script` file can be kept delightfully short:"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:263
+msgid ":code:`.travis.yml`"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:263
+msgid ""
+"language: cpp\n"
+"# needed for installing packages with apt\n"
+"sudo: required\n"
+"\n"
+"# we use the Qt PPAs to have some more recent Qt versions that are "
+"compatible with Ubuntu trusty\n"
+"before_install:\n"
+"  - sudo add-apt-repository ppa:beineri/opt-qt-5.10.1-trusty -y\n"
+"  - sudo apt-get update\n"
+"\n"
+"# install Qt from the PPA, and set up environment so that calls to Qt tools "
+"end up in the new Qt installation\n"
+"install:\n"
+"  - sudo apt-get -y install qt510base qt510declarative\n"
+"  - . /opt/qt*/bin/qt*-env.sh\n"
+"\n"
+"# use CMake based build script shown in previous section\n"
+"script:\n"
+"  - bash travis/build-with-cmake.sh\n"
+"\n"
+"# OPTIONAL: uploading binaries using uploadtool\n"
+"# see https://github.com/probonopd/uploadtool for more information\n"
+"\n"
+"branches:\n"
+"  except:\n"
+"    # Do not build tags that we create when we upload to GitHub Releases\n"
+"    # required for uploadtool\n"
+"    - /^(?i:continuous)/\n"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/native-binaries.rst:272
+msgid ""
+"Please see the :ref:`ref-travis-ci` section in the :ref:`ref-hosted-"
+"services` section for more information on Travis CI. It also contains a "
+"guide on :ref:`uploadtool <ref-uploadtool>`."
+msgstr ""

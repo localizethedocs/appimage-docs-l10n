@@ -1,0 +1,47 @@
+{
+  "po" : 
+  {
+    "en_US" : 
+    {
+      "branch" : "",
+      "commit" : 
+      {
+        "date" : "",
+        "hash" : "",
+        "title" : ""
+      }
+    },
+    "zh_CN" : 
+    {
+      "branch" : "",
+      "commit" : 
+      {
+        "date" : "",
+        "hash" : "",
+        "title" : ""
+      }
+    },
+    "zh_TW" : 
+    {
+      "branch" : "",
+      "commit" : 
+      {
+        "date" : "",
+        "hash" : "",
+        "title" : ""
+      }
+    }
+  },
+  "pot" : 
+  {
+    "branch" : "master",
+    "commit" : 
+    {
+      "date" : "2025-09-30 12:11:05 +0200",
+      "hash" : "475547d9d1cadfb8792fa9dc83cf62687ff323f1",
+      "title" : "Bump sphinxext-rediraffe from 0.2.7 to 0.3.0"
+    }
+  },
+  "type" : "branch",
+  "version" : "master"
+}

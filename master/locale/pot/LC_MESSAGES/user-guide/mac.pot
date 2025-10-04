@@ -1,0 +1,142 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2022, The AppImage project
+# This file is distributed under the same license as the AppImage package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AppImage master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-04 12:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/user-guide/mac.rst:2
+msgid "AppImage for macOS switchers"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:6
+msgid ""
+"This page compares the AppImage terms to its macOS equivalents. It should "
+"help macOS to Linux switchers to \"get\" AppImage concepts quickly."
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:10
+msgid "AppImage concept"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:10
+msgid "Rough macOS equivalent"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:12
+msgid "``.AppImage`` file"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:12
+msgid ""
+"``.app`` inside a ``.dmg`` file that mounts itself automatically when "
+"executed"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:16
+msgid "``.AppDir`` directory"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:16
+msgid "``.app`` directory"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:18
+msgid "``.desktop`` file"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:18
+msgid "``Info.plist`` file"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:20
+msgid "``*.metainfo.xml`` file and  ``package.json`` file (for  Electron apps)"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:20
+msgid "``Info.plist`` file (more elaborate version thereof)"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:22
+msgid "``usr/`` inside the AppDir"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:22
+msgid "``Resources/`` inside the ``.app``"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:24
+msgid "`AppImageUpdate`_"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:24
+msgid "`Sparkle Framework`_"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:26
+msgid ""
+"No direct equivalent, but `update information`_ in ELF section ``.upd_info``"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:26
+msgid "`Sparkle appcast`_"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:28
+msgid "Optional ``appimaged`` daemon"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:28
+msgid ""
+"`Launch Services`_ to register applications in the system (e.g., MIME types, "
+"icons, etc.)"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:30
+msgid ""
+"No direct equivalent, but AppImageHub_ central directory of available "
+"AppImages"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:30
+msgid "Mac App Store"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:32
+msgid "Optional signature in ELF section"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:32
+msgid "Signatures in ``/Contents/_MASReceipt/``"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:34
+msgid ""
+"No direct equivalent (yet?), but use `linuxdeployqt`_ (for Qt, C++, C) or "
+"`electron-builder`_ for Electron apps in the build chain"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:34
+msgid "**Xcode** IDE generates ``.app``  when you click \"compile\""
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:37
+msgid "``appimagetool my.AppDir my.AppImage``"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:37
+msgid ""
+"``hdiutil create -volname myApp -srcfolder my.app/../ -ov -format UDZO myApp."
+"dmg``"
+msgstr ""
