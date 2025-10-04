@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../source/reference/index.rst:9
 msgid "Contents:"
-msgstr ""
+msgstr "目次："
 
 #: ../../../source/reference/index.rst:5
 msgid "Reference"

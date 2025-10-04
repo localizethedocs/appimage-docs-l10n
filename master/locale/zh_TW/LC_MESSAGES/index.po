@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../../../source/index.rst:31
 msgid "Contents:"
-msgstr ""
+msgstr "目次："
 
 #: ../../../source/index.rst:11
 msgid "Welcome to the AppImage documentation"
-msgstr ""
+msgstr "歡迎來到 AppImage 文件"
 
 #: ../../../source/index.rst:14
 msgid ""
@@ -31,12 +31,16 @@ msgid ""
 "• Mabuhay • Välkommen • أهلا وسهلا • Добро пожаловать • Merhaba • Bonvenon • "
 "歡迎光臨 • خوش آمدید"
 msgstr ""
+"Willkommen • Welcome • 欢迎 • Bienvenue • Benvenuto • Bienvenido • ようこそ "
+"• Mabuhay • Välkommen • أهلا وسهلا • Добро пожаловать • Merhaba • Bonvenon • "
+"歡迎光臨 • خوش آمدید"
 
 #: ../../../source/index.rst:21
 msgid ""
 "In this documentation, all aspects of the AppImage project shall be "
 "explained, to have a single unified source of information."
 msgstr ""
+"在這份文件中，AppImage 專案的所有面向都將被解釋，以作為單一的統一資訊來源。"
 
 #: ../../../source/index.rst:27
 msgid ""
@@ -45,6 +49,9 @@ msgid ""
 "or developer should be interested in AppImages. Also, it explains the core "
 "concepts of AppImage's design."
 msgstr ""
+"如果您是 AppImage 的新手，請閱讀簡介。它描述了 AppImage 背後的理念，展示了動"
+"機，解釋了為什麼您作為使用者和/或開發者應該對 AppImage 感興趣。此外，它還解釋"
+"了 AppImage 設計的核心概念。"
 
 #: ../../../source/index.rst:29
 msgid ""
@@ -52,3 +59,5 @@ msgid ""
 "are interested in building and distributing AppImages or building software "
 "that works with AppImages, please check the Packaging Guide."
 msgstr ""
+"若要進一步瞭解如何\\ **使用** AppImage，請參閱使用者指南。如果您有興趣建置和"
+"散布 AppImage，或建置可與 AppImage 搭配使用的軟體，請查看打包指南。"

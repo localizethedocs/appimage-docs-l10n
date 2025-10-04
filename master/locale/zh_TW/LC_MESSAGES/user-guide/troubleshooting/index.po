@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../../../source/user-guide/troubleshooting/index.rst:22
 msgid "Contents:"
-msgstr ""
+msgstr "目次："
 
 #: ../../../source/user-guide/troubleshooting/index.rst:4
 msgid "Troubleshooting"
-msgstr ""
+msgstr "疑難排解"
 
 #: ../../../source/user-guide/troubleshooting/index.rst:6
 msgid ""

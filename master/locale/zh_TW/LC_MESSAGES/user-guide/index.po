@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../../../source/user-guide/index.rst:6
 msgid "Contents:"
-msgstr ""
+msgstr "目次："
 
 #: ../../../source/user-guide/index.rst:2
 msgid "User Guide"
-msgstr ""
+msgstr "使用者指南"
 
 #: ../../../source/user-guide/index.rst:4
 msgid ""
