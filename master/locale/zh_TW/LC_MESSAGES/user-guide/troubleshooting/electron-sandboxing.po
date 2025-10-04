@@ -1,0 +1,130 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2022, The AppImage project
+# This file is distributed under the same license as the AppImage package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AppImage master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-04 12:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:4
+msgid "I have issues with Electron-based AppImages and their sandboxing"
+msgstr ""
+
+#: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:6
+msgid ""
+"AppImages based on `Electron <https://www.electron.build/>`__ require the "
+"kernel to be configured in a certain way to allow for its sandboxing to work "
+"as intended (specifically, the kernel needs to be allowed to provide "
+"\"unprivileged namespaces\"). Many distributions come with this configured "
+"out of the box (like `Ubuntu <https://ubuntu.com>`__ prior to `24.04 "
+"<https://discourse.ubuntu.com/t/ubuntu-24-04-lts-noble-numbat-release-"
+"notes/39890#unprivileged-user-namespace-restrictions-15>`__), but some do "
+"not (for example `Debian <https://debian.org>`__)."
+msgstr ""
+
+#: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:10
+msgid ""
+"Please note that the AppImage team does not provide any guarantees that "
+"enabling this feature is secure and safe. If in doubt, you need to contact "
+"your distribution first. If they enable those securely by default, all users "
+"can benefit from this feature."
+msgstr ""
+
+#: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:14
+msgid "Check if kernel is configured correctly already"
+msgstr ""
+
+#: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:16
+msgid ""
+"To check if your distribution has unprivileged namespaces enabled, please "
+"run::"
+msgstr ""
+
+#: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:18
+msgid ""
+"> sysctl kernel.unprivileged_userns_clone\n"
+"kernel.unprivileged_userns_clone = 1"
+msgstr ""
+
+#: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:21
+msgid ""
+"A ``1`` means that the unprivileged namespaces are enabled already, and you "
+"do not have to take any action. A ``0`` indicates that the feature is "
+"available, but not enabled at the moment. Please see the following sections "
+"on how to enable it."
+msgstr ""
+
+#: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:26
+msgid "The command does not need to be run as ``root``."
+msgstr ""
+
+#: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:32
+msgid "Configure unprivileged sandboxes"
+msgstr ""
+
+#: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:34
+msgid ""
+"To temporarily enable unprivileged namespaces, you can run this command::"
+msgstr ""
+
+#: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:36
+msgid "sudo sysctl -w kernel.unprivileged_userns_clone=1"
+msgstr ""
+
+#: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:38
+msgid ""
+"You can run the same command, swapping the ``1`` for a ``0``, to disable "
+"this again."
+msgstr ""
+
+#: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:41
+msgid ""
+"To permanently enable the feature, it is recommended to create a new file in "
+"``/etc/sysctl.d/``. For your convenience, we have prepared the following "
+"command which creates the file on the fly::"
+msgstr ""
+
+#: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:43
+msgid ""
+"echo kernel.unprivileged_userns_clone = 1 | sudo tee /etc/sysctl.d/00-local-"
+"userns.conf"
+msgstr ""
+
+#: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:47
+msgid ""
+"This command will take effect only on the next reboot. To change this on a "
+"running system, please refer to the :ref:`previous section <ref-electron-"
+"sandboxing-configure-temporarily>`."
+msgstr ""
+
+#: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:50
+msgid "Allow Electron AppImages to run without unprivileged namespaces"
+msgstr ""
+
+#: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:52
+msgid ""
+"@gergof made a tool that automatically applies the `--no-sandbox` flag when "
+"the `unprivileged_userns_clone` kernel feature is not enabled: https://www."
+"npmjs.com/package/electron-builder-sandbox-fix"
+msgstr ""
+
+#: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:57
+msgid "More information on unprivileged namespaces"
+msgstr ""
+
+#: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:59
+msgid ""
+"For more information on unprivileged namespaces, please see https://lwn.net/"
+"Articles/673597/."
+msgstr ""

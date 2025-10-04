@@ -1,0 +1,232 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2022, The AppImage project
+# This file is distributed under the same license as the AppImage package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AppImage master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-04 12:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/reference/appdir.rst:7
+msgid "AppDir specification"
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:9
+msgid ""
+"This page describes the *AppDir* format. AppDirs are the \"source\" of "
+"AppImages. When building an AppImage, a file system image is built from such "
+"a directory, to which a runtime is prepended."
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:15
+msgid "Contents"
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:18
+msgid "History"
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:20
+msgid ""
+"The AppDir format has first been described by `ROX Filer`_, and has since "
+"been extended by the AppImage project to suit their needs."
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:29
+msgid "General description"
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:31
+msgid ""
+"As the name intends, AppDirs are normal directories with some special "
+"contents. The AppDir format is coming from ROX Filer  http://rox.sourceforge."
+"net/desktop/AppDirs.html:"
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:33
+msgid "``AppRun``"
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:34
+msgid ""
+"A file (executable, script, etc.) or symlink, serving as the \"entry point\" "
+"for a specific application. It is located in the root directory that makes "
+"up an AppDir, so it can be used to calculate paths relative to the (later "
+"mounted) AppDir."
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:36
+msgid "``.DirIcon``"
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:37
+msgid ""
+"PNG icon located in the root directory. Can be used by e.g., thumbnailers, "
+"to display application icons rather than a generic filetype symbol. Should "
+"be in one of the standard image sizes, e.g., 128x128 or 256x256 pixels."
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:39
+msgid ""
+"These two entries have been re-used from `ROX Filer`_'s specification. `ROX "
+"Filer`_ actually specifies additional (but optional) entries, however, "
+"AppImage doesn't use these. Instead, the following ones have been introduced:"
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:41
+msgid "``myapp.desktop``"
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:42
+msgid ""
+"A desktop file located in the root directory, describing the payload "
+"application. As AppImage is following the principle :ref:`one app = one file "
+"<one-app-one-file-principle>`, one desktop file is enough to describe the "
+"entire AppImage. There |must not| be more than one desktop file in the root "
+"directory. The name of the file doesn't matter, as long as it carries the ``."
+"desktop`` extension. Can be a symlink to subdirectories such as ``usr/share/"
+"applications/...``"
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:46
+msgid "``myapp.<icon ext>`` (e.g., ``myapp.png``, ``myapp.svg``)"
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:47
+msgid ""
+"Application's icon in the best available quality, ideally a vector graphic. "
+"Can be a symlink to subdirectories such as ``usr/share/icons/hicolor/...``. "
+"In most cases, :ref:`.DirIcon <ref-diricon>` is a symlink to this file. The "
+"filename must be equal to what is set in the ``Icon=`` entry in the desktop "
+"file. It is recommended by AppImage and also the XDG icon specifications to "
+"use a lower-case filename which is equal to the desktop file's name."
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:50
+msgid ""
+"The ``Icon=`` entry |should not| contain the file extension, the actual "
+"file's filename however |should| carry the extension."
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:52
+msgid ""
+"These four types of entries |must| be contained in the AppDir to conform to "
+"this specification."
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:56
+msgid "Conventions"
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:58
+msgid ""
+"In contrary to the rules in the previous section, the ones introduced in "
+"this section are no basic requirement. However, this is the recommended "
+"structure to put applications into AppDirs. It's picking up ideas from well-"
+"known, widely spread Linux standards such as the `Filesystem Hierarchy "
+"Standard`_ (part of the `Linux Standards Base`_)."
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:61
+msgid ""
+"A very good summary of the FHS can be found on `Wikipedia <https://en."
+"wikipedia.org/wiki/Filesystem_Hierarchy_Standard>`__."
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:68
+msgid "``usr`` subdirectory"
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:70
+msgid ""
+"Analog to the FHS, most AppDirs, especially the ones created by the official "
+"tools such as :ref:`linuxdeploy <ref-linuxdeploy>`, contain a ``usr`` "
+"directory."
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:72
+msgid ""
+"``usr`` originally abbreviated *unix system resources*. According to the "
+"FHS, it contains shared, read-only data, which perfectly suits AppImage's "
+"needs, as AppImages are read-only, too."
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:74
+msgid ""
+"The directory contains applications, (shared) libraries, desktop files, "
+"icons etc., in separate directories. Only a few of them are useful for "
+"AppDirs:"
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:76
+msgid "``bin``"
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:77
+msgid "Executables that can be called by a user."
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:79
+msgid "``lib``"
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:80
+msgid "(Shared) libraries used by applications in ``bin``."
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:82
+msgid "``share``"
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:83
+msgid ""
+"Architecture-independent (shared) data. Inside this directory, some special "
+"directories are commonly placed:"
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:85
+msgid "``applications``"
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:86
+msgid ""
+"Contains desktop files for applications in ``bin``. Normally, there's just "
+"one desktop file in this directory, which is symlinked in the root directory."
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:88
+msgid "``icons``"
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:89
+msgid ""
+"Directory containing so-called `icon themes`_. Contains at least one, but "
+"often a set of icons for the main application. The icons are referred to by "
+"the root desktop file, which means the :ref:`same constraints <root-icon>` "
+"apply. Example path: ``<root>/usr/share/icons/<theme>/<resolution>/apps/"
+"myapp.<ext>``, e.g., ``<root>/usr/share/icons/hicolor/256x256/apps/myapp."
+"png`` Icon themes placed in this directory are copied to the system during "
+"so-called :ref:`desktop integration <ref-desktop-integration>`."
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:97
+msgid "Summary"
+msgstr ""
+
+#: ../../../source/reference/appdir.rst:99
+msgid ""
+"The modern packaging tools such as :ref:`linuxdeploy <ref-linuxdeploy>` "
+"create these directories by default to standardize and harmonize AppDir "
+"creation. If you intend to :ref:`create AppDirs manually <ref-manual>`, you "
+"are recommended to follow these recommendations."
+msgstr ""
