@@ -1,0 +1,200 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2022, The AppImage project
+# This file is distributed under the same license as the AppImage package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AppImage master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-04 12:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/introduction/advantages.rst:2
+msgid "AppImage advantages"
+msgstr ""
+
+#: ../../../source/introduction/advantages.rst:4
+msgid ""
+"This chapter compares AppImage with traditional application packaging "
+"formats on Linux and explains the advantages of the AppImage format. You can "
+"skip this chapter if you already know why AppImages are useful."
+msgstr ""
+
+#: ../../../source/introduction/advantages.rst:6
+msgid ""
+"Traditionally, applications have been installed on Linux systems by using "
+"the package manager that comes with the Linux distribution. However, this "
+"model does not scale well for long-tail applications, applications that are "
+"only used by a few users, or in cases where users want to use the very "
+"latest applications immediately after they are published by their "
+"developers. It also is very cumbersome for application developers that want "
+"to reach a large audience quickly."
+msgstr ""
+
+#: ../../../source/introduction/advantages.rst:12
+msgid "Contents"
+msgstr ""
+
+#: ../../../source/introduction/advantages.rst:15
+msgid "Advantages for users"
+msgstr ""
+
+#: ../../../source/introduction/advantages.rst:17
+msgid ""
+"On the desktop, users are used to installing an operating system, using that "
+"operating systems for many years, and running the most recent applications "
+"whenever they feel like it. However, many Linux distributions restrict the "
+"availability of applications to those that were already published at the "
+"point in time when the Linux distribution was published. This effectively "
+"means that if the user wants to use a stable operating system, then the user "
+"is locked into a set of applications that was recent at the point when the "
+"operating system was released. While this may be reasonable for enterprise-"
+"critical applications or server side processes, it is not the model users "
+"expect from a desktop operating system."
+msgstr ""
+
+#: ../../../source/introduction/advantages.rst:19
+msgid ""
+"So-called \"rolling release\" distributions exist that provide latest "
+"versions of software. However, they make no distinction between the core "
+"operating system and applications. So, with a \"rolling release\" "
+"distribution users don’t only get the latest applications, but also an ever-"
+"changing base system. While this may be suitable for hobbyists and "
+"technology enthusiasts, it is hardly suitable for productive use where the "
+"base system has to be supportable."
+msgstr ""
+
+#: ../../../source/introduction/advantages.rst:21
+msgid ""
+"The combination of a long-term stable base operating system with the latest "
+"applications delivered in AppImage format can provide an elegant solution to "
+"this dilemma. While the base operating system can stay stable and only "
+"change every few years, users can download and run the very latest "
+"applications whenever they appear."
+msgstr ""
+
+#: ../../../source/introduction/advantages.rst:23
+msgid ""
+"AppImage also makes it easy to try out new versions of applications. Since "
+"versions can exist alongside each other, the user can simply download a new "
+"version of an application and try it out. If the new version proves to be "
+"superior, the user can then delete the old version and work with the new "
+"one. However, should the new version have bugs or be otherwise unusable, the "
+"user can simply delete the new version and continue using the old version. "
+"This is also very useful for testing nightly or continuous builds and for "
+"giving feedback to the application development team."
+msgstr ""
+
+#: ../../../source/introduction/advantages.rst:27
+msgid "Advantages for system administrators"
+msgstr ""
+
+#: ../../../source/introduction/advantages.rst:29
+msgid ""
+"System administrators in corporate, educational or institutional settings "
+"usually need to support a large number of desktop systems, where they either "
+"need to lock down the system so that users cannot make changes such as "
+"application installations, or need to find a way to leave the base system "
+"supportable while users can run applications on top."
+msgstr ""
+
+#: ../../../source/introduction/advantages.rst:31
+msgid ""
+"AppImages provide an elegant solution here: Since the core operating system "
+"is not changed through the installation of applications, the system stays "
+"pristine and supportable no matter what kind of applications end users run "
+"on the system. Users are happy because they can run their favorite "
+"applications without having to ask a system administrator to install them. "
+"System administrators are happy because they have less work."
+msgstr ""
+
+#: ../../../source/introduction/advantages.rst:35
+msgid "Advantages for application authors"
+msgstr ""
+
+#: ../../../source/introduction/advantages.rst:37
+msgid ""
+"Application authors may want to reach as many users as possible, regardless "
+"of the operating system and version users are running.  With the traditional "
+"model, application authors either need to get their application into Linux "
+"distributions by creating packages according to the rules of distributions, "
+"which can be a lengthy and time-consuming process, or need to find someone "
+"who creates the application package for them. It does not help that "
+"different Linux distributions have very different rules for packaging "
+"applications. This means that if an author is successful to package an "
+"application according to the rules of one distribution, it may well not be "
+"suitable for inclusion in another distribution. In any case, it is not a "
+"quick and easy operation to get a new application into every Linux "
+"distribution. And even if an author gets an application into a Linux "
+"distribution, it will only appear in the soon-to-be-released version of that "
+"Linux distribution, which means that all the currently existing users using "
+"older versions of the Linux distribution are left out in the cold."
+msgstr ""
+
+#: ../../../source/introduction/advantages.rst:39
+msgid ""
+"If a third party (the distribution's \"maintainer\") packages the "
+"application for inclusion in the distribution, the third party may make "
+"unintended changes to the application not authorized by the original author. "
+"This has led to some application authors to ask Linux distributions to no "
+"longer distribute their software because they did not like the changes."
+msgstr ""
+
+#: ../../../source/introduction/advantages.rst:41
+msgid ""
+"Some developers do not want their applications to be distributed randomly, "
+"but be in full control over who downloads what and when. For example an "
+"application author may want users to fill in a survey before downloading the "
+"application. Also, the author may want to count the number of downloads.  In "
+"other cases still, the application author may want to ask for a donation or "
+"even a required payment before the user can download the application through "
+"services such as Gumroad, PayPal, or Patreon. In the traditional Linux "
+"distribution model, this is not possible."
+msgstr ""
+
+#: ../../../source/introduction/advantages.rst:43
+msgid ""
+"Providing an AppImage solves these kinds of issues, since the application "
+"author is in full control over the application distribution and the user "
+"experience connected to it."
+msgstr ""
+
+#: ../../../source/introduction/advantages.rst:45
+msgid ""
+"Some applications require certain versions of dependencies in order to "
+"function properly. For example, an application may run only on a certain "
+"version of the Qt framework and may run into unexpected issues if another "
+"version is used. In the traditional Linux distribution model, an application "
+"has to use whatever version of a library the Linux distribution happens to "
+"provide, whereas with AppImage, the application author can exactly decide "
+"which version of a dependency should be used by the application."
+msgstr ""
+
+#: ../../../source/introduction/advantages.rst:49
+msgid "Advantages for software testers"
+msgstr ""
+
+#: ../../../source/introduction/advantages.rst:51
+msgid ""
+"Successful application projects run a lot of tests. Whereas some tests may "
+"be automated, manual tests are always important to ensure both functionality "
+"and usability. In regression testing, different versions of an application "
+"are compared to each other concerning features and bugs. AppImage makes it "
+"easy to conduct application tests on local machines, since it allows to run "
+"various different versions of applications alongside each other. With "
+"portable mode, it is also possible to isolate the settings of each version "
+"of the application from each other, allowing for clean testing environments."
+msgstr ""
+
+#: ../../../source/introduction/advantages.rst:53
+msgid ""
+"The LibreOffice_ project, for example, uses AppImages to test new "
+"application versions."
+msgstr ""

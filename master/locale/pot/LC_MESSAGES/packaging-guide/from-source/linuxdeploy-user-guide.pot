@@ -1,0 +1,353 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2022, The AppImage project
+# This file is distributed under the same license as the AppImage package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AppImage master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-04 12:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:4
+msgid "linuxdeploy user guide"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:6
+msgid "This page illustrates how linuxdeploy can be used."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:8
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:132
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:165
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:176
+msgid "Todo"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:9
+msgid "Write introduction"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:10
+msgid "Add references to examples in packaging guide"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:12
+msgid ""
+"linuxdeploy is capable of packaging dependencies of resources in an existing "
+"AppDir, or creating the AppDir from scratch, bundling resources into the "
+"right locations that the user passes to it."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:14
+msgid ""
+"linuxdeploy describes itself as an `\"AppDir maintenance tool\" <https://"
+"github.com/linuxdeploy/linuxdeploy/blob/master/README.md>`__. Its primary "
+"focus is on AppDirs, and it uses plugins to create output formats such as "
+"AppImages."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:21
+msgid "Contents"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:24
+msgid "Packaging dependencies of files in an existing AppDir"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:26
+msgid ""
+"Sometimes, the build system can be used to install resources into an :ref:"
+"`AppDir <ref-appdir>`-like structure. If this so-called \"install "
+"configuration\" is feature complete, i.e., all the resources an AppImage "
+"needs (a binary, an icon and a desktop file), all linuxdeploy has to do is "
+"bundle the dependencies of these files."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:28
+msgid "This workflow is described in :ref:`ref-make-install-workflow`."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:30
+msgid ""
+"In case some of the required files described above are *not* installed by "
+"``make install``, you can instruct linuxdeploy to bundle these resources "
+"manually. Please see the next section for more information."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:37
+msgid "Packaging binaries and other resources manually"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:39
+msgid ""
+"Unlike the old tools, linuxdeploy doesn't need any existing directory with "
+"files in the right positions, etc. Instead, it puts files specified via CLI "
+"parameters into the right positions. This makes bundling easier than ever "
+"before, as users don't need to know where to put files any more."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:41
+msgid ""
+"linuxdeploy provides different flags to bundle different kinds of resources. "
+"Only resources whose destination can be calculated by linuxdeploy can be "
+"bundled this way. Additional resources applications need, which linuxdeploy "
+"can not know about, must be bundled by hand. However, the most common "
+"resources are covered by the parameters."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:43
+msgid "``--executable``/``-e``"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:44
+msgid "Bundle a native binary executable. |rpath-comment|"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:46
+msgid "``--library``/``-l``"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:47
+msgid ""
+"Bundle a shared library (:code:`.so` file) into the AppDir. |rpath-comment|"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:49
+msgid "``--desktop-file``/``-d``"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:50
+msgid ""
+"Bundle a desktop file into the AppDir. These are required for desktop "
+"integration, and there must always be at least one of them in the AppDir. "
+"Please see :ref:`ref-desktop-integration` for a guide how they can be "
+"created, and for best practices related to AppImages."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:52
+msgid "``--icon-file``/``-i``"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:53
+msgid ""
+"Bundle icon file. Supported are all formats which the `Icon Theme "
+"Specification <https://standards.freedesktop.org/icon-theme-spec/icon-theme-"
+"spec-latest.html>`__ lists. linuxdeploy will automatically calculate the "
+"right output path, which depends on file format and resolution. You can "
+"specify multiple icons for multiple resolutions in the form of "
+"``<resolution>/<app_name>.<ext>``."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:57
+msgid ""
+"The following example illustrates how an existing binary can be bundled into "
+"an AppDir:"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:59
+msgid ""
+"> ./linuxdeploy-x86_64.AppImage --appdir AppDir --executable ./foobar <...> "
+"--output appimage"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:67
+msgid "Plugin system"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:69
+msgid ""
+"linuxdeploy provides a flexible packaging system for both bundling "
+"additional resources that cannot be discovered automatically by linuxdeploy "
+"(i.e., plugins loaded during runtime using ``dlopen()``, icon themes, etc.), "
+"and to convert the AppDir into an output format such as AppImage."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:71
+msgid ""
+"Plugins are automatically recognized by linuxdeploy. They are executable "
+"files (scripts, native binaries, etc.), which must be in one of the "
+"following locations:"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:73
+msgid "in case the linuxdeploy AppImage is used: next to the AppImage"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:74
+msgid "next to the linuxdeploy binary"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:75
+msgid "in any of the directories in ``$PATH``"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:77
+msgid ""
+"Therefore, when downloading additional plugins, just put them into one of "
+"these locations, and linuxdeploy can use them."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:79
+msgid ""
+"Plugins are standalone executable files. This means they must be made "
+"executable by the user before they can be used by linuxdeploy. On the other "
+"hand, this also allows for calling plugins manually."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:81
+msgid ""
+"The plugin system works by calling external executables, hence the only "
+"communication linuxdeploy can perform with plugins is via CLI parameters "
+"(communication via the ``stdin``/``stdout`` pipes would be a lot more "
+"complex to implement for both linuxdeploy and the plugin). Therefore, to "
+"influence plugin behavior, plugins may implement environment variables that "
+"the user can set *before* calling linuxdeploy. Examples how this works are "
+"shown in the following sections."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:83
+msgid ""
+"You can use the ``--list-plugins`` flag to see what plugins are visible to "
+"linuxdeploy. This can come in handy when debugging plugin related issues. It "
+"lists the name of the plugin (i.e., what linuxdeploy refers to them as), the "
+"full path and the API level they implement."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:86
+msgid ""
+"Some plugins might be bundled in the linuxdeploy AppImage already for "
+"convenience. They're likely out of date, but should be stable. In case there "
+"are any issues or you need to use a newer version, please download the "
+"latest version of the respective plugin, and put it next to the linuxdeploy "
+"AppImage. linuxdeploy prefers plugins next to the AppImage over bundled ones."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:89
+msgid ""
+"More information on plugins can be found in the `plugin specification`_."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:97
+msgid "Using input plugins"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:99
+msgid ""
+"Input plugins can simply be switched on using the ``--plugin`` flag. For "
+"example:"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:101
+msgid "> ./linuxdeploy-x86_64.AppImage --appdir AppDir <...> --plugin qt"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:105
+msgid "This causes linuxdeploy to call a plugin called ``qt``, if available."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:108
+msgid "A list of plugins can be found in the `Awesome linuxdeploy README`_."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:116
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:152
+msgid "Using environment variables to change plugins' behavior"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:118
+msgid ""
+"As mentioned previously, some plugins implement additional optional or "
+"mandatory parameters in the form of environment variables. These environment "
+"variables must be set *before* calling linuxdeploy."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:120
+msgid "For example:"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:122
+msgid ""
+"# set the environment variable\n"
+"> export FOOBAR_VAR=example\n"
+"\n"
+"# call linuxdeploy with the respective plugin enabled\n"
+"> ./linuxdeploy-x86_64.AppImage --appdir AppDir <...> --plugin foobar"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:130
+msgid ""
+"Please refer to the plugins' documentation to find a list of supported "
+"environment variables. If you can't find any, there's probably none."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:134
+msgid "Document existing input plugins' environment variables"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:138
+msgid "Creating output files"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:140
+msgid ""
+"Similar to the input plugins, output plugins are enabled through a command "
+"line parameter. To avoid any possible confusion, a second parameter is used: "
+"``--output``."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:142
+msgid "Example:"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:144
+msgid "> ./linuxdeploy-x86_64.AppImage <...> --output appimage"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:148
+msgid ""
+"Most users are interested in generating AppImages, therefore the AppImage "
+"plugin is bundled in the official linuxdeploy AppImage. Please see the :ref:"
+"`plugin's user guide <ref-linuxdeploy-plugin-appimage-user-guide>` for more "
+"information."
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:154
+msgid ""
+"Users can use environment variables to :ref:`change input plugins' behavior "
+"<ref-linuxdeploy-input-plugins-environment-variables>` or enable additional "
+"features. Output plugins use the same method to provide similar "
+"functionality. Just set an environment variable *before* calling linuxdeploy "
+"with the respective plugin enabled. For example:"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:156
+msgid ""
+"# set environment variable to embed update information in an AppImage\n"
+"> export UPDATE_INFORMATION=\"zsync|https://foo.bar/myappimage-latest."
+"AppImage.zsync\"\n"
+"\n"
+"# call linuxdeploy with the AppImage plugin enabled\n"
+"> ./linuxdeploy-x86_64.AppImage --appdir AppDir <...> --output appimage"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:167
+msgid "Document environment variables of existing output plugins"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:174
+msgid "Iterative workflow"
+msgstr ""
+
+#: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:178
+msgid ""
+"This section is missing. Please consider adding it by filing a pull request "
+"against our `repository <https://github.com/AppImage/docs.appimage.org>`__."
+msgstr ""

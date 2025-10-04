@@ -1,0 +1,126 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2022, The AppImage project
+# This file is distributed under the same license as the AppImage package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AppImage master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-04 12:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/introduction/quickstart.rst:4
+msgid "Quickstart"
+msgstr ""
+
+#: ../../../source/introduction/quickstart.rst:6
+msgid ""
+"This page contains information for users new to AppImage, and want to get "
+"started."
+msgstr ""
+
+#: ../../../source/introduction/quickstart.rst:12
+msgid "Contents"
+msgstr ""
+
+#: ../../../source/introduction/quickstart.rst:17
+msgid "How to run an AppImage"
+msgstr ""
+
+#: ../../../source/introduction/quickstart.rst:19
+msgid ""
+"It's quite simple to run AppImages. All you have to do is download them, "
+"make them executable and run them. This can either be done using the GUI or "
+"via the command line."
+msgstr ""
+
+#: ../../../source/introduction/quickstart.rst:23
+msgid "Using the GUI"
+msgstr ""
+
+#: ../../../source/introduction/quickstart.rst:25
+msgid "Open your file manager and browse to the location of the AppImage"
+msgstr ""
+
+#: ../../../source/introduction/quickstart.rst:26
+msgid "Right-click on the AppImage and click the ‘Properties’ entry"
+msgstr ""
+
+#: ../../../source/introduction/quickstart.rst:27
+msgid "Switch to the Permissions tab and"
+msgstr ""
+
+#: ../../../source/introduction/quickstart.rst:28
+msgid ""
+"Click the ‘Allow executing file as program’ checkbox if you are using a "
+"Nautilus-based file manager (Files, Nemo, Caja), or click the ‘Is "
+"executable’ checkbox if you are using Dolphin, or change the ‘Execute’ drop "
+"down list to ‘Anyone’ if you are using PCManFM"
+msgstr ""
+
+#: ../../../source/introduction/quickstart.rst:29
+msgid "Close the dialog"
+msgstr ""
+
+#: ../../../source/introduction/quickstart.rst:30
+msgid "Double-click on the AppImage file to run"
+msgstr ""
+
+#: ../../../source/introduction/quickstart.rst:32
+msgid "Please see also the video below:"
+msgstr ""
+
+#: ../../../source/introduction/quickstart.rst:38
+msgid "Using the Terminal"
+msgstr ""
+
+#: ../../../source/introduction/quickstart.rst:40
+msgid "Open a terminal"
+msgstr ""
+
+#: ../../../source/introduction/quickstart.rst:41
+msgid ""
+"Change to the directory containing the AppImage, e.g., using :code:`cd <my "
+"directory>`"
+msgstr ""
+
+#: ../../../source/introduction/quickstart.rst:42
+msgid "Make the AppImage executable: :code:`chmod +x my.AppImage`"
+msgstr ""
+
+#: ../../../source/introduction/quickstart.rst:43
+msgid "Run the AppImage: :code:`./my.AppImage`"
+msgstr ""
+
+#: ../../../source/introduction/quickstart.rst:45
+msgid "That's it! The AppImage should now be executed."
+msgstr ""
+
+#: ../../../source/introduction/quickstart.rst:49
+msgid "Translated versions of this guide"
+msgstr ""
+
+#: ../../../source/introduction/quickstart.rst:51
+msgid ""
+"Translated versions are available in a `post in the AppImage forum <https://"
+"discourse.appimage.org/t/how-to-run-an-appimage/80>`__."
+msgstr ""
+
+#: ../../../source/introduction/quickstart.rst:55
+msgid "Getting help"
+msgstr ""
+
+#: ../../../source/introduction/quickstart.rst:57
+msgid ""
+"If you're new to AppImage and have problems getting up and running, please "
+"don't hesitate to contact the AppImage team and their awesome community. "
+"They're happy to help! Please see the :ref:`Contact page <ref-contact>` for "
+"more information."
+msgstr ""
