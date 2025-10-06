@@ -56,6 +56,12 @@ msgid ""
 "MyApp.AppDir/usr/bin/myapp\n"
 "MyApp.AppDir/usr/lib/libfoo.so.0"
 msgstr ""
+"MyApp.AppDir/\n"
+"MyApp.AppDir/AppRun\n"
+"MyApp.AppDir/myapp.desktop\n"
+"MyApp.AppDir/myapp.png\n"
+"MyApp.AppDir/usr/bin/myapp\n"
+"MyApp.AppDir/usr/lib/libfoo.so.0"
 
 #: ../../../source/packaging-guide/manual.rst:30
 msgid ""

@@ -33,7 +33,7 @@ msgstr ""
 
 #: ../../../source/reference/architecture.rst:15
 msgid "Overview"
-msgstr ""
+msgstr "概覽"
 
 #: ../../../source/reference/architecture.rst:17
 msgid ""

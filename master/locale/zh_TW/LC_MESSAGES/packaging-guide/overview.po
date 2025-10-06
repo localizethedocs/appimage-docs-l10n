@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../source/packaging-guide/overview.rst:2
 msgid "Overview"
-msgstr ""
+msgstr "概覽"
 
 #: ../../../source/packaging-guide/overview.rst:4
 msgid ""
@@ -34,7 +34,7 @@ msgstr ""
 
 #: ../../../source/packaging-guide/overview.rst:15
 msgid "Packaging from source"
-msgstr ""
+msgstr "從來源檔打包"
 
 #: ../../../source/packaging-guide/overview.rst:17
 msgid ""
@@ -82,7 +82,7 @@ msgstr ""
 
 #: ../../../source/packaging-guide/overview.rst:40
 msgid "Using electron-builder"
-msgstr ""
+msgstr "使用 electron-builder"
 
 #: ../../../source/packaging-guide/overview.rst:42
 msgid ""
@@ -147,7 +147,7 @@ msgstr ""
 
 #: ../../../source/packaging-guide/overview.rst:76
 msgid "Using appimage-builder"
-msgstr ""
+msgstr "使用 appimage-builder"
 
 #: ../../../source/packaging-guide/overview.rst:78
 msgid ""

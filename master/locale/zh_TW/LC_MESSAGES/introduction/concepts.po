@@ -163,7 +163,7 @@ msgstr ""
 
 #: ../../../source/introduction/concepts.rst:63
 msgid "AppImage specification"
-msgstr ""
+msgstr "AppImage 規範"
 
 #: ../../../source/introduction/concepts.rst:65
 msgid ""

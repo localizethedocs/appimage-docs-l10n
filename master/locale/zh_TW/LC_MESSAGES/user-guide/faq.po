@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../source/user-guide/faq.rst:4
 msgid "Frequently Asked Questions"
-msgstr ""
+msgstr "常見問題集"
 
 #: ../../../source/user-guide/faq.rst:6
 msgid ""

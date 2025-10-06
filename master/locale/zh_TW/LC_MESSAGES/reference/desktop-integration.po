@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../source/reference/desktop-integration.rst:2
 msgid "Desktop integration"
-msgstr ""
+msgstr "桌面整合"
 
 #: ../../../source/reference/desktop-integration.rst:4
 msgid ""
@@ -30,11 +30,11 @@ msgstr ""
 
 #: ../../../source/reference/desktop-integration.rst:10
 msgid "Contents"
-msgstr ""
+msgstr "目次"
 
 #: ../../../source/reference/desktop-integration.rst:13
 msgid "Desktop files"
-msgstr ""
+msgstr "桌面檔"
 
 #: ../../../source/reference/desktop-integration.rst:15
 msgid ""
@@ -74,7 +74,7 @@ msgstr ""
 
 #: ../../../source/reference/desktop-integration.rst:30
 msgid "X-AppImage-Name"
-msgstr ""
+msgstr "X-AppImage-Name"
 
 #: ../../../source/reference/desktop-integration.rst:31
 msgid ""
@@ -88,7 +88,7 @@ msgstr ""
 
 #: ../../../source/reference/desktop-integration.rst:34
 msgid "X-AppImage-Version"
-msgstr ""
+msgstr "X-AppImage-Version"
 
 #: ../../../source/reference/desktop-integration.rst:35
 msgid "Version of the application bundled in the AppImage."
@@ -100,11 +100,11 @@ msgstr ""
 
 #: ../../../source/reference/desktop-integration.rst:38
 msgid "X-AppImage-Arch"
-msgstr ""
+msgstr "X-AppImage-Arch"
 
 #: ../../../source/reference/desktop-integration.rst:39
 msgid "Architecture of the AppImage."
-msgstr ""
+msgstr "AppImage 的架構。"
 
 #: ../../../source/reference/desktop-integration.rst:41
 msgid "**Examples:** :code:`x86_64`, :code:`i386`"

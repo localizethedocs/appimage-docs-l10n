@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../source/introduction/motivation.rst:2
 msgid "Motivation"
-msgstr ""
+msgstr "動機"
 
 #: ../../../source/introduction/motivation.rst:4
 msgid ""

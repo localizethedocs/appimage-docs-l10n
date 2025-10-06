@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../source/user-guide/portable-mode.rst:2
 msgid "Using portable mode"
-msgstr ""
+msgstr "使用可移植模式"
 
 #: ../../../source/user-guide/portable-mode.rst:4
 msgid ""

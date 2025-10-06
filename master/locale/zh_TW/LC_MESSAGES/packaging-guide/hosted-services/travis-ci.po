@@ -158,7 +158,7 @@ msgstr ""
 
 #: ../../../source/packaging-guide/hosted-services/travis-ci.rst:78
 msgid "Environment variables"
-msgstr ""
+msgstr "環境變數"
 
 #: ../../../source/packaging-guide/hosted-services/travis-ci.rst:80
 msgid ""

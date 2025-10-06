@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../source/reference/appdir.rst:7
 msgid "AppDir specification"
-msgstr ""
+msgstr "AppDir 規範"
 
 #: ../../../source/reference/appdir.rst:9
 msgid ""

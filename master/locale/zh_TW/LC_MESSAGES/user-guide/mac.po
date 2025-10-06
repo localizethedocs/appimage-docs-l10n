@@ -55,7 +55,7 @@ msgstr ""
 
 #: ../../../source/user-guide/mac.rst:18
 msgid "``.desktop`` file"
-msgstr ""
+msgstr "``.desktop`` 檔案"
 
 #: ../../../source/user-guide/mac.rst:18
 msgid "``Info.plist`` file"

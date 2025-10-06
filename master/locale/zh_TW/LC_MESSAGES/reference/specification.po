@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../source/reference/specification.rst:6
 msgid "AppImage specification"
-msgstr ""
+msgstr "AppImage 規範"
 
 #: ../../../source/reference/specification.rst:8
 msgid ""
@@ -36,11 +36,11 @@ msgstr ""
 
 #: ../../../source/reference/specification.rst:16
 msgid "Contents"
-msgstr ""
+msgstr "目次"
 
 #: ../../../source/reference/specification.rst:19
 msgid "Development"
-msgstr ""
+msgstr "開發"
 
 #: ../../../source/reference/specification.rst:21
 msgid ""

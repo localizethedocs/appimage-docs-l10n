@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../source/user-guide/run-appimages.rst:2
 msgid "Running AppImages"
-msgstr ""
+msgstr "執行 AppImage"
 
 #: ../../../source/user-guide/run-appimages.rst:4
 msgid ""

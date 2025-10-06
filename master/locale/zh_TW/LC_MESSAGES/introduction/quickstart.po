@@ -44,7 +44,7 @@ msgstr ""
 
 #: ../../../source/introduction/quickstart.rst:23
 msgid "Using the GUI"
-msgstr ""
+msgstr "使用 GUI"
 
 #: ../../../source/introduction/quickstart.rst:25
 msgid "Open your file manager and browse to the location of the AppImage"
@@ -80,7 +80,7 @@ msgstr ""
 
 #: ../../../source/introduction/quickstart.rst:38
 msgid "Using the Terminal"
-msgstr ""
+msgstr "使用終端機"
 
 #: ../../../source/introduction/quickstart.rst:40
 msgid "Open a terminal"

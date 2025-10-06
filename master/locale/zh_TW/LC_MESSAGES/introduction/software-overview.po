@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../source/introduction/software-overview.rst:4
 msgid "Software Overview"
-msgstr ""
+msgstr "軟體概覽"
 
 #: ../../../source/introduction/software-overview.rst:6
 #: ../../../source/introduction/software-overview.rst:188
@@ -32,15 +32,15 @@ msgstr ""
 
 #: ../../../source/introduction/software-overview.rst:13
 msgid "Contents"
-msgstr ""
+msgstr "目次"
 
 #: ../../../source/introduction/software-overview.rst:16
 msgid "AppImage project"
-msgstr ""
+msgstr "AppImage 專案"
 
 #: ../../../source/introduction/software-overview.rst:21
 msgid "AppImageKit"
-msgstr ""
+msgstr "AppImageKit"
 
 #: ../../../source/introduction/software-overview.rst:23
 msgid ""
@@ -102,7 +102,7 @@ msgstr ""
 
 #: ../../../source/introduction/software-overview.rst:49
 msgid "AppRun"
-msgstr ""
+msgstr "AppRun"
 
 #: ../../../source/introduction/software-overview.rst:51
 msgid ""
@@ -269,7 +269,7 @@ msgstr ""
 
 #: ../../../source/introduction/software-overview.rst:122
 msgid "Third-party tools"
-msgstr ""
+msgstr "第三方工具"
 
 #: ../../../source/introduction/software-overview.rst:124
 msgid ""

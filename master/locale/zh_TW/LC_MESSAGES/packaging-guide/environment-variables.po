@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../source/packaging-guide/environment-variables.rst:4
 msgid "Environment variables"
-msgstr ""
+msgstr "環境變數"
 
 #: ../../../source/packaging-guide/environment-variables.rst:6
 msgid ""
@@ -54,7 +54,7 @@ msgstr ""
 #: ../../../source/packaging-guide/environment-variables.rst:26
 #: ../../../source/packaging-guide/environment-variables.rst:47
 msgid "Variable name"
-msgstr ""
+msgstr "變數名稱"
 
 #: ../../../source/packaging-guide/environment-variables.rst:29
 #: ../../../source/packaging-guide/environment-variables.rst:50
