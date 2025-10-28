@@ -1,0 +1,7 @@
+Copyright 2018-2020 AppImage team and contributors.
+
+The contents of these docs, e.g., the `.rst` files, are licensed under the terms of the CC-By 4.0 Intl. See CONTENT_LICENSE.txt for more information.
+
+The code in these docs is licensed under the terms of the MIT license. See CODE_LICENSE.txt for more information.
+
+All third-party code is subject to the copyright of the respective authors.
