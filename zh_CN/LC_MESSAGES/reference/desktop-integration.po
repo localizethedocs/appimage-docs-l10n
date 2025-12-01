@@ -1,0 +1,131 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2022, The AppImage project
+# This file is distributed under the same license as the AppImage package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AppImage master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-04 12:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/reference/desktop-integration.rst:2
+msgid "Desktop integration"
+msgstr ""
+
+#: ../../../source/reference/desktop-integration.rst:4
+msgid ""
+"This section discusses how we integrate AppImages into the Linux desktops, "
+"what technologies are involved and what customizations and additions we "
+"implemented to adapt them to work for AppImages."
+msgstr ""
+
+#: ../../../source/reference/desktop-integration.rst:10
+msgid "Contents"
+msgstr ""
+
+#: ../../../source/reference/desktop-integration.rst:13
+msgid "Desktop files"
+msgstr ""
+
+#: ../../../source/reference/desktop-integration.rst:15
+msgid ""
+"A central component of the Linux desktop, so-called *desktop entries* (or, "
+"colloquially, *desktop files*) are also relevant for AppImage desktop "
+"integration. Every AppImage ships with such a file in its :ref:`AppDir <ref-"
+"appdir>`."
+msgstr ""
+
+#: ../../../source/reference/desktop-integration.rst:17
+msgid ""
+"The FreeDesktop_ project maintains the so-called `Desktop Entry "
+"Specification`_. Desktop Entry files are `INI <https://en.wikipedia.org/wiki/"
+"INI_file>`__-style text documents containing key-value pairs, one per line. "
+"The file is structured in multiple sections, most notably the :code:"
+"`[Desktop Entry]`, where the main information goes into. There's a set of "
+"mandatory and optional keys to be set in these documents, and there may be "
+"additional sections."
+msgstr ""
+
+#: ../../../source/reference/desktop-integration.rst:24
+msgid "Custom keys introduced for AppImage purposes"
+msgstr ""
+
+#: ../../../source/reference/desktop-integration.rst:26
+msgid ""
+"Aside from the standardized mandatory and optional keys, there may be "
+"additional, proprietary keys. They're usually prepended with :code:`X-` to "
+"differentiate between standard and custom keys."
+msgstr ""
+
+#: ../../../source/reference/desktop-integration.rst:28
+msgid ""
+"The AppImage project defined a few custom keys with special meaning that "
+"provide information to enhance our desktop integration algorithm."
+msgstr ""
+
+#: ../../../source/reference/desktop-integration.rst:30
+msgid "X-AppImage-Name"
+msgstr ""
+
+#: ../../../source/reference/desktop-integration.rst:31
+msgid ""
+"Name of the application. Used to relate two AppImages of the same "
+"application but different versions."
+msgstr ""
+
+#: ../../../source/reference/desktop-integration.rst:33
+msgid "**Examples:** :code:`Krita`, :code:`Kdenlive`, :code:`Ultimaker Cura`"
+msgstr ""
+
+#: ../../../source/reference/desktop-integration.rst:34
+msgid "X-AppImage-Version"
+msgstr ""
+
+#: ../../../source/reference/desktop-integration.rst:35
+msgid "Version of the application bundled in the AppImage."
+msgstr ""
+
+#: ../../../source/reference/desktop-integration.rst:37
+msgid "**Examples:** :code:`1.0.0-beta-2`, :code:`2019.1.1`"
+msgstr ""
+
+#: ../../../source/reference/desktop-integration.rst:38
+msgid "X-AppImage-Arch"
+msgstr ""
+
+#: ../../../source/reference/desktop-integration.rst:39
+msgid "Architecture of the AppImage."
+msgstr ""
+
+#: ../../../source/reference/desktop-integration.rst:41
+msgid "**Examples:** :code:`x86_64`, :code:`i386`"
+msgstr ""
+
+#: ../../../source/reference/desktop-integration.rst:43
+msgid ""
+":ref:`appimagetool <ref-appimagetool>` and :ref:`libappimage <ref-"
+"libappimage>` currently make use mostly of :code:`X-AppImage-Version`."
+msgstr ""
+
+#: ../../../source/reference/desktop-integration.rst:47
+msgid ""
+"The following discussions in issue trackers contain some background "
+"information:"
+msgstr ""
+
+#: ../../../source/reference/desktop-integration.rst:49
+msgid "`AppImageKit#59 <https://github.com/AppImage/AppImageKit/issues/59>`_"
+msgstr ""
+
+#: ../../../source/reference/desktop-integration.rst:50
+msgid "`AppImageKit#662 <https://github.com/AppImage/AppImageKit/issues/662>`_"
+msgstr ""
