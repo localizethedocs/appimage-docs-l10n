@@ -77,7 +77,7 @@ msgstr ""
 
 #: ../../../source/contact.rst:30
 msgid "Forum"
-msgstr ""
+msgstr "論壇"
 
 #: ../../../source/contact.rst:32
 msgid ""

@@ -175,11 +175,11 @@ msgstr ""
 #: ../../../source/user-guide/troubleshooting/fuse.rst:89
 #: ../../../source/user-guide/troubleshooting/fuse.rst:98
 msgid "Install the required package::"
-msgstr ""
+msgstr "安裝必要的軟體包： ::"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:91
 msgid "> sudo apt install libfuse2"
-msgstr ""
+msgstr "> sudo apt install libfuse2"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:93
 msgid ""
@@ -193,7 +193,7 @@ msgstr ""
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:100
 msgid "> sudo zypper install fuse libfuse2"
-msgstr ""
+msgstr "> sudo zypper install fuse libfuse2"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:102
 msgid "FUSE should now be working."
@@ -223,7 +223,7 @@ msgstr ""
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:117
 msgid "> usermod -a -G fuse $(whoami)"
-msgstr ""
+msgstr "> usermod -a -G fuse $(whoami)"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:123
 msgid ""
@@ -255,6 +255,9 @@ msgid ""
 "echo \"fuse\" | sudo tee /etc/modules-load.d/fuse.conf\n"
 "sudo reboot"
 msgstr ""
+"sudo mkdir -p /etc/modules-load.d/\n"
+"echo \"fuse\" | sudo tee /etc/modules-load.d/fuse.conf\n"
+"sudo reboot"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:142
 msgid ""
@@ -275,7 +278,7 @@ msgstr ""
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:150
 msgid "sudo apt install fuse"
-msgstr ""
+msgstr "sudo apt install fuse"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:156
 msgid "Setting up FUSE on Arch Linux"
@@ -283,11 +286,11 @@ msgstr ""
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:158
 msgid "Install the required package:"
-msgstr ""
+msgstr "安裝必要的軟體包： ::"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:160
 msgid "sudo pacman -S fuse2"
-msgstr ""
+msgstr "sudo pacman -S fuse2"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:164
 msgid ""
