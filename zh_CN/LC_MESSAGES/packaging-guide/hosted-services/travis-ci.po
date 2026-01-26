@@ -1,0 +1,211 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2022, The AppImage project
+# This file is distributed under the same license as the AppImage package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AppImage master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-04 12:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:4
+msgid "Bundling your Travis CI builds as AppImages"
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:6
+msgid ""
+"Services such as Travis CI make it easy to build software automatically "
+"whenever a new commit is pushed to the source code repository. How you turn "
+"your build products into an AppImage depends on how your application is "
+"built. Generally there are two main methods, namely :ref:`producing an "
+"application directory <ref-manual>`, and using :ref:`tools to automate the "
+"process <ref-packaging-from-source>`."
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:12
+msgid "Contents"
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:15
+msgid "Producing an application directory using bash scripts"
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:17
+msgid ""
+"Some types of applications can best be converted into application "
+"directories using custom bash script. However, to facilitate this, there is "
+"a collection of convenience functions in https://github.com/AppImage/"
+"pkg2appimage/blob/master/functions.sh which can use in your own scripts."
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:19
+msgid "Todo"
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:21
+msgid ""
+"Document the functions in :code:`functions.sh` that are for public "
+"consumption based on comments in the file."
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:26
+msgid ""
+"For most types of applications, especially those compiled with compilers "
+"such as :code:`gcc` or :code:`g++` using a tool like :ref:`ref-linuxdeploy` "
+"is much easier than doing this in a bash script because it automates much of "
+"the process."
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:30
+msgid "Producing an application directory using linuxdeploy"
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:32
+msgid "Please refer to the chapter :ref:`ref-packaging-from-source`."
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:34
+msgid "For general information on linuxdeploy, see :ref:`ref-linuxdeploy`."
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:40
+msgid "Uploading the generated AppImage"
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:42
+msgid ""
+"Once an Appimage has been generated, you want to upload it to GitHub "
+"Releases. For this, you can use the :code:`upload.sh` script available in "
+"the `uploadtool repository`_."
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:46
+msgid ""
+"It is best practice to upload binaries (such as AppImages) to GitHub "
+"Releases rather than committing them into the repository itself."
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:49
+msgid ""
+"Super simple uploading of continuous builds (each push) to GitHub Releases. "
+"If this is not the easiest way to upload continuous builds to GitHub "
+"Releases, then it is a bug."
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:53
+msgid "Using ``upload.sh``"
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:55
+msgid ""
+"The :code:`upload.sh` script in the `uploadtool repository`_ is designed to "
+"be called from Travis CI after a successful build. By default, this script "
+"will *delete* any pre-existing release tagged with :code:`continuous`, tag "
+"the current state with the name :code:`continuous`, create a new release "
+"with that name, and upload the specified binaries there. For pull requests, "
+"it will upload the binaries to transfer.sh instead and post the resulting "
+"download URL to the pull request page on GitHub."
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:59
+msgid ""
+"On https://github.com/settings/tokens, click on \"Generate new token\" and "
+"generate a token with at least the :code:`public_repo`, :code:`repo:status`, "
+"and :code:`repo_deployment` scopes"
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:60
+msgid ""
+"On Travis CI, go to the settings of your project at :code:`https://travis-ci."
+"org/yourusername/yourrepository/settings`"
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:61
+msgid ""
+"Under \"Environment Variables\", add key :code:`GITHUB_TOKEN` and the token "
+"you generated above as the value. **Make sure that \"Display value in build "
+"log\" is set to \"OFF\"!**"
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:62
+msgid ""
+"In the :code:`.travis.yml` of your GitHub repository, add something like "
+"this (assuming the build artifacts to be uploaded are in out/):"
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:64
+msgid ""
+"after_success:\n"
+"  - ls -lh out/* # Assuming you have some files in out/ that you would like "
+"to upload\n"
+"  - wget -c https://github.com/probonopd/uploadtool/raw/master/upload.sh\n"
+"  - bash upload.sh out/*\n"
+"\n"
+"branches:\n"
+"  except:\n"
+"    - # Do not build tags that we create when we upload to GitHub Releases\n"
+"    - /^(?i:continuous)$/"
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:78
+msgid "Environment variables"
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:80
+msgid ""
+":code:`upload.sh` normally only creates one stream of continuous releases "
+"for the latest commits that are pushed into (or merged into) the repository."
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:82
+msgid ""
+"It's possible to use :code:`upload.sh` in a more complex manner by setting "
+"the environment variable :code:`UPLOADTOOL_SUFFIX`. If this variable is set "
+"to the name of the current tag, then :code:`upload.sh` will upload a release "
+"to the repository (basically reproducing the :code:`deploy:` feature in :"
+"code:`.travis.yml`)."
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:84
+msgid ""
+"If :code:`UPLOADTOOL_SUFFIX` is set to a different text, then this text is "
+"used as suffix for the :code:`continuous` tag that is created for continuous "
+"releases. This way, a project can customize what releases are being created."
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:86
+msgid ""
+"One possible use case for this is to set up continuous builds for feature or "
+"test branches:"
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:88
+msgid ""
+"if [ ! -z $TRAVIS_BRANCH ] && [ \"$TRAVIS_BRANCH\" != \"master\" ] ; then\n"
+"    export UPLOADTOOL_SUFFIX=$TRAVIS_BRANCH\n"
+"fi"
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:95
+msgid ""
+"This will create builds tagged with :code:`continuous` for pushes/merges to :"
+"code:`master` and with :code:`continuous-<branch-name>` for pushes / merges "
+"to other branches."
+msgstr ""
+
+#: ../../../source/packaging-guide/hosted-services/travis-ci.rst:97
+msgid ""
+"The two environment variables :code:`UPLOADTOOL_PR_BODY` and :code:"
+"`UPLOADTOOL_BODY` allow the calling script to customize the messages that "
+"are posted either for pull requests or merges/pushes. If these variables "
+"aren't set, generic default texts are used."
+msgstr ""
