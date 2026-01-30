@@ -23,8 +23,8 @@ msgstr "目次："
 
 #: ../../../source/reference/index.rst:5
 msgid "Reference"
-msgstr ""
+msgstr "參考"
 
 #: ../../../source/reference/index.rst:7
 msgid "The following section contains reference documents like standards, etc."
-msgstr ""
+msgstr "以下章節包含標準等參考文件。"

@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../../../source/introduction/index.rst:10
 msgid "Contents:"
-msgstr ""
+msgstr "目次："
 
 #: ../../../source/introduction/index.rst:2
 msgid "Introduction"
-msgstr ""
+msgstr "簡介"
 
 #: ../../../source/introduction/index.rst:4
 msgid ""
@@ -35,11 +35,16 @@ msgid ""
 "each target system in a recent enough version and will run on most Linux "
 "distributions without further modifications."
 msgstr ""
+"AppImage 提供上游開發者一種方式，讓他們能像在其他作業系統上一樣為 Linux 使用"
+"者提供「原生」二進位檔。它能為任何常見的 Linux 作業系統打包應用程式，例如 "
+"Ubuntu、Debian、openSUSE、RHEL、CentOS、Fedora 等。AppImage 會隨附所有無法合"
+"理假設在各目標系統中存在、且版本足夠新的相依項目，並可在多數 Linux 散布版上無"
+"需額外修改即可執行。"
 
 #: ../../../source/introduction/index.rst:6
 msgid ""
 "AppImage is the format, and AppImageKit_ provides a reference implementation."
-msgstr ""
+msgstr "AppImage 是格式，而 AppImageKit_ 提供參考實作。"
 
 #: ../../../source/introduction/index.rst:8
 msgid ""
@@ -48,3 +53,5 @@ msgid ""
 "overview over the currently existing software, and some words on upstream "
 "packaging."
 msgstr ""
+"以下章節概述 AppImage 的理念與動機，並說明基本概念。此外，也包含現有軟體概覽"
+"與上游打包的說明。"

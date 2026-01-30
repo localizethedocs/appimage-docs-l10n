@@ -25,7 +25,7 @@ msgstr "AppImage 規範"
 msgid ""
 "The AppImage project maintains a work-in-progress specification on the "
 "AppImage format."
-msgstr ""
+msgstr "AppImage 專案維護一份仍在編寫中的 AppImage 格式規範。"
 
 #: ../../../source/reference/specification.rst:10
 msgid ""
@@ -33,6 +33,8 @@ msgid ""
 "implement their own tools to build AppImages, and helps maintaining "
 "compatibility between different tools and components."
 msgstr ""
+"作為具備參考實作的標準設計，讓使用者可以實作自己的 AppImage 建置工具，並有助"
+"於維持不同工具與元件之間的相容性。"
 
 #: ../../../source/reference/specification.rst:16
 msgid "Contents"
@@ -49,6 +51,9 @@ msgid ""
 "AppImageSpec/blob/master/draft.md>`_ in the `GitHub repository <https://"
 "github.com/AppImage/AppImageSpec/>`__."
 msgstr ""
+"規範的儲存庫包含目前 **第 2 類** 格式的說明。您可在 `GitHub 儲存庫 <https://"
+"github.com/AppImage/AppImageSpec/>`__ 中找到 `完整內容 <https://github.com/"
+"AppImage/AppImageSpec/blob/master/draft.md>`_。"
 
 #: ../../../source/reference/specification.rst:25
 msgid ""
@@ -59,6 +64,9 @@ msgid ""
 "etc. Backwards compatibility is maintained by the team in the reference "
 "implementation."
 msgstr ""
+"文件會定期更新，例如修正錯誤或記錄新功能。對於第 2 類，決定不發布特定版本，而"
+"是採用持續發布。這代表某些 AppImage 可能因使用較舊的執行階段而缺少新功能等。"
+"團隊會在參考實作中維持向後相容性。"
 
 #: ../../../source/reference/specification.rst:27
 msgid ""
@@ -66,13 +74,15 @@ msgid ""
 "AppImageSpec/issues>`__ if you encounter bugs or have ideas for additional "
 "features. Also, improvements on wording etc. are highly appreciated."
 msgstr ""
+"若您遇到錯誤或有新增功能的想法，歡迎在 `GitHub 上回報問題 <https://github."
+"com/AppImage/AppImageSpec/issues>`__。也非常感謝對措辭等內容的改進。"
 
 #: ../../../source/reference/specification.rst:31
 msgid "Reference implementation"
-msgstr ""
+msgstr "參考實作"
 
 #: ../../../source/reference/specification.rst:33
 msgid ""
 "The project maintains a reference implementation of the standard which is "
 "called :ref:`ref-appimagekit`."
-msgstr ""
+msgstr "本專案維護一個名為 :ref:`ref-appimagekit` 的標準參考實作。"

@@ -27,6 +27,8 @@ msgid ""
 "what technologies are involved and what customizations and additions we "
 "implemented to adapt them to work for AppImages."
 msgstr ""
+"本節說明我們如何將 AppImage 整合到 Linux 桌面、涉及哪些技術，以及我們為了讓它"
+"們能在 AppImage 上運作所做的自訂與擴充。"
 
 #: ../../../source/reference/desktop-integration.rst:10
 msgid "Contents"
@@ -43,6 +45,9 @@ msgid ""
 "integration. Every AppImage ships with such a file in its :ref:`AppDir <ref-"
 "appdir>`."
 msgstr ""
+"Linux 桌面的核心元件之一是所謂的 *desktop entries*（通稱 *desktop files*），"
+"它們也與 AppImage 的桌面整合相關。每個 AppImage 都會在其 :ref:`AppDir <ref-"
+"appdir>` 中附帶此檔案。"
 
 #: ../../../source/reference/desktop-integration.rst:17
 msgid ""
@@ -54,10 +59,14 @@ msgid ""
 "mandatory and optional keys to be set in these documents, and there may be "
 "additional sections."
 msgstr ""
+"FreeDesktop_ 專案維護所謂的 `Desktop Entry Specification`_。Desktop Entry 檔"
+"案是 `INI <https://en.wikipedia.org/wiki/INI_file>`__ 風格的文字文件，每行一"
+"組鍵值對。檔案分成多個區段，其中最重要的是 :code:`[Desktop Entry]`，主要資訊"
+"都放在此處。文件中有一組必填與選填的鍵，且可能還有其他區段。"
 
 #: ../../../source/reference/desktop-integration.rst:24
 msgid "Custom keys introduced for AppImage purposes"
-msgstr ""
+msgstr "為 AppImage 目的新增的自訂鍵"
 
 #: ../../../source/reference/desktop-integration.rst:26
 msgid ""
@@ -65,12 +74,16 @@ msgid ""
 "additional, proprietary keys. They're usually prepended with :code:`X-` to "
 "differentiate between standard and custom keys."
 msgstr ""
+"除了標準的必填與選填鍵之外，還可能有額外的專有鍵。它們通常以 :code:`X-` 開"
+"頭，用以區分標準鍵與自訂鍵。"
 
 #: ../../../source/reference/desktop-integration.rst:28
 msgid ""
 "The AppImage project defined a few custom keys with special meaning that "
 "provide information to enhance our desktop integration algorithm."
 msgstr ""
+"AppImage 專案定義了一些具有特殊含義的自訂鍵，用來提供資訊以強化桌面整合的演算"
+"法。"
 
 #: ../../../source/reference/desktop-integration.rst:30
 msgid "X-AppImage-Name"
@@ -80,11 +93,11 @@ msgstr "X-AppImage-Name"
 msgid ""
 "Name of the application. Used to relate two AppImages of the same "
 "application but different versions."
-msgstr ""
+msgstr "應用程式名稱。用於關聯同一應用程式的不同版本 AppImage。"
 
 #: ../../../source/reference/desktop-integration.rst:33
 msgid "**Examples:** :code:`Krita`, :code:`Kdenlive`, :code:`Ultimaker Cura`"
-msgstr ""
+msgstr "**範例：** :code:`Krita`、:code:`Kdenlive`、:code:`Ultimaker Cura`"
 
 #: ../../../source/reference/desktop-integration.rst:34
 msgid "X-AppImage-Version"
@@ -92,11 +105,11 @@ msgstr "X-AppImage-Version"
 
 #: ../../../source/reference/desktop-integration.rst:35
 msgid "Version of the application bundled in the AppImage."
-msgstr ""
+msgstr "AppImage 中打包的應用程式版本。"
 
 #: ../../../source/reference/desktop-integration.rst:37
 msgid "**Examples:** :code:`1.0.0-beta-2`, :code:`2019.1.1`"
-msgstr ""
+msgstr "**範例：** :code:`1.0.0-beta-2`、:code:`2019.1.1`"
 
 #: ../../../source/reference/desktop-integration.rst:38
 msgid "X-AppImage-Arch"
@@ -108,19 +121,21 @@ msgstr "AppImage 的架構。"
 
 #: ../../../source/reference/desktop-integration.rst:41
 msgid "**Examples:** :code:`x86_64`, :code:`i386`"
-msgstr ""
+msgstr "**範例：** :code:`x86_64`、:code:`i386`"
 
 #: ../../../source/reference/desktop-integration.rst:43
 msgid ""
 ":ref:`appimagetool <ref-appimagetool>` and :ref:`libappimage <ref-"
 "libappimage>` currently make use mostly of :code:`X-AppImage-Version`."
 msgstr ""
+":ref:`appimagetool <ref-appimagetool>` 與 :ref:`libappimage <ref-"
+"libappimage>`目前主要使用 :code:`X-AppImage-Version`。"
 
 #: ../../../source/reference/desktop-integration.rst:47
 msgid ""
 "The following discussions in issue trackers contain some background "
 "information:"
-msgstr ""
+msgstr "以下議題討論包含一些背景資訊："
 
 #: ../../../source/reference/desktop-integration.rst:49
 msgid "`AppImageKit#59 <https://github.com/AppImage/AppImageKit/issues/59>`_"

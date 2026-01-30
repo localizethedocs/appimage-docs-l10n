@@ -28,14 +28,16 @@ msgid ""
 "the concept of desktop integration, and presents tools that can be used for "
 "this purpose."
 msgstr ""
+"本頁說明使用者如何在自己偏好的散布版上，使用桌面環境工具或終端機執行 "
+"AppImage。同時也解釋桌面整合的概念，並介紹可用於此目的的工具。"
 
 #: ../../../source/user-guide/run-appimages.rst:10
 msgid "Contents"
-msgstr ""
+msgstr "目次"
 
 #: ../../../source/user-guide/run-appimages.rst:15
 msgid "Download, make executable, run"
-msgstr ""
+msgstr "下載、設為可執行、執行"
 
 #: ../../../source/user-guide/run-appimages.rst:17
 msgid ""
@@ -43,20 +45,22 @@ msgid ""
 "make them executable and run them. This can either be done using the GUI or "
 "via the command line."
 msgstr ""
+"執行 AppImage 非常簡單。如標題所示，只要下載、設為可執行並執行即可。這可以透"
+"過圖形介面或命令列完成。"
 
 #: ../../../source/user-guide/run-appimages.rst:21
 msgid ""
 "Information on how to run AppImages was moved into our :ref:`ref-quickstart` "
 "page."
-msgstr ""
+msgstr "關於如何執行 AppImage 的資訊已移至 :ref:`ref-quickstart` 頁面。"
 
 #: ../../../source/user-guide/run-appimages.rst:23
 msgid "Please see :ref:`ref-how-to-run-appimage` for more information."
-msgstr ""
+msgstr "更多資訊請參閱 :ref:`ref-how-to-run-appimage`。"
 
 #: ../../../source/user-guide/run-appimages.rst:27
 msgid "Mount or extract AppImages"
-msgstr ""
+msgstr "掛載或解壓 AppImage"
 
 #: ../../../source/user-guide/run-appimages.rst:29
 msgid ""
@@ -64,16 +68,18 @@ msgid ""
 "without running them, or extract the contents to a directory in the current "
 "working directory.."
 msgstr ""
+"若要檢視任何 AppImage 的內容，可以在不執行的情況下掛載，或將內容解壓到目前工"
+"作目錄中的某個資料夾。"
 
 #: ../../../source/user-guide/run-appimages.rst:33
 msgid "Mount an AppImage"
-msgstr ""
+msgstr "掛載 AppImage"
 
 #: ../../../source/user-guide/run-appimages.rst:35
 msgid ""
 "AppImages can be mounted in the system to provide *read-only* access for "
 "users to allow for inspecting the contents."
-msgstr ""
+msgstr "AppImage 可以在系統中掛載，提供使用者 *唯讀* 存取以便檢視內容。"
 
 #: ../../../source/user-guide/run-appimages.rst:37
 msgid ""
@@ -81,6 +87,8 @@ msgid ""
 "do so is to call AppImages with the special parameter ``--appimage-mount``, "
 "for example::"
 msgstr ""
+"要暫時掛載 AppImage 有兩種方式。最簡單的方法是以特殊參數 ``--appimage-"
+"mount`` 執行 AppImage，例如："
 
 #: ../../../source/user-guide/run-appimages.rst:39
 msgid ""
@@ -89,12 +97,17 @@ msgid ""
 "# now, use another terminal or file manager to inspect the contents in the "
 "directory printed by --appimage-mount"
 msgstr ""
+"> my.AppImage --appimage-mount\n"
+"/tmp/mount_myXXXX\n"
+"# 接著用另一個終端機或檔案管理員檢視 --appimage-mount 輸出的目錄內容"
 
 #: ../../../source/user-guide/run-appimages.rst:43
 msgid ""
 "The AppImage is unmounted when the application called in the example is "
 "interrupted (e.g., by pressing :kbd:`Ctrl+C`, closing the terminal etc.)."
 msgstr ""
+"當上述範例中的應用程式被中斷時（例如按下 :kbd:`Ctrl+C`、關閉終端機等），"
+"AppImage 就會被卸載。"
 
 #: ../../../source/user-guide/run-appimages.rst:46
 msgid ""
@@ -102,12 +115,14 @@ msgid ""
 "any self-mounting mechanism. To mount type 1 AppImages, use ``mount -o "
 "loop``."
 msgstr ""
+"此方法僅適用於第 2 類 AppImage。第 1 類 AppImage 不提供自動掛載機制。要掛載"
+"第 1 類 AppImage，請使用 ``mount -o loop``。"
 
 #: ../../../source/user-guide/run-appimages.rst:48
 msgid ""
 "This method is to be preferable, as other methods have some major "
 "disadvantages explained below."
-msgstr ""
+msgstr "此方法較為推薦，因為其他方法有一些重大缺點（如下所述）。"
 
 #: ../../../source/user-guide/run-appimages.rst:50
 msgid ""
@@ -116,10 +131,13 @@ msgid ""
 "files, images and also AppImages requires root permissions. Also, you need "
 "to provide a mountpoint. Please see the following example:"
 msgstr ""
+"另一種掛載 AppImage 的方式是使用您 Linux 散布版的 ``mount`` 命令工具鏈。掛載"
+"與卸載裝置、檔案、映像以及 AppImage 都需要 root 權限，而且必須提供掛載點。請"
+"參見以下範例："
 
 #: ../../../source/user-guide/run-appimages.rst:52
 msgid "For type 1 AppImages::"
-msgstr ""
+msgstr "第 1 類 AppImage："
 
 #: ../../../source/user-guide/run-appimages.rst:54
 msgid ""
@@ -128,10 +146,14 @@ msgid ""
 "# you can now inspect the contents\n"
 "> sudo umount mountpoint/"
 msgstr ""
+"> mkdir mountpoint\n"
+"> sudo mount my.AppImage mountpoint/\n"
+"# 現在可以檢視內容\n"
+"> sudo umount mountpoint/"
 
 #: ../../../source/user-guide/run-appimages.rst:59
 msgid "For type 2 AppImages::"
-msgstr ""
+msgstr "第 2 類 AppImage："
 
 #: ../../../source/user-guide/run-appimages.rst:61
 msgid ""
@@ -142,12 +164,18 @@ msgid ""
 "# you can now inspect the contents\n"
 "> sudo umount mountpoint/"
 msgstr ""
+"> mkdir mountpoint\n"
+"> my.AppImage --appimage-offset\n"
+"> 123456\n"
+"> sudo mount my.AppImage mountpoint/ -o offset=123456\n"
+"# 現在可以檢視內容\n"
+"> sudo umount mountpoint/"
 
 #: ../../../source/user-guide/run-appimages.rst:68
 msgid ""
 "Note that the number `123456` is just an example here, you will likely see "
 "another number."
-msgstr ""
+msgstr "請注意，`123456` 只是範例，您可能會看到不同的數字。"
 
 #: ../../../source/user-guide/run-appimages.rst:71
 msgid ""
@@ -155,6 +183,8 @@ msgid ""
 "do not forget to call ``umount`` the AppImage as soon as you don't need it "
 "mounted any more."
 msgstr ""
+"使用此方法掛載的 AppImage 不會自動卸載。當您不再需要掛載時，請務必執行 "
+"``umount``。"
 
 #: ../../../source/user-guide/run-appimages.rst:73
 msgid ""
@@ -162,12 +192,16 @@ msgid ""
 "so-called \"dangling mount\" can be created. This should be avoided by "
 "properly unmounting the AppImages."
 msgstr ""
+"若 AppImage 未正確卸載就被移動到新位置，可能會產生所謂的「懸掛掛載」。請透過"
+"正確卸載 AppImage 來避免此問題。"
 
 #: ../../../source/user-guide/run-appimages.rst:76
 msgid ""
 "Type 2 AppImages which are mounted using the ``--appimage-mount`` parameter "
 "are **not** affected by this problem!"
 msgstr ""
+"使用 ``--appimage-mount`` 參數掛載的第 2 類 AppImage **不會** 受到此問題影"
+"響！"
 
 #: ../../../source/user-guide/notes/external-tool-to-mount-and-extract-appimages.rst:2
 msgid ""
@@ -175,6 +209,8 @@ msgid ""
 "target AppImage. This might not always be appropriate, e.g., if the AppImage "
 "is not trustworthy."
 msgstr ""
+"目前無法在不執行目標 AppImage 的情況下使用前述方法。在某些情況下可能不適合，"
+"例如 AppImage 不可信時。"
 
 #: ../../../source/user-guide/notes/external-tool-to-mount-and-extract-appimages.rst:4
 msgid ""
@@ -182,10 +218,12 @@ msgid ""
 "appimagetool`. Please see the related `GitHub issue <https://github.com/"
 "AppImage/AppImageKit/issues/830>`__ for progress on this."
 msgstr ""
+"AppImage 團隊正在 :ref:`ref-appimagetool` 中實作掛載選項。進度請參考相關的 "
+"`GitHub issue <https://github.com/AppImage/AppImageKit/issues/830>`__。"
 
 #: ../../../source/user-guide/run-appimages.rst:82
 msgid "Extract the contents of an AppImage"
-msgstr ""
+msgstr "解壓 AppImage 內容"
 
 #: ../../../source/user-guide/run-appimages.rst:84
 msgid ""
@@ -194,6 +232,9 @@ msgid ""
 "`AppDir <ref-appdir>`, and users can create AppImages from them again using :"
 "ref:`ref-appimagetool`."
 msgstr ""
+"掛載 AppImage 的替代方式是解壓其內容，這樣可以修改內容。解壓後的目錄是有效"
+"的 :ref:`AppDir <ref-appdir>`，使用者可再透過 :ref:`ref-appimagetool`重新建"
+"立 AppImage。"
 
 #: ../../../source/user-guide/run-appimages.rst:86
 msgid ""
@@ -203,6 +244,10 @@ msgid ""
 "the :ref:`ref-runtime` to create a new directory called :code:`squashfs-"
 "root`, containing the contents of the AppImage's :ref:`AppDir <ref-appdir>`."
 msgstr ""
+"類似於掛載 AppImage，也有一個簡單的命令列選項可在不使用外部工具的情況下解壓"
+"第 2 類 AppImage 的內容。只要以 :code:`--appimage-extract` 參數執行 "
+"AppImage。這會讓 :ref:`ref-runtime` 建立名為 :code:`squashfs-root` 的新目錄，"
+"其中包含 AppImage 的 :ref:`AppDir <ref-appdir>` 內容。"
 
 #: ../../../source/user-guide/run-appimages.rst:88
 msgid ""
@@ -210,10 +255,12 @@ msgid ""
 "contents of an AppImage. It's very limited functionality wise, and requires "
 "a GUI to run. It creates a new directory in the user's desktop directory."
 msgstr ""
+"第 1 類 AppImage 需要已棄用的 AppImageExtract_ 工具來解壓內容。該工具功能非常"
+"有限，且需要圖形介面才能執行。它會在使用者的桌面目錄建立新資料夾。"
 
 #: ../../../source/user-guide/run-appimages.rst:98
 msgid "Integrating AppImages into the desktop"
-msgstr ""
+msgstr "將 AppImage 整合到桌面"
 
 #: ../../../source/user-guide/run-appimages.rst:100
 msgid ""
@@ -223,6 +270,9 @@ msgid ""
 "launch desktop applications from their desktop environments' launchers. This "
 "concept is called *desktop integration*."
 msgstr ""
+"AppImage 是獨立套件，不需要 *安裝*。不過，有些使用者希望 AppImage 能像散布版"
+"提供的應用程式一樣可用。這主要涉及能從桌面環境的啟動器啟動桌面應用程式，此概"
+"念稱為 *桌面整合*。"
 
 #: ../../../source/user-guide/run-appimages.rst:103
 msgid "appimaged"
@@ -236,10 +286,13 @@ msgid ""
 "and integrates them into the system using :ref:`libappimage <ref-"
 "libappimage>`."
 msgstr ""
+"`appimaged <https://github.com/probonopd/go-appimage/releases>`__ 是監控系統"
+"並整合 AppImage 的常駐服務。它會監視使用者系統中一組預先定義的目錄以尋找 "
+"AppImage，並透過 :ref:`libappimage <ref-libappimage>` 將它們整合到系統。"
 
 #: ../../../source/user-guide/run-appimages.rst:108
 msgid "More information on appimaged can be found in :ref:`appimaged`."
-msgstr ""
+msgstr "更多關於 appimaged 的資訊請參閱 :ref:`appimaged`。"
 
 #: ../../../source/user-guide/run-appimages.rst:112
 msgid "AppImageLauncher"
@@ -251,6 +304,8 @@ msgid ""
 "a kind of \"entry point\" for running and integrating AppImages. It makes a "
 "user's system AppImage-ready™."
 msgstr ""
+"AppImageLauncher_ 是 Linux 散布版的輔助應用程式，可作為執行與整合 AppImage 的"
+"「入口」。它讓使用者的系統變成 AppImage-ready™。"
 
 #: ../../../source/user-guide/run-appimages.rst:116
 msgid ""
@@ -259,6 +314,8 @@ msgid ""
 "desktop environment features, and therefore should be able to run on most "
 "distributions."
 msgstr ""
+"AppImageLauncher 必須安裝到系統中，才能正確整合到系統。它使用與桌面環境功能無"
+"關的技術，因此應可在多數散布版上運作。"
 
 #: ../../../source/user-guide/run-appimages.rst:118
 msgid ""
@@ -269,6 +326,10 @@ msgid ""
 "reducing the mess of AppImages on your file system and prevents you from "
 "having to search for the actual AppImage file if you want to e.g., remove it."
 msgstr ""
+"安裝 AppImageLauncher 後，您可以在檔案管理員、瀏覽器等地方直接雙擊 AppImage。"
+"系統會詢問要整合 AppImage 或僅執行一次。當您選擇整合 AppImage 時，檔案會被移"
+"動到 :code:`~/Applications` 目錄。這有助於減少檔案系統中 AppImage 的雜亂，並"
+"避免您在想移除時還得尋找實際的 AppImage 檔案。"
 
 #: ../../../source/user-guide/run-appimages.rst:120
 msgid ""
@@ -277,18 +338,20 @@ msgid ""
 "AppImages from the system. These functions can be found in the context menus "
 "of the entries in the desktop's launcher."
 msgstr ""
+"為了提供完整的 AppImage 系統管理方案，AppImageLauncher 也提供更新與移除 "
+"AppImage 的功能。這些功能可在桌面啟動器中的項目右鍵選單中找到。"
 
 #: ../../../source/user-guide/run-appimages.rst:125
 msgid ""
 "More information about AppImageLauncher can be found in :ref:`ref-"
 "appimagelauncher`."
-msgstr ""
+msgstr "更多關於 AppImageLauncher 的資訊請參閱 :ref:`ref-appimagelauncher`。"
 
 #: ../../../source/user-guide/run-appimages.rst:129
 msgid "Troubleshooting"
-msgstr ""
+msgstr "疑難排解"
 
 #: ../../../source/user-guide/run-appimages.rst:131
 msgid ""
 "Please refer to our :ref:`Troubleshooting page <ref-ug-troubleshooting>`."
-msgstr ""
+msgstr "請參閱 :ref:`Troubleshooting page <ref-ug-troubleshooting>`。"

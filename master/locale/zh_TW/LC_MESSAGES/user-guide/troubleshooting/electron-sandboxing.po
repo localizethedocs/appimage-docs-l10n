@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:4
 msgid "I have issues with Electron-based AppImages and their sandboxing"
-msgstr ""
+msgstr "我在使用基於 Electron 的 AppImage 與其沙箱時遇到問題"
 
 #: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:6
 msgid ""
@@ -32,6 +32,12 @@ msgid ""
 "notes/39890#unprivileged-user-namespace-restrictions-15>`__), but some do "
 "not (for example `Debian <https://debian.org>`__)."
 msgstr ""
+"基於 `Electron <https://www.electron.build/>`__ 的 AppImage 需要以特定方式設"
+"定核心，才能讓沙箱按預期運作（具體而言，核心必須允許提供「非特權命名空"
+"間」）。許多散布版預設已完成此設定（例如 `Ubuntu <https://ubuntu.com>`__ 在 "
+"`24.04 <https://discourse.ubuntu.com/t/ubuntu-24-04-lts-noble-numbat-release-"
+"notes/39890#unprivileged-user-namespace-restrictions-15>`__ 之前），但也有些"
+"沒有（例如 `Debian <https://debian.org>`__）。"
 
 #: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:10
 msgid ""
@@ -40,16 +46,18 @@ msgid ""
 "your distribution first. If they enable those securely by default, all users "
 "can benefit from this feature."
 msgstr ""
+"請注意，AppImage 團隊不保證啟用此功能一定安全。若有疑慮，請先聯絡您的散布版。"
+"如果他們預設以安全方式啟用，所有使用者都能受益於此功能。"
 
 #: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:14
 msgid "Check if kernel is configured correctly already"
-msgstr ""
+msgstr "檢查核心是否已正確設定"
 
 #: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:16
 msgid ""
 "To check if your distribution has unprivileged namespaces enabled, please "
 "run::"
-msgstr ""
+msgstr "要檢查您的散布版是否啟用了非特權命名空間，請執行："
 
 #: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:18
 msgid ""
@@ -64,19 +72,21 @@ msgid ""
 "available, but not enabled at the moment. Please see the following sections "
 "on how to enable it."
 msgstr ""
+"``1`` 表示非特權命名空間已啟用，您無需採取任何動作。``0`` 則表示此功能可用，"
+"但目前尚未啟用。請參閱下方段落了解如何啟用。"
 
 #: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:26
 msgid "The command does not need to be run as ``root``."
-msgstr ""
+msgstr "此命令不需要以 ``root`` 身分執行。"
 
 #: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:32
 msgid "Configure unprivileged sandboxes"
-msgstr ""
+msgstr "設定非特權沙箱"
 
 #: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:34
 msgid ""
 "To temporarily enable unprivileged namespaces, you can run this command::"
-msgstr ""
+msgstr "要暫時啟用非特權命名空間，您可以執行："
 
 #: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:36
 msgid "sudo sysctl -w kernel.unprivileged_userns_clone=1"
@@ -86,7 +96,7 @@ msgstr ""
 msgid ""
 "You can run the same command, swapping the ``1`` for a ``0``, to disable "
 "this again."
-msgstr ""
+msgstr "若要再次停用，執行相同命令並把 ``1`` 改成 ``0`` 即可。"
 
 #: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:41
 msgid ""
@@ -94,6 +104,8 @@ msgid ""
 "``/etc/sysctl.d/``. For your convenience, we have prepared the following "
 "command which creates the file on the fly::"
 msgstr ""
+"要永久啟用此功能，建議在 ``/etc/sysctl.d/`` 建立新檔案。為了方便您，我們準備"
+"了以下命令可即時建立該檔案："
 
 #: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:43
 msgid ""
@@ -107,10 +119,12 @@ msgid ""
 "running system, please refer to the :ref:`previous section <ref-electron-"
 "sandboxing-configure-temporarily>`."
 msgstr ""
+"此命令僅會在下次重新開機後生效。若要在目前運作中的系統上變更，請參閱 :ref:"
+"`previous section <ref-electron-sandboxing-configure-temporarily>`。"
 
 #: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:50
 msgid "Allow Electron AppImages to run without unprivileged namespaces"
-msgstr ""
+msgstr "允許 Electron AppImage 在沒有非特權命名空間時執行"
 
 #: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:52
 msgid ""
@@ -118,13 +132,17 @@ msgid ""
 "the `unprivileged_userns_clone` kernel feature is not enabled: https://www."
 "npmjs.com/package/electron-builder-sandbox-fix"
 msgstr ""
+"@gergof 製作了一個工具，當核心功能 `unprivileged_userns_clone` 未啟用時，會自"
+"動套用 `--no-sandbox` 旗標：https://www.npmjs.com/package/electron-builder-"
+"sandbox-fix"
 
 #: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:57
 msgid "More information on unprivileged namespaces"
-msgstr ""
+msgstr "更多關於非特權命名空間的資訊"
 
 #: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:59
 msgid ""
 "For more information on unprivileged namespaces, please see https://lwn.net/"
 "Articles/673597/."
 msgstr ""
+"如需更多關於非特權命名空間的資訊，請參閱 https://lwn.net/Articles/673597/。"

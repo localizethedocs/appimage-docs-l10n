@@ -25,30 +25,31 @@ msgstr "動機"
 msgid ""
 "There's two different points of view when looking at AppImages: the user's "
 "and the developer's. The following section explains both of them."
-msgstr ""
+msgstr "從兩個角度看待 AppImage：使用者與開發者。以下章節將分別說明。"
 
 #: ../../../source/introduction/motivation.rst:10
 msgid "Contents"
-msgstr ""
+msgstr "目次"
 
 #: ../../../source/introduction/motivation.rst:13
 msgid "Why would I as a user want to use AppImages?"
-msgstr ""
+msgstr "為什麼使用者會想用 AppImage？"
 
 #: ../../../source/introduction/motivation.rst:15
 msgid "Consider the following user stories:"
-msgstr ""
+msgstr "請看以下使用者情境："
 
 #: ../../../source/introduction/motivation.rst:17
 msgid ""
 "\"I as a user want to run the latest version of my favorite app on my stable "
 "distribution, which ships only with an old outdated version.\""
 msgstr ""
+"「我希望在穩定的散布版上執行最愛應用程式的最新版本，但該散布版只提供舊版。」"
 
 #: ../../../source/introduction/motivation.rst:19
 msgid ""
 "\"I as a user need to use multiple versions of an application in parallel.\""
-msgstr ""
+msgstr "「我需要同時使用某個應用程式的多個版本。」"
 
 #: ../../../source/introduction/motivation.rst:21
 msgid ""
@@ -56,12 +57,14 @@ msgid ""
 "disk together with my data, allowing me to use any Linux computer to work "
 "with my files.\""
 msgstr ""
+"「我想把喜愛的應用程式連同資料一起放在可攜式磁碟上，以便在任何 Linux 電腦上處"
+"理我的檔案。」"
 
 #: ../../../source/introduction/motivation.rst:23
 msgid ""
 "\"I am in a corporate or university environment and want to simply run some "
 "specific software, but lack permissions to 'install' applications.\""
-msgstr ""
+msgstr "「我在企業或大學環境中想執行特定軟體，但沒有『安裝』應用程式的權限。」"
 
 #: ../../../source/introduction/motivation.rst:25
 msgid ""
@@ -71,6 +74,9 @@ msgid ""
 "without any major issues. AppImage is primarily a user-focused way of "
 "bundling software."
 msgstr ""
+"以上情境都能透過 AppImage 達成。它是在簡單使用體驗與檔案大小之間的取捨。其獨"
+"特的使用體驗可確保即使不熟悉技術的人也能順利上手。AppImage 主要是一種以使用者"
+"為中心的軟體打包方式。"
 
 #: ../../../source/introduction/motivation.rst:27
 msgid ""
@@ -81,6 +87,11 @@ msgid ""
 "are required for the basic experience, though. AppImages are designed to :"
 "ref:`be run in three steps at most <ref-download-make-executable-run>`."
 msgstr ""
+"由於 AppImage 已存在一段時間，已開發出許多實用的可選功能，包含 :ref:`高效率更"
+"新 <ref-appimageupdate>`、所謂的 :ref:`桌面整合 <ref-desktop-integration>`、"
+"以及 :ref:`軟體目錄 <ref-appimagehub>` 等。不過，這些都不是基本體驗所必需的。"
+"AppImage 的設計目標是:ref:`最多三步就能執行 <ref-download-make-executable-"
+"run>`。"
 
 #: ../../../source/introduction/motivation.rst:29
 msgid ""
@@ -92,6 +103,10 @@ msgid ""
 "instance can simply put an AppImage on a USB disk and use it normally, on "
 "any machine."
 msgstr ""
+"一項重要優勢是 AppImage 從一開始就設計為不需超級使用者權限即可執行。幾乎所有"
+"主流散布版都相容 AppImage，且不需使用者修改基礎系統。AppImage 內建自己的執行"
+"階段，若打包得當就不需外部資源。例如在大學實驗室中，學生可將 AppImage 放在 "
+"USB 隨身碟上，於任何電腦上正常使用。"
 
 #: ../../../source/introduction/motivation.rst:31
 msgid ""
@@ -99,10 +114,12 @@ msgid ""
 "large user base and eco system, and there's a lot of tools that improve the "
 "users' user experience."
 msgstr ""
+"總結來說：AppImage 提供簡單且一致的使用體驗，擁有龐大的使用者基礎與生態系，並"
+"有許多工具可改善使用者體驗。"
 
 #: ../../../source/introduction/motivation.rst:35
 msgid "Why would I as a developer want to make and distribute AppImages?"
-msgstr ""
+msgstr "為什麼開發者會想製作並散布 AppImage？"
 
 #: ../../../source/introduction/motivation.rst:37
 msgid ""
@@ -113,6 +130,10 @@ msgid ""
 "Linux\", but they have to make them for Ubuntu, Debian, CentOS, openSUSE "
 "etc. Read: they have to make binaries for every distribution."
 msgstr ""
+"許多開發者發現，他們能以可行的成本將應用程式部署到多數作業系統。他們可以說"
+"「我為 Windows 製作二進位檔」或「我為 macOS 製作二進位檔」。然而，對 Linux 來"
+"說，他們經常面臨無法「為 Linux 製作二進位檔」，而是必須為 Ubuntu、Debian、"
+"CentOS、openSUSE 等各別製作。也就是說，必須為每個散布版製作二進位檔。"
 
 #: ../../../source/introduction/motivation.rst:39
 msgid ""
@@ -126,6 +147,10 @@ msgid ""
 "is not the same as the one the binary was built on, it will crash or even "
 "refuse to run."
 msgstr ""
+"問題在於 Linux 只是核心，而使用者實際使用的作業系統是彼此獨立的專案，有各自的"
+"目標與考量。它們提供的函式庫版本與組合各不相同，且大多要求軟體以散布版的二進"
+"位檔為依據進行連結與散布。因此，某個二進位檔要能執行，必須針對該散布版的函式"
+"庫集合 *編譯*。一旦換到另一個散布版，其函式庫集合不同，就可能崩潰或拒絕執行。"
 
 #: ../../../source/introduction/motivation.rst:41
 msgid ""
@@ -134,6 +159,8 @@ msgid ""
 "other platforms: ship the dependency libraries along with the own software's "
 "binaries."
 msgstr ""
+"為解決此問題，必須像在其他平台上避免缺少共享函式庫（或版本不相容）一樣，將相"
+"依函式庫與自己的軟體二進位檔一併散布。"
 
 #: ../../../source/introduction/motivation.rst:43
 msgid ""
@@ -147,6 +174,11 @@ msgid ""
 "software within it. Furthermore, they now have that data on their hard "
 "drive, and have to manage it themselves, without any kind of helpers."
 msgstr ""
+"這可透過傳統的 tarball 來達成，裡面包含所有函式庫，並可能附帶某種「執行腳本」"
+"以確保只使用這些函式庫。但這樣有幾個重大缺點。首先，要找出必須打包的正確函式"
+"庫集合並排除會造成問題的項目（如最低層相依：``libc``、``libdl`` 等）並不容"
+"易。更糟的是，使用者面對的是必須解壓的壓縮檔，還需要教他們如何執行其中的軟"
+"體。此外，這些資料會留在硬碟上，使用者必須自行管理，沒有任何輔助工具。"
 
 #: ../../../source/introduction/motivation.rst:45
 msgid ""
@@ -156,6 +188,9 @@ msgid ""
 "binaries, following the \":ref:`one app = one file <one-app-one-file-"
 "principle>`\" core principle."
 msgstr ""
+"為了提升可用性並降低維護成本，AppImage 因而誕生。AppImage 打包了程式、其相依"
+"函式庫與執行所需的所有資源。它們是單一二進位檔，遵循「:ref:`一個應用程式 = 一"
+"個檔案 <one-app-one-file-principle>`」的核心原則。"
 
 #: ../../../source/introduction/motivation.rst:47
 msgid ""
@@ -166,9 +201,13 @@ msgid ""
 "And once the AppImage has been built, it will \"just run\" on all major "
 "desktop distributions."
 msgstr ""
+"對開發者而言，製作 AppImage 非常簡單。有工具可從所謂的 :ref:`AppDir <ref-"
+"appdir>` 產生 AppImage。也有簡單工具可為既有軟體建立 AppDir，這些工具能意識到"
+"跨散布版的不相容性並嘗試避免。而一旦 AppImage 建置完成，就能在所有主流桌面散"
+"布版上「直接執行」。"
 
 #: ../../../source/introduction/motivation.rst:49
 msgid ""
 "Stop making binaries \"for distributions\" and start making binaries \"for "
 "Linux\" today!"
-msgstr ""
+msgstr "停止為「散布版」製作二進位檔，從今天起開始為「Linux」製作二進位檔吧！"

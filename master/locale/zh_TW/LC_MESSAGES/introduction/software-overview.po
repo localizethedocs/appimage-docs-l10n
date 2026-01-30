@@ -24,11 +24,11 @@ msgstr "軟體概覽"
 #: ../../../source/introduction/software-overview.rst:6
 #: ../../../source/introduction/software-overview.rst:188
 msgid "Todo"
-msgstr ""
+msgstr "待辦"
 
 #: ../../../source/introduction/software-overview.rst:7
 msgid "list deprecated components"
-msgstr ""
+msgstr "列出已棄用元件"
 
 #: ../../../source/introduction/software-overview.rst:13
 msgid "Contents"
@@ -49,6 +49,8 @@ msgid ""
 "specification>`. It is split up into several components, which are described "
 "in this subsection."
 msgstr ""
+"`AppImageKit <https://github.com/AppImage/AppImageKit>`__ 是 :ref:`AppImage "
+"規範 <appimage-specification>` 的參考實作。它分為多個元件，將在本小節說明。"
 
 #: ../../../source/introduction/software-overview.rst:29
 msgid "runtime"
@@ -63,6 +65,10 @@ msgid ""
 "exited, the runtime unmounts the squashfs image and cleans up the temporary "
 "resources (such as, the temporary mountpoint directory)."
 msgstr ""
+"runtime 提供每個 AppImage 的「可執行標頭」。執行 AppImage 時，AppImage 內的 "
+"runtime 會被執行，將內嵌的檔案系統映像以唯讀方式掛載到暫存位置，並在其中啟動 "
+"payload 應用程式。payload 結束後，runtime 會卸載 squashfs 映像並清理暫存資源"
+"（例如暫存掛載點目錄）。"
 
 #: ../../../source/introduction/software-overview.rst:33
 msgid ""
@@ -72,6 +78,10 @@ msgid ""
 "it needs to be combined with a filesystem image to form a valid AppImage, "
 "usually by using appimagetool which comes with its own copy of the runtime."
 msgstr ""
+"**下載：** 通常沒有必要手動下載，但若仍想下載，可至 https://github.com/"
+"AppImage/type2-runtime/releases/continuous。請注意，它單獨使用沒有作用，必須"
+"與檔案系統映像結合才是有效的 AppImage，通常透過 appimagetool（其本身包含一份 "
+"runtime）來完成。"
 
 #: ../../../source/introduction/software-overview.rst:39
 msgid "appimagetool"
@@ -84,6 +94,9 @@ msgid ""
 "creates the AppImage by embedding the :ref:`runtime <ref-runtime>`, and "
 "creating and appending the filesystem image."
 msgstr ""
+"appimagetool 是從系統既有目錄（所謂的 :ref:`AppDir <ref-appdir>`）建立 "
+"AppImage 的最簡單方式。它會嵌入 :ref:`runtime <ref-runtime>`，並建立與附加檔"
+"案系統映像來產生 AppImage。"
 
 #: ../../../source/introduction/software-overview.rst:43
 msgid ""
@@ -93,12 +106,18 @@ msgid ""
 "options to make sure the information in the AppImage is valid (for instance, "
 "it can validate :ref:`AppStream files <appstream-support>`)."
 msgstr ""
+"appimagetool 實作了所有可選功能，例如 `更新資訊 <https://github.com/AppImage/"
+"AppImageSpec/blob/master/draft.md#update-information>`__、:ref:`簽署 <ref-"
+"signing>`，以及一些 lint 選項以確保 AppImage 內的資訊有效（例如可驗證 :ref:"
+"`AppStream 檔案 <appstream-support>`）。"
 
 #: ../../../source/introduction/software-overview.rst:45
 msgid ""
 "**Download:** You can get it as an AppImage from https://github.com/AppImage/"
 "appimagetool/releases/continuous."
 msgstr ""
+"**下載：** 可從 https://github.com/AppImage/appimagetool/releases/continuous "
+"取得 AppImage。"
 
 #: ../../../source/introduction/software-overview.rst:49
 msgid "AppRun"
@@ -111,6 +130,9 @@ msgid ""
 "runtime>` executes the :code:`AppRun` file within the :ref:`AppDir <ref-"
 "appdir>`."
 msgstr ""
+"每個 AppImage 的 AppDir 都必須包含名為 :code:`AppRun` 的檔案，作為「入口"
+"點」。執行 AppImage 時，:ref:`runtime <ref-runtime>` 會在 :ref:`AppDir <ref-"
+"appdir>` 中執行 :code:`AppRun`。"
 
 #: ../../../source/introduction/software-overview.rst:53
 msgid ""
@@ -120,6 +142,9 @@ msgid ""
 "applications into relocatable applications, and therefore create such a "
 "symlink."
 msgstr ""
+":code:`AppRun` 不一定要是一般檔案。若應用程式是 :ref:`可重定位 <relocatable-"
+"apps>`，它可以只是指向主執行檔的符號連結。像 :ref:`ref-linuxdeploy` 之類的工"
+"具能將應用程式轉為可重定位，因此可建立這樣的符號連結。"
 
 #: ../../../source/introduction/software-overview.rst:55
 msgid ""
@@ -131,6 +156,10 @@ msgid ""
 "prevent warnings users might encounter that are coming from the fact the :"
 "ref:`AppDir <ref-appdir>` is mounted read-only."
 msgstr ""
+"在某些情況下（例如應用程式不可被修改，或授權禁止修改，或無法使用 linuxdeploy "
+"等工具），可改用 AppImageKit 的 :code:`AppRun.c`。:code:`AppRun.c` 透過調整環"
+"境變數，嘗試讓程式載入打包的共享函式庫而非系統函式庫。此外，也會避免使用者"
+"因 :ref:`AppDir <ref-appdir>` 以唯讀掛載而產生的警告。"
 
 #: ../../../source/introduction/software-overview.rst:57
 msgid ""
@@ -143,6 +172,11 @@ msgid ""
 "tools, but can also be a problem for GUI applications expecting paths via "
 "parameters."
 msgstr ""
+"使用 :code:`AppRun.c` 並不保證應用程式一定能執行，打包者必須在使用 :ref:"
+"`appimagetool <ref-appimagetool>` 建立 AppImage 前，手動（或透過外部工具）提"
+"供應用程式所需的所有資源。:code:`AppRun` 會強制變更目前工作目錄，因此應用程式"
+"無法得知原始呼叫 AppImage 的位置。這對 CLI 工具有時很惱人，對需要透過參數接收"
+"路徑的 GUI 應用程式也可能造成問題。"
 
 #: ../../../source/introduction/software-overview.rst:60
 msgid ""
@@ -152,6 +186,10 @@ msgid ""
 "so that a simple symlink called :code:`AppRun` to the main binary works just "
 "fine), and made using :code:`AppRun.c` obsolete in most cases."
 msgstr ""
+":code:`AppRun.c`（AppImageKit 的二進位檔）屬於過時技術，若可行應盡量避免。"
+"像 :ref:`linuxdeploy <ref-linuxdeploy>` 這類工具以不同方式部署應用程式（它們"
+"足夠聰明，讓名為 :code:`AppRun` 的簡單符號連結指向主執行檔即可運作），因此多"
+"數情況下使用 :code:`AppRun.c` 已不再必要。"
 
 #: ../../../source/introduction/software-overview.rst:62
 msgid ""
@@ -162,6 +200,9 @@ msgid ""
 "cause a lot of trouble while trying to debug an AppImage. Please beware of "
 "these before thinking about using :code:`AppRun.c` in your AppImage."
 msgstr ""
+"在某些邊緣情況下仍會使用 :code:`AppRun.c`，且可能有其用途。然而它有許多限制並"
+"需要一些變通作法（例如本節提到的強制變更目前工作目錄等），在除錯 AppImage 時"
+"可能造成不少困擾。在考慮使用 :code:`AppRun.c` 前，請先了解這些限制。"
 
 #: ../../../source/introduction/software-overview.rst:64
 msgid ""
@@ -169,16 +210,18 @@ msgid ""
 "you still want to, you can get it from https://github.com/AppImage/"
 "AppImageKit/releases/continuous."
 msgstr ""
+"**下載：** 通常沒有必要手動下載，但若仍想下載，可至 https://github.com/"
+"AppImage/AppImageKit/releases/continuous。"
 
 #: ../../../source/introduction/software-overview.rst:68
 msgid "Helpers"
-msgstr ""
+msgstr "輔助工具"
 
 #: ../../../source/introduction/software-overview.rst:70
 msgid ""
 "AppImageKit ships with a few helpers that can be used to verify and validate "
 "some AppImage features."
-msgstr ""
+msgstr "AppImageKit 附帶一些輔助工具，可用於驗證與檢查部分 AppImage 功能。"
 
 #: ../../../source/introduction/software-overview.rst:74
 msgid "validate"
@@ -186,14 +229,14 @@ msgstr ""
 
 #: ../../../source/introduction/software-overview.rst:76
 msgid ":code:`validate` can validate the PGP signatures inside AppImages."
-msgstr ""
+msgstr ":code:`validate` 可驗證 AppImage 內的 PGP 簽章。"
 
 #: ../../../source/introduction/software-overview.rst:78
 #: ../../../source/introduction/software-overview.rst:88
 msgid ""
 "Normally there is no need to use this directly, this is mainly for debugging "
 "for AppImage developers."
-msgstr ""
+msgstr "通常不需要直接使用它，主要是提供 AppImage 開發者除錯用。"
 
 #: ../../../source/introduction/software-overview.rst:80
 #: ../../../source/introduction/software-overview.rst:90
@@ -202,6 +245,9 @@ msgid ""
 "https://github.com/AppImage/AppImageKit/. In the future it may become "
 "bundled with or its functionality may become integrated into appimagetool."
 msgstr ""
+"**下載：** 目前需要從原始碼編譯，原始碼位於 https://github.com/AppImage/"
+"AppImageKit/。未來可能會隨 appimagetool 一起提供，或其功能會整合到 "
+"appimagetool 中。"
 
 #: ../../../source/introduction/software-overview.rst:84
 msgid "digest-md5"
@@ -212,6 +258,8 @@ msgid ""
 "Calculates the MD5 digest used for desktop integration purposes for a given "
 "AppImage. This digest depends on the path, not on the contents."
 msgstr ""
+"計算用於桌面整合的 MD5 摘要（針對指定 AppImage）。此摘要取決於路徑，而非內"
+"容。"
 
 #: ../../../source/introduction/software-overview.rst:95
 msgid "AppImageUpdate"
@@ -222,6 +270,7 @@ msgid ""
 "AppImageUpdate_ lets you update AppImages in a decentralized way using "
 "information embedded in the AppImage itself."
 msgstr ""
+"AppImageUpdate_ 讓您透過 AppImage 內嵌的資訊，以去中心化的方式更新 AppImage。"
 
 #: ../../../source/introduction/software-overview.rst:99
 msgid ""
@@ -230,12 +279,17 @@ msgid ""
 "information`_, and :code:`AppImageUpdate`, a user interface for updating "
 "AppImages written in Qt."
 msgstr ""
+"此專案包含兩個工具：:code:`appimageupdatetool`（完整功能的 CLI 更新工具，處"
+"理 `update information`_），以及 :code:`AppImageUpdate`（以 Qt 編寫的 "
+"AppImage 更新介面）。"
 
 #: ../../../source/introduction/software-overview.rst:104
 msgid ""
 "**Download:** You can get it as an AppImage from https://github.com/AppImage/"
 "AppImageUpdate/releases/continuous."
 msgstr ""
+"**下載：** 可從 https://github.com/AppImage/AppImageUpdate/releases/"
+"continuous 取得 AppImage。"
 
 #: ../../../source/introduction/software-overview.rst:109
 msgid "appimaged"
@@ -249,10 +303,13 @@ msgid ""
 "an initial search, and then live watches for new AppImage (or AppImages that "
 "were removed) and (de)integrates these immediately."
 msgstr ""
+"`appimaged <https://github.com/probonopd/go-appimage/releases>`__ 是常駐服"
+"務，會監控系統中一組預先定義的目錄以尋找 AppImage。它會在初始搜尋時自動整合找"
+"到的 AppImage，之後也會即時監看新加入或移除的 AppImage，並立即（解除）整合。"
 
 #: ../../../source/introduction/software-overview.rst:113
 msgid "It is shipped as an AppImage."
-msgstr ""
+msgstr "它以 AppImage 形式提供。"
 
 #: ../../../source/introduction/software-overview.rst:117
 msgid ""
@@ -260,12 +317,16 @@ msgid ""
 "very large, appimaged usually needs quite long to visit all files. It is "
 "likely to slow down the system (specifically, the filesystem)."
 msgstr ""
+"監控的目錄之一是 ``~/Downloads``。若該目錄很大，appimaged 通常需要較長時間掃"
+"描所有檔案，可能會讓系統（特別是檔案系統）變慢。"
 
 #: ../../../source/introduction/software-overview.rst:119
 msgid ""
 "**Download:** You can get it as an AppImage from https://github.com/"
 "probonopd/go-appimage/releases."
 msgstr ""
+"**下載：** 可從 https://github.com/probonopd/go-appimage/releases 取得 "
+"AppImage。"
 
 #: ../../../source/introduction/software-overview.rst:122
 msgid "Third-party tools"
@@ -275,7 +336,7 @@ msgstr "第三方工具"
 msgid ""
 "This section showcases a couple of third-party tools that can be used to "
 "create and handle AppImage files."
-msgstr ""
+msgstr "本節介紹幾個可用於建立與處理 AppImage 檔案的第三方工具。"
 
 #: ../../../source/introduction/software-overview.rst:130
 msgid "linuxdeployqt"
@@ -289,18 +350,26 @@ msgid ""
 "used to produce AppDirs and AppImages for C, C++, and Qt/QML applications, "
 "as well as applications written in other compiled languages."
 msgstr ""
+"`linuxdeployqt <https://github.com/probonopd/linuxdeployqt>`__ 是基於 Qt 的簡"
+"單命令列工具，可用來建立 AppDir 與 AppImage。它以 Qt 隨附的 macdeployqt 為基"
+"礎。可用於產生 C、C++、Qt/QML 應用程式的 AppDir 與 AppImage，也可用於其他編譯"
+"型語言的應用程式。"
 
 #: ../../../source/introduction/software-overview.rst:136
 msgid ""
 "There is a copy-and-paste example for how to use it on Travis CI at https://"
 "github.com/probonopd/linuxdeployqt#using-linuxdeployqt-with-travis-ci."
 msgstr ""
+"在 https://github.com/probonopd/linuxdeployqt#using-linuxdeployqt-with-"
+"travis-ci 提供了可直接複製使用的 Travis CI 範例。"
 
 #: ../../../source/introduction/software-overview.rst:138
 msgid ""
 "**Download:** You can get it as an AppImage from https://github.com/"
 "probonopd/linuxdeployqt/releases/tag/continuous."
 msgstr ""
+"**下載：** 可從 https://github.com/probonopd/linuxdeployqt/releases/tag/"
+"continuous 取得 AppImage。"
 
 #: ../../../source/introduction/software-overview.rst:142
 msgid "linuxdeploy"
@@ -312,6 +381,8 @@ msgid ""
 "used to create AppDirs and AppImages. It has been developed in 2018, and "
 "describes itself as an \"AppDir creation and maintenance tool\"."
 msgstr ""
+"linuxdeploy_ 是簡單又彈性的外掛式工具，可用來建立 AppDir 與 AppImage。它於 "
+"2018 年開發，並自稱為「AppDir 建立與維護工具」。"
 
 #: ../../../source/introduction/software-overview.rst:146
 msgid ""
@@ -323,6 +394,11 @@ msgid ""
 "environments for non-native programming languages such as `Python <https://"
 "github.com/linuxdeploy/linuxdeploy-plugin-conda>`__."
 msgstr ""
+"linuxdeploy 計畫成為 :ref:`linuxdeployqt <ref-linuxdeployqt>` 的後繼工具，可"
+"用於所有使用 :ref:`linuxdeployqt <ref-linuxdeployqt>` 的專案。外掛清單持續成"
+"長，提供打包 `Qt <https://github.com/linuxdeploy/linuxdeploy-plugin-qt>`__ 等"
+"框架的方案，也提供非原生程式語言（如 `Python <https://github.com/linuxdeploy/"
+"linuxdeploy-plugin-conda>`__）的完整環境。"
 
 #: ../../../source/introduction/software-overview.rst:152
 msgid ""
@@ -330,12 +406,17 @@ msgid ""
 "binaries>` and a general :ref:`linuxdeploy user guide <ref-linuxdeploy>` in "
 "the :ref:`ref-packaging-guide`."
 msgstr ""
+"在 :ref:`ref-packaging-guide` 中有 :ref:`原生二進位打包 <ref-packaging-"
+"native-binaries>` 指南以及一般性的 :ref:`linuxdeploy 使用指南 <ref-"
+"linuxdeploy>`。"
 
 #: ../../../source/introduction/software-overview.rst:154
 msgid ""
 "**Download:** You can get it as an AppImage from https://github.com/"
 "linuxdeploy/linuxdeploy/releases/continuous."
 msgstr ""
+"**下載：** 可從 https://github.com/linuxdeploy/linuxdeploy/releases/"
+"continuous 取得 AppImage。"
 
 #: ../../../source/introduction/software-overview.rst:159
 msgid "AppImageLauncher"
@@ -346,10 +427,12 @@ msgid ""
 "AppImageLauncher_ is a helper application for Linux distributions serving as "
 "a kind of \"entry point\" for running and integrating AppImages."
 msgstr ""
+"AppImageLauncher_ 是 Linux 散布版的輔助應用程式，可作為執行與整合 AppImage 的"
+"「入口」。"
 
 #: ../../../source/introduction/software-overview.rst:163
 msgid "Quoting the README:"
-msgstr ""
+msgstr "引用 README："
 
 #: ../../../source/introduction/software-overview.rst:165
 msgid ""
@@ -360,6 +443,10 @@ msgid ""
 "and manage them from your application launcher. Updating and removing "
 "AppImages becomes as easy as never before."
 msgstr ""
+"AppImageLauncher 讓您的 Linux 桌面 AppImage ready™。安裝後，您再也不用擔心 "
+"AppImage。您可以直接雙擊執行，而不必先設為可執行，就像現在應該能做到的一樣。"
+"只需一次點擊就能整合 AppImage，並可在應用程式啟動器中管理它們。更新與移除 "
+"AppImage 變得前所未有地簡單。"
 
 #: ../../../source/introduction/software-overview.rst:167
 msgid ""
@@ -368,12 +455,15 @@ msgid ""
 "example app stores. However, it doesn't depend on any of those, and can run "
 "completely standalone."
 msgstr ""
+"由於整合方式簡單而有效，它可與其他用來管理 AppImage 的應用程式（例如應用商"
+"店）良好搭配。然而它不依賴任何這些工具，且可完全獨立運作。"
 
 #: ../../../source/introduction/software-overview.rst:169
 msgid ""
 "Install AppImageLauncher today for your distribution and enjoy using "
 "AppImages as easy as never before!"
 msgstr ""
+"今天就為您的散布版安裝 AppImageLauncher，享受前所未有的 AppImage 使用體驗！"
 
 #: ../../../source/introduction/software-overview.rst:171
 msgid "https://github.com/TheAssassin/AppImageLauncher/blob/master/README.md"
@@ -386,6 +476,9 @@ msgid ""
 "for updating (based on :ref:`AppImageUpdate <ref-appimageupdate>`) and "
 "removing AppImages."
 msgstr ""
+"AppImageLauncher 不提供任何「應用商店」軟體，而是整合到系統提供的啟動器右鍵選"
+"單中。它提供更新（基於 :ref:`AppImageUpdate <ref-appimageupdate>`）與移除 "
+"AppImage 的工具。"
 
 #: ../../../source/introduction/software-overview.rst:177
 msgid ""
@@ -393,6 +486,8 @@ msgid ""
 "version as a deb from https://github.com/TheAssassin/AppImageLauncher/"
 "releases/continuous."
 msgstr ""
+"**下載：** 可從 https://github.com/TheAssassin/AppImageLauncher/releases/"
+"continuous 取得AppImageLauncher-Lite（AppImage）與完整版本（deb）。"
 
 #: ../../../source/introduction/software-overview.rst:181
 msgid "NX Software Center"
@@ -401,7 +496,7 @@ msgstr ""
 #: ../../../source/introduction/software-overview.rst:183
 msgid ""
 "A portable Software Center for portable applications thanks to AppImage."
-msgstr ""
+msgstr "基於 AppImage 的可攜式應用軟體中心。"
 
 #: ../../../source/introduction/software-overview.rst:186
 msgid ""
@@ -409,7 +504,9 @@ msgid ""
 "https://nxos.org/. There are currently no recent continuous standalone "
 "AppImage builds available."
 msgstr ""
+"**下載：** 可作為 Nitrux OS 的一部分在 https://nxos.org/ 取得 NX Software "
+"Center。目前沒有近期的獨立 AppImage 持續建置版本。"
 
 #: ../../../source/introduction/software-overview.rst:189
 msgid "Describe the rest of the third-party tools"
-msgstr ""
+msgstr "描述其餘第三方工具"

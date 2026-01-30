@@ -25,19 +25,19 @@ msgstr "常見問題集"
 msgid ""
 "The most common questions are answered directly here to save you from having "
 "to read the entire user guide."
-msgstr ""
+msgstr "這裡直接回答最常見的問題，讓您不必閱讀整份使用者指南。"
 
 #: ../../../source/user-guide/faq.rst:12
 msgid "Contents"
-msgstr ""
+msgstr "目次"
 
 #: ../../../source/user-guide/faq.rst:15
 msgid "|question| What is an AppImage?"
-msgstr ""
+msgstr "|question| 什麼是 AppImage？"
 
 #: ../../../source/user-guide/faq.rst:66
 msgid "question"
-msgstr ""
+msgstr "問題"
 
 #: ../../../source/user-guide/faq.rst:17
 msgid ""
@@ -46,18 +46,20 @@ msgid ""
 "translations, etc.) that cannot be reasonably expected to be part of each "
 "target system."
 msgstr ""
+"AppImage 是供 Linux 下載的檔案，包含應用程式以及其執行所需的一切（例如函式"
+"庫、圖示、字型、翻譯等），而這些內容不可能合理地要求每個目標系統都預先具備。"
 
 #: ../../../source/user-guide/faq.rst:21
 msgid "|question| How do I run an AppImage?"
-msgstr ""
+msgstr "|question| 如何執行 AppImage？"
 
 #: ../../../source/user-guide/faq.rst:23
 msgid "Make it executable and double-click it."
-msgstr ""
+msgstr "把它設為可執行檔，然後雙擊即可。"
 
 #: ../../../source/user-guide/faq.rst:27
 msgid "|question| How can I integrate AppImages with the system?"
-msgstr ""
+msgstr "|question| 如何把 AppImage 與系統整合？"
 
 #: ../../../source/user-guide/faq.rst:29
 msgid ""
@@ -66,18 +68,21 @@ msgid ""
 "icons, all on the fly. You can download it from this repository. But it is "
 "entirely optional."
 msgstr ""
+"使用可選的 appimaged 常駐服務，就能輕鬆把 AppImage 與系統整合。此常駐服務會即"
+"時把 AppImage 加入選單、註冊 MIME 類型與圖示。您可以從這個儲存庫下載它，但完"
+"全非必需。"
 
 #: ../../../source/user-guide/faq.rst:33
 msgid "|question| Where can I download AppImages?"
-msgstr ""
+msgstr "|question| 我可以在哪裡下載 AppImage？"
 
 #: ../../../source/user-guide/faq.rst:35
 msgid "See the \"repository\" of upstream-generated AppImages."
-msgstr ""
+msgstr "請參見上游產生的 AppImage 的「儲存庫」。"
 
 #: ../../../source/user-guide/faq.rst:39
 msgid "|question| Where do I store my AppImages?"
-msgstr ""
+msgstr "|question| AppImage 應該存放在哪裡？"
 
 #: ../../../source/user-guide/faq.rst:41
 msgid ""
@@ -90,6 +95,11 @@ msgid ""
 "not need to install AppImages or put them into some special location in "
 "order for them to work."
 msgstr ""
+"AppImage 格式的一個重要特點是，您可以把 AppImage 檔案存放在任何地方。這包括家"
+"目錄、下載目錄、專用的應用程式目錄、USB 隨身碟、CD-ROM 或 DVD，甚至是網路共享"
+"位置。無論您把 AppImage 放在哪裡，都仍然可以執行它們。這與 macOS 上應用程式的"
+"運作方式非常相似。不同於傳統 Linux 套件，您不需要安裝 AppImage，或將其放到特"
+"定位置才能運作。"
 
 #: ../../../source/user-guide/faq.rst:43
 msgid ""
@@ -99,6 +109,10 @@ msgid ""
 "involve :code:`$HOME/.local/bin` and :code:`$HOME/bin`, which are useful "
 "mainly for CLI tools."
 msgstr ""
+"如果您不想把它們留在 :code:`$HOME/Downloads`，那麼 :code:`$HOME/"
+"Applications` 是不錯的選擇。許多第三方工具（尤其是負責桌面整合的工具）也會使"
+"用此位置。其他選項包括 :code:`$HOME/.local/bin` 與 :code:`$HOME/bin`，主要適"
+"合命令列工具。"
 
 #: ../../../source/user-guide/faq.rst:45
 msgid ""
@@ -106,12 +120,16 @@ msgid ""
 "bash_profile` is executed and this script adds :code:`$HOME/.local/bin:$HOME/"
 "bin` to your path."
 msgstr ""
+"**在 CentOS/RHEL 與 Fedora：** 登入時會執行 :code:`$HOME/.bash_profile`，該腳"
+"本會把 :code:`$HOME/.local/bin:$HOME/bin` 加入您的路徑。"
 
 #: ../../../source/user-guide/faq.rst:47
 msgid ""
 "**On Ubuntu:** When you login, the script :code:`$HOME/.profile` is executed "
 "and this script adds :code:`\"$HOME/bin:$HOME/.local/bin\"` to your path."
 msgstr ""
+"**在 Ubuntu：** 登入時會執行 :code:`$HOME/.profile`，該腳本會把 :code:"
+"`\"$HOME/bin:$HOME/.local/bin\"` 加入您的路徑。"
 
 #: ../../../source/user-guide/faq.rst:49
 msgid ""
@@ -120,10 +138,13 @@ msgid ""
 "means that you cannot simply type their name into a terminal but have to use "
 "the full path."
 msgstr ""
+"此外，任何其他位置也都可行，例如 USB 隨身碟、網路位置或 CD-ROM，但這樣 "
+"AppImage 不會在您的路徑中，代表您無法在終端機直接輸入名稱，而必須使用完整路"
+"徑。"
 
 #: ../../../source/user-guide/faq.rst:53
 msgid "|question| Where can I request AppImages?"
-msgstr ""
+msgstr "|question| 我可以在哪裡請求 AppImage？"
 
 #: ../../../source/user-guide/faq.rst:55
 msgid ""
@@ -131,6 +152,8 @@ msgid ""
 "request it from the author(s) of the application, e.g., as a feature request "
 "in the issue tracker of the application."
 msgstr ""
+"如果您喜愛的應用程式沒有 AppImage，請向該應用程式的作者提出需求，例如在該應用"
+"程式的問題追蹤系統中提出功能請求。"
 
 #: ../../../source/user-guide/faq.rst:57
 msgid ""
@@ -139,11 +162,14 @@ msgid ""
 "id=1249971. The more people request an AppImage from the upstream authors, "
 "the more likely is that an AppImage will be provided."
 msgstr ""
+"例如，如果您希望 Mozilla Firefox 有 AppImage，請在 https://bugzilla.mozilla."
+"org/show_bug.cgi?id=1249971 留言。向上游作者提出 AppImage 需求的人越多，提供 "
+"AppImage 的可能性就越高。"
 
 #: ../../../source/user-guide/faq.rst:61
 msgid "|question| Where do I get support?"
-msgstr ""
+msgstr "|question| 我可以在哪裡獲得支援？"
 
 #: ../../../source/user-guide/faq.rst:63
 msgid "Please refer to the :ref:`contact page <ref-contact>`."
-msgstr ""
+msgstr "請參閱 :ref:`contact page <ref-contact>`。"

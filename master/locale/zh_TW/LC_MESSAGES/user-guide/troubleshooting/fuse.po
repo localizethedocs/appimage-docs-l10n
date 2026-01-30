@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:4
 msgid "I get some errors related to something called \"FUSE\""
-msgstr ""
+msgstr "我遇到一些與「FUSE」相關的錯誤"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:6
 msgid ""
@@ -28,18 +28,21 @@ msgid ""
 "However, sometimes, it doesn't quite work. This section explains a few "
 "solutions that fix the most frequently reported problems."
 msgstr ""
+"AppImage 需要一項稱為 *Filesystem in Userspace*（簡稱 *FUSE*）的 Linux 技術。"
+"多數系統都預裝可用的 FUSE 設定，但有時仍會無法正常運作。本節說明幾種可修正常"
+"見問題的解決方案。"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:11
 msgid "Contents"
-msgstr ""
+msgstr "目次"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:14
 msgid "The AppImage tells me it needs FUSE to run"
-msgstr ""
+msgstr "AppImage 告訴我需要 FUSE 才能執行"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:16
 msgid "Sometimes, an AppImage writes the following message to the console:"
-msgstr ""
+msgstr "有時 AppImage 會在主控台輸出下列訊息："
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:19
 msgid ""
@@ -49,12 +52,19 @@ msgid ""
 "See https://github.com/AppImage/AppImageKit/wiki/FUSE\n"
 "for more information"
 msgstr ""
+"AppImage 需要 FUSE 才能執行。\n"
+"若您以 --appimage-extract 選項執行，\n"
+"仍可能可以解壓此 AppImage 的內容。\n"
+"請參閱 https://github.com/AppImage/AppImageKit/wiki/FUSE\n"
+"以取得更多資訊"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:27
 msgid ""
 "In this case, FUSE is not properly set up on your system. You will have to :"
 "ref:`install FUSE <ref-install-fuse>` in order to fix the problem."
 msgstr ""
+"此情況表示您的系統上 FUSE 未正確設定。您需要 :ref:`安裝 FUSE <ref-install-"
+"fuse>` 才能修正問題。"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:30
 msgid ""
@@ -63,6 +73,9 @@ msgid ""
 "using AppImages built for your platform. Please see :ref:`these instructions "
 "<ref-warning-fuse-cross-architecture>` on how to fix the issue."
 msgstr ""
+"嘗試執行非針對您平台建置的 AppImage 時，即使在執行本平台建置的 AppImage 沒問"
+"題，也可能會看到此訊息。請參閱 :ref:`這些指引 <ref-warning-fuse-cross-"
+"architecture>` 了解如何修正。"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:36
 msgid "How to install FUSE"
@@ -74,6 +87,8 @@ msgid ""
 "it is not working for you, you may have to install and configure FUSE 2.y "
 "yourself."
 msgstr ""
+"多數 Linux 散布版預設具備可用的 FUSE 2.x 設定。若無法運作，您可能需要自行安裝"
+"並設定 FUSE 2.x。"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:40
 msgid ""
@@ -81,16 +96,17 @@ msgid ""
 "distribution. This section shows how to install FUSE on the most common "
 "distributions."
 msgstr ""
+"FUSE 的安裝流程會因散布版而異。本節說明在最常見的散布版上如何安裝 FUSE。"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:43
 msgid ""
 "If your distribution is not listed, please ask the distribution developers "
 "for instructions."
-msgstr ""
+msgstr "若您的散布版未列出，請向該散布版的開發者索取指引。"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:49
 msgid "Setting up FUSE 2.x on Ubuntu (pre-22.04), Debian and their derivatives"
-msgstr ""
+msgstr "在 Ubuntu（22.04 之前）、Debian 及其衍生版本設定 FUSE 2.x"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:53
 msgid ""
@@ -99,16 +115,21 @@ msgid ""
 "g., by running :code:`dpkg -l | grep fuse3` in the terminal and checking for "
 "a line starting with :code:`ii  fuse3`."
 msgstr ""
+"此段僅適用於 *未* 預設安裝 ``fuse3`` 的散布版。為確定是否已安裝 :code:"
+"`fuse3` 套件，可在終端機執行 :code:`dpkg -l | grep fuse3`，並確認是否有以 :"
+"code:`ii  fuse3` 開頭的列。"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:55
 msgid ""
 "If your distribution is using :code:`fuse3`, please refer to the :ref:`next "
 "section <ref-ug-troubleshooting-fuse-fuse3>`."
 msgstr ""
+"若您的散布版使用 :code:`fuse3`，請參閱 :ref:`下一節 <ref-ug-troubleshooting-"
+"fuse-fuse3>`。"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:57
 msgid "Install the required packages::"
-msgstr ""
+msgstr "安裝必要的軟體包::"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:59
 msgid "> sudo apt-get install libfuse2"
@@ -116,17 +137,17 @@ msgstr ""
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:62
 msgid "In Ubuntu 24.04, the libfuse2 package was renamed to libfuse2t64."
-msgstr ""
+msgstr "在 Ubuntu 24.04 中，libfuse2 套件已更名為 libfuse2t64。"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:64
 msgid ""
 "Now, FUSE should be working. On some older distributions, you will have to "
 "run some additional configuration steps:"
-msgstr ""
+msgstr "現在 FUSE 應可運作。在某些較舊的散布版上，您還需要額外設定："
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:66
 msgid "Make sure the FUSE kernel module is loaded::"
-msgstr ""
+msgstr "確保已載入 FUSE 核心模組::"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:68
 msgid "> sudo modprobe -v fuse"
@@ -138,6 +159,8 @@ msgid ""
 "this is the case, this call *will* fail), and add your own user account to "
 "this group::"
 msgstr ""
+"接著新增所需的群組（通常會由安裝命令建立；若已存在，這個指令 *會* 失敗），並"
+"將自己的使用者帳號加入該群組::"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:72
 msgid ""
@@ -149,13 +172,15 @@ msgstr ""
 msgid ""
 "After adding users to groups, these users must logout and login again for "
 "the change to take effect!"
-msgstr ""
+msgstr "將使用者加入群組後，必須登出再登入，變更才會生效！"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:81
 msgid ""
 "Setting up FUSE 2.x alongside of FUSE 3.x on recent Ubuntu (>=22.04), Debian "
 "and their derivatives"
 msgstr ""
+"在近期的 Ubuntu（>=22.04）、Debian 及其衍生版本上同時設定 FUSE 2.x 與 FUSE 3."
+"x"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:85
 msgid ""
@@ -165,17 +190,23 @@ msgid ""
 "in the terminal and checking for a line starting with :code:`ii  fuse3` (if "
 "there is none, your distribution is not using :code:`fuse3`)."
 msgstr ""
+"此段僅適用於非常新的（截至 2022 年 4 月）且預設安裝 :code:`fuse3` 的散布版。"
+"為確定是否已安裝 :code:`fuse3` 套件，可在終端機執行 :code:`dpkg -l | grep "
+"fuse3`，並確認是否有以 :code:`ii  fuse3` 開頭的列（若沒有，表示您的散布版未使"
+"用 :code:`fuse3`）。"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:87
 msgid ""
 "If your distribution is not using :code:`fuse3`, please refer to the :ref:"
 "`previous section <ref-ug-troubleshooting-fuse-fuse2>`."
 msgstr ""
+"若您的散布版未使用 :code:`fuse3`，請參閱 :ref:`前一節 <ref-ug-"
+"troubleshooting-fuse-fuse2>`。"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:89
 #: ../../../source/user-guide/troubleshooting/fuse.rst:98
 msgid "Install the required package::"
-msgstr "安裝必要的軟體包： ::"
+msgstr "安裝必要的軟體包::"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:91
 msgid "> sudo apt install libfuse2"
@@ -185,11 +216,11 @@ msgstr "> sudo apt install libfuse2"
 msgid ""
 "Now, FUSE 2.x should be working alongside of FUSE 3.x without breaking your "
 "system."
-msgstr ""
+msgstr "現在 FUSE 2.x 應可與 FUSE 3.x 同時運作，且不會破壞系統。"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:96
 msgid "Setting up FUSE 2.x on openSUSE"
-msgstr ""
+msgstr "在 openSUSE 上設定 FUSE 2.x"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:100
 msgid "> sudo zypper install fuse libfuse2"
@@ -197,19 +228,19 @@ msgstr "> sudo zypper install fuse libfuse2"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:102
 msgid "FUSE should now be working."
-msgstr ""
+msgstr "現在 FUSE 應可運作。"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:106
 msgid "Setting up FUSE on CentOS and RHEL"
-msgstr ""
+msgstr "在 CentOS 與 RHEL 上設定 FUSE"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:109
 msgid "The following instructions may be out of date. Contributions welcome!"
-msgstr ""
+msgstr "以下指引可能已過時，歡迎協助更新！"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:111
 msgid "Install FUSE from EPEL::"
-msgstr ""
+msgstr "從 EPEL 安裝 FUSE::"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:113
 msgid "> yum --enablerepo=epel install fuse-sshfs"
@@ -219,7 +250,7 @@ msgstr ""
 msgid ""
 "Now, add yourself to the related group in order to authorize yourself for "
 "using FUSE::"
-msgstr ""
+msgstr "接著把自己加入相關群組，以取得使用 FUSE 的權限::"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:117
 msgid "> usermod -a -G fuse $(whoami)"
@@ -231,6 +262,9 @@ msgid ""
 "``x86_64``/``amd64`` to ``i386``, or ``arm64`` to ``armhf``), you will have "
 "to install the FUSE runtime libraries for those architectures.::"
 msgstr ""
+"若您使用 64 位元系統並想執行 32 位元 AppImage（例如從 ``x86_64``/``amd64`` "
+"到 ``i386``，或從 ``arm64`` 到 ``armhf``），需要安裝對應架構的 FUSE 執行階段"
+"函式庫："
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:125
 msgid ""
@@ -240,7 +274,7 @@ msgstr ""
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:130
 msgid "Setting up FUSE on Clear Linux OS"
-msgstr ""
+msgstr "在 Clear Linux OS 上設定 FUSE"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:132
 msgid ""
@@ -248,6 +282,8 @@ msgid ""
 "the error message mentioned before nevertheless, you can try the following "
 "trick:"
 msgstr ""
+"在 Clear Linux OS 上，FUSE 理應預設啟用。不過若仍看到前述錯誤訊息，可嘗試以下"
+"方法："
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:134
 msgid ""
@@ -264,17 +300,19 @@ msgid ""
 "This bug was also reported on `reported on GitHub <https://github.com/"
 "clearlinux/distribution/issues/273>`__."
 msgstr ""
+"此錯誤也曾在 `GitHub 上回報 <https://github.com/clearlinux/distribution/"
+"issues/273>`__。"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:146
 msgid ""
 "Setting up FUSE on Chromium OS, Chrome OS, Crostini or other derivatives"
-msgstr ""
+msgstr "在 Chromium OS、Chrome OS、Crostini 或其他衍生版本上設定 FUSE"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:148
 msgid ""
 "FUSE is not operational out of the box. However, starting with release 73, "
 "it's fairly easy to install it:"
-msgstr ""
+msgstr "FUSE 預設無法使用。但自第 73 版起，安裝相當容易："
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:150
 msgid "sudo apt install fuse"
@@ -282,11 +320,11 @@ msgstr "sudo apt install fuse"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:156
 msgid "Setting up FUSE on Arch Linux"
-msgstr ""
+msgstr "在 Arch Linux 上設定 FUSE"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:158
 msgid "Install the required package:"
-msgstr "安裝必要的軟體包： ::"
+msgstr "安裝必要的軟體包："
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:160
 msgid "sudo pacman -S fuse2"
@@ -297,6 +335,8 @@ msgid ""
 "A common issue, however, is that the ``fusermount`` binary's permissions may "
 "be incorrect. Fortunately, there's an easy fix:"
 msgstr ""
+"不過常見的問題是 ``fusermount`` 執行檔的權限可能不正確。幸好有簡單的修正方"
+"式："
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:166
 msgid ""
@@ -306,10 +346,15 @@ msgid ""
 "# fish shell:\n"
 "sudo chmod u+s (which fusermount)"
 msgstr ""
+"# bash、dash、bourne shell：\n"
+"sudo chmod u+s \"$(which fusermount)\"\n"
+"\n"
+"# fish shell：\n"
+"sudo chmod u+s (which fusermount)"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:178
 msgid "Fallback (if FUSE can't be made working)"
-msgstr ""
+msgstr "備援方案（若 FUSE 無法運作）"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:180
 msgid ""
@@ -317,10 +362,12 @@ msgid ""
 "Depending on the AppImage type, you can either mount the AppImage, or "
 "extract it and run the contents."
 msgstr ""
+"若您不想（或無法）設定 FUSE，仍有備援方案。視 AppImage 類型而定，您可以掛載 "
+"AppImage，或解壓後執行其內容。"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:186
 msgid "Extract and run type 2 AppImages"
-msgstr ""
+msgstr "解壓並執行第 2 類 AppImage"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:188
 msgid ""
@@ -328,12 +375,15 @@ msgid ""
 "AppImage, if FUSE is not available, is to extract it and then run its "
 "contents."
 msgstr ""
+"目前多數 AppImage 都是第 2 類。若無法使用 FUSE，最簡單的做法是先解壓，再執行"
+"其內容。"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:191
 msgid ""
 "Extracting an AppImage to run its contents is pretty expensive. It should "
 "only be done if you have no other options left."
 msgstr ""
+"為了執行內容而解壓 AppImage 的成本較高，只有在沒有其他選擇時才建議這麼做。"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:194
 msgid ""
@@ -341,6 +391,8 @@ msgid ""
 "extracts the AppImage, runs the contents, waits until the app closes, and "
 "then cleans up the files again:"
 msgstr ""
+"AppImage 執行階段內建一項稱為「extract-and-run」的功能。它會解壓 AppImage、執"
+"行內容、等待程式關閉，然後再清理檔案："
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:196
 msgid ""
@@ -359,6 +411,18 @@ msgid ""
 "export APPIMAGE_EXTRACT_AND_RUN=1\n"
 "env NO_CLEANUP=1 ./my.AppImage"
 msgstr ""
+"# 使用參數\n"
+"./my.AppImage --appimage-extract-and-run [...]\n"
+"\n"
+"# 使用環境變數（通常也會轉傳給 AppImage 子行程）\n"
+"# 注意：此功能是在引入參數後一段時間才實作\n"
+"# 對較舊的 AppImage，可能仍需使用參數\n"
+"export APPIMAGE_EXTRACT_AND_RUN=1\n"
+"./my.AppImage [...]\n"
+"\n"
+"# 如需多次執行 AppImage，可選擇停用清理\n"
+"export APPIMAGE_EXTRACT_AND_RUN=1\n"
+"env NO_CLEANUP=1 ./my.AppImage"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:211
 msgid ""
@@ -366,6 +430,8 @@ msgid ""
 "before \"extract-and-run\" was implemented), you can extract the AppImage "
 "manually:"
 msgstr ""
+"若您使用非常舊的 AppImage（亦即使用了在「extract-and-run」實作之前的執行階"
+"段），可手動解壓："
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:213
 msgid ""
@@ -377,22 +443,32 @@ msgid ""
 "# optionally, you can clean up the directory again\n"
 "rm -r squashfs-root/"
 msgstr ""
+"./my.AppImage --appimage-extract\n"
+"# 內容會被解壓到目前工作目錄中的 \"squashfs-root\" 資料夾\n"
+"# 現在可執行 \"AppRun\" 入口點\n"
+"squashfs-root/AppRun [...]\n"
+"# 如有需要，可再次清理該資料夾\n"
+"rm -r squashfs-root/"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:224
 msgid "Mount or extract type 1 AppImages"
-msgstr ""
+msgstr "掛載或解壓第 1 類 AppImage"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:226
 msgid ""
 "If the process described in the :ref:`previous section <ref-extract-and-run-"
 "type-2>` does not work, you likely have a type 1 AppImage."
 msgstr ""
+"若 :ref:`前一節 <ref-extract-and-run-type-2>` 所述流程無法運作，您可能使用的"
+"是第 1 類 AppImage。"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:228
 msgid ""
 "Type 1 AppImages are regular ISO9660 files. They can therefore be *loop-"
 "mounted*. Note that you need ``root`` permissions to do so."
 msgstr ""
+"第 1 類 AppImage 是一般的 ISO9660 檔案，因此可以 *loop 掛載*。請注意，這需要 "
+"``root`` 權限。"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:230
 msgid ""
@@ -402,6 +478,11 @@ msgid ""
 "# when you're done, you can unmount the AppImage again\n"
 "sudo unmount /mnt"
 msgstr ""
+"sudo mount -o loop my.AppImage /mnt\n"
+"# 現在可執行內容\n"
+"/mnt/AppRun\n"
+"# 完成後可再次卸載 AppImage\n"
+"sudo unmount /mnt"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:238
 msgid ""
@@ -409,6 +490,9 @@ msgid ""
 "<https://github.com/AppImage/AppImageKit/releases/tag/6>`__ or using an "
 "extraction tool which supports ISO9660 images (e.g., ``bsdtar``):"
 msgstr ""
+"您也可以改為解壓 AppImage，使用 `AppImageExtract <https://github.com/"
+"AppImage/AppImageKit/releases/tag/6>`__，或使用支援 ISO9660 映像的解壓工具"
+"（例如 ``bsdtar``）："
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:240
 msgid ""
@@ -422,10 +506,19 @@ msgid ""
 "# now, you can run the entry point\n"
 "./AppRun"
 msgstr ""
+"# 安裝 bsdtar\n"
+"sudo apt install libarchive-tools\n"
+"# 建立目標目錄\n"
+"mkdir AppDir\n"
+"# 將內容解壓到新目錄\n"
+"cd AppDir\n"
+"bsdtar xfp .../my.AppImage\n"
+"# 現在可執行入口點\n"
+"./AppRun"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:254
 msgid "FUSE and Docker"
-msgstr ""
+msgstr "FUSE 與 Docker"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:256
 msgid ""
@@ -433,6 +526,8 @@ msgid ""
 "security reasons. Instead, you can extract and run AppImages as described in "
 "the :ref:`previous section <ref-fuse-fallback>`."
 msgstr ""
+"多數 Docker 安裝基於安全考量不允許在容器內使用 FUSE。您可以改依 :ref:`前一節 "
+"<ref-fuse-fallback>` 所述，解壓並執行 AppImage。"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:260
 msgid ""
@@ -441,3 +536,6 @@ msgid ""
 "and it will work\". It is, however, insecure to do so. There's a reason why "
 "Docker doesn't support FUSE by default."
 msgstr ""
+"網路上有很多建議說「只要加上 ``--cap-add SYS_ADMIN --cap-add MKNOD --device /"
+"dev/fuse:mrw`` 就能運作」。但這樣做並不安全。Docker 預設不支援 FUSE 是有原因"
+"的。"

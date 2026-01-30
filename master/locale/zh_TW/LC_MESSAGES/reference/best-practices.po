@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../source/reference/best-practices.rst:2
 msgid "Best practices"
-msgstr ""
+msgstr "最佳實務"
 
 #: ../../../source/reference/best-practices.rst:4
 msgid ""
@@ -27,14 +27,16 @@ msgid ""
 "generally design and write software so that it can be easily put into "
 "AppImages."
 msgstr ""
+"本節包含一些最佳實務與建議，說明如何一般性地設計與撰寫軟體，以便能輕鬆打包成 "
+"AppImage。"
 
 #: ../../../source/reference/best-practices.rst:10
 msgid "Contents"
-msgstr ""
+msgstr "目次"
 
 #: ../../../source/reference/best-practices.rst:13
 msgid "General Recommendations"
-msgstr ""
+msgstr "一般建議"
 
 #: ../../../source/reference/best-practices.rst:15
 msgid ""
@@ -43,6 +45,9 @@ msgid ""
 "file or an :code:`.iso` file. It does not define how to compile "
 "applications. It it is also not a build system."
 msgstr ""
+"務必理解 AppImage 只是用來散布應用程式的格式。就這點而言，AppImage 類似於 :"
+"code:`.zip` 或 :code:`.iso` 檔案。它並不定義如何編譯應用程式，也不是建置系"
+"統。"
 
 #: ../../../source/reference/best-practices.rst:17
 msgid ""
@@ -52,40 +57,47 @@ msgid ""
 "thought, as you want your AppImage to run on as many targets systems as "
 "possible."
 msgstr ""
+"務必在 AppImage 中放入能與多種目標系統相容的二進位檔。放入 AppImage 的內容稱"
+"為「payload」或「ingredients」。製作 payload 需要一些考量，因為您希望 "
+"AppImage 能在越多目標系統上執行越好。"
 
 #: ../../../source/reference/best-practices.rst:19
 msgid ""
 "For an AppImage to run on most systems, the following conditions need to be "
 "met:"
-msgstr ""
+msgstr "要讓 AppImage 在大多數系統上執行，需符合以下條件："
 
 #: ../../../source/reference/best-practices.rst:21
 msgid ""
 ":ref:`Binaries must not use compiled-in absolute paths <ref-binaries-no-abs-"
 "paths>` (and if they do, they need to be binary-patched)"
 msgstr ""
+":ref:`二進位檔不得使用編譯時寫死的絕對路徑 <ref-binaries-no-abs-paths>`（若有"
+"使用，需進行二進位修補）"
 
 #: ../../../source/reference/best-practices.rst:22
 msgid ""
 "The AppImage needs to include all libraries and other dependencies that are "
 "not part of all of the base systems that the AppImage is intended to run on."
 msgstr ""
+"AppImage 必須包含所有不一定存在於其目標基礎系統中的函式庫與其他相依項目。"
 
 #: ../../../source/reference/best-practices.rst:23
 msgid ""
 "The binaries contained in the AppImage need to be compiled on a system not "
 "newer than the oldest base system that the AppImage is intended to run on."
 msgstr ""
+"AppImage 內的二進位檔必須在不新於其預計支援的最舊基礎系統的環境中編譯。"
 
 #: ../../../source/reference/best-practices.rst:24
 msgid ""
 "The AppImage should actually be tested on the base systems that it is "
 "intended to run on."
-msgstr ""
+msgstr "AppImage 應實際在其預計支援的基礎系統上測試。"
 
 #: ../../../source/reference/best-practices.rst:29
 msgid "Binaries must not use compiled-in absolute paths"
-msgstr ""
+msgstr "二進位檔不得使用編譯時寫死的絕對路徑"
 
 #: ../../../source/reference/best-practices.rst:31
 msgid ""
@@ -96,10 +108,14 @@ msgid ""
 "applications have absolute paths compiled in (:code:`$PREFIX`, most "
 "commonly :code:`/usr`) at compile time."
 msgstr ""
+"由於 AppImage 每次執行時都會掛載到檔案系統中的不同位置，因此絕對不能使用編譯"
+"時寫死的絕對路徑。例如，若應用程式要存取影像等資源，應該使用相對於主執行檔的"
+"位置。不幸的是，許多應用程式在編譯時就寫死了絕對路徑（:code:`$PREFIX`，最常見"
+"為 :code:`/usr`）。"
 
 #: ../../../source/reference/best-practices.rst:37
 msgid "Open source applications"
-msgstr ""
+msgstr "開放原始碼應用程式"
 
 #: ../../../source/reference/best-practices.rst:39
 msgid ""
@@ -110,6 +126,9 @@ msgid ""
 "it should work both in normal installations and in relocatable installations "
 "such as AppImages."
 msgstr ""
+"在可行的情況下，應修改應用程式原始碼以避免使用絕對路徑。有多種做法，其中在 "
+"Linux 上的典型方式是解析 ``proc/self/exe`` 取得主執行檔路徑，再由此建立相對路"
+"徑。如此可同時在一般安裝與可搬移安裝（如 AppImage）中正常運作。"
 
 #: ../../../source/reference/best-practices.rst:41
 msgid ""
@@ -118,6 +137,8 @@ msgid ""
 "building applications and libraries that use resource files (e.g. icons, "
 "configuration, data)."
 msgstr ""
+"有些函式庫可簡化此流程，例如 `BinReloc`_。也可參考 `Resourceful`_，該專案研究"
+"跨平台技術，用於建置會使用資源檔（如圖示、設定、資料）的應用程式與函式庫。"
 
 #: ../../../source/reference/best-practices.rst:43
 msgid ""
@@ -126,18 +147,25 @@ msgid ""
 "documentation`_), and construct a *relative* path to :code:`../share/kaidan/"
 "images/` from there."
 msgstr ""
+"某些應用程式框架（如 Qt）已內建此功能，例如 :code:`QString QCoreApplication::"
+"applicationDirPath()`（`參見文件`_），並由此建立指向 :code:`../share/kaidan/"
+"images/` 的 *相對* 路徑。"
 
 #: ../../../source/reference/best-practices.rst:47
 msgid ""
 "For an example, see: https://github.com/KaidanIM/Kaidan/commit/"
 "da38011b55a1aa5d17764647ecd699deb4be437f"
 msgstr ""
+"範例請見：https://github.com/KaidanIM/Kaidan/commit/"
+"da38011b55a1aa5d17764647ecd699deb4be437f"
 
 #: ../../../source/reference/best-practices.rst:51
 msgid ""
 ":code:`QStandardPaths::standardLocations(QStandardPaths::AppDataLocation)` "
 "**does not work reliably.**"
 msgstr ""
+":code:`QStandardPaths::standardLocations(QStandardPaths::AppDataLocation)` **"
+"無法可靠運作。**"
 
 #: ../../../source/reference/best-practices.rst:53
 msgid ""
@@ -146,10 +174,13 @@ msgid ""
 "<APPNAME>`, but clearly :code:`/usr` is not where these things are located "
 "in an AppImage."
 msgstr ""
+"依 `Qt 文件`_，其會解析為 :code:`~/.local/share/<APPNAME>`、:code:`/usr/"
+"local/share/<APPNAME>`、:code:`/usr/share/<APPNAME>`，但很明顯 :code:`/usr` "
+"並不是 AppImage 中這些內容所在的位置。"
 
 #: ../../../source/reference/best-practices.rst:64
 msgid "Closed source applications with compiled-in absolute paths"
-msgstr ""
+msgstr "含有編譯時寫死絕對路徑的閉源應用程式"
 
 #: ../../../source/reference/best-practices.rst:66
 msgid ""
@@ -157,6 +188,7 @@ msgid ""
 "example because it is a closed source application, you could binary patch "
 "the executable."
 msgstr ""
+"若無法更改應用程式原始碼（例如閉源應用程式），可以對可執行檔進行二進位修補。"
 
 #: ../../../source/reference/best-practices.rst:68
 msgid ""
@@ -164,6 +196,8 @@ msgid ""
 "same length string :code:`././` which means “here”. This can be done by "
 "using the following command::"
 msgstr ""
+"技巧是在二進位檔中搜尋 :code:`/usr`，並將其替換為等長字串 :code:`././`（意即"
+"「這裡」）。可用以下命令執行："
 
 #: ../../../source/reference/best-practices.rst:70
 msgid "find usr/ -type f -executable -exec sed -i -e \"s|/usr|././|g\" {} \\;"
@@ -176,16 +210,21 @@ msgid ""
 "application to work, you need to change to the :code:`usr/` directory inside "
 "the application directory before you launch the application."
 msgstr ""
+"此命令也可在 `AppImage/pkg2appimage/functions.sh#L79`_ 的 bash 函式集合中找"
+"到。要讓二進位修補後的應用程式運作，啟動前需切換到應用程式目錄內的 :code:"
+"`usr/` 目錄。"
 
 #: ../../../source/reference/best-practices.rst:80
 msgid "Binaries compiled on old enough base system"
-msgstr ""
+msgstr "在足夠舊的基礎系統上編譯二進位檔"
 
 #: ../../../source/reference/best-practices.rst:82
 msgid ""
 "The ingredients used in your AppImage should not be built on a more recent "
 "base system than the oldest base system your AppImage is intended to run on."
 msgstr ""
+"AppImage 使用的 ingredients 不應在比其預計支援的最舊基礎系統還新的系統上建"
+"置。"
 
 #: ../../../source/reference/best-practices.rst:84
 msgid ""
@@ -193,10 +232,12 @@ msgid ""
 "base systems quite frequently, which means that binaries will run on newer, "
 "but not on older base systems than the one the binaries were compiled on."
 msgstr ""
+"某些核心函式庫（如 glibc）常會破壞與舊版基礎系統的相容性，這代表二進位檔能在"
+"較新的系統上執行，但無法在比其編譯環境更舊的系統上執行。"
 
 #: ../../../source/reference/best-practices.rst:86
 msgid "If you run into errors like this::"
-msgstr ""
+msgstr "若您遇到如下錯誤："
 
 #: ../../../source/reference/best-practices.rst:88
 msgid ""
@@ -215,6 +256,11 @@ msgid ""
 "dependencies yourself on a not too recent base system, and/or to use "
 "LibcWrapGenerator_ or glibc_version_header_ or bingcc_."
 msgstr ""
+"這表示該二進位檔是在比您嘗試執行它的系統更新的系統上編譯的。您應使用在較舊系"
+"統上編譯的二進位檔。不幸的是，多數散布版通常只在最新系統上編譯最新版應用程"
+"式，因此您很難找到能在舊系統上執行的前沿軟體二進位檔。其中一種做法是自己在較"
+"舊的基礎系統上編譯相依項目，或使用 LibcWrapGenerator_、glibc_version_header_ "
+"或 bingcc_。"
 
 #: ../../../source/reference/best-practices.rst:92
 msgid ""
@@ -226,6 +272,11 @@ msgid ""
 "Red Hat Developer Toolset 2). Binaries built on this distribution run on "
 "nearly any distribution, including **Debian oldstable**."
 msgstr ""
+"在為 Subsurface 專案製作 AppImage 時，我們使用 **CentOS 7** 得到非常好的結"
+"果。這是撰寫本文時仍受支援的最舊 Linux 散布版，且不算太新。不過在 EPEL_ 與 "
+"devtools-2_ 儲存庫（社群版的 Red Hat Developer Toolset 2）中仍有最新的 Qt 與"
+"現代編譯器。在此散布版上編譯出的二進位檔幾乎可在任何散布版上執行，包括 "
+"**Debian oldstable**。"
 
 #: ../../../source/reference/best-practices.rst:94
 msgid ""
@@ -234,6 +285,9 @@ msgid ""
 "cloud using travis-ci, docker, docker-hub, and bintray. Especially check the "
 "recipes for Subsurface and Scribus."
 msgstr ""
+"務必查看 https://github.com/AppImage/pkg2appimage，這是我用來建置並託管 "
+"AppImage 的方式，以及在雲端使用 travis-ci、docker、docker-hub 與 bintray 產出"
+"它們的建置系統。特別請查看 Subsurface 與 Scribus 的 recipes。"
 
 #: ../../../source/reference/best-practices.rst:96
 msgid ""
@@ -242,16 +296,21 @@ msgid ""
 "repository, Docker Hub, and Travis CI for a fully automated continuous build "
 "workflow."
 msgstr ""
+"請參閱 https://github.com/AppImage/AppImageKit/wiki/Docker-Hub-Travis-CI-"
+"Workflow，了解如何建立包含 GitHub 儲存庫、Docker Hub 與 Travis CI 的全自動持"
+"續建置流程。"
 
 #: ../../../source/reference/best-practices.rst:98
 msgid ""
 "You could also consider to link some exotic libraries statically. Yes, even "
 "Debian does that: https://wiki.debian.org/Lintian"
 msgstr ""
+"您也可以考慮將某些較特殊的函式庫以靜態方式連結。是的，連 Debian 都這麼做："
+"https://wiki.debian.org/Lintian"
 
 #: ../../../source/reference/best-practices.rst:109
 msgid "This concept is also described in :ref:`build-on-old-systems`."
-msgstr ""
+msgstr "此概念也在 :ref:`build-on-old-systems` 中說明。"
 
 #: ../../../source/reference/best-practices.rst:115
 msgid "libstdc++.so.6"
@@ -263,3 +322,5 @@ msgid ""
 "one that comes with the oldest distribution that you still want to support, "
 "i.e., the oldest still-supported LTS version of Ubuntu**."
 msgstr ""
+"**一般經驗法則是：請使用不新於您仍想支援的最舊散布版所隨附的 libstdc++.so.6，"
+"亦即仍受支援的最舊 Ubuntu LTS 版本。**"
