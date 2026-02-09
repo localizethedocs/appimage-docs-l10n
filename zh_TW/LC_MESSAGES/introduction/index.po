@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2022, The AppImage project
+# This file is distributed under the same license as the AppImage package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AppImage master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-04 12:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/introduction/index.rst:10
+msgid "Contents:"
+msgstr "目次："
+
+#: ../../../source/introduction/index.rst:2
+msgid "Introduction"
+msgstr "簡介"
+
+#: ../../../source/introduction/index.rst:4
+msgid ""
+"AppImage provides a way for upstream developers to provide \"native\" "
+"binaries for Linux users just the same way they could do for other operating "
+"systems. It allow packaging applications for any common Linux based "
+"operating system, e.g., Ubuntu, Debian, openSUSE, RHEL, CentOS, Fedora etc. "
+"AppImages come with all dependencies that cannot be assumed to be part of "
+"each target system in a recent enough version and will run on most Linux "
+"distributions without further modifications."
+msgstr ""
+"AppImage 提供上游開發者一種方式，讓他們能像在其他作業系統上一樣為 Linux 使用"
+"者提供「原生」二進位檔。它能為任何常見的 Linux 作業系統打包應用程式，例如 "
+"Ubuntu、Debian、openSUSE、RHEL、CentOS、Fedora 等。AppImage 會隨附所有無法合"
+"理假設在各目標系統中存在、且版本足夠新的相依項目，並可在多數 Linux 散布版上無"
+"需額外修改即可執行。"
+
+#: ../../../source/introduction/index.rst:6
+msgid ""
+"AppImage is the format, and AppImageKit_ provides a reference implementation."
+msgstr "AppImage 是格式，而 AppImageKit_ 提供參考實作。"
+
+#: ../../../source/introduction/index.rst:8
+msgid ""
+"The following section provides an overview of the AppImage idea, the motives "
+"behind AppImage, and explains the basic concepts. Furthermore, there's an "
+"overview over the currently existing software, and some words on upstream "
+"packaging."
+msgstr ""
+"以下章節概述 AppImage 的理念與動機，並說明基本概念。此外，也包含現有軟體概覽"
+"與上游打包的說明。"

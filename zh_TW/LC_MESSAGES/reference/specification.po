@@ -1,0 +1,88 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2022, The AppImage project
+# This file is distributed under the same license as the AppImage package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AppImage master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-04 12:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/reference/specification.rst:6
+msgid "AppImage specification"
+msgstr "AppImage 規範"
+
+#: ../../../source/reference/specification.rst:8
+msgid ""
+"The AppImage project maintains a work-in-progress specification on the "
+"AppImage format."
+msgstr "AppImage 專案維護一份仍在編寫中的 AppImage 格式規範。"
+
+#: ../../../source/reference/specification.rst:10
+msgid ""
+"Being designed as a standard with a reference implementation allows users to "
+"implement their own tools to build AppImages, and helps maintaining "
+"compatibility between different tools and components."
+msgstr ""
+"作為具備參考實作的標準設計，讓使用者可以實作自己的 AppImage 建置工具，並有助"
+"於維持不同工具與元件之間的相容性。"
+
+#: ../../../source/reference/specification.rst:16
+msgid "Contents"
+msgstr "目次"
+
+#: ../../../source/reference/specification.rst:19
+msgid "Development"
+msgstr "開發"
+
+#: ../../../source/reference/specification.rst:21
+msgid ""
+"The specification's repository contains a description of the current **type "
+"2** format. You can find the `full text <https://github.com/AppImage/"
+"AppImageSpec/blob/master/draft.md>`_ in the `GitHub repository <https://"
+"github.com/AppImage/AppImageSpec/>`__."
+msgstr ""
+"規範的儲存庫包含目前 **第 2 類** 格式的說明。您可在 `GitHub 儲存庫 <https://"
+"github.com/AppImage/AppImageSpec/>`__ 中找到 `完整內容 <https://github.com/"
+"AppImage/AppImageSpec/blob/master/draft.md>`_。"
+
+#: ../../../source/reference/specification.rst:25
+msgid ""
+"The documentation receives updates regularly, e.g., to fix bugs or document "
+"new features. For type 2, a decision was made to not release specific "
+"versions but work with continuous releases. This implies there might be some "
+"AppImages that lack newer features because they're using an older runtime, "
+"etc. Backwards compatibility is maintained by the team in the reference "
+"implementation."
+msgstr ""
+"文件會定期更新，例如修正錯誤或記錄新功能。對於第 2 類，決定不發布特定版本，而"
+"是採用持續發布。這代表某些 AppImage 可能因使用較舊的執行階段而缺少新功能等。"
+"團隊會在參考實作中維持向後相容性。"
+
+#: ../../../source/reference/specification.rst:27
+msgid ""
+"Please feel free to file `issues on GitHub <https://github.com/AppImage/"
+"AppImageSpec/issues>`__ if you encounter bugs or have ideas for additional "
+"features. Also, improvements on wording etc. are highly appreciated."
+msgstr ""
+"若您遇到錯誤或有新增功能的想法，歡迎在 `GitHub 上回報問題 <https://github."
+"com/AppImage/AppImageSpec/issues>`__。也非常感謝對措辭等內容的改進。"
+
+#: ../../../source/reference/specification.rst:31
+msgid "Reference implementation"
+msgstr "參考實作"
+
+#: ../../../source/reference/specification.rst:33
+msgid ""
+"The project maintains a reference implementation of the standard which is "
+"called :ref:`ref-appimagekit`."
+msgstr "本專案維護一個名為 :ref:`ref-appimagekit` 的標準參考實作。"

@@ -1,0 +1,136 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2022, The AppImage project
+# This file is distributed under the same license as the AppImage package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AppImage master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-04 12:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/introduction/quickstart.rst:4
+msgid "Quickstart"
+msgstr "快速入門"
+
+#: ../../../source/introduction/quickstart.rst:6
+msgid ""
+"This page contains information for users new to AppImage, and want to get "
+"started."
+msgstr "本頁提供給初次接觸 AppImage 的使用者，協助快速上手。"
+
+#: ../../../source/introduction/quickstart.rst:12
+msgid "Contents"
+msgstr "目次"
+
+#: ../../../source/introduction/quickstart.rst:17
+msgid "How to run an AppImage"
+msgstr "如何執行 AppImage"
+
+#: ../../../source/introduction/quickstart.rst:19
+msgid ""
+"It's quite simple to run AppImages. All you have to do is download them, "
+"make them executable and run them. This can either be done using the GUI or "
+"via the command line."
+msgstr ""
+"執行 AppImage 非常簡單。您只要下載、設為可執行並執行即可。這可以透過圖形介面"
+"或命令列完成。"
+
+#: ../../../source/introduction/quickstart.rst:23
+msgid "Using the GUI"
+msgstr "使用 GUI"
+
+#: ../../../source/introduction/quickstart.rst:25
+msgid "Open your file manager and browse to the location of the AppImage"
+msgstr "開啟檔案管理員並瀏覽到 AppImage 的位置"
+
+#: ../../../source/introduction/quickstart.rst:26
+msgid "Right-click on the AppImage and click the ‘Properties’ entry"
+msgstr "在 AppImage 上按右鍵並點選「內容」"
+
+#: ../../../source/introduction/quickstart.rst:27
+msgid "Switch to the Permissions tab and"
+msgstr "切換到「權限」分頁，然後"
+
+#: ../../../source/introduction/quickstart.rst:28
+msgid ""
+"Click the ‘Allow executing file as program’ checkbox if you are using a "
+"Nautilus-based file manager (Files, Nemo, Caja), or click the ‘Is "
+"executable’ checkbox if you are using Dolphin, or change the ‘Execute’ drop "
+"down list to ‘Anyone’ if you are using PCManFM"
+msgstr ""
+"若使用 Nautilus 系列檔案管理員（Files、Nemo、Caja），請勾選「允許將檔案當成程"
+"式執行」。若使用 Dolphin，請勾選「可執行」。若使用 PCManFM，請將「執行」下拉"
+"選單改為「任何人」。"
+
+#: ../../../source/introduction/quickstart.rst:29
+msgid "Close the dialog"
+msgstr "關閉對話框"
+
+#: ../../../source/introduction/quickstart.rst:30
+msgid "Double-click on the AppImage file to run"
+msgstr "雙擊 AppImage 檔案執行"
+
+#: ../../../source/introduction/quickstart.rst:32
+msgid "Please see also the video below:"
+msgstr "也可參考下方影片："
+
+#: ../../../source/introduction/quickstart.rst:38
+msgid "Using the Terminal"
+msgstr "使用終端機"
+
+#: ../../../source/introduction/quickstart.rst:40
+msgid "Open a terminal"
+msgstr "開啟終端機"
+
+#: ../../../source/introduction/quickstart.rst:41
+msgid ""
+"Change to the directory containing the AppImage, e.g., using :code:`cd <my "
+"directory>`"
+msgstr "切換到包含 AppImage 的目錄，例如使用 :code:`cd <my directory>`"
+
+#: ../../../source/introduction/quickstart.rst:42
+msgid "Make the AppImage executable: :code:`chmod +x my.AppImage`"
+msgstr "將 AppImage 設為可執行：:code:`chmod +x my.AppImage`"
+
+#: ../../../source/introduction/quickstart.rst:43
+msgid "Run the AppImage: :code:`./my.AppImage`"
+msgstr "執行 AppImage：:code:`./my.AppImage`"
+
+#: ../../../source/introduction/quickstart.rst:45
+msgid "That's it! The AppImage should now be executed."
+msgstr "就這樣！AppImage 現在應該會被執行。"
+
+#: ../../../source/introduction/quickstart.rst:49
+msgid "Translated versions of this guide"
+msgstr "本指南的翻譯版本"
+
+#: ../../../source/introduction/quickstart.rst:51
+msgid ""
+"Translated versions are available in a `post in the AppImage forum <https://"
+"discourse.appimage.org/t/how-to-run-an-appimage/80>`__."
+msgstr ""
+"翻譯版本可在 `AppImage 論壇的貼文 <https://discourse.appimage.org/t/how-to-"
+"run-an-appimage/80>`__ 中找到。"
+
+#: ../../../source/introduction/quickstart.rst:55
+msgid "Getting help"
+msgstr "取得協助"
+
+#: ../../../source/introduction/quickstart.rst:57
+msgid ""
+"If you're new to AppImage and have problems getting up and running, please "
+"don't hesitate to contact the AppImage team and their awesome community. "
+"They're happy to help! Please see the :ref:`Contact page <ref-contact>` for "
+"more information."
+msgstr ""
+"如果您是 AppImage 新手且遇到使用上的問題，請隨時聯絡 AppImage 團隊與他們的社"
+"群。他們很樂意提供協助！更多資訊請參閱 :ref:`聯絡頁 <ref-contact>`。"

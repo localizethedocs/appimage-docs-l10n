@@ -1,0 +1,157 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2022, The AppImage project
+# This file is distributed under the same license as the AppImage package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AppImage master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-04 12:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/user-guide/portable-mode.rst:2
+msgid "Using portable mode"
+msgstr "使用可移植模式"
+
+#: ../../../source/user-guide/portable-mode.rst:4
+msgid ""
+"This page describes a mode some newer AppImages (i.e., built in 2017 or "
+"later) provide, the *portable mode*. This mode allows for bundling an "
+"application's data next to the application's AppImage."
+msgstr ""
+"本頁說明部分較新的 AppImage（例如 2017 年或之後建置）提供的一種模式：*可移植"
+"模式*。此模式可讓應用程式資料與其 AppImage 放在一起。"
+
+#: ../../../source/user-guide/portable-mode.rst:10
+msgid "Contents"
+msgstr "目次"
+
+#: ../../../source/user-guide/portable-mode.rst:13
+msgid "Introduction"
+msgstr "簡介"
+
+#: ../../../source/user-guide/portable-mode.rst:15
+msgid ""
+"Sometimes it can be useful for data of an application to travel along with "
+"the application, for example to put the application on a USB stick that can "
+"be used with different computers. In the windows world, this concept is "
+"known as “portable applications”."
+msgstr ""
+"有時讓應用程式的資料跟著應用程式一起移動會很有用，例如把應用程式放在 USB 隨身"
+"碟，以便在不同電腦上使用。在 Windows 世界中，這個概念稱為「可攜式應用程式」。"
+
+#: ../../../source/user-guide/portable-mode.rst:17
+msgid ""
+"Normally the application contained inside an AppImage will store its "
+"configuration files wherever it always stores them (most frequently "
+"somewhere inside :code:`$HOME`). In other words, the fact that an "
+"application is contained inside an AppImage normally does not change where "
+"the application stores its data."
+msgstr ""
+"通常 AppImage 內的應用程式會把設定檔儲存在其一貫的位置（最常見是在 :code:"
+"`$HOME` 內的某處）。換句話說，應用程式被包在 AppImage 裡通常不會改變它儲存資"
+"料的位置。"
+
+#: ../../../source/user-guide/portable-mode.rst:19
+msgid ""
+"However, there is functionality in newer AppImages that can make the "
+"application's data travel along with the application, if certain directories "
+"are present *next to the AppImage file*."
+msgstr ""
+"不過，較新的 AppImage 提供一些功能，只要在 *AppImage 檔案旁* 存在特定目錄，就"
+"能讓應用程式資料與應用程式一同移動。"
+
+#: ../../../source/user-guide/portable-mode.rst:21
+msgid ""
+"If you invoke an AppImage built with a recent version of AppImageKit and "
+"have one of these special directories in place, then the configuration files "
+"will be stored alongside the AppImage. This can be useful for portable use "
+"cases, e.g., carrying an AppImage on a USB stick, along with its data."
+msgstr ""
+"如果您執行的是使用新版 AppImageKit 建置的 AppImage，且已放置這些特殊目錄，設"
+"定檔就會儲存在 AppImage 旁邊。這對可移植的使用情境很有用，例如把 AppImage 與"
+"其資料一起放在 USB 隨身碟上。"
+
+#: ../../../source/user-guide/portable-mode.rst:23
+msgid ""
+"If there is a directory with the same name as the AppImage plus :code:`."
+"home`, then :code:`$HOME` will automatically be set to it before executing "
+"the payload application"
+msgstr ""
+"如果有一個目錄名稱等於 AppImage 加上 :code:`.home`，則在執行實際應用程式前，:"
+"code:`$HOME` 會自動設為該目錄。"
+
+#: ../../../source/user-guide/portable-mode.rst:24
+msgid ""
+"If there is a directory with the same name as the AppImage plus :code:`."
+"config`, then :code:`$XDG_CONFIG_HOME` will automatically be set to it "
+"before executing the payload application"
+msgstr ""
+"如果有一個目錄名稱等於 AppImage 加上 :code:`.config`，則在執行實際應用程式"
+"前，:code:`$XDG_CONFIG_HOME` 會自動設為該目錄。"
+
+#: ../../../source/user-guide/portable-mode.rst:28
+msgid "Example"
+msgstr "範例"
+
+#: ../../../source/user-guide/portable-mode.rst:30
+msgid ""
+"Imagine you want to use the Leafpad text editor, but carry its settings "
+"around with the executable. You can do the following:"
+msgstr ""
+"假設您想使用 Leafpad 文字編輯器，但希望設定能隨可執行檔一起攜帶。您可以這麼"
+"做："
+
+#: ../../../source/user-guide/portable-mode.rst:34
+msgid ""
+"# Download Leafpad AppImage and make it executable\n"
+"$ wget -c \"https://bintray.com/probono/AppImages/download_file?"
+"file_path=Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage\" -O Leafpad-0.8.18.1."
+"glibc2.4-x86_64.AppImage\n"
+"$ chmod a+x Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage\n"
+"\n"
+"# Create a directory with the same name as the AppImage plus the \".config\" "
+"extension\n"
+"# in the same directory as the AppImage\n"
+"$ mkdir Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage.config\n"
+"\n"
+"# Run Leafpad, change some setting (e.g., change the default font size) then "
+"close Leafpad\n"
+"$ ./Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage\n"
+"\n"
+"# Now, check where the settings were written:\n"
+"$ find Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage.config\n"
+"(...)\n"
+"Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage.config/leafpad/leafpadrc"
+msgstr ""
+"# 下載 Leafpad AppImage 並設為可執行\n"
+"$ wget -c \"https://bintray.com/probono/AppImages/download_file?"
+"file_path=Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage\" -O Leafpad-0.8.18.1."
+"glibc2.4-x86_64.AppImage\n"
+"$ chmod a+x Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage\n"
+"\n"
+"# 在與 AppImage 相同的目錄中，建立與 AppImage 同名並加上 \".config\" 副檔名的"
+"目錄\n"
+"$ mkdir Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage.config\n"
+"\n"
+"# 執行 Leafpad，變更一些設定（例如變更預設字型大小）後關閉 Leafpad\n"
+"$ ./Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage\n"
+"\n"
+"# 接著檢查設定寫入的位置：\n"
+"$ find Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage.config\n"
+"(...)\n"
+"Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage.config/leafpad/leafpadrc"
+
+#: ../../../source/user-guide/portable-mode.rst:53
+msgid ""
+"Note that the file :code:`leafpadrc` was written in the directory we have "
+"created before."
+msgstr "請注意，:code:`leafpadrc` 檔案寫入了我們先前建立的目錄中。"
