@@ -1,0 +1,176 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-TW" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>使用可移植模式 &mdash; AppImage  說明文件</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=5111789f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://projects.localizethedocs.org/appimage-docs-l10n/user-guide/portable-mode.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=0d9984b1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=cbf116e0"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜尋" href="../search.html" />
+    <link rel="next" title="給 macOS 使用者轉換到 AppImage" href="mac.html" />
+    <link rel="prev" title="執行 AppImage" href="run-appimages.html" />
+ 
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AppImage
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">目次：</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">簡介</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">使用者指南</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="faq.html">常見問題集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run-appimages.html">執行 AppImage</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">使用可移植模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mac.html">給 macOS 使用者轉換到 AppImage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting/index.html">疑難排解</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../packaging-guide/index.html">Packaging Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">參考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">聯絡方式</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AppImage</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">使用者指南</a></li>
+      <li class="breadcrumb-item active">使用可移植模式</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/AppImage/docs.appimage.org/blob/master/source/user-guide/portable-mode.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="run-appimages.html" class="btn btn-neutral float-left" title="執行 AppImage" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mac.html" class="btn btn-neutral float-right" title="給 macOS 使用者轉換到 AppImage" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="using-portable-mode">
+<h1>使用可移植模式<a class="headerlink" href="#using-portable-mode" title="連結到這個標頭"></a></h1>
+<p>本頁說明部分較新的 AppImage（例如 2017 年或之後建置）提供的一種模式：<em>可移植模式</em>。此模式可讓應用程式資料與其 AppImage 放在一起。</p>
+<nav class="contents local" id="contents">
+<p class="topic-title">目次</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#introduction" id="id1">簡介</a></p></li>
+<li><p><a class="reference internal" href="#example" id="id2">範例</a></p></li>
+</ul>
+</nav>
+<section id="introduction">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">簡介</a><a class="headerlink" href="#introduction" title="連結到這個標頭"></a></h2>
+<p>有時讓應用程式的資料跟著應用程式一起移動會很有用，例如把應用程式放在 USB 隨身碟，以便在不同電腦上使用。在 Windows 世界中，這個概念稱為「可攜式應用程式」。</p>
+<p>通常 AppImage 內的應用程式會把設定檔儲存在其一貫的位置（最常見是在 <code class="code docutils literal notranslate"><span class="pre">$HOME</span></code> 內的某處）。換句話說，應用程式被包在 AppImage 裡通常不會改變它儲存資料的位置。</p>
+<p>不過，較新的 AppImage 提供一些功能，只要在 <em>AppImage 檔案旁</em> 存在特定目錄，就能讓應用程式資料與應用程式一同移動。</p>
+<p>如果您執行的是使用新版 AppImageKit 建置的 AppImage，且已放置這些特殊目錄，設定檔就會儲存在 AppImage 旁邊。這對可移植的使用情境很有用，例如把 AppImage 與其資料一起放在 USB 隨身碟上。</p>
+<ul class="simple">
+<li><p>如果有一個目錄名稱等於 AppImage 加上 <code class="code docutils literal notranslate"><span class="pre">.home</span></code>，則在執行實際應用程式前，<code class="code docutils literal notranslate"><span class="pre">$HOME</span></code> 會自動設為該目錄。</p></li>
+<li><p>如果有一個目錄名稱等於 AppImage 加上 <code class="code docutils literal notranslate"><span class="pre">.config</span></code>，則在執行實際應用程式前，<code class="code docutils literal notranslate"><span class="pre">$XDG_CONFIG_HOME</span></code> 會自動設為該目錄。</p></li>
+</ul>
+</section>
+<section id="example">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">範例</a><a class="headerlink" href="#example" title="連結到這個標頭"></a></h2>
+<p>假設您想使用 Leafpad 文字編輯器，但希望設定能隨可執行檔一起攜帶。您可以這麼做：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># 下載 Leafpad AppImage 並設為可執行</span>
+$<span class="w"> </span>wget<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;https://bintray.com/probono/AppImages/download_file?file_path=Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage&quot;</span><span class="w"> </span>-O<span class="w"> </span>Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage
+$<span class="w"> </span>chmod<span class="w"> </span>a+x<span class="w"> </span>Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage
+
+<span class="c1"># 在與 AppImage 相同的目錄中，建立與 AppImage 同名並加上 &quot;.config&quot; 副檔名的目錄</span>
+$<span class="w"> </span>mkdir<span class="w"> </span>Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage.config
+
+<span class="c1"># 執行 Leafpad，變更一些設定（例如變更預設字型大小）後關閉 Leafpad</span>
+$<span class="w"> </span>./Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage
+
+<span class="c1"># 接著檢查設定寫入的位置：</span>
+$<span class="w"> </span>find<span class="w"> </span>Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage.config
+<span class="o">(</span>...<span class="o">)</span>
+Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage.config/leafpad/leafpadrc
+</pre></div>
+</div>
+<p>請注意，<code class="code docutils literal notranslate"><span class="pre">leafpadrc</span></code> 檔案寫入了我們先前建立的目錄中。</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="run-appimages.html" class="btn btn-neutral float-left" title="執行 AppImage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mac.html" class="btn btn-neutral float-right" title="給 macOS 使用者轉換到 AppImage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2022, The AppImage project.
+      <span class="commit">Revision <code>475547d</code>.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

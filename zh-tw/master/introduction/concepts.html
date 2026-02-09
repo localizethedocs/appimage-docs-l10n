@@ -1,0 +1,182 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-TW" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>概念 &mdash; AppImage  說明文件</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=5111789f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://projects.localizethedocs.org/appimage-docs-l10n/introduction/concepts.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=0d9984b1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=cbf116e0"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜尋" href="../search.html" />
+    <link rel="next" title="軟體概覽" href="software-overview.html" />
+    <link rel="prev" title="AppImage 的優勢" href="advantages.html" />
+ 
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AppImage
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">目次：</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">簡介</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html">快速入門</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motivation.html">動機</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advantages.html">AppImage 的優勢</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software-overview.html">軟體概覽</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upstream.html">A word on upstream packaging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">使用者指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../packaging-guide/index.html">Packaging Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">參考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">聯絡方式</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AppImage</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">簡介</a></li>
+      <li class="breadcrumb-item active">概念</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/AppImage/docs.appimage.org/blob/master/source/introduction/concepts.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="advantages.html" class="btn btn-neutral float-left" title="AppImage 的優勢" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="software-overview.html" class="btn btn-neutral float-right" title="軟體概覽" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="concepts">
+<h1>概念<a class="headerlink" href="#concepts" title="連結到這個標頭"></a></h1>
+<p>AppImage 的開發遵循一些容易理解的核心原則與概念，讓開發者與使用者都能輕鬆使用。本節說明其中最重要的概念。</p>
+<nav class="contents local" id="contents">
+<p class="topic-title">目次</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#one-app-one-file" id="id2">一個應用程式 = 一個檔案</a></p></li>
+<li><p><a class="reference internal" href="#do-not-depend-on-system-provided-resources" id="id3">不要依賴系統提供的資源</a></p></li>
+<li><p><a class="reference internal" href="#build-on-old-systems-run-on-newer-systems" id="id4">在舊系統上建置，在新系統上執行</a></p></li>
+<li><p><a class="reference internal" href="#appimage-specification" id="id5">AppImage 規範</a></p></li>
+<li><p><a class="reference internal" href="#appdirs" id="id6">AppDir</a></p></li>
+</ul>
+</nav>
+<section id="one-app-one-file">
+<span id="one-app-one-file-principle"></span><h2><a class="toc-backref" href="#id2" role="doc-backlink">一個應用程式 = 一個檔案</a><a class="headerlink" href="#one-app-one-file" title="連結到這個標頭"></a></h2>
+<p>AppImage 非常容易理解。每個 AppImage 都是一般檔案，且每個 AppImage 只包含一個應用程式及其所有相依項目。當 AppImage <a class="reference internal" href="../user-guide/run-appimages.html#ref-download-make-executable-run"><span class="std std-ref">設為可執行</span></a> 後，使用者即可執行它，例如在桌面環境的檔案管理員中雙擊，或在主控台執行等。</p>
+<div class="admonition note" id="ref-opinion-reusable-frameworks">
+<p class="admonition-title">備註</p>
+<p>經常有人 <a class="reference external" href="https://github.com/AppImage/AppImageKit/issues/848">詢問</a> 是否能支援某種「可重複/共享框架」。這些框架預期包含多個 AppImage 會用到的函式庫集合，因而可節省磁碟空間。在管理上，有人建議使用複雜的自動化系統，在缺少時從網路自動抓取「框架」，或以一些複雜、且多半是手動的方式，讓使用者把框架與 AppImage 一起放在 USB 隨身碟等可攜式磁碟上。</p>
+<p>這對部分人或許是好點子，即使運作良好，也會違背我們最重要的概念：<a class="reference internal" href="#one-app-one-file-principle"><span class="std std-ref">一個應用程式 = 一個檔案</span></a>。AppImage 之所以容易理解，<em>正是因為</em> 每個應用程式都是單一檔案。這種做法沒有複雜性，連阿嬤都能理解。而且，現在磁碟空間也不貴，對吧？</p>
+<p>若您偏好或確實需要此做法，請改用其他方案。AppImage 不會實作這類功能。</p>
+</div>
+</section>
+<section id="do-not-depend-on-system-provided-resources">
+<span id="no-external-dependencies"></span><h2><a class="toc-backref" href="#id3" role="doc-backlink">不要依賴系統提供的資源</a><a class="headerlink" href="#do-not-depend-on-system-provided-resources" title="連結到這個標頭"></a></h2>
+<p>AppImage 作者需要決定要支援哪些目標系統（Linux 散布版）。接著，必須把那些無法合理假設會隨每個目標系統（Linux 散布版）預設安裝、且版本足夠新的相依項目一併打包。</p>
+<p>為了能在任何 Linux 散布版上執行，AppImage 應該打包所有在執行時需要、但無法合理期待所有仍受支援目標系統（Linux 散布版）預設安裝就「一定有」的資源。最常見的資源包含實際二進位檔、共享函式庫相依、圖示與其他圖形，以及用於桌面整合的一個或多個桌面檔。</p>
+<p>這不代表 AppImage 不能使用系統提供的資源，例如可合理假設每個目標系統都具備的基礎函式庫（如 C 標準函式庫或圖形函式庫）、使用者介面主題等。可參考 <a class="reference external" href="https://github.com/AppImage/pkg2appimage/blob/master/excludelist">excludelist</a>，了解我們認為目前各仍受支援目標系統（散布版）中已包含的函式庫清單。</p>
+</section>
+<section id="build-on-old-systems-run-on-newer-systems">
+<span id="build-on-old-systems"></span><h2><a class="toc-backref" href="#id4" role="doc-backlink">在舊系統上建置，在新系統上執行</a><a class="headerlink" href="#build-on-old-systems-run-on-newer-systems" title="連結到這個標頭"></a></h2>
+<p>最佳實務是：在可假設使用者仍在使用的最舊且仍受支援的 Linux 散布版上開發與編譯應用程式。例如，仍受支援的最舊 Ubuntu LTS 版本就是不錯的開發與建置選擇。</p>
+<p>應用程式應在盡可能舊的系統上建置，以便在較新的系統上執行。這樣就能排除某些「基礎函式庫」，因為可預期它們存在於所有主流桌面 Linux 散布版中，從而降低 <a class="reference internal" href="#one-app-one-file-principle"><span class="std std-ref">一個應用程式 = 一個檔案</span></a> 的負擔。這些相依項目多為共享函式庫，包含如 :code:<a href="#id1"><span class="problematic" id="id2">`</span></a>libc.so.6`（GNU C 函式庫、也是多數 Linux 散布版的 C 標準函式庫），以及常見的 <a class="reference external" href="https://zlib.net/">zlib</a> 或 <a class="reference external" href="https://developer.gnome.org/glib/">GLib</a> 函式庫。</p>
+<p>依賴散布版提供的資源似乎與 <a class="reference internal" href="#no-external-dependencies"><span class="std std-ref">前一節</span></a> 相矛盾。這是在降低重複與儘可能自包含之間的取捨。</p>
+<p>在某些情況下，反而會因為包含函式庫而導致 AppImage 在目標系統上無法運作。例如硬體相依的函式庫（像顯示卡驅動提供的函式庫，例如 <a href="#id1"><span class="problematic" id="id2">:code:`libGL.so.1`（`來源 &lt;https://github.com/AppImage/pkg2appimage/blob/14c255b528dd88ef3e00ae0446ac6d84a20ac798/excludelist\#L38-L41&gt;`__</span></a>）），或在不同散布版上建置與連結方式不同的函式庫（例如 <code class="code docutils literal notranslate"><span class="pre">libharfbuzz.so.0</span></code> 與 <a href="#id3"><span class="problematic" id="id4">:code:`libfreetype.so.6`（`來源 &lt;https://github.com/AppImage/pkg2appimage/blob/14c255b528dd88ef3e00ae0446ac6d84a20ac798/excludelist\#L98-L102&gt;`__</span></a>））。</p>
+<p>可（或必須）排除的函式庫清單，即所謂的 <a class="reference external" href="https://github.com/AppImage/pkg2appimage/blob/master/excludelist">excludelist</a>，由 AppImage 團隊仔細維護並定期更新。</p>
+</section>
+<section id="appimage-specification">
+<span id="id1"></span><h2><a class="toc-backref" href="#id5" role="doc-backlink">AppImage 規範</a><a class="headerlink" href="#appimage-specification" title="連結到這個標頭"></a></h2>
+<p><em>AppImage</em> 一詞並非指某個軟體專案，而是 <span class="xref std std-ref">AppImage 規範 &lt;ref-appimage-specification&gt;`中定義的一項標準。其參考實作稱為 :ref:`ref-appimagekit</span>。</p>
+<p>作為具備參考實作的標準設計，讓使用者可實作自己的 AppImage 建置工具，並有助於維持不同工具與元件之間的相容性。</p>
+</section>
+<section id="appdirs">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">AppDir</a><a class="headerlink" href="#appdirs" title="連結到這個標頭"></a></h2>
+<p><em>AppDir</em> 指的是應用程式目錄。這些目錄是 AppImage 的「來源」。當 <a class="reference internal" href="software-overview.html#ref-appimagetool"><span class="std std-ref">appimagetool</span></a> 建置 AppImage 時，會建立該目錄的唯讀映像，在前面加上 <a class="reference internal" href="software-overview.html#ref-runtime"><span class="std std-ref">runtime</span></a>，並將檔案標記為可執行。</p>
+<p>AppDir 格式在 <a class="reference internal" href="../reference/appdir.html#ref-appdir-specification"><span class="std std-ref">AppDir 規範</span></a> 中說明。</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="advantages.html" class="btn btn-neutral float-left" title="AppImage 的優勢" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="software-overview.html" class="btn btn-neutral float-right" title="軟體概覽" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2022, The AppImage project.
+      <span class="commit">Revision <code>475547d</code>.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
