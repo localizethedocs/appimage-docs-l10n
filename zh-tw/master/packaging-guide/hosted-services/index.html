@@ -1,0 +1,171 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-TW" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hosted services &mdash; AppImage  說明文件</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=5111789f" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="canonical" href="https://projects.localizethedocs.org/appimage-docs-l10n/packaging-guide/hosted-services/index.html" />
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=0d9984b1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/translations.js?v=cbf116e0"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜尋" href="../../search.html" />
+    <link rel="next" title="Bundling your Travis CI builds as AppImages" href="travis-ci.html" />
+    <link rel="prev" title="AppStream metadata" href="../optional/appstream.html" />
+ 
+<script type="text/javascript" src="../../ltd-provenance.js"></script>
+<script type="text/javascript" src="../../ltd-current.js"></script>
+<script type="text/javascript" src="../../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../../ltd-flyout.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            AppImage
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">目次：</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">簡介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/index.html">使用者指南</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Packaging Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">Introduction to Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">概覽</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../from-source/index.html">Packaging from source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../converting-binary-packages/index.html">Converting binary packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../optional/index.html">選用的資源與功能</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Hosted services</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="travis-ci.html">Bundling your Travis CI builds as AppImages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opensuse-build-service.html">Using the Open Build Service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../manual.html">手動打包</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing.html">Testing your AppImage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../distribution.html">散布 AppImage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment-variables.html">環境變數</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/index.html">參考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">聯絡方式</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">AppImage</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Packaging Guide</a></li>
+      <li class="breadcrumb-item active">Hosted services</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/AppImage/docs.appimage.org/blob/master/source/packaging-guide/hosted-services/index.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../optional/appstream.html" class="btn btn-neutral float-left" title="AppStream metadata" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="travis-ci.html" class="btn btn-neutral float-right" title="Bundling your Travis CI builds as AppImages" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="hosted-services">
+<span id="ref-hosted-services"></span><h1>Hosted services<a class="headerlink" href="#hosted-services" title="連結到這個標頭"></a></h1>
+<p>There's some hosted services which can help with building AppImages. These services are described in the following section.</p>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p>The services listed in this section is not exclusive. Many other services, especially generic CI services, can be used to build AppImages. The following services just have been tested and are known to work. For some of them, there's some example scripts, etc.</p>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="travis-ci.html">Bundling your Travis CI builds as AppImages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="travis-ci.html#producing-an-application-directory-using-bash-scripts">Producing an application directory using bash scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="travis-ci.html#producing-an-application-directory-using-linuxdeploy">Producing an application directory using linuxdeploy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="travis-ci.html#uploading-the-generated-appimage">Uploading the generated AppImage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="opensuse-build-service.html">Using the Open Build Service</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="opensuse-build-service.html#differences-to-other-methods-of-building-appimages">Differences to other methods of building AppImages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opensuse-build-service.html#the-osc-command-line-tool">The osc command line tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opensuse-build-service.html#setting-up-an-account-and-a-project">Setting up an account and a project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opensuse-build-service.html#appimage-yml-file"><cite>appimage.yml</cite> file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opensuse-build-service.html#inspecting-the-results">Inspecting the results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opensuse-build-service.html#working-examples">Working examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opensuse-build-service.html#continuous-builds-with-github-and-obs">Continuous builds with GitHub and OBS</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../optional/appstream.html" class="btn btn-neutral float-left" title="AppStream metadata" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="travis-ci.html" class="btn btn-neutral float-right" title="Bundling your Travis CI builds as AppImages" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2022, The AppImage project.
+      <span class="commit">Revision <code>475547d</code>.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

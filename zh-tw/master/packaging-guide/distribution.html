@@ -1,0 +1,241 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-TW" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>散布 AppImage &mdash; AppImage  說明文件</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=5111789f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://projects.localizethedocs.org/appimage-docs-l10n/packaging-guide/distribution.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=0d9984b1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=cbf116e0"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜尋" href="../search.html" />
+    <link rel="next" title="環境變數" href="environment-variables.html" />
+    <link rel="prev" title="Testing your AppImage" href="testing.html" />
+ 
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AppImage
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">目次：</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">簡介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">使用者指南</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Packaging Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction to Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html">概覽</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from-source/index.html">Packaging from source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="converting-binary-packages/index.html">Converting binary packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional/index.html">選用的資源與功能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hosted-services/index.html">Hosted services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.html">手動打包</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html">Testing your AppImage</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">散布 AppImage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment-variables.html">環境變數</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">參考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">聯絡方式</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AppImage</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Packaging Guide</a></li>
+      <li class="breadcrumb-item active">散布 AppImage</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/AppImage/docs.appimage.org/blob/master/source/packaging-guide/distribution.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="testing.html" class="btn btn-neutral float-left" title="Testing your AppImage" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="environment-variables.html" class="btn btn-neutral float-right" title="環境變數" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="distributing-appimages">
+<span id="ref-distribution"></span><h1>散布 AppImage<a class="headerlink" href="#distributing-appimages" title="連結到這個標頭"></a></h1>
+<p>有多種方式可將 AppImage 散布給使用者。最常見的是由製作者直接散布給使用者。</p>
+<p>以下章節說明 AppImage 常見的散布方式。</p>
+<nav class="contents local" id="contents">
+<p class="topic-title">目次</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#hosting-appimages" id="id1">託管 AppImage</a></p></li>
+<li><p><a class="reference internal" href="#complying-with-licenses" id="id2">遵循授權條款</a></p></li>
+<li><p><a class="reference internal" href="#do-not-put-linux-into-the-appimage-file-name" id="id3">不要在 AppImage 檔名中加入「Linux」</a></p></li>
+<li><p><a class="reference internal" href="#do-not-put-appimages-into-other-archives" id="id4">不要把 AppImage 放進其他封存檔</a></p></li>
+<li><p><a class="reference internal" href="#making-your-appimages-discoverable" id="id5">讓 AppImage 更容易被發現</a></p></li>
+</ul>
+</nav>
+<section id="hosting-appimages">
+<span id="ref-hosting-appimages"></span><h2><a class="toc-backref" href="#id1" role="doc-backlink">託管 AppImage</a><a class="headerlink" href="#hosting-appimages" title="連結到這個標頭"></a></h2>
+<p>最常見的方式是將檔案放在一般的網頁伺服器上。這是最簡單且最容易存取的方法。</p>
+<p>我們建議您在專案下載頁面上，將 Linux 的 AppImage 與 macOS 的 dmg、Windows 的 exe 並列，例如：</p>
+<a class="reference internal image-reference" href="../_images/release-page-screenshot.png"><img alt="下載頁面概覽，顯示 Windows、macOS、Linux 與原始碼下載" class="align-center" src="../_images/release-page-screenshot.png" style="width: 80%;" />
+</a>
+<p>若是開源專案且位於 GitHub，我們建議您也在 <a class="reference external" href="https://help.github.com/en/articles/creating-releases/">GitHub Releases</a> 發佈 AppImage。</p>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p>為了讓 <a class="reference internal" href="../introduction/software-overview.html#ref-appimageupdate"><span class="std std-ref">AppImageUpdate</span></a> 正常運作，網頁伺服器必須支援 HTTP range requests。多數主機都有支援，例如瀏覽 MP3 檔也會用到相同技術。</p>
+<p>目前已知有些託管服務不支援 range requests，包括：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://gitlab.com">Gitlab releases</a></p></li>
+</ul>
+</div></blockquote>
+<p>若您使用此類服務且想搭配 <a class="reference internal" href="../introduction/software-overview.html#ref-appimageupdate"><span class="std std-ref">AppImageUpdate</span></a>，請要求服務提供者啟用 range requests。</p>
+</div>
+</section>
+<section id="complying-with-licenses">
+<span id="ref-complying-with-licenses"></span><h2><a class="toc-backref" href="#id2" role="doc-backlink">遵循授權條款</a><a class="headerlink" href="#complying-with-licenses" title="連結到這個標頭"></a></h2>
+<p>即使在開源授權下，以原始碼或二進位形式散布或使用程式碼也可能產生法律義務，例如為 GPL 授權的二進位檔散布對應原始碼與建置指引、顯示著作權聲明與免責聲明等。若您以 AppImage 形式散布應用程式，必須遵守所包含第三方相依項目的所有授權條款，並在需要時與發佈的二進位檔一併提供其授權與原始碼。AppImageKit 本身採用寬鬆的 MIT 授權。</p>
+</section>
+<section id="do-not-put-linux-into-the-appimage-file-name">
+<span id="ref-no-linux-in-appimage-filename"></span><h2><a class="toc-backref" href="#id3" role="doc-backlink">不要在 AppImage 檔名中加入「Linux」</a><a class="headerlink" href="#do-not-put-linux-into-the-appimage-file-name" title="連結到這個標頭"></a></h2>
+<p>請 <strong>不要</strong> 在 AppImage 的檔名中加入「linux」。<code class="code docutils literal notranslate"><span class="pre">.exe</span></code> 是 Windows、<code class="code docutils literal notranslate"><span class="pre">.dmg</span></code> 是 Mac、<code class="code docutils literal notranslate"><span class="pre">.AppImage</span></code> 是 Linux（以及相容系統，如 WSL2 的 Windows 或具 Linuxulator 的 FreeBSD），這些已非常清楚，無需重複標示。</p>
+</section>
+<section id="do-not-put-appimages-into-other-archives">
+<span id="ref-no-appimages-in-archives"></span><h2><a class="toc-backref" href="#id4" role="doc-backlink">不要把 AppImage 放進其他封存檔</a><a class="headerlink" href="#do-not-put-appimages-into-other-archives" title="連結到這個標頭"></a></h2>
+<p>請 <strong>不要</strong> 將 AppImage 放入 <code class="code docutils literal notranslate"><span class="pre">.zip</span></code> 或 <code class="code docutils literal notranslate"><span class="pre">.tar.gz</span></code> 等其他封存檔。</p>
+<p>雖然這麼做可能是為了避免使用者自行設定權限，但會破壞與可選的 <code class="code docutils literal notranslate"><span class="pre">appimaged</span></code> 常駐服務的桌面整合等功能。此外，AppImage 格式的優點就是不需要解壓任何東西。再者，把 AppImage 放進封存檔會讓它無法被加入 <a class="reference external" href="https://github.com/AppImage/appimage.github.io">https://github.com/AppImage/appimage.github.io</a> 的中央目錄。</p>
+</section>
+<section id="making-your-appimages-discoverable">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">讓 AppImage 更容易被發現</a><a class="headerlink" href="#making-your-appimages-discoverable" title="連結到這個標頭"></a></h2>
+<p>現在您已產生 AppImage，接著要讓使用者能輕鬆找到它。要獲得使用者，就需要讓世界知道您的 AppImage。</p>
+<section id="application-website">
+<h3>應用程式網站<a class="headerlink" href="#application-website" title="連結到這個標頭"></a></h3>
+<p>最明顯的宣傳方式是在應用程式下載頁面顯著呈現 AppImage。</p>
+</section>
+<section id="download-as-an-appimage-button">
+<h3>「下載 AppImage」按鈕<a class="headerlink" href="#download-as-an-appimage-button" title="連結到這個標頭"></a></h3>
+<p>您可以在其他下載按鈕旁放置「下載 AppImage」按鈕：</p>
+<img alt="下載 AppImage" src="../_images/download-appimage-banner.svg" />
+<p>將此按鈕直接連到最新版本 AppImage，或連到包含最新 AppImage 連結的下載頁。</p>
+<p>按鈕由 <a class="reference external" href="https://github.com/Khushraj/">Khushraj Rathod</a> 製作，採用 <a class="reference external" href="https://creativecommons.org/share-your-work/public-domain/cc0/">CC0 授權</a></p>
+</section>
+<section id="social-media">
+<h3>社群媒體<a class="headerlink" href="#social-media" title="連結到這個標頭"></a></h3>
+<p>也務必在社群媒體（如 Twitter、部落格等）宣傳您的新 AppImage。請使用 <code class="code docutils literal notranslate"><span class="pre">#AppImage</span></code> 標籤以提升可發現性。</p>
+</section>
+<section id="appimagehub">
+<span id="ref-appimagehub"></span><h3>AppImageHub<a class="headerlink" href="#appimagehub" title="連結到這個標頭"></a></h3>
+<p>您可能想將 AppImage 加入 <a class="reference external" href="https://appimage.github.io/apps/">AppImageHub</a>，這是一個由社群維護、可用且經自動測試的 AppImage 目錄，提供第三方應用商店與軟體中心可使用的資料。只要提供 AppImage 的 URL，它就會檢查並加入社群維護的目錄。</p>
+<p>應用商店與軟體中心可使用此專案收集的中繼資料。請參閱 <a class="reference external" href="https://github.com/AppImage/AppImageKit/wiki/Ecosystem">AppImage ecosystem</a>。</p>
+<p>已使用這些資料的專案包括：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Nitrux、NX Software Center：<a class="reference external" href="https://github.com/Nitrux/nx-software-center">https://github.com/Nitrux/nx-software-center</a></p></li>
+<li><p><a class="reference external" href="https://github.com/simoniz0r/spm">https://github.com/simoniz0r/spm</a></p></li>
+<li><p><a class="reference external" href="https://github.com/sillasleal/appcenter">https://github.com/sillasleal/appcenter</a></p></li>
+<li><p><a class="reference external" href="https://github.com/lliurex/lliurex-store">https://github.com/lliurex/lliurex-store</a></p></li>
+<li><p>如果您正在使用這些資料，請與我們聯絡，以便將您的專案列在此處</p></li>
+</ul>
+</div></blockquote>
+<p>要讓您的 AppImage 被收錄，請在 <a class="reference external" href="https://github.com/AppImage/AppImageHub/new/master/data">https://github.com/AppImage/AppImageHub/new/master/data</a> 新建檔案並送出 pull request。</p>
+<p>檔案內容應為一行，放置托管 AppImage 的 GitHub 儲存庫連結（在 Releases 頁）。</p>
+<p>或者直接放 AppImage 的連結即可，不要加其他內容。</p>
+<p>接著送出 pull request。Travis CI 會立即自動檢查 AppImage，若成功，您的 pull request 會顯示綠色結果；若是紅色，請查看 Travis CI 的建置紀錄並修正問題。</p>
+<p>一旦應用程式加入 AppImageHub，除非輸入檔改變，否則不會自動更新。若您需要更新 AppImageHub 上的項目（例如最新 AppImage 釋出包含新的中繼資料），請提交新的 pull request。在您的 AppImageHub 頁面底部有「Edit the input for this page」連結可用。若 URL 不變，只要在新的一行新增或移除一個「#」字元即可觸發更新。請記得 AppImageHub 不會追蹤版本，因此僅因為發布新版本並不一定需要這樣做。</p>
+<p>作為格式，AppImage 的設計不會對製作 AppImage 的人施加限制，基本上您可以放入任何內容。但對 AppImageHub 而言，會有額外規則。送交 AppImageHub 的 AppImage 會經過自動檢查，必要時還可能人工審查。</p>
+<ul class="simple">
+<li><p>必須可透過 URL 下載。我們的測試系統使用 <code class="code docutils literal notranslate"><span class="pre">wget</span></code> 取得 AppImage。目前無法從需要驗證或受 cookie 保護的位置取得 AppImage。商業應用程式建議提供一般可下載的試用/示範版本。若您希望將商業 AppImage 加入目錄但無法提供一般下載，請與我們聯絡。</p></li>
+<li><p>必須能在 <a class="reference external" href="https://www.ubuntu.com/info/release-end-of-life">最舊仍受支援的 Ubuntu LTS 版本</a> 上執行（2019 年為 16.04；最新資訊請見 <a class="reference external" href="https://en.wikipedia.org/wiki/Ubuntu#Releases">https://en.wikipedia.org/wiki/Ubuntu#Releases</a>），且不需安裝額外套件。鎖定最舊仍受支援的 LTS，可確保 AppImage 不僅能在最新系統上執行，也能在較舊的目標系統（如企業散布版，不限 Ubuntu）上執行。</p></li>
+<li><p>必須能在我們以 Travis CI 為基礎的測試環境中執行</p></li>
+<li><p>必須通過 <a class="reference external" href="https://github.com/AppImage/pkg2appimage/blob/master/appdir-lint.sh">appdir-lint.sh</a></p></li>
+<li><p>必須包含可通過 <code class="code docutils literal notranslate"><span class="pre">desktop-file-validate</span></code> 的桌面檔</p></li>
+<li><p>必須能在無網路連線的情況下執行（至少要顯示一些資訊）</p></li>
+<li><p>建議在 <code class="code docutils literal notranslate"><span class="pre">usr/share/metainfo</span></code> 中提供 <a class="reference external" href="https://people.freedesktop.org/~hughsient/appdata/">AppStream metainfo 檔</a>；若提供，必須通過 <code class="code docutils literal notranslate"><span class="pre">appstreamcli</span></code> 驗證</p></li>
+<li><p>應顯示有意義的畫面而非粗糙的對話框，因為主視窗會用作主要螢幕截圖。請注意，您可透過 <a class="reference external" href="https://people.freedesktop.org/~hughsient/appdata/">AppStream metainfo 檔</a> 提供自訂截圖。</p></li>
+<li><p>應提供不含版本號的固定 URL。或者，應提供於 GitHub Releases 或 openSUSE Build Service（也可建議其他類似服務）。</p></li>
+</ul>
+</section>
+<section id="future-catalogs">
+<h3>未來的目錄<a class="headerlink" href="#future-catalogs" title="連結到這個標頭"></a></h3>
+<p>未來我們可能會使用去中心化的點對點資料庫作為 AppImage 目錄。</p>
+<p>我們正在研究 IPFS 等技術，也很歡迎這方面的貢獻者加入。</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="testing.html" class="btn btn-neutral float-left" title="Testing your AppImage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="environment-variables.html" class="btn btn-neutral float-right" title="環境變數" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2022, The AppImage project.
+      <span class="commit">Revision <code>475547d</code>.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

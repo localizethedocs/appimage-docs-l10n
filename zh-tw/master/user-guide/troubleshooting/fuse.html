@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-TW" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>我遇到一些與「FUSE」相關的錯誤 &mdash; AppImage  說明文件</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=5111789f" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="canonical" href="https://projects.localizethedocs.org/appimage-docs-l10n/user-guide/troubleshooting/fuse.html" />
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=0d9984b1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/translations.js?v=cbf116e0"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜尋" href="../../search.html" />
+    <link rel="next" title="我在使用基於 Electron 的 AppImage 與其沙箱時遇到問題" href="electron-sandboxing.html" />
+    <link rel="prev" title="疑難排解" href="index.html" />
+ 
+<script type="text/javascript" src="../../ltd-provenance.js"></script>
+<script type="text/javascript" src="../../ltd-current.js"></script>
+<script type="text/javascript" src="../../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../../ltd-flyout.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            AppImage
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">目次：</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">簡介</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">使用者指南</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">常見問題集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../run-appimages.html">執行 AppImage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../portable-mode.html">使用可移植模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mac.html">給 macOS 使用者轉換到 AppImage</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">疑難排解</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">我遇到一些與「FUSE」相關的錯誤</a></li>
+<li class="toctree-l3"><a class="reference internal" href="electron-sandboxing.html">我在使用基於 Electron 的 AppImage 與其沙箱時遇到問題</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging-guide/index.html">Packaging Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/index.html">參考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">聯絡方式</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">AppImage</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">使用者指南</a></li>
+          <li class="breadcrumb-item"><a href="index.html">疑難排解</a></li>
+      <li class="breadcrumb-item active">我遇到一些與「FUSE」相關的錯誤</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/AppImage/docs.appimage.org/blob/master/source/user-guide/troubleshooting/fuse.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="index.html" class="btn btn-neutral float-left" title="疑難排解" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="electron-sandboxing.html" class="btn btn-neutral float-right" title="我在使用基於 Electron 的 AppImage 與其沙箱時遇到問題" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="i-get-some-errors-related-to-something-called-fuse">
+<span id="ref-ug-troubleshooting-fuse"></span><h1>我遇到一些與「FUSE」相關的錯誤<a class="headerlink" href="#i-get-some-errors-related-to-something-called-fuse" title="連結到這個標頭"></a></h1>
+<p>AppImage 需要一項稱為 <em>Filesystem in Userspace*（簡稱 *FUSE</em>）的 Linux 技術。多數系統都預裝可用的 FUSE 設定，但有時仍會無法正常運作。本節說明幾種可修正常見問題的解決方案。</p>
+<nav class="contents local" id="contents">
+<p class="topic-title">目次</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#the-appimage-tells-me-it-needs-fuse-to-run" id="id1">AppImage 告訴我需要 FUSE 才能執行</a></p></li>
+<li><p><a class="reference internal" href="#how-to-install-fuse" id="id2">如何安裝 FUSE</a></p>
+<ul>
+<li><p><a class="reference internal" href="#setting-up-fuse-2-x-on-ubuntu-pre-22-04-debian-and-their-derivatives" id="id3">在 Ubuntu（22.04 之前）、Debian 及其衍生版本設定 FUSE 2.x</a></p></li>
+<li><p><a class="reference internal" href="#setting-up-fuse-2-x-alongside-of-fuse-3-x-on-recent-ubuntu-22-04-debian-and-their-derivatives" id="id4">在近期的 Ubuntu（&gt;=22.04）、Debian 及其衍生版本上同時設定 FUSE 2.x 與 FUSE 3.x</a></p></li>
+<li><p><a class="reference internal" href="#setting-up-fuse-2-x-on-opensuse" id="id5">在 openSUSE 上設定 FUSE 2.x</a></p></li>
+<li><p><a class="reference internal" href="#setting-up-fuse-on-centos-and-rhel" id="id6">在 CentOS 與 RHEL 上設定 FUSE</a></p></li>
+<li><p><a class="reference internal" href="#setting-up-fuse-on-clear-linux-os" id="id7">在 Clear Linux OS 上設定 FUSE</a></p></li>
+<li><p><a class="reference internal" href="#setting-up-fuse-on-chromium-os-chrome-os-crostini-or-other-derivatives" id="id8">在 Chromium OS、Chrome OS、Crostini 或其他衍生版本上設定 FUSE</a></p></li>
+<li><p><a class="reference internal" href="#setting-up-fuse-on-arch-linux" id="id9">在 Arch Linux 上設定 FUSE</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#fallback-if-fuse-can-t-be-made-working" id="id10">備援方案（若 FUSE 無法運作）</a></p>
+<ul>
+<li><p><a class="reference internal" href="#extract-and-run-type-2-appimages" id="id11">解壓並執行第 2 類 AppImage</a></p></li>
+<li><p><a class="reference internal" href="#mount-or-extract-type-1-appimages" id="id12">掛載或解壓第 1 類 AppImage</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#fuse-and-docker" id="id13">FUSE 與 Docker</a></p></li>
+</ul>
+</nav>
+<section id="the-appimage-tells-me-it-needs-fuse-to-run">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">AppImage 告訴我需要 FUSE 才能執行</a><a class="headerlink" href="#the-appimage-tells-me-it-needs-fuse-to-run" title="連結到這個標頭"></a></h2>
+<p>有時 AppImage 會在主控台輸出下列訊息：</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>AppImage 需要 FUSE 才能執行。
+若您以 --appimage-extract 選項執行，
+仍可能可以解壓此 AppImage 的內容。
+請參閱 https://github.com/AppImage/AppImageKit/wiki/FUSE
+以取得更多資訊
+</pre></div>
+</div>
+<p>此情況表示您的系統上 FUSE 未正確設定。您需要 <a class="reference internal" href="#ref-install-fuse"><span class="std std-ref">安裝 FUSE</span></a> 才能修正問題。</p>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p>嘗試執行非針對您平台建置的 AppImage 時，即使在執行本平台建置的 AppImage 沒問題，也可能會看到此訊息。請參閱 <a class="reference internal" href="#ref-warning-fuse-cross-architecture"><span class="std std-ref">這些指引</span></a> 了解如何修正。</p>
+</div>
+</section>
+<section id="how-to-install-fuse">
+<span id="ref-install-fuse"></span><h2><a class="toc-backref" href="#id2" role="doc-backlink">如何安裝 FUSE</a><a class="headerlink" href="#how-to-install-fuse" title="連結到這個標頭"></a></h2>
+<p>多數 Linux 散布版預設具備可用的 FUSE 2.x 設定。若無法運作，您可能需要自行安裝並設定 FUSE 2.x。</p>
+<p>FUSE 的安裝流程會因散布版而異。本節說明在最常見的散布版上如何安裝 FUSE。</p>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p>若您的散布版未列出，請向該散布版的開發者索取指引。</p>
+</div>
+<section id="setting-up-fuse-2-x-on-ubuntu-pre-22-04-debian-and-their-derivatives">
+<span id="ref-ug-troubleshooting-fuse-fuse2"></span><h3><a class="toc-backref" href="#id3" role="doc-backlink">在 Ubuntu（22.04 之前）、Debian 及其衍生版本設定 FUSE 2.x</a><a class="headerlink" href="#setting-up-fuse-2-x-on-ubuntu-pre-22-04-debian-and-their-derivatives" title="連結到這個標頭"></a></h3>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>此段僅適用於 <em>未</em> 預設安裝 <code class="docutils literal notranslate"><span class="pre">fuse3</span></code> 的散布版。為確定是否已安裝 <code class="code docutils literal notranslate"><span class="pre">fuse3</span></code> 套件，可在終端機執行 <code class="code docutils literal notranslate"><span class="pre">dpkg</span> <span class="pre">-l</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">fuse3</span></code>，並確認是否有以 <code class="code docutils literal notranslate"><span class="pre">ii</span>&#160; <span class="pre">fuse3</span></code> 開頭的列。</p>
+<p>若您的散布版使用 <code class="code docutils literal notranslate"><span class="pre">fuse3</span></code>，請參閱 <a class="reference internal" href="#ref-ug-troubleshooting-fuse-fuse3"><span class="std std-ref">下一節</span></a>。</p>
+</div>
+<p>安裝必要的軟體包:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libfuse2</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p>在 Ubuntu 24.04 中，libfuse2 套件已更名為 libfuse2t64。</p>
+</div>
+<p>現在 FUSE 應可運作。在某些較舊的散布版上，您還需要額外設定：</p>
+<p>確保已載入 FUSE 核心模組:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">sudo</span> <span class="n">modprobe</span> <span class="o">-</span><span class="n">v</span> <span class="n">fuse</span>
+</pre></div>
+</div>
+<p>接著新增所需的群組（通常會由安裝命令建立；若已存在，這個指令 <em>會</em> 失敗），並將自己的使用者帳號加入該群組:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt; sudo addgroup fuse
+&gt; sudo adduser $USER fuse
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p>將使用者加入群組後，必須登出再登入，變更才會生效！</p>
+</div>
+</section>
+<section id="setting-up-fuse-2-x-alongside-of-fuse-3-x-on-recent-ubuntu-22-04-debian-and-their-derivatives">
+<span id="ref-ug-troubleshooting-fuse-fuse3"></span><h3><a class="toc-backref" href="#id4" role="doc-backlink">在近期的 Ubuntu（&gt;=22.04）、Debian 及其衍生版本上同時設定 FUSE 2.x 與 FUSE 3.x</a><a class="headerlink" href="#setting-up-fuse-2-x-alongside-of-fuse-3-x-on-recent-ubuntu-22-04-debian-and-their-derivatives" title="連結到這個標頭"></a></h3>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>此段僅適用於非常新的（截至 2022 年 4 月）且預設安裝 <code class="code docutils literal notranslate"><span class="pre">fuse3</span></code> 的散布版。為確定是否已安裝 <code class="code docutils literal notranslate"><span class="pre">fuse3</span></code> 套件，可在終端機執行 <code class="code docutils literal notranslate"><span class="pre">dpkg</span> <span class="pre">-l</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">fuse3</span></code>，並確認是否有以 <code class="code docutils literal notranslate"><span class="pre">ii</span>&#160; <span class="pre">fuse3</span></code> 開頭的列（若沒有，表示您的散布版未使用 <code class="code docutils literal notranslate"><span class="pre">fuse3</span></code>）。</p>
+<p>若您的散布版未使用 <code class="code docutils literal notranslate"><span class="pre">fuse3</span></code>，請參閱 <a class="reference internal" href="#ref-ug-troubleshooting-fuse-fuse2"><span class="std std-ref">前一節</span></a>。</p>
+</div>
+<p>安裝必要的軟體包:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">libfuse2</span>
+</pre></div>
+</div>
+<p>現在 FUSE 2.x 應可與 FUSE 3.x 同時運作，且不會破壞系統。</p>
+</section>
+<section id="setting-up-fuse-2-x-on-opensuse">
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">在 openSUSE 上設定 FUSE 2.x</a><a class="headerlink" href="#setting-up-fuse-2-x-on-opensuse" title="連結到這個標頭"></a></h3>
+<p>安裝必要的軟體包:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">sudo</span> <span class="n">zypper</span> <span class="n">install</span> <span class="n">fuse</span> <span class="n">libfuse2</span>
+</pre></div>
+</div>
+<p>現在 FUSE 應可運作。</p>
+</section>
+<section id="setting-up-fuse-on-centos-and-rhel">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">在 CentOS 與 RHEL 上設定 FUSE</a><a class="headerlink" href="#setting-up-fuse-on-centos-and-rhel" title="連結到這個標頭"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p>以下指引可能已過時，歡迎協助更新！</p>
+</div>
+<p>從 EPEL 安裝 FUSE:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">yum</span> <span class="o">--</span><span class="n">enablerepo</span><span class="o">=</span><span class="n">epel</span> <span class="n">install</span> <span class="n">fuse</span><span class="o">-</span><span class="n">sshfs</span>
+</pre></div>
+</div>
+<p>接著把自己加入相關群組，以取得使用 FUSE 的權限:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt; usermod -a -G fuse $(whoami)
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p>將使用者加入群組後，必須登出再登入，變更才會生效！</p>
+</div>
+<div class="admonition warning" id="ref-warning-fuse-cross-architecture">
+<p class="admonition-title">警告</p>
+<p>若您使用 64 位元系統並想執行 32 位元 AppImage（例如從 <code class="docutils literal notranslate"><span class="pre">x86_64</span></code>/<code class="docutils literal notranslate"><span class="pre">amd64</span></code> 到 <code class="docutils literal notranslate"><span class="pre">i386</span></code>，或從 <code class="docutils literal notranslate"><span class="pre">arm64</span></code> 到 <code class="docutils literal notranslate"><span class="pre">armhf</span></code>），需要安裝對應架構的 FUSE 執行階段函式庫：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libfuse2</span><span class="p">:</span><span class="n">i386</span>
+<span class="o">&gt;</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libfuse2</span><span class="p">:</span><span class="n">armhf</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="setting-up-fuse-on-clear-linux-os">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">在 Clear Linux OS 上設定 FUSE</a><a class="headerlink" href="#setting-up-fuse-on-clear-linux-os" title="連結到這個標頭"></a></h3>
+<p>在 Clear Linux OS 上，FUSE 理應預設啟用。不過若仍看到前述錯誤訊息，可嘗試以下方法：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/etc/modules-load.d/
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;fuse&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/modules-load.d/fuse.conf
+sudo<span class="w"> </span>reboot
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">也參考</p>
+<p>此錯誤也曾在 <a class="reference external" href="https://github.com/clearlinux/distribution/issues/273">GitHub 上回報</a>。</p>
+</div>
+</section>
+<section id="setting-up-fuse-on-chromium-os-chrome-os-crostini-or-other-derivatives">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">在 Chromium OS、Chrome OS、Crostini 或其他衍生版本上設定 FUSE</a><a class="headerlink" href="#setting-up-fuse-on-chromium-os-chrome-os-crostini-or-other-derivatives" title="連結到這個標頭"></a></h3>
+<p>FUSE 預設無法使用。但自第 73 版起，安裝相當容易：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>fuse
+</pre></div>
+</div>
+</section>
+<section id="setting-up-fuse-on-arch-linux">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">在 Arch Linux 上設定 FUSE</a><a class="headerlink" href="#setting-up-fuse-on-arch-linux" title="連結到這個標頭"></a></h3>
+<p>安裝必要的軟體包：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>fuse2
+</pre></div>
+</div>
+<p>不過常見的問題是 <code class="docutils literal notranslate"><span class="pre">fusermount</span></code> 執行檔的權限可能不正確。幸好有簡單的修正方式：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># bash、dash、bourne shell：</span>
+sudo<span class="w"> </span>chmod<span class="w"> </span>u+s<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>which<span class="w"> </span>fusermount<span class="k">)</span><span class="s2">&quot;</span>
+
+<span class="c1"># fish shell：</span>
+sudo<span class="w"> </span>chmod<span class="w"> </span>u+s<span class="w"> </span><span class="o">(</span>which<span class="w"> </span>fusermount<span class="o">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="fallback-if-fuse-can-t-be-made-working">
+<span id="ref-fuse-fallback"></span><h2><a class="toc-backref" href="#id10" role="doc-backlink">備援方案（若 FUSE 無法運作）</a><a class="headerlink" href="#fallback-if-fuse-can-t-be-made-working" title="連結到這個標頭"></a></h2>
+<p>若您不想（或無法）設定 FUSE，仍有備援方案。視 AppImage 類型而定，您可以掛載 AppImage，或解壓後執行其內容。</p>
+<section id="extract-and-run-type-2-appimages">
+<span id="ref-extract-and-run-type-2"></span><h3><a class="toc-backref" href="#id11" role="doc-backlink">解壓並執行第 2 類 AppImage</a><a class="headerlink" href="#extract-and-run-type-2-appimages" title="連結到這個標頭"></a></h3>
+<p>目前多數 AppImage 都是第 2 類。若無法使用 FUSE，最簡單的做法是先解壓，再執行其內容。</p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>為了執行內容而解壓 AppImage 的成本較高，只有在沒有其他選擇時才建議這麼做。</p>
+</div>
+<p>AppImage 執行階段內建一項稱為「extract-and-run」的功能。它會解壓 AppImage、執行內容、等待程式關閉，然後再清理檔案：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用參數</span>
+./my.AppImage<span class="w"> </span>--appimage-extract-and-run<span class="w"> </span><span class="o">[</span>...<span class="o">]</span>
+
+<span class="c1"># 使用環境變數（通常也會轉傳給 AppImage 子行程）</span>
+<span class="c1"># 注意：此功能是在引入參數後一段時間才實作</span>
+<span class="c1"># 對較舊的 AppImage，可能仍需使用參數</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">APPIMAGE_EXTRACT_AND_RUN</span><span class="o">=</span><span class="m">1</span>
+./my.AppImage<span class="w"> </span><span class="o">[</span>...<span class="o">]</span>
+
+<span class="c1"># 如需多次執行 AppImage，可選擇停用清理</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">APPIMAGE_EXTRACT_AND_RUN</span><span class="o">=</span><span class="m">1</span>
+env<span class="w"> </span><span class="nv">NO_CLEANUP</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>./my.AppImage
+</pre></div>
+</div>
+<p>若您使用非常舊的 AppImage（亦即使用了在「extract-and-run」實作之前的執行階段），可手動解壓：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./my.AppImage<span class="w"> </span>--appimage-extract
+<span class="c1"># 內容會被解壓到目前工作目錄中的 &quot;squashfs-root&quot; 資料夾</span>
+<span class="c1"># 現在可執行 &quot;AppRun&quot; 入口點</span>
+squashfs-root/AppRun<span class="w"> </span><span class="o">[</span>...<span class="o">]</span>
+<span class="c1"># 如有需要，可再次清理該資料夾</span>
+rm<span class="w"> </span>-r<span class="w"> </span>squashfs-root/
+</pre></div>
+</div>
+</section>
+<section id="mount-or-extract-type-1-appimages">
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">掛載或解壓第 1 類 AppImage</a><a class="headerlink" href="#mount-or-extract-type-1-appimages" title="連結到這個標頭"></a></h3>
+<p>若 <a class="reference internal" href="#ref-extract-and-run-type-2"><span class="std std-ref">前一節</span></a> 所述流程無法運作，您可能使用的是第 1 類 AppImage。</p>
+<p>第 1 類 AppImage 是一般的 ISO9660 檔案，因此可以 <em>loop 掛載</em>。請注意，這需要 <code class="docutils literal notranslate"><span class="pre">root</span></code> 權限。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>mount<span class="w"> </span>-o<span class="w"> </span>loop<span class="w"> </span>my.AppImage<span class="w"> </span>/mnt
+<span class="c1"># 現在可執行內容</span>
+/mnt/AppRun
+<span class="c1"># 完成後可再次卸載 AppImage</span>
+sudo<span class="w"> </span>unmount<span class="w"> </span>/mnt
+</pre></div>
+</div>
+<p>您也可以改為解壓 AppImage，使用 <a class="reference external" href="https://github.com/AppImage/AppImageKit/releases/tag/6">AppImageExtract</a>，或使用支援 ISO9660 映像的解壓工具（例如 <code class="docutils literal notranslate"><span class="pre">bsdtar</span></code>）：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># 安裝 bsdtar</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>libarchive-tools
+<span class="c1"># 建立目標目錄</span>
+mkdir<span class="w"> </span>AppDir
+<span class="c1"># 將內容解壓到新目錄</span>
+<span class="nb">cd</span><span class="w"> </span>AppDir
+bsdtar<span class="w"> </span>xfp<span class="w"> </span>.../my.AppImage
+<span class="c1"># 現在可執行入口點</span>
+./AppRun
+</pre></div>
+</div>
+</section>
+</section>
+<section id="fuse-and-docker">
+<h2><a class="toc-backref" href="#id13" role="doc-backlink">FUSE 與 Docker</a><a class="headerlink" href="#fuse-and-docker" title="連結到這個標頭"></a></h2>
+<p>多數 Docker 安裝基於安全考量不允許在容器內使用 FUSE。您可以改依 <a class="reference internal" href="#ref-fuse-fallback"><span class="std std-ref">前一節</span></a> 所述，解壓並執行 AppImage。</p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>網路上有很多建議說「只要加上 <code class="docutils literal notranslate"><span class="pre">--cap-add</span> <span class="pre">SYS_ADMIN</span> <span class="pre">--cap-add</span> <span class="pre">MKNOD</span> <span class="pre">--device</span> <span class="pre">/dev/fuse:mrw</span></code> 就能運作」。但這樣做並不安全。Docker 預設不支援 FUSE 是有原因的。</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="疑難排解" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="electron-sandboxing.html" class="btn btn-neutral float-right" title="我在使用基於 Electron 的 AppImage 與其沙箱時遇到問題" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2022, The AppImage project.
+      <span class="commit">Revision <code>475547d</code>.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
