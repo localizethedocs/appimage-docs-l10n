@@ -87,6 +87,10 @@ msgid ""
 "$ sudo bash testappimage /path/to/elementary-0.2-20110926.iso "
 "AppImageAssistant.AppImage"
 msgstr ""
+"$ wget https://raw.githubusercontent.com/AppImage/AppImageKit/master/"
+"testappimage\n"
+"$ sudo bash testappimage /path/to/elementary-0.2-20110926.iso "
+"AppImageAssistant.AppImage"
 
 #: ../../../source/packaging-guide/testing.rst:35
 msgid "Using the Docker-based appimage-testsuite"

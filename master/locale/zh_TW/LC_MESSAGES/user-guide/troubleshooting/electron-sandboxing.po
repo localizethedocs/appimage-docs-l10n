@@ -64,6 +64,8 @@ msgid ""
 "> sysctl kernel.unprivileged_userns_clone\n"
 "kernel.unprivileged_userns_clone = 1"
 msgstr ""
+"> sysctl kernel.unprivileged_userns_clone\n"
+"kernel.unprivileged_userns_clone = 1"
 
 #: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:21
 msgid ""
@@ -90,7 +92,7 @@ msgstr "要暫時啟用非特權命名空間，您可以執行："
 
 #: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:36
 msgid "sudo sysctl -w kernel.unprivileged_userns_clone=1"
-msgstr ""
+msgstr "sudo sysctl -w kernel.unprivileged_userns_clone=1"
 
 #: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:38
 msgid ""
@@ -112,6 +114,8 @@ msgid ""
 "echo kernel.unprivileged_userns_clone = 1 | sudo tee /etc/sysctl.d/00-local-"
 "userns.conf"
 msgstr ""
+"echo kernel.unprivileged_userns_clone = 1 | sudo tee /etc/sysctl.d/00-local-"
+"userns.conf"
 
 #: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:47
 msgid ""

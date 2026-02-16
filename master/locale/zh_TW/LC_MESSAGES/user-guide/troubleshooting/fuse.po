@@ -133,7 +133,7 @@ msgstr "安裝必要的軟體包::"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:59
 msgid "> sudo apt-get install libfuse2"
-msgstr ""
+msgstr "> sudo apt-get install libfuse2"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:62
 msgid "In Ubuntu 24.04, the libfuse2 package was renamed to libfuse2t64."
@@ -151,7 +151,7 @@ msgstr "確保已載入 FUSE 核心模組::"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:68
 msgid "> sudo modprobe -v fuse"
-msgstr ""
+msgstr "> sudo modprobe -v fuse"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:70
 msgid ""
@@ -167,6 +167,8 @@ msgid ""
 "> sudo addgroup fuse\n"
 "> sudo adduser $USER fuse"
 msgstr ""
+"> sudo addgroup fuse\n"
+"> sudo adduser $USER fuse"
 
 #: ../../../source/user-guide/troubleshooting/notes/user-group-modifications.rst:2
 msgid ""
@@ -244,7 +246,7 @@ msgstr "從 EPEL 安裝 FUSE::"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:113
 msgid "> yum --enablerepo=epel install fuse-sshfs"
-msgstr ""
+msgstr "> yum --enablerepo=epel install fuse-sshfs"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:115
 msgid ""
@@ -271,6 +273,8 @@ msgid ""
 "> sudo apt-get install libfuse2:i386\n"
 "> sudo apt-get install libfuse2:armhf"
 msgstr ""
+"> sudo apt-get install libfuse2:i386\n"
+"> sudo apt-get install libfuse2:armhf"
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:130
 msgid "Setting up FUSE on Clear Linux OS"

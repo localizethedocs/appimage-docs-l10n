@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../source/packaging-guide/manual.rst:4
 msgid "Manual packaging"
-msgstr ""
+msgstr "手動打包"
 
 #: ../../../source/packaging-guide/manual.rst:6
 msgid ""
@@ -35,7 +35,7 @@ msgstr ""
 
 #: ../../../source/packaging-guide/manual.rst:17
 msgid "Creating an AppDir manually"
-msgstr ""
+msgstr "手動建立 AppDir"
 
 #: ../../../source/packaging-guide/manual.rst:19
 msgid ""
@@ -90,7 +90,7 @@ msgstr ""
 
 #: ../../../source/packaging-guide/manual.rst:42
 msgid "strings MyApp.AppDir/usr/bin/myapp | grep /usr"
-msgstr ""
+msgstr "strings MyApp.AppDir/usr/bin/myapp | grep /usr"
 
 #: ../../../source/packaging-guide/manual.rst:46
 msgid ""

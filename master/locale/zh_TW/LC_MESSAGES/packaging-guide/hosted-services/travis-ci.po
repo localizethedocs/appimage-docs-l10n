@@ -103,7 +103,7 @@ msgstr ""
 
 #: ../../../source/packaging-guide/hosted-services/travis-ci.rst:53
 msgid "Using ``upload.sh``"
-msgstr ""
+msgstr "使用 ``upload.sh``"
 
 #: ../../../source/packaging-guide/hosted-services/travis-ci.rst:55
 msgid ""

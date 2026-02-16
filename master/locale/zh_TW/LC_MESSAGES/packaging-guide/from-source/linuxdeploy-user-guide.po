@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:4
 msgid "linuxdeploy user guide"
-msgstr ""
+msgstr "linuxdeploy 使用者指南"
 
 #: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:6
 msgid "This page illustrates how linuxdeploy can be used."
@@ -106,7 +106,7 @@ msgstr ""
 
 #: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:43
 msgid "``--executable``/``-e``"
-msgstr ""
+msgstr "``--executable``/``-e``"
 
 #: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:44
 msgid "Bundle a native binary executable. |rpath-comment|"
@@ -158,10 +158,12 @@ msgid ""
 "> ./linuxdeploy-x86_64.AppImage --appdir AppDir --executable ./foobar <...> "
 "--output appimage"
 msgstr ""
+"> ./linuxdeploy-x86_64.AppImage --appdir AppDir --executable ./foobar <...> "
+"--output appimage"
 
 #: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:67
 msgid "Plugin system"
-msgstr ""
+msgstr "插件系統"
 
 #: ../../../source/packaging-guide/from-source/linuxdeploy-user-guide.rst:69
 msgid ""

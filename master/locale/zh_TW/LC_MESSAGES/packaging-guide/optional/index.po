@@ -23,7 +23,7 @@ msgstr ""
 
 #: ../../../source/packaging-guide/optional/index.rst:2
 msgid "Optional Resources and Features"
-msgstr ""
+msgstr "選用的資源與功能"
 
 #: ../../../source/packaging-guide/optional/index.rst:4
 msgid ""

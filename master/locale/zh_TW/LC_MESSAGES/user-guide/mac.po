@@ -82,7 +82,7 @@ msgstr "``.app`` 內的 ``Resources/``"
 
 #: ../../../source/user-guide/mac.rst:24
 msgid "`AppImageUpdate`_"
-msgstr ""
+msgstr "`AppImageUpdate`_"
 
 #: ../../../source/user-guide/mac.rst:24
 msgid "`Sparkle Framework`_"

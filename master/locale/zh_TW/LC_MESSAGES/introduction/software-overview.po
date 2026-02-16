@@ -293,7 +293,7 @@ msgstr ""
 
 #: ../../../source/introduction/software-overview.rst:109
 msgid "appimaged"
-msgstr ""
+msgstr "appimaged"
 
 #: ../../../source/introduction/software-overview.rst:111
 msgid ""
@@ -420,7 +420,7 @@ msgstr ""
 
 #: ../../../source/introduction/software-overview.rst:159
 msgid "AppImageLauncher"
-msgstr ""
+msgstr "AppImageLauncher"
 
 #: ../../../source/introduction/software-overview.rst:161
 msgid ""

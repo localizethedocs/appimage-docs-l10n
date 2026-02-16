@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../../source/packaging-guide/from-source/index.rst:9
 msgid "appimage-builder user guide"
-msgstr ""
+msgstr "appimage-builder 使用者指南"
 
 #: ../../../source/packaging-guide/from-source/index.rst:9
 msgid "Contents"

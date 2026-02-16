@@ -276,7 +276,7 @@ msgstr ""
 
 #: ../../../source/user-guide/run-appimages.rst:103
 msgid "appimaged"
-msgstr ""
+msgstr "appimaged"
 
 #: ../../../source/user-guide/run-appimages.rst:105
 msgid ""
@@ -296,7 +296,7 @@ msgstr "更多關於 appimaged 的資訊請參閱 :ref:`appimaged`。"
 
 #: ../../../source/user-guide/run-appimages.rst:112
 msgid "AppImageLauncher"
-msgstr ""
+msgstr "AppImageLauncher"
 
 #: ../../../source/user-guide/run-appimages.rst:114
 msgid ""
