@@ -1,0 +1,54 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2022, The AppImage project
+# This file is distributed under the same license as the AppImage package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AppImage master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-04 12:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/index.rst:31
+msgid "Contents:"
+msgstr ""
+
+#: ../../../source/index.rst:11
+msgid "Welcome to the AppImage documentation"
+msgstr ""
+
+#: ../../../source/index.rst:14
+msgid ""
+"Willkommen • Welcome • 欢迎 • Bienvenue • Benvenuto • Bienvenido • ようこそ "
+"• Mabuhay • Välkommen • أهلا وسهلا • Добро пожаловать • Merhaba • Bonvenon • "
+"歡迎光臨 • خوش آمدید"
+msgstr ""
+
+#: ../../../source/index.rst:21
+msgid ""
+"In this documentation, all aspects of the AppImage project shall be "
+"explained, to have a single unified source of information."
+msgstr ""
+
+#: ../../../source/index.rst:27
+msgid ""
+"If you are new to AppImage, please read the introduction. It describes the "
+"ideas behind AppImage, shows the motivation, explains why you as a user and/"
+"or developer should be interested in AppImages. Also, it explains the core "
+"concepts of AppImage's design."
+msgstr ""
+
+#: ../../../source/index.rst:29
+msgid ""
+"To learn more about *using* AppImages, please read the User Guide. If you "
+"are interested in building and distributing AppImages or building software "
+"that works with AppImages, please check the Packaging Guide."
+msgstr ""

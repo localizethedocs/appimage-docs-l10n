@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2022, The AppImage project
+# This file is distributed under the same license as the AppImage package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AppImage master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-04 12:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/reference/architecture.rst:4
+msgid "Architecture"
+msgstr "架構"
+
+#: ../../../source/reference/architecture.rst:6
+msgid ""
+"AppImage follows a very simple architecture, which is explained in this "
+"section."
+msgstr "AppImage 採用非常簡單的架構，本節將加以說明。"
+
+#: ../../../source/reference/architecture.rst:12
+msgid "Contents"
+msgstr "目次"
+
+#: ../../../source/reference/architecture.rst:15
+msgid "Overview"
+msgstr "概覽"
+
+#: ../../../source/reference/architecture.rst:17
+msgid ""
+"An AppImage consists of two parts: a *runtime* and a *file system image*. "
+"For the current type 2, the file system in use is SquashFS."
+msgstr ""
+"AppImage 由兩個部分組成：*執行階段* 與 *檔案系統映像*。目前第 2 類所使用的檔"
+"案系統是 SquashFS。"
+
+#: ../../../source/reference/architecture.rst:22
+msgid ""
+"AppImage file structure. Copyright © `@TheAssassin <https://github.com/"
+"TheAssassin>`__ 2019. Licensed under CC-By-SA Intl 4.0."
+msgstr ""
+"AppImage 檔案結構。版權所有 © `@TheAssassin <https://github.com/"
+"TheAssassin>`__ 2019。採用 CC-By-SA Intl 4.0 授權。"
+
+#: ../../../source/reference/architecture.rst:24
+msgid ""
+"What happens when an AppImage is run is that the operating system runs the "
+"AppImage as an executable. The runtime, the executable part, tries to mount "
+"the file system image using :ref:`FUSE <ref-fuse>`. If that succeeds, the :"
+"ref:`AppDir <ref-appdir>` is available in a :ref:`temporary mountpoint <ref-"
+"temporary-mountpoint>`, and can be used like a read-only directory."
+msgstr ""
+"當 AppImage 被執行時，作業系統會把它當作可執行檔來執行。執行階段（可執行部"
+"分）會使用 :ref:`FUSE <ref-fuse>` 掛載檔案系統映像。若成功，:ref:`AppDir "
+"<ref-appdir>` 會出現在 :ref:`暫時掛載點 <ref-temporary-mountpoint>`，並可像唯"
+"讀目錄一樣使用。"
+
+#: ../../../source/reference/architecture.rst:26
+msgid ""
+"The runtime continues by calling the AppDir's \"entrypoint\" :ref:`AppRun "
+"<ref-apprun>` using the operating system facilities. There are no checks "
+"performed by the runtime, the operating system is simply tasked with the "
+"execution of ``<AppDir mountpoint>/AppRun``. This provides a lot of "
+"flexibility, as AppRun can be an arbitrary executable, a script with a "
+"shebang_, or even a simple symlink to another executable within the AppDir. "
+"The file must be executable."
+msgstr ""
+"接著執行階段會透過作業系統的機制呼叫 AppDir 的「入口點」:ref:`AppRun <ref-"
+"apprun>`。執行階段不會做任何檢查，作業系統僅負責執行 ``<AppDir 掛載點>/"
+"AppRun``。這帶來高度彈性，因為 AppRun 可以是任意可執行檔、含有 shebang_ 的腳"
+"本，甚至只是指向 AppDir 內另一個可執行檔的符號連結。該檔案必須可執行。"
+
+#: ../../../source/reference/architecture.rst:30
+msgid ""
+"The contents of an AppDir are completely user-specified, although there are "
+"tools that help with packaging. For more information, see the :ref:"
+"`packaging guide <ref-packaging-guide>`."
+msgstr ""
+"AppDir 的內容完全由使用者指定，儘管有工具可協助打包。更多資訊請參閱 :ref:`打"
+"包指南 <ref-packaging-guide>`。"
