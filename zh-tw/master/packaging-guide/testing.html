@@ -1,0 +1,188 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-TW" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testing your AppImage &mdash; AppImage  說明文件</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=5111789f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://projects.localizethedocs.org/appimage-docs-l10n/packaging-guide/testing.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=0d9984b1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=cbf116e0"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜尋" href="../search.html" />
+    <link rel="next" title="散布 AppImage" href="distribution.html" />
+    <link rel="prev" title="手動打包" href="manual.html" />
+ 
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AppImage
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">目次：</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">簡介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">使用者指南</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Packaging Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction to Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html">概覽</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from-source/index.html">Packaging from source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="converting-binary-packages/index.html">Converting binary packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional/index.html">選用的資源與功能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hosted-services/index.html">Hosted services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.html">手動打包</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Testing your AppImage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="distribution.html">散布 AppImage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment-variables.html">環境變數</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">參考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">聯絡方式</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AppImage</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Packaging Guide</a></li>
+      <li class="breadcrumb-item active">Testing your AppImage</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/AppImage/docs.appimage.org/blob/master/source/packaging-guide/testing.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="manual.html" class="btn btn-neutral float-left" title="手動打包" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="distribution.html" class="btn btn-neutral float-right" title="散布 AppImage" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="testing-your-appimage">
+<span id="ref-testing-appimages"></span><h1>Testing your AppImage<a class="headerlink" href="#testing-your-appimage" title="連結到這個標頭"></a></h1>
+<p>Testing your AppImage is a very important step in producing an AppImage. Since AppImage files are supposed to run on a variety of Linux distributions, it is important to test your AppImage on a wide variety of distributions.</p>
+<p class="centered">
+<strong><strong>Test your AppImage on all base operating systems you are targeting!</strong></strong></p><p>This is an important step which you should not skip. Subtle differences in distributions make this a must. While it is possible in most cases to create AppImages that run on various distributions, this does not come automatically, but requires careful hand-tuning.</p>
+<p>To ensure that the AppImage runs on the intended base systems, it should be thoroughly tested on each of them. The following testing procedure is both efficient and effective: Get the previous version of Ubuntu, Fedora, and openSUSE Live CDs and test your AppImage there. Using the three largest distributions increases the chances that your AppImage will run on other distributions as well. Using the previous (current minus one) version ensures that your end users who might not have upgraded to the latest version yet can still run your AppImage.</p>
+<p>Using Live CDs has the advantage that unlike installed systems, you always have a system that is in a factory-fresh condition that can be easily reproduced. Most developers just test their software on their main working systems, which tend to be heavily customized through the installation of additional packages. By testing on Live CDs, you can be sure that end users will get the best experience possible.</p>
+<nav class="contents local" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#using-testappimage" id="id1">Using testappimage</a></p></li>
+<li><p><a class="reference internal" href="#using-the-docker-based-appimage-testsuite" id="id2">Using the Docker-based appimage-testsuite</a></p></li>
+</ul>
+</nav>
+<section id="using-testappimage">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Using testappimage</a><a class="headerlink" href="#using-testappimage" title="連結到這個標頭"></a></h2>
+<p>You can use ISOs of Live CDs, loop-mount them, chroot into them, and run the AppImage there. This way, you need approximately 700 MB per supported base system (distribution) and can easily upgrade to newer versions by just exchanging one ISO file. The following script automates this for Ubuntu-like (Casper-based) and Fedora-like (Dract-based) Live ISOs:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>wget<span class="w"> </span>https://raw.githubusercontent.com/AppImage/AppImageKit/master/testappimage
+$<span class="w"> </span>sudo<span class="w"> </span>bash<span class="w"> </span>testappimage<span class="w"> </span>/path/to/elementary-0.2-20110926.iso<span class="w"> </span>AppImageAssistant.AppImage
+</pre></div>
+</div>
+</section>
+<section id="using-the-docker-based-appimage-testsuite">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Using the Docker-based appimage-testsuite</a><a class="headerlink" href="#using-the-docker-based-appimage-testsuite" title="連結到這個標頭"></a></h2>
+<p>In addition to Live CD ISOs, it is possible to use Docker containers to test an AppImage package on a large variety of Linux distributions. This approach works for virtually any Linux distribution for which a base Docker container is available. For each of the supported distributions, there is a corresponding DockerFile that allows to build a container with a minimal set of dependencies needed to run an AppImage package.</p>
+<p>Currently, only type2 AppImages that provide the <code class="docutils literal notranslate"><span class="pre">--appimage-extract</span></code> option are supported.</p>
+<p>For example, to test an AppImage package on Ubuntu 18.04, the steps to be followed are:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/aferrero2707/appimage-testsuite.git
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>appimage-testsuite
+$<span class="w"> </span>./run.sh<span class="w"> </span>PATH_TO_APPIMAGE/package.AppImage<span class="w"> </span>ubuntu-18.04
+<span class="c1"># /aitest/aitest.sh</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">run.sh</span></code> script will build the corresponding Docker container, determine the IP address of the host system, and run the container with convenient parameters. The host <code class="docutils literal notranslate"><span class="pre">HOME</span></code> folder is mapped to the <code class="docutils literal notranslate"><span class="pre">/shared</span></code> folder in the running container, and the X server is forwarded to the host system so that graphical applications can be correctly executed.</p>
+<p>The following Linux distributions are supported out-of-the-box:</p>
+<ul class="simple">
+<li><p>Ubuntu 14.04, 16.04 and 18.04</p></li>
+<li><p>CentOS 6 and 7</p></li>
+<li><p>Fedora 26 and 27</p></li>
+<li><p>Debian stable and testing</p></li>
+<li><p>Manjaro (Arch Linux derivative)</p></li>
+<li><p>Sabayon (Gentoo Linux derivative)</p></li>
+</ul>
+<p>Other distributions can be added by writing an appropriate Dockerfile.</p>
+<p>Users might need to modify the <code class="docutils literal notranslate"><span class="pre">run.sh</span></code> script and change the line used to guess the host IP address:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">IP</span><span class="o">=</span><span class="k">$(</span>ifconfig<span class="w"> </span>en0<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>inet<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;$1==&quot;inet&quot; {print $2}&#39;</span><span class="k">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="manual.html" class="btn btn-neutral float-left" title="手動打包" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="distribution.html" class="btn btn-neutral float-right" title="散布 AppImage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2022, The AppImage project.
+      <span class="commit">Revision <code>475547d</code>.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

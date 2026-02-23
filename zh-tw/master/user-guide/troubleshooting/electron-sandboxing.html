@@ -1,0 +1,183 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-TW" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>我在使用基於 Electron 的 AppImage 與其沙箱時遇到問題 &mdash; AppImage  說明文件</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=5111789f" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="canonical" href="https://projects.localizethedocs.org/appimage-docs-l10n/user-guide/troubleshooting/electron-sandboxing.html" />
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=0d9984b1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/translations.js?v=cbf116e0"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜尋" href="../../search.html" />
+    <link rel="next" title="Packaging Guide" href="../../packaging-guide/index.html" />
+    <link rel="prev" title="我遇到一些與「FUSE」相關的錯誤" href="fuse.html" />
+ 
+<script type="text/javascript" src="../../ltd-provenance.js"></script>
+<script type="text/javascript" src="../../ltd-current.js"></script>
+<script type="text/javascript" src="../../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../../ltd-flyout.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            AppImage
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">目次：</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">簡介</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">使用者指南</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">常見問題集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../run-appimages.html">執行 AppImage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../portable-mode.html">使用可移植模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mac.html">給 macOS 使用者轉換到 AppImage</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">疑難排解</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="fuse.html">我遇到一些與「FUSE」相關的錯誤</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">我在使用基於 Electron 的 AppImage 與其沙箱時遇到問題</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging-guide/index.html">Packaging Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/index.html">參考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">聯絡方式</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">AppImage</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">使用者指南</a></li>
+          <li class="breadcrumb-item"><a href="index.html">疑難排解</a></li>
+      <li class="breadcrumb-item active">我在使用基於 Electron 的 AppImage 與其沙箱時遇到問題</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/AppImage/docs.appimage.org/blob/master/source/user-guide/troubleshooting/electron-sandboxing.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="fuse.html" class="btn btn-neutral float-left" title="我遇到一些與「FUSE」相關的錯誤" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../packaging-guide/index.html" class="btn btn-neutral float-right" title="Packaging Guide" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="i-have-issues-with-electron-based-appimages-and-their-sandboxing">
+<span id="ref-troubleshooting-electron"></span><h1>我在使用基於 Electron 的 AppImage 與其沙箱時遇到問題<a class="headerlink" href="#i-have-issues-with-electron-based-appimages-and-their-sandboxing" title="連結到這個標頭"></a></h1>
+<p>基於 <a class="reference external" href="https://www.electron.build/">Electron</a> 的 AppImage 需要以特定方式設定核心，才能讓沙箱按預期運作（具體而言，核心必須允許提供「非特權命名空間」）。許多散布版預設已完成此設定（例如 <a class="reference external" href="https://ubuntu.com">Ubuntu</a> 在 <a class="reference external" href="https://discourse.ubuntu.com/t/ubuntu-24-04-lts-noble-numbat-release-notes/39890#unprivileged-user-namespace-restrictions-15">24.04</a> 之前），但也有些沒有（例如 <a class="reference external" href="https://debian.org">Debian</a>）。</p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>請注意，AppImage 團隊不保證啟用此功能一定安全。若有疑慮，請先聯絡您的散布版。如果他們預設以安全方式啟用，所有使用者都能受益於此功能。</p>
+</div>
+<section id="check-if-kernel-is-configured-correctly-already">
+<h2>檢查核心是否已正確設定<a class="headerlink" href="#check-if-kernel-is-configured-correctly-already" title="連結到這個標頭"></a></h2>
+<p>要檢查您的散布版是否啟用了非特權命名空間，請執行：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">sysctl</span> <span class="n">kernel</span><span class="o">.</span><span class="n">unprivileged_userns_clone</span>
+<span class="n">kernel</span><span class="o">.</span><span class="n">unprivileged_userns_clone</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">1</span></code> 表示非特權命名空間已啟用，您無需採取任何動作。<code class="docutils literal notranslate"><span class="pre">0</span></code> 則表示此功能可用，但目前尚未啟用。請參閱下方段落了解如何啟用。</p>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p>此命令不需要以 <code class="docutils literal notranslate"><span class="pre">root</span></code> 身分執行。</p>
+</div>
+</section>
+<section id="configure-unprivileged-sandboxes">
+<span id="ref-electron-sandboxing-configure-temporarily"></span><h2>設定非特權沙箱<a class="headerlink" href="#configure-unprivileged-sandboxes" title="連結到這個標頭"></a></h2>
+<p>要暫時啟用非特權命名空間，您可以執行：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">sysctl</span> <span class="o">-</span><span class="n">w</span> <span class="n">kernel</span><span class="o">.</span><span class="n">unprivileged_userns_clone</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>若要再次停用，執行相同命令並把 <code class="docutils literal notranslate"><span class="pre">1</span></code> 改成 <code class="docutils literal notranslate"><span class="pre">0</span></code> 即可。</p>
+<p>要永久啟用此功能，建議在 <code class="docutils literal notranslate"><span class="pre">/etc/sysctl.d/</span></code> 建立新檔案。為了方便您，我們準備了以下命令可即時建立該檔案：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="n">kernel</span><span class="o">.</span><span class="n">unprivileged_userns_clone</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">sysctl</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="mi">00</span><span class="o">-</span><span class="n">local</span><span class="o">-</span><span class="n">userns</span><span class="o">.</span><span class="n">conf</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p>此命令僅會在下次重新開機後生效。若要在目前運作中的系統上變更，請參閱 <a class="reference internal" href="#ref-electron-sandboxing-configure-temporarily"><span class="std std-ref">previous section</span></a>。</p>
+</div>
+</section>
+<section id="allow-electron-appimages-to-run-without-unprivileged-namespaces">
+<h2>允許 Electron AppImage 在沒有非特權命名空間時執行<a class="headerlink" href="#allow-electron-appimages-to-run-without-unprivileged-namespaces" title="連結到這個標頭"></a></h2>
+<p>&#64;gergof 製作了一個工具，當核心功能 <cite>unprivileged_userns_clone</cite> 未啟用時，會自動套用 <cite>--no-sandbox</cite> 旗標：<a class="reference external" href="https://www.npmjs.com/package/electron-builder-sandbox-fix">https://www.npmjs.com/package/electron-builder-sandbox-fix</a></p>
+</section>
+<section id="more-information-on-unprivileged-namespaces">
+<h2>更多關於非特權命名空間的資訊<a class="headerlink" href="#more-information-on-unprivileged-namespaces" title="連結到這個標頭"></a></h2>
+<p>如需更多關於非特權命名空間的資訊，請參閱 <a class="reference external" href="https://lwn.net/Articles/673597/">https://lwn.net/Articles/673597/</a>。</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="fuse.html" class="btn btn-neutral float-left" title="我遇到一些與「FUSE」相關的錯誤" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../packaging-guide/index.html" class="btn btn-neutral float-right" title="Packaging Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2022, The AppImage project.
+      <span class="commit">Revision <code>475547d</code>.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

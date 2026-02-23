@@ -1,0 +1,179 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desktop integration &mdash; AppImage  文档</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=5111789f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://projects.localizethedocs.org/appimage-docs-l10n/reference/desktop-integration.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=7d86a446"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="Contact" href="../contact.html" />
+    <link rel="prev" title="AppDir specification" href="appdir.html" />
+ 
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AppImage
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../packaging-guide/index.html">Packaging Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="specification.html">AppImage specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="best-practices.html">Best practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appdir.html">AppDir specification</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Desktop integration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AppImage</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Reference</a></li>
+      <li class="breadcrumb-item active">Desktop integration</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/AppImage/docs.appimage.org/blob/master/source/reference/desktop-integration.rst" class="fa fa-github"> 在 GitHub 上编辑</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="顺序式页面导航">
+        <a href="appdir.html" class="btn btn-neutral float-left" title="AppDir specification" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../contact.html" class="btn btn-neutral float-right" title="Contact" accesskey="n">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="desktop-integration">
+<h1>Desktop integration<a class="headerlink" href="#desktop-integration" title="Link to this heading"></a></h1>
+<p>This section discusses how we integrate AppImages into the Linux desktops, what technologies are involved and what customizations and additions we implemented to adapt them to work for AppImages.</p>
+<nav class="contents local" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#desktop-files" id="id1">Desktop files</a></p>
+<ul>
+<li><p><a class="reference internal" href="#custom-keys-introduced-for-appimage-purposes" id="id2">Custom keys introduced for AppImage purposes</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="desktop-files">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Desktop files</a><a class="headerlink" href="#desktop-files" title="Link to this heading"></a></h2>
+<p>A central component of the Linux desktop, so-called <em>desktop entries</em> (or, colloquially, <em>desktop files</em>) are also relevant for AppImage desktop integration. Every AppImage ships with such a file in its <a class="reference internal" href="appdir.html#ref-appdir"><span class="std std-ref">AppDir</span></a>.</p>
+<p>The <a class="reference external" href="https://www.freedesktop.org/">FreeDesktop</a> project maintains the so-called <a class="reference external" href="https://specifications.freedesktop.org/desktop-entry-spec/latest/">Desktop Entry Specification</a>. Desktop Entry files are <a class="reference external" href="https://en.wikipedia.org/wiki/INI_file">INI</a>-style text documents containing key-value pairs, one per line. The file is structured in multiple sections, most notably the <code class="code docutils literal notranslate"><span class="pre">[Desktop</span> <span class="pre">Entry]</span></code>, where the main information goes into. There's a set of mandatory and optional keys to be set in these documents, and there may be additional sections.</p>
+<section id="custom-keys-introduced-for-appimage-purposes">
+<h3><a class="toc-backref" href="#id2" role="doc-backlink">Custom keys introduced for AppImage purposes</a><a class="headerlink" href="#custom-keys-introduced-for-appimage-purposes" title="Link to this heading"></a></h3>
+<p>Aside from the standardized mandatory and optional keys, there may be additional, proprietary keys. They're usually prepended with <code class="code docutils literal notranslate"><span class="pre">X-</span></code> to differentiate between standard and custom keys.</p>
+<p>The AppImage project defined a few custom keys with special meaning that provide information to enhance our desktop integration algorithm.</p>
+<dl>
+<dt>X-AppImage-Name</dt><dd><p>Name of the application. Used to relate two AppImages of the same application but different versions.</p>
+<p><strong>Examples:</strong> <code class="code docutils literal notranslate"><span class="pre">Krita</span></code>, <code class="code docutils literal notranslate"><span class="pre">Kdenlive</span></code>, <code class="code docutils literal notranslate"><span class="pre">Ultimaker</span> <span class="pre">Cura</span></code></p>
+</dd>
+<dt>X-AppImage-Version</dt><dd><p>Version of the application bundled in the AppImage.</p>
+<p><strong>Examples:</strong> <code class="code docutils literal notranslate"><span class="pre">1.0.0-beta-2</span></code>, <code class="code docutils literal notranslate"><span class="pre">2019.1.1</span></code></p>
+</dd>
+<dt>X-AppImage-Arch</dt><dd><p>Architecture of the AppImage.</p>
+<p><strong>Examples:</strong> <code class="code docutils literal notranslate"><span class="pre">x86_64</span></code>, <code class="code docutils literal notranslate"><span class="pre">i386</span></code></p>
+</dd>
+</dl>
+<p><a class="reference internal" href="../introduction/software-overview.html#ref-appimagetool"><span class="std std-ref">appimagetool</span></a> and <span class="xref std std-ref">libappimage</span> currently make use mostly of <code class="code docutils literal notranslate"><span class="pre">X-AppImage-Version</span></code>.</p>
+<div class="admonition seealso">
+<p class="admonition-title">参见</p>
+<p>The following discussions in issue trackers contain some background information:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/AppImage/AppImageKit/issues/59">AppImageKit#59</a></p></li>
+<li><p><a class="reference external" href="https://github.com/AppImage/AppImageKit/issues/662">AppImageKit#662</a></p></li>
+</ul>
+</div></blockquote>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="appdir.html" class="btn btn-neutral float-left" title="AppDir specification" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../contact.html" class="btn btn-neutral float-right" title="Contact" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2018-2022, The AppImage project。
+      <span class="commit">版本 <code>475547d</code>.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

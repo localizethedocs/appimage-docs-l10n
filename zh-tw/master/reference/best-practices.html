@@ -1,0 +1,214 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-TW" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>最佳實務 &mdash; AppImage  說明文件</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=5111789f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://projects.localizethedocs.org/appimage-docs-l10n/reference/best-practices.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=0d9984b1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=cbf116e0"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜尋" href="../search.html" />
+    <link rel="next" title="AppDir 規範" href="appdir.html" />
+    <link rel="prev" title="AppImage 規範" href="specification.html" />
+ 
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AppImage
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">目次：</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">簡介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">使用者指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../packaging-guide/index.html">Packaging Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">參考</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">架構</a></li>
+<li class="toctree-l2"><a class="reference internal" href="specification.html">AppImage 規範</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">最佳實務</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appdir.html">AppDir 規範</a></li>
+<li class="toctree-l2"><a class="reference internal" href="desktop-integration.html">桌面整合</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">聯絡方式</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AppImage</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">參考</a></li>
+      <li class="breadcrumb-item active">最佳實務</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/AppImage/docs.appimage.org/blob/master/source/reference/best-practices.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="specification.html" class="btn btn-neutral float-left" title="AppImage 規範" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="appdir.html" class="btn btn-neutral float-right" title="AppDir 規範" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="best-practices">
+<h1>最佳實務<a class="headerlink" href="#best-practices" title="連結到這個標頭"></a></h1>
+<p>本節包含一些最佳實務與建議，說明如何一般性地設計與撰寫軟體，以便能輕鬆打包成 AppImage。</p>
+<nav class="contents local" id="contents">
+<p class="topic-title">目次</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#general-recommendations" id="id1">一般建議</a></p>
+<ul>
+<li><p><a class="reference internal" href="#binaries-must-not-use-compiled-in-absolute-paths" id="id2">二進位檔不得使用編譯時寫死的絕對路徑</a></p></li>
+<li><p><a class="reference internal" href="#binaries-compiled-on-old-enough-base-system" id="id3">在足夠舊的基礎系統上編譯二進位檔</a></p></li>
+<li><p><a class="reference internal" href="#libstdc-so-6" id="id4">libstdc++.so.6</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="general-recommendations">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">一般建議</a><a class="headerlink" href="#general-recommendations" title="連結到這個標頭"></a></h2>
+<p>務必理解 AppImage 只是用來散布應用程式的格式。就這點而言，AppImage 類似於 <code class="code docutils literal notranslate"><span class="pre">.zip</span></code> 或 <code class="code docutils literal notranslate"><span class="pre">.iso</span></code> 檔案。它並不定義如何編譯應用程式，也不是建置系統。</p>
+<p>務必在 AppImage 中放入能與多種目標系統相容的二進位檔。放入 AppImage 的內容稱為「payload」或「ingredients」。製作 payload 需要一些考量，因為您希望 AppImage 能在越多目標系統上執行越好。</p>
+<p>要讓 AppImage 在大多數系統上執行，需符合以下條件：</p>
+<ol class="arabic simple">
+<li><p>:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>二進位檔不得使用編譯時寫死的絕對路徑 &lt;ref-binaries-no-abs-paths&gt;`（若有使用，需進行二進位修補）</p></li>
+<li><p>AppImage 必須包含所有不一定存在於其目標基礎系統中的函式庫與其他相依項目。</p></li>
+<li><p>AppImage 內的二進位檔必須在不新於其預計支援的最舊基礎系統的環境中編譯。</p></li>
+<li><p>AppImage 應實際在其預計支援的基礎系統上測試。</p></li>
+</ol>
+<section id="binaries-must-not-use-compiled-in-absolute-paths">
+<span id="ref-binaries-no-abs-paths"></span><h3><a class="toc-backref" href="#id2" role="doc-backlink">二進位檔不得使用編譯時寫死的絕對路徑</a><a class="headerlink" href="#binaries-must-not-use-compiled-in-absolute-paths" title="連結到這個標頭"></a></h3>
+<p>由於 AppImage 每次執行時都會掛載到檔案系統中的不同位置，因此絕對不能使用編譯時寫死的絕對路徑。例如，若應用程式要存取影像等資源，應該使用相對於主執行檔的位置。不幸的是，許多應用程式在編譯時就寫死了絕對路徑（<code class="code docutils literal notranslate"><span class="pre">$PREFIX</span></code>，最常見為 <code class="code docutils literal notranslate"><span class="pre">/usr</span></code>）。</p>
+<section id="open-source-applications">
+<span id="ref-open-source-applications"></span><h4>開放原始碼應用程式<a class="headerlink" href="#open-source-applications" title="連結到這個標頭"></a></h4>
+<p>在可行的情況下，應修改應用程式原始碼以避免使用絕對路徑。有多種做法，其中在 Linux 上的典型方式是解析 <code class="docutils literal notranslate"><span class="pre">proc/self/exe</span></code> 取得主執行檔路徑，再由此建立相對路徑。如此可同時在一般安裝與可搬移安裝（如 AppImage）中正常運作。</p>
+<p>有些函式庫可簡化此流程，例如 <a class="reference external" href="https://github.com/limbahq/binreloc">BinReloc</a>。也可參考 <a class="reference external" href="https://github.com/drbenmorgan/Resourceful">Resourceful</a>，該專案研究跨平台技術，用於建置會使用資源檔（如圖示、設定、資料）的應用程式與函式庫。</p>
+<p>某些應用程式框架（如 Qt）已內建此功能，例如 <a href="#id1"><span class="problematic" id="id2">:code:`QString QCoreApplication::applicationDirPath()`（`參見文件`_</span></a>），並由此建立指向 <code class="code docutils literal notranslate"><span class="pre">../share/kaidan/images/</span></code> 的 <em>相對</em> 路徑。</p>
+<div class="admonition seealso">
+<p class="admonition-title">也參考</p>
+<p>範例請見：<a class="reference external" href="https://github.com/KaidanIM/Kaidan/commit/da38011b55a1aa5d17764647ecd699deb4be437f">https://github.com/KaidanIM/Kaidan/commit/da38011b55a1aa5d17764647ecd699deb4be437f</a></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p><code class="code docutils literal notranslate"><span class="pre">QStandardPaths::standardLocations(QStandardPaths::AppDataLocation)</span></code> <strong>無法可靠運作。</strong></p>
+<p>依 <a class="reference external" href="https://doc.qt.io/qt-5/qstandardpaths.html">Qt 文件</a>，其會解析為 <code class="code docutils literal notranslate"><span class="pre">~/.local/share/&lt;APPNAME&gt;</span></code>、<code class="code docutils literal notranslate"><span class="pre">/usr/local/share/&lt;APPNAME&gt;</span></code>、<code class="code docutils literal notranslate"><span class="pre">/usr/share/&lt;APPNAME&gt;</span></code>，但很明顯 <code class="code docutils literal notranslate"><span class="pre">/usr</span></code> 並不是 AppImage 中這些內容所在的位置。</p>
+</div>
+</section>
+<section id="closed-source-applications-with-compiled-in-absolute-paths">
+<span id="ref-closed-source-apps-abs-paths"></span><h4>含有編譯時寫死絕對路徑的閉源應用程式<a class="headerlink" href="#closed-source-applications-with-compiled-in-absolute-paths" title="連結到這個標頭"></a></h4>
+<p>若無法更改應用程式原始碼（例如閉源應用程式），可以對可執行檔進行二進位修補。</p>
+<p>技巧是在二進位檔中搜尋 <code class="code docutils literal notranslate"><span class="pre">/usr</span></code>，並將其替換為等長字串 :code:<a href="#id1"><span class="problematic" id="id2">`</span></a>././<a href="#id3"><span class="problematic" id="id4">`</span></a>（意即「這裡」）。可用以下命令執行：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="n">usr</span><span class="o">/</span> <span class="o">-</span><span class="nb">type</span> <span class="n">f</span> <span class="o">-</span><span class="n">executable</span> <span class="o">-</span><span class="n">exec</span> <span class="n">sed</span> <span class="o">-</span><span class="n">i</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&quot;s|/usr|././|g&quot;</span> <span class="p">{}</span> \<span class="p">;</span>
+</pre></div>
+</div>
+<p>此命令也可在 <a class="reference external" href="https://github.com/AppImage/pkg2appimage/blob/9249a99e653272416c8ee8f42cecdde12573ba3e/functions.sh#L79">AppImage/pkg2appimage/functions.sh#L79</a> 的 bash 函式集合中找到。要讓二進位修補後的應用程式運作，啟動前需切換到應用程式目錄內的 <code class="code docutils literal notranslate"><span class="pre">usr/</span></code> 目錄。</p>
+</section>
+</section>
+<section id="binaries-compiled-on-old-enough-base-system">
+<span id="ref-binaries-compiled-on-old-system"></span><h3><a class="toc-backref" href="#id3" role="doc-backlink">在足夠舊的基礎系統上編譯二進位檔</a><a class="headerlink" href="#binaries-compiled-on-old-enough-base-system" title="連結到這個標頭"></a></h3>
+<p>AppImage 使用的 ingredients 不應在比其預計支援的最舊基礎系統還新的系統上建置。</p>
+<p>某些核心函式庫（如 glibc）常會破壞與舊版基礎系統的相容性，這代表二進位檔能在較新的系統上執行，但無法在比其編譯環境更舊的系統上執行。</p>
+<p>若您遇到如下錯誤：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>failed to initialize: /lib/tls/i686/cmov/libc.so.6: version `GLIBC_2.11&#39; not found
+</pre></div>
+</div>
+<p>這表示該二進位檔是在比您嘗試執行它的系統更新的系統上編譯的。您應使用在較舊系統上編譯的二進位檔。不幸的是，多數散布版通常只在最新系統上編譯最新版應用程式，因此您很難找到能在舊系統上執行的前沿軟體二進位檔。其中一種做法是自己在較舊的基礎系統上編譯相依項目，或使用 <a class="reference external" href="https://github.com/AppImage/AppImageKit/tree/stable/v1.0/LibcWrapGenerator">LibcWrapGenerator</a>、<a class="reference external" href="https://github.com/wheybags/glibc_version_header">glibc_version_header</a> 或 <a class="reference external" href="https://github.com/sulix/bingcc">bingcc</a>。</p>
+<p>在為 Subsurface 專案製作 AppImage 時，我們使用 <strong>CentOS 7</strong> 得到非常好的結果。這是撰寫本文時仍受支援的最舊 Linux 散布版，且不算太新。不過在 <a class="reference external" href="https://fedoraproject.org/wiki/EPEL">EPEL</a> 與 <a class="reference external" href="http://people.centos.org/tru/devtools-2/">devtools-2</a> 儲存庫（社群版的 Red Hat Developer Toolset 2）中仍有最新的 Qt 與現代編譯器。在此散布版上編譯出的二進位檔幾乎可在任何散布版上執行，包括 <strong>Debian oldstable</strong>。</p>
+<p>務必查看 <a class="reference external" href="https://github.com/AppImage/pkg2appimage">https://github.com/AppImage/pkg2appimage</a>，這是我用來建置並託管 AppImage 的方式，以及在雲端使用 travis-ci、docker、docker-hub 與 bintray 產出它們的建置系統。特別請查看 Subsurface 與 Scribus 的 recipes。</p>
+<p>請參閱 <a class="reference external" href="https://github.com/AppImage/AppImageKit/wiki/Docker-Hub-Travis-CI-Workflow">https://github.com/AppImage/AppImageKit/wiki/Docker-Hub-Travis-CI-Workflow</a>，了解如何建立包含 GitHub 儲存庫、Docker Hub 與 Travis CI 的全自動持續建置流程。</p>
+<p>您也可以考慮將某些較特殊的函式庫以靜態方式連結。是的，連 Debian 都這麼做：<a class="reference external" href="https://wiki.debian.org/Lintian">https://wiki.debian.org/Lintian</a></p>
+<div class="admonition seealso">
+<p class="admonition-title">也參考</p>
+<p>此概念也在 <a class="reference internal" href="../introduction/concepts.html#build-on-old-systems"><span class="std std-ref">在舊系統上建置，在新系統上執行</span></a> 中說明。</p>
+</div>
+</section>
+<section id="libstdc-so-6">
+<span id="ref-libstdc-so-6"></span><h3><a class="toc-backref" href="#id4" role="doc-backlink">libstdc++.so.6</a><a class="headerlink" href="#libstdc-so-6" title="連結到這個標頭"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p><strong>一般經驗法則是：請使用不新於您仍想支援的最舊散布版所隨附的 libstdc++.so.6，亦即仍受支援的最舊 Ubuntu LTS 版本。</strong></p>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="specification.html" class="btn btn-neutral float-left" title="AppImage 規範" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="appdir.html" class="btn btn-neutral float-right" title="AppDir 規範" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2022, The AppImage project.
+      <span class="commit">Revision <code>475547d</code>.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

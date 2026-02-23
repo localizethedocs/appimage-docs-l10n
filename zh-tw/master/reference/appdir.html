@@ -1,0 +1,205 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-TW" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AppDir 規範 &mdash; AppImage  說明文件</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=5111789f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://projects.localizethedocs.org/appimage-docs-l10n/reference/appdir.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=0d9984b1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=cbf116e0"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜尋" href="../search.html" />
+    <link rel="next" title="桌面整合" href="desktop-integration.html" />
+    <link rel="prev" title="最佳實務" href="best-practices.html" />
+ 
+<script type="text/javascript" src="../ltd-provenance.js"></script>
+<script type="text/javascript" src="../ltd-current.js"></script>
+<script type="text/javascript" src="../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../ltd-flyout.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AppImage
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">目次：</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">簡介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">使用者指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../packaging-guide/index.html">Packaging Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">參考</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">架構</a></li>
+<li class="toctree-l2"><a class="reference internal" href="specification.html">AppImage 規範</a></li>
+<li class="toctree-l2"><a class="reference internal" href="best-practices.html">最佳實務</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">AppDir 規範</a></li>
+<li class="toctree-l2"><a class="reference internal" href="desktop-integration.html">桌面整合</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">聯絡方式</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AppImage</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">參考</a></li>
+      <li class="breadcrumb-item active">AppDir 規範</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/AppImage/docs.appimage.org/blob/master/source/reference/appdir.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="best-practices.html" class="btn btn-neutral float-left" title="最佳實務" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="desktop-integration.html" class="btn btn-neutral float-right" title="桌面整合" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="appdir-specification">
+<span id="ref-appdir"></span><span id="ref-appdir-specification"></span><h1>AppDir 規範<a class="headerlink" href="#appdir-specification" title="連結到這個標頭"></a></h1>
+<p>本頁說明 <em>AppDir</em> 格式。AppDir 是 AppImage 的「來源」。在建置 AppImage 時，會由此類目錄建立檔案系統映像，並在前面加上執行階段。</p>
+<nav class="contents local" id="contents">
+<p class="topic-title">目次</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#history" id="id9">歷史</a></p></li>
+<li><p><a class="reference internal" href="#general-description" id="id10">一般說明</a></p></li>
+<li><p><a class="reference internal" href="#conventions" id="id11">慣例</a></p></li>
+</ul>
+</nav>
+<section id="history">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">歷史</a><a class="headerlink" href="#history" title="連結到這個標頭"></a></h2>
+<p>AppDir 格式最早由 <a class="reference external" href="http://rox.sourceforge.net/desktop/AppDirs.html">ROX Filer</a> 描述，之後由 AppImage 專案擴充以符合其需求。</p>
+</section>
+<section id="general-description">
+<span id="ref-diricon"></span><h2><a class="toc-backref" href="#id10" role="doc-backlink">一般說明</a><a class="headerlink" href="#general-description" title="連結到這個標頭"></a></h2>
+<p>顧名思義，AppDir 是帶有特定內容的一般目錄。AppDir 格式源自 ROX Filer <a class="reference external" href="http://rox.sourceforge.net/desktop/AppDirs.html">http://rox.sourceforge.net/desktop/AppDirs.html</a>：</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">AppRun</span></code></dt><dd><p>用來作為特定應用程式「入口點」的檔案（可執行檔、腳本等）或符號連結。它位於構成 AppDir 的根目錄，因此可用來計算相對於（稍後掛載的）AppDir 的路徑。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">.DirIcon</span></code></dt><dd><p>位於根目錄的 PNG 圖示。可供縮圖工具等使用，以顯示應用程式圖示而非通用檔案類型符號。尺寸應為標準圖像大小之一，例如 128x128 或 256x256 像素。</p>
+</dd>
+</dl>
+<p>以上兩個項目沿用自 <a class="reference external" href="http://rox.sourceforge.net/desktop/AppDirs.html">ROX Filer</a> 的規範。雖然 <a class="reference external" href="http://rox.sourceforge.net/desktop/AppDirs.html">ROX Filer</a> 另有其他（可選）項目，但 AppImage 未使用它們，而是新增了下列項目：</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">myapp.desktop</span></code></dt><dd><p>位於根目錄的桌面檔，用於描述實際應用程式。由於 AppImage 遵循 <a class="reference internal" href="../introduction/concepts.html#one-app-one-file-principle"><span class="std std-ref">one app = one file</span></a> 原則，一個桌面檔就足以描述整個 AppImage。根目錄中 <a href="#id1"><span class="problematic" id="id2">|不得|</span></a> 有超過一個桌面檔。檔名不限，只要副檔名為 <code class="docutils literal notranslate"><span class="pre">.desktop</span></code> 即可。可為指向如 <code class="docutils literal notranslate"><span class="pre">usr/share/applications/...</span></code> 等子目錄的符號連結。</p>
+</dd>
+</dl>
+<dl id="root-icon">
+<dt><code class="docutils literal notranslate"><span class="pre">myapp.&lt;圖示副檔名&gt;``（例如</span> <span class="pre">``myapp.png</span></code>、<code class="docutils literal notranslate"><span class="pre">myapp.svg</span></code>）</dt><dd><p>應用程式圖示的最佳可用品質版本，理想情況為向量圖。可為指向 <code class="docutils literal notranslate"><span class="pre">usr/share/icons/hicolor/...</span></code> 等子目錄的符號連結。多數情況下，<a class="reference internal" href="#ref-diricon"><span class="std std-ref">.DirIcon</span></a> 會是此檔案的符號連結。檔名必須與桌面檔中 <code class="docutils literal notranslate"><span class="pre">Icon=</span></code> 欄位所設定的值一致。AppImage 以及 XDG 圖示規範建議使用與桌面檔同名的全小寫檔名。</p>
+<div class="admonition note">
+<p class="admonition-title">備註</p>
+<p><code class="docutils literal notranslate"><span class="pre">Icon=</span></code> 欄位 <a href="#id3"><span class="problematic" id="id4">|不應|</span></a> 包含副檔名，但實際檔名 <a href="#id5"><span class="problematic" id="id6">|應|</span></a> 含有副檔名。</p>
+</div>
+</dd>
+</dl>
+<p>以上四種類型的項目 <a href="#id7"><span class="problematic" id="id8">|必須|</span></a> 包含於 AppDir 中，才能符合此規範。</p>
+</section>
+<section id="conventions">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">慣例</a><a class="headerlink" href="#conventions" title="連結到這個標頭"></a></h2>
+<p>與前一節的規則不同，本節介紹的內容並非基本要求。不過這是建議用於 AppDir 的應用程式結構。它採用了廣為人知的 Linux 標準概念，例如 <a class="reference external" href="https://wiki.linuxfoundation.org/lsb/start">Filesystem Hierarchy Standard`_（`Linux Standards Base</a> 的一部分）。</p>
+<div class="admonition seealso">
+<p class="admonition-title">也參考</p>
+<p>FHS 的良好摘要可參考 <a class="reference external" href="https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard">Wikipedia</a>。</p>
+</div>
+<section id="usr-subdirectory">
+<h3><code class="docutils literal notranslate"><span class="pre">usr</span></code> 子目錄<a class="headerlink" href="#usr-subdirectory" title="連結到這個標頭"></a></h3>
+<p>依照 FHS，大多數 AppDir（尤其是由 <a class="reference internal" href="../packaging-guide/from-source/linuxdeploy-user-guide.html#ref-linuxdeploy"><span class="std std-ref">linuxdeploy</span></a> 等官方工具建立的）都包含 <code class="docutils literal notranslate"><span class="pre">usr</span></code> 目錄。</p>
+<p><code class="docutils literal notranslate"><span class="pre">usr</span></code> 最初是 <em>unix system resources</em> 的縮寫。依 FHS 定義，該目錄包含共享的唯讀資料，這正符合 AppImage 的需求，因為 AppImage 也是唯讀。</p>
+<p>此目錄會以不同子目錄分別包含應用程式、（共享）函式庫、桌面檔、圖示等。其中只有少數對 AppDir 有用：</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">bin</span></code></dt><dd><p>可供使用者執行的可執行檔。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">lib</span></code></dt><dd><p><code class="docutils literal notranslate"><span class="pre">bin</span></code> 中的應用程式使用的（共享）函式庫。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">share</span></code></dt><dd><p>與架構無關的（共享）資料。在此目錄中常見的特殊子目錄包括：</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">applications</span></code></dt><dd><p>包含 <code class="docutils literal notranslate"><span class="pre">bin</span></code> 中應用程式的桌面檔。通常此目錄只有一個桌面檔，並會在根目錄建立符號連結。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">icons</span></code></dt><dd><p>包含所謂的 <a class="reference external" href="https://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html">icon themes</a> 的目錄。至少包含一個，且常包含主應用程式的一組圖示。圖示由根目錄的桌面檔參照，因此同樣適用 <a class="reference internal" href="#root-icon"><span class="std std-ref">相同限制</span></a>。範例路徑：<code class="docutils literal notranslate"><span class="pre">&lt;root&gt;/usr/share/icons/&lt;theme&gt;/&lt;resolution&gt;/apps/myapp.&lt;ext&gt;</span></code>，例如 <code class="docutils literal notranslate"><span class="pre">&lt;root&gt;/usr/share/icons/hicolor/256x256/apps/myapp.png</span></code>。置於此目錄的圖示主題會在所謂 <a class="reference internal" href="../user-guide/run-appimages.html#ref-desktop-integration"><span class="std std-ref">桌面整合</span></a> 時被複製到系統。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+<section id="summary">
+<h3>總結<a class="headerlink" href="#summary" title="連結到這個標頭"></a></h3>
+<p>現代打包工具（如 <a class="reference internal" href="../packaging-guide/from-source/linuxdeploy-user-guide.html#ref-linuxdeploy"><span class="std std-ref">linuxdeploy</span></a>）預設會建立上述目錄，以標準化並一致化 AppDir 的建立流程。若您打算 <a class="reference internal" href="../packaging-guide/manual.html#ref-manual"><span class="std std-ref">手動建立 AppDir</span></a>，建議遵循這些建議。</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="best-practices.html" class="btn btn-neutral float-left" title="最佳實務" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="desktop-integration.html" class="btn btn-neutral float-right" title="桌面整合" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2022, The AppImage project.
+      <span class="commit">Revision <code>475547d</code>.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

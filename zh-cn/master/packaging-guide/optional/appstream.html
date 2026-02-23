@@ -1,0 +1,987 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AppStream metadata &mdash; AppImage  文档</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=5111789f" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="canonical" href="https://projects.localizethedocs.org/appimage-docs-l10n/packaging-guide/optional/appstream.html" />
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=7d86a446"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/translations.js?v=beaddf03"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Hosted services" href="../hosted-services/index.html" />
+    <link rel="prev" title="Signing AppImages" href="signatures.html" />
+ 
+<script type="text/javascript" src="../../ltd-provenance.js"></script>
+<script type="text/javascript" src="../../ltd-current.js"></script>
+<script type="text/javascript" src="../../../../ltd-config.js"></script>
+<script type="text/javascript" src="../../../../ltd-flyout.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            AppImage
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/index.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Packaging Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">Introduction to Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../from-source/index.html">Packaging from source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../converting-binary-packages/index.html">Converting binary packages</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Optional Resources and Features</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="updates.html">Making AppImages updateable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signatures.html">Signing AppImages</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">AppStream metadata</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../hosted-services/index.html">Hosted services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual.html">Manual packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing.html">Testing your AppImage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../distribution.html">Distributing AppImages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment-variables.html">Environment variables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/index.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">AppImage</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Packaging Guide</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Optional Resources and Features</a></li>
+      <li class="breadcrumb-item active">AppStream metadata</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/AppImage/docs.appimage.org/blob/master/source/packaging-guide/optional/appstream.rst" class="fa fa-github"> 在 GitHub 上编辑</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="顺序式页面导航">
+        <a href="signatures.html" class="btn btn-neutral float-left" title="Signing AppImages" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../hosted-services/index.html" class="btn btn-neutral float-right" title="Hosted services" accesskey="n">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="appstream-metadata">
+<span id="ref-appstream"></span><h1>AppStream metadata<a class="headerlink" href="#appstream-metadata" title="Link to this heading"></a></h1>
+<p>AppStream is a cross-distribution effort for providing metadata for software in the (Linux) ecosystem.
+It provides a convenient way to get information about not installed software,
+and is one of the building blocks for software centers.</p>
+<nav class="contents local" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#why-should-i-include-appstream-metadata-in-my-appimage" id="id1">Why should I include AppStream metadata in my AppImage?</a></p></li>
+<li><p><a class="reference internal" href="#using-the-appstream-generator" id="id2">Using the AppStream generator</a></p></li>
+<li><p><a class="reference internal" href="#embedding-the-appstream-metadata" id="id3">Embedding the AppStream metadata</a></p></li>
+</ul>
+</nav>
+<section id="why-should-i-include-appstream-metadata-in-my-appimage">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Why should I include AppStream metadata in my AppImage?</a><a class="headerlink" href="#why-should-i-include-appstream-metadata-in-my-appimage" title="Link to this heading"></a></h2>
+<p>Desktop environments, file managers, AppImage catalogs, software centers, and app stores can use metadata about the application from inside the AppImage to get a description, URLs, screenshots, and other information that describes the application. This optional metadata travels inside the AppImage.</p>
+<p>So if you would like your application to show a nice screenshot in app centers, you should add an AppStream metainfo file to your AppImage. AppStream is a format that exists independently of AppImage and can be used in conjunction with other packaging formats as well. Many open source applications already come with AppStream metainfo files by default.</p>
+<div class="admonition seealso">
+<p class="admonition-title">参见</p>
+<p>More information on AppStream can be found on the <a class="reference external" href="https://www.freedesktop.org/software/appstream/docs/chap-Quickstart.html#sect-Quickstart-DesktopApps">FreeDesktop.org pages</a>.</p>
+</div>
+</section>
+<section id="using-the-appstream-generator">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Using the AppStream generator</a><a class="headerlink" href="#using-the-appstream-generator" title="Link to this heading"></a></h2>
+<p>An easy way to generate an AppStream metainfo file is to use our generator below.</p>
+<!-- note that this function requires a Sphinx theme that ships JQuery (rtd for instance does) -->
+<!-- using appstream-generator as a container to make sure none of our scripting interferes with the page we embed this into -->
+<div id="appstream-generator" style="margin-top: 1em; margin-bottom: 1em;">
+    <h4>General Settings</h4>
+    <table>
+      <tr>
+        <td width="200px">Metadata license:</td>
+        <td>
+          <select id="metadata_license">
+            <option value="CC0-1.0" selected="selected">CC0-1.0</option>
+            <option value="Glide">3dfx Glide License</option>
+            <option value="Abstyles">Abstyles License</option>
+            <option value="AFL-1.1">Academic Free License v1.1</option>
+            <option value="AFL-1.2">Academic Free License v1.2</option>
+            <option value="AFL-2.0">Academic Free License v2.0</option>
+            <option value="AFL-2.1">Academic Free License v2.1</option>
+            <option value="AFL-3.0">Academic Free License v3.0</option>
+            <option value="AMPAS">Academy of Motion Picture Arts and Sciences BSD</option>
+            <option value="APL-1.0">Adaptive Public License 1.0</option>
+            <option value="Adobe-Glyph">Adobe Glyph List License</option>
+            <option value="APAFML">Adobe Postscript AFM License</option>
+            <option value="Adobe-2006">Adobe Systems Incorporated Source Code License Agreement</option>
+            <option value="AGPL-1.0">Affero General Public License v1.0</option>
+            <option value="Afmparse">Afmparse License</option>
+            <option value="Aladdin">Aladdin Free Public License</option>
+            <option value="ADSL">Amazon Digital Services License</option>
+            <option value="AMDPLPA">AMD"s plpa_map.c License</option>
+            <option value="ANTLR-PD">ANTLR Software Rights Notice</option>
+            <option value="Apache-1.0">Apache License 1.0</option>
+            <option value="Apache-1.1">Apache License 1.1</option>
+            <option value="Apache-2.0">Apache License 2.0</option>
+            <option value="AML">Apple MIT License</option>
+            <option value="APSL-1.0">Apple Public Source License 1.0</option>
+            <option value="APSL-1.1">Apple Public Source License 1.1</option>
+            <option value="APSL-1.2">Apple Public Source License 1.2</option>
+            <option value="APSL-2.0">Apple Public Source License 2.0</option>
+            <option value="Artistic-1.0">Artistic License 1.0</option>
+            <option value="Artistic-1.0-Perl">Artistic License 1.0 (Perl)</option>
+            <option value="Artistic-1.0-cl8">Artistic License 1.0 w/clause 8</option>
+            <option value="Artistic-2.0">Artistic License 2.0</option>
+            <option value="AAL">Attribution Assurance License</option>
+            <option value="Bahyph">Bahyph License</option>
+            <option value="Barr">Barr License</option>
+            <option value="Beerware">Beerware License</option>
+            <option value="BitTorrent-1.0">BitTorrent Open Source License v1.0</option>
+            <option value="BitTorrent-1.1">BitTorrent Open Source License v1.1</option>
+            <option value="BSL-1.0">Boost Software License 1.0</option>
+            <option value="Borceux">Borceux license</option>
+            <option value="BSD-2-Clause">BSD 2-clause "Simplified" License</option>
+            <option value="BSD-2-Clause-FreeBSD">BSD 2-clause FreeBSD License</option>
+            <option value="BSD-2-Clause-NetBSD">BSD 2-clause NetBSD License</option>
+            <option value="BSD-3-Clause">BSD 3-clause "New" or "Revised" License</option>
+            <option value="BSD-3-Clause-Clear">BSD 3-clause Clear License</option>
+            <option value="BSD-3-Clause-No-Nuclear-License">BSD 3-Clause No Nuclear License</option>
+            <option value="BSD-3-Clause-No-Nuclear-License-2014">BSD 3-Clause No Nuclear License 2014</option>
+            <option value="BSD-3-Clause-No-Nuclear-Warranty">BSD 3-Clause No Nuclear Warranty</option>
+            <option value="BSD-4-Clause">BSD 4-clause "Original" or "Old" License</option>
+            <option value="BSD-Protection">BSD Protection License</option>
+            <option value="BSD-Source-Code">BSD Source Code Attribution</option>
+            <option value="BSD-3-Clause-Attribution">BSD with attribution</option>
+            <option value="0BSD">BSD Zero Clause License</option>
+            <option value="BSD-4-Clause-UC">BSD-4-Clause (University of California-Specific)</option>
+            <option value="bzip2-1.0.5">bzip2 and libbzip2 License v1.0.5</option>
+            <option value="bzip2-1.0.6">bzip2 and libbzip2 License v1.0.6</option>
+            <option value="Caldera">Caldera License</option>
+            <option value="CECILL-1.0">CeCILL Free Software License Agreement v1.0</option>
+            <option value="CECILL-1.1">CeCILL Free Software License Agreement v1.1</option>
+            <option value="CECILL-2.0">CeCILL Free Software License Agreement v2.0</option>
+            <option value="CECILL-2.1">CeCILL Free Software License Agreement v2.1</option>
+            <option value="CECILL-B">CeCILL-B Free Software License Agreement</option>
+            <option value="CECILL-C">CeCILL-C Free Software License Agreement</option>
+            <option value="ClArtistic">Clarified Artistic License</option>
+            <option value="MIT-CMU">CMU License</option>
+            <option value="CNRI-Jython">CNRI Jython License</option>
+            <option value="CNRI-Python">CNRI Python License</option>
+            <option value="CNRI-Python-GPL-Compatible">CNRI Python Open Source GPL Compatible License Agreement</option>
+            <option value="CPOL-1.02">Code Project Open License 1.02</option>
+            <option value="CDDL-1.0">Common Development and Distribution License 1.0</option>
+            <option value="CDDL-1.1">Common Development and Distribution License 1.1</option>
+            <option value="CPAL-1.0">Common Public Attribution License 1.0</option>
+            <option value="CPL-1.0">Common Public License 1.0</option>
+            <option value="CATOSL-1.1">Computer Associates Trusted Open Source License 1.1</option>
+            <option value="Condor-1.1">Condor Public License v1.1</option>
+            <option value="CC-BY-1.0">Creative Commons Attribution 1.0</option>
+            <option value="CC-BY-2.0">Creative Commons Attribution 2.0</option>
+            <option value="CC-BY-2.5">Creative Commons Attribution 2.5</option>
+            <option value="CC-BY-3.0">Creative Commons Attribution 3.0</option>
+            <option value="CC-BY-4.0">Creative Commons Attribution 4.0</option>
+            <option value="CC-BY-ND-1.0">Creative Commons Attribution No Derivatives 1.0</option>
+            <option value="CC-BY-ND-2.0">Creative Commons Attribution No Derivatives 2.0</option>
+            <option value="CC-BY-ND-2.5">Creative Commons Attribution No Derivatives 2.5</option>
+            <option value="CC-BY-ND-3.0">Creative Commons Attribution No Derivatives 3.0</option>
+            <option value="CC-BY-ND-4.0">Creative Commons Attribution No Derivatives 4.0</option>
+            <option value="CC-BY-NC-1.0">Creative Commons Attribution Non Commercial 1.0</option>
+            <option value="CC-BY-NC-2.0">Creative Commons Attribution Non Commercial 2.0</option>
+            <option value="CC-BY-NC-2.5">Creative Commons Attribution Non Commercial 2.5</option>
+            <option value="CC-BY-NC-3.0">Creative Commons Attribution Non Commercial 3.0</option>
+            <option value="CC-BY-NC-4.0">Creative Commons Attribution Non Commercial 4.0</option>
+            <option value="CC-BY-NC-ND-1.0">Creative Commons Attribution Non Commercial No Derivatives 1.0</option>
+            <option value="CC-BY-NC-ND-2.0">Creative Commons Attribution Non Commercial No Derivatives 2.0</option>
+            <option value="CC-BY-NC-ND-2.5">Creative Commons Attribution Non Commercial No Derivatives 2.5</option>
+            <option value="CC-BY-NC-ND-3.0">Creative Commons Attribution Non Commercial No Derivatives 3.0</option>
+            <option value="CC-BY-NC-ND-4.0">Creative Commons Attribution Non Commercial No Derivatives 4.0</option>
+            <option value="CC-BY-NC-SA-1.0">Creative Commons Attribution Non Commercial Share Alike 1.0</option>
+            <option value="CC-BY-NC-SA-2.0">Creative Commons Attribution Non Commercial Share Alike 2.0</option>
+            <option value="CC-BY-NC-SA-2.5">Creative Commons Attribution Non Commercial Share Alike 2.5</option>
+            <option value="CC-BY-NC-SA-3.0">Creative Commons Attribution Non Commercial Share Alike 3.0</option>
+            <option value="CC-BY-NC-SA-4.0">Creative Commons Attribution Non Commercial Share Alike 4.0</option>
+            <option value="CC-BY-SA-1.0">Creative Commons Attribution Share Alike 1.0</option>
+            <option value="CC-BY-SA-2.0">Creative Commons Attribution Share Alike 2.0</option>
+            <option value="CC-BY-SA-2.5">Creative Commons Attribution Share Alike 2.5</option>
+            <option value="CC-BY-SA-3.0">Creative Commons Attribution Share Alike 3.0</option>
+            <option value="CC-BY-SA-4.0">Creative Commons Attribution Share Alike 4.0</option>
+            <option value="CC0-1.0">Creative Commons Zero v1.0 Universal</option>
+            <option value="Crossword">Crossword License</option>
+            <option value="CrystalStacker">CrystalStacker License</option>
+            <option value="CUA-OPL-1.0">CUA Office Public License v1.0</option>
+            <option value="Cube">Cube License</option>
+            <option value="curl">curl License</option>
+            <option value="D-FSL-1.0">Deutsche Freie Software Lizenz</option>
+            <option value="diffmark">diffmark license</option>
+            <option value="WTFPL">Do What The F*ck You Want To Public License</option>
+            <option value="DOC">DOC License</option>
+            <option value="Dotseqn">Dotseqn License</option>
+            <option value="DSDP">DSDP License</option>
+            <option value="dvipdfm">dvipdfm License</option>
+            <option value="EPL-1.0">Eclipse Public License 1.0</option>
+            <option value="ECL-1.0">Educational Community License v1.0</option>
+            <option value="ECL-2.0">Educational Community License v2.0</option>
+            <option value="eGenix">eGenix.com Public License 1.1.0</option>
+            <option value="EFL-1.0">Eiffel Forum License v1.0</option>
+            <option value="EFL-2.0">Eiffel Forum License v2.0</option>
+            <option value="MIT-advertising">Enlightenment License (e16)</option>
+            <option value="MIT-enna">enna License</option>
+            <option value="Entessa">Entessa Public License v1.0</option>
+            <option value="ErlPL-1.1">Erlang Public License v1.1</option>
+            <option value="EUDatagrid">EU DataGrid Software License</option>
+            <option value="EUPL-1.0">European Union Public License 1.0</option>
+            <option value="EUPL-1.1">European Union Public License 1.1</option>
+            <option value="Eurosym">Eurosym License</option>
+            <option value="Fair">Fair License</option>
+            <option value="MIT-feh">feh License</option>
+            <option value="Frameworx-1.0">Frameworx Open License 1.0</option>
+            <option value="FreeImage">FreeImage Public License v1.0</option>
+            <option value="FTL">Freetype Project License</option>
+            <option value="FSFAP">FSF All Permissive License</option>
+            <option value="FSFUL">FSF Unlimited License</option>
+            <option value="FSFULLR">FSF Unlimited License (with License Retention)</option>
+            <option value="Giftware">Giftware License</option>
+            <option value="GL2PS">GL2PS License</option>
+            <option value="Glulxe">Glulxe License</option>
+            <option value="AGPL-3.0">GNU Affero General Public License v3.0</option>
+            <option value="GFDL-1.1">GNU Free Documentation License v1.1</option>
+            <option value="GFDL-1.2">GNU Free Documentation License v1.2</option>
+            <option value="GFDL-1.3">GNU Free Documentation License v1.3</option>
+            <option value="GPL-1.0">GNU General Public License v1.0 only</option>
+            <option value="GPL-2.0">GNU General Public License v2.0 only</option>
+            <option value="GPL-3.0">GNU General Public License v3.0 only</option>
+            <option value="LGPL-2.1">GNU Lesser General Public License v2.1 only</option>
+            <option value="LGPL-3.0">GNU Lesser General Public License v3.0 only</option>
+            <option value="LGPL-2.0">GNU Library General Public License v2 only</option>
+            <option value="gnuplot">gnuplot License</option>
+            <option value="gSOAP-1.3b">gSOAP Public License v1.3b</option>
+            <option value="HaskellReport">Haskell Language Report License</option>
+            <option value="HPND">Historic Permission Notice and Disclaimer</option>
+            <option value="IBM-pibs">IBM PowerPC Initialization and Boot Software</option>
+            <option value="IPL-1.0">IBM Public License v1.0</option>
+            <option value="ICU">ICU License</option>
+            <option value="ImageMagick">ImageMagick License</option>
+            <option value="iMatix">iMatix Standard Function Library Agreement</option>
+            <option value="Imlib2">Imlib2 License</option>
+            <option value="IJG">Independent JPEG Group License</option>
+            <option value="Info-ZIP">Info-ZIP License</option>
+            <option value="Intel-ACPI">Intel ACPI Software License Agreement</option>
+            <option value="Intel">Intel Open Source License</option>
+            <option value="Interbase-1.0">Interbase Public License v1.0</option>
+            <option value="IPA">IPA Font License</option>
+            <option value="ISC">ISC License</option>
+            <option value="JasPer-2.0">JasPer License</option>
+            <option value="JSON">JSON License</option>
+            <option value="LPPL-1.0">LaTeX Project Public License v1.0</option>
+            <option value="LPPL-1.1">LaTeX Project Public License v1.1</option>
+            <option value="LPPL-1.2">LaTeX Project Public License v1.2</option>
+            <option value="LPPL-1.3a">LaTeX Project Public License v1.3a</option>
+            <option value="LPPL-1.3c">LaTeX Project Public License v1.3c</option>
+            <option value="Latex2e">Latex2e License</option>
+            <option value="BSD-3-Clause-LBNL">Lawrence Berkeley National Labs BSD variant license</option>
+            <option value="Leptonica">Leptonica License</option>
+            <option value="LGPLLR">Lesser General Public License For Linguistic Resources</option>
+            <option value="Libpng">libpng License</option>
+            <option value="libtiff">libtiff License</option>
+            <option value="LAL-1.2">Licence Art Libre 1.2</option>
+            <option value="LAL-1.3">Licence Art Libre 1.3</option>
+            <option value="LiLiQ-P-1.1">Licence Libre du Québec – Permissive version 1.1</option>
+            <option value="LiLiQ-Rplus-1.1">Licence Libre du Québec – Réciprocité forte version 1.1</option>
+            <option value="LiLiQ-R-1.1">Licence Libre du Québec – Réciprocité version 1.1</option>
+            <option value="LPL-1.02">Lucent Public License v1.02</option>
+            <option value="LPL-1.0">Lucent Public License Version 1.0</option>
+            <option value="MakeIndex">MakeIndex License</option>
+            <option value="MTLL">Matrix Template Library License</option>
+            <option value="MS-PL">Microsoft Public License</option>
+            <option value="MS-RL">Microsoft Reciprocal License</option>
+            <option value="MirOS">MirOS Licence</option>
+            <option value="MITNFA">MIT +no-false-attribs license</option>
+            <option value="MIT">MIT License</option>
+            <option value="Motosoto">Motosoto License</option>
+            <option value="MPL-1.0">Mozilla Public License 1.0</option>
+            <option value="MPL-1.1">Mozilla Public License 1.1</option>
+            <option value="MPL-2.0">Mozilla Public License 2.0</option>
+            <option value="MPL-2.0-no-copyleft-exception">Mozilla Public License 2.0 (no copyleft exception)</option>
+            <option value="mpich2">mpich2 License</option>
+            <option value="Multics">Multics License</option>
+            <option value="Mup">Mup License</option>
+            <option value="NASA-1.3">NASA Open Source Agreement 1.3</option>
+            <option value="Naumen">Naumen Public License</option>
+            <option value="NBPL-1.0">Net Boolean Public License v1</option>
+            <option value="Net-SNMP">Net-SNMP License</option>
+            <option value="NetCDF">NetCDF license</option>
+            <option value="NGPL">Nethack General Public License</option>
+            <option value="NOSL">Netizen Open Source License</option>
+            <option value="NPL-1.0">Netscape Public License v1.0</option>
+            <option value="NPL-1.1">Netscape Public License v1.1</option>
+            <option value="Newsletr">Newsletr License</option>
+            <option value="NLPL">No Limit Public License</option>
+            <option value="Nokia">Nokia Open Source License</option>
+            <option value="NPOSL-3.0">Non-Profit Open Software License 3.0</option>
+            <option value="NLOD-1.0">Norwegian Licence for Open Government Data</option>
+            <option value="Noweb">Noweb License</option>
+            <option value="NRL">NRL License</option>
+            <option value="NTP">NTP License</option>
+            <option value="Nunit">Nunit License</option>
+            <option value="OCLC-2.0">OCLC Research Public License 2.0</option>
+            <option value="ODbL-1.0">ODC Open Database License v1.0</option>
+            <option value="PDDL-1.0">ODC Public Domain Dedication & License 1.0</option>
+            <option value="OCCT-PL">Open CASCADE Technology Public License</option>
+            <option value="OGTSL">Open Group Test Suite License</option>
+            <option value="OLDAP-2.2.2">Open LDAP Public License 2.2.2</option>
+            <option value="OLDAP-1.1">Open LDAP Public License v1.1</option>
+            <option value="OLDAP-1.2">Open LDAP Public License v1.2</option>
+            <option value="OLDAP-1.3">Open LDAP Public License v1.3</option>
+            <option value="OLDAP-1.4">Open LDAP Public License v1.4</option>
+            <option value="OLDAP-2.0">Open LDAP Public License v2.0 (or possibly 2.0A and 2.0B)</option>
+            <option value="OLDAP-2.0.1">Open LDAP Public License v2.0.1</option>
+            <option value="OLDAP-2.1">Open LDAP Public License v2.1</option>
+            <option value="OLDAP-2.2">Open LDAP Public License v2.2</option>
+            <option value="OLDAP-2.2.1">Open LDAP Public License v2.2.1</option>
+            <option value="OLDAP-2.3">Open LDAP Public License v2.3</option>
+            <option value="OLDAP-2.4">Open LDAP Public License v2.4</option>
+            <option value="OLDAP-2.5">Open LDAP Public License v2.5</option>
+            <option value="OLDAP-2.6">Open LDAP Public License v2.6</option>
+            <option value="OLDAP-2.7">Open LDAP Public License v2.7</option>
+            <option value="OLDAP-2.8">Open LDAP Public License v2.8</option>
+            <option value="OML">Open Market License</option>
+            <option value="OPL-1.0">Open Public License v1.0</option>
+            <option value="OSL-1.0">Open Software License 1.0</option>
+            <option value="OSL-1.1">Open Software License 1.1</option>
+            <option value="OSL-2.0">Open Software License 2.0</option>
+            <option value="OSL-2.1">Open Software License 2.1</option>
+            <option value="OSL-3.0">Open Software License 3.0</option>
+            <option value="OpenSSL">OpenSSL License</option>
+            <option value="OSET-PL-2.1">OSET Public License version 2.1</option>
+            <option value="PHP-3.0">PHP License v3.0</option>
+            <option value="PHP-3.01">PHP License v3.01</option>
+            <option value="Plexus">Plexus Classworlds License</option>
+            <option value="PostgreSQL">PostgreSQL License</option>
+            <option value="psfrag">psfrag License</option>
+            <option value="psutils">psutils License</option>
+            <option value="Python-2.0">Python License 2.0</option>
+            <option value="QPL-1.0">Q Public License 1.0</option>
+            <option value="Qhull">Qhull License</option>
+            <option value="Rdisc">Rdisc License</option>
+            <option value="RPSL-1.0">RealNetworks Public Source License v1.0</option>
+            <option value="RPL-1.1">Reciprocal Public License 1.1</option>
+            <option value="RPL-1.5">Reciprocal Public License 1.5</option>
+            <option value="RHeCos-1.1">Red Hat eCos Public License v1.1</option>
+            <option value="RSCPL">Ricoh Source Code Public License</option>
+            <option value="RSA-MD">RSA Message-Digest License</option>
+            <option value="Ruby">Ruby License</option>
+            <option value="SAX-PD">Sax Public Domain Notice</option>
+            <option value="Saxpath">Saxpath License</option>
+            <option value="SCEA">SCEA Shared Source License</option>
+            <option value="SWL">Scheme Widget Library (SWL) Software License Agreement</option>
+            <option value="SMPPL">Secure Messaging Protocol Public License</option>
+            <option value="Sendmail">Sendmail License</option>
+            <option value="SGI-B-1.0">SGI Free Software License B v1.0</option>
+            <option value="SGI-B-1.1">SGI Free Software License B v1.1</option>
+            <option value="SGI-B-2.0">SGI Free Software License B v2.0</option>
+            <option value="OFL-1.0">SIL Open Font License 1.0</option>
+            <option value="OFL-1.1">SIL Open Font License 1.1</option>
+            <option value="SimPL-2.0">Simple Public License 2.0</option>
+            <option value="Sleepycat">Sleepycat License</option>
+            <option value="SNIA">SNIA Public License 1.1</option>
+            <option value="Spencer-86">Spencer License 86</option>
+            <option value="Spencer-94">Spencer License 94</option>
+            <option value="Spencer-99">Spencer License 99</option>
+            <option value="SMLNJ">Standard ML of New Jersey License</option>
+            <option value="SugarCRM-1.1.3">SugarCRM Public License v1.1.3</option>
+            <option value="SISSL">Sun Industry Standards Source License v1.1</option>
+            <option value="SISSL-1.2">Sun Industry Standards Source License v1.2</option>
+            <option value="SPL-1.0">Sun Public License v1.0</option>
+            <option value="Watcom-1.0">Sybase Open Watcom Public License 1.0</option>
+            <option value="TCL">TCL/TK License</option>
+            <option value="TCP-wrappers">TCP Wrappers License</option>
+            <option value="Unlicense">The Unlicense</option>
+            <option value="TMate">TMate Open Source License</option>
+            <option value="TORQUE-1.1">TORQUE v2.5+ Software License v1.1</option>
+            <option value="TOSL">Trusster Open Source License</option>
+            <option value="Unicode-DFS-2015">Unicode License Agreement - Data Files and Software (2015)</option>
+            <option value="Unicode-DFS-2016">Unicode License Agreement - Data Files and Software (2016)</option>
+            <option value="Unicode-TOU">Unicode Terms of Use</option>
+            <option value="UPL-1.0">Universal Permissive License v1.0</option>
+            <option value="NCSA">University of Illinois/NCSA Open Source License</option>
+            <option value="Vim">Vim License</option>
+            <option value="VOSTROM">VOSTROM Public License for Open Source</option>
+            <option value="VSL-1.0">Vovida Software License v1.0</option>
+            <option value="W3C-20150513">W3C Software Notice and Document License (2015-05-13)</option>
+            <option value="W3C-19980720">W3C Software Notice and License (1998-07-20)</option>
+            <option value="W3C">W3C Software Notice and License (2002-12-31)</option>
+            <option value="Wsuipa">Wsuipa License</option>
+            <option value="Xnet">X.Net License</option>
+            <option value="X11">X11 License</option>
+            <option value="Xerox">Xerox License</option>
+            <option value="XFree86-1.1">XFree86 License 1.1</option>
+            <option value="xinetd">xinetd License</option>
+            <option value="xpp">XPP License</option>
+            <option value="XSkat">XSkat License</option>
+            <option value="YPL-1.0">Yahoo! Public License v1.0</option>
+            <option value="YPL-1.1">Yahoo! Public License v1.1</option>
+            <option value="Zed">Zed License</option>
+            <option value="Zend-2.0">Zend License v2.0</option>
+            <option value="Zimbra-1.3">Zimbra Public License v1.3</option>
+            <option value="Zimbra-1.4">Zimbra Public License v1.4</option>
+            <option value="Zlib">zlib License</option>
+            <option value="zlib-acknowledgement">zlib/libpng License with Acknowledgement</option>
+            <option value="ZPL-1.1">Zope Public License 1.1</option>
+            <option value="ZPL-2.0">Zope Public License 2.0</option>
+            <option value="ZPL-2.1">Zope Public License 2.1</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td width="200px">Project license:</td>
+        <td>
+          <select id="project_license">
+            <option value="GPL-2.0+" selected="selected">GPL-2.0+</option>
+            <option value="Glide">3dfx Glide License</option>
+            <option value="Abstyles">Abstyles License</option>
+            <option value="AFL-1.1">Academic Free License v1.1</option>
+            <option value="AFL-1.2">Academic Free License v1.2</option>
+            <option value="AFL-2.0">Academic Free License v2.0</option>
+            <option value="AFL-2.1">Academic Free License v2.1</option>
+            <option value="AFL-3.0">Academic Free License v3.0</option>
+            <option value="AMPAS">Academy of Motion Picture Arts and Sciences BSD</option>
+            <option value="APL-1.0">Adaptive Public License 1.0</option>
+            <option value="Adobe-Glyph">Adobe Glyph List License</option>
+            <option value="APAFML">Adobe Postscript AFM License</option>
+            <option value="Adobe-2006">Adobe Systems Incorporated Source Code License Agreement</option>
+            <option value="AGPL-1.0">Affero General Public License v1.0</option>
+            <option value="Afmparse">Afmparse License</option>
+            <option value="Aladdin">Aladdin Free Public License</option>
+            <option value="ADSL">Amazon Digital Services License</option>
+            <option value="AMDPLPA">AMD"s plpa_map.c License</option>
+            <option value="ANTLR-PD">ANTLR Software Rights Notice</option>
+            <option value="Apache-1.0">Apache License 1.0</option>
+            <option value="Apache-1.1">Apache License 1.1</option>
+            <option value="Apache-2.0">Apache License 2.0</option>
+            <option value="AML">Apple MIT License</option>
+            <option value="APSL-1.0">Apple Public Source License 1.0</option>
+            <option value="APSL-1.1">Apple Public Source License 1.1</option>
+            <option value="APSL-1.2">Apple Public Source License 1.2</option>
+            <option value="APSL-2.0">Apple Public Source License 2.0</option>
+            <option value="Artistic-1.0">Artistic License 1.0</option>
+            <option value="Artistic-1.0-Perl">Artistic License 1.0 (Perl)</option>
+            <option value="Artistic-1.0-cl8">Artistic License 1.0 w/clause 8</option>
+            <option value="Artistic-2.0">Artistic License 2.0</option>
+            <option value="AAL">Attribution Assurance License</option>
+            <option value="Bahyph">Bahyph License</option>
+            <option value="Barr">Barr License</option>
+            <option value="Beerware">Beerware License</option>
+            <option value="BitTorrent-1.0">BitTorrent Open Source License v1.0</option>
+            <option value="BitTorrent-1.1">BitTorrent Open Source License v1.1</option>
+            <option value="BSL-1.0">Boost Software License 1.0</option>
+            <option value="Borceux">Borceux license</option>
+            <option value="BSD-2-Clause">BSD 2-clause "Simplified" License</option>
+            <option value="BSD-2-Clause-FreeBSD">BSD 2-clause FreeBSD License</option>
+            <option value="BSD-2-Clause-NetBSD">BSD 2-clause NetBSD License</option>
+            <option value="BSD-3-Clause">BSD 3-clause "New" or "Revised" License</option>
+            <option value="BSD-3-Clause-Clear">BSD 3-clause Clear License</option>
+            <option value="BSD-3-Clause-No-Nuclear-License">BSD 3-Clause No Nuclear License</option>
+            <option value="BSD-3-Clause-No-Nuclear-License-2014">BSD 3-Clause No Nuclear License 2014</option>
+            <option value="BSD-3-Clause-No-Nuclear-Warranty">BSD 3-Clause No Nuclear Warranty</option>
+            <option value="BSD-4-Clause">BSD 4-clause "Original" or "Old" License</option>
+            <option value="BSD-Protection">BSD Protection License</option>
+            <option value="BSD-Source-Code">BSD Source Code Attribution</option>
+            <option value="BSD-3-Clause-Attribution">BSD with attribution</option>
+            <option value="0BSD">BSD Zero Clause License</option>
+            <option value="BSD-4-Clause-UC">BSD-4-Clause (University of California-Specific)</option>
+            <option value="bzip2-1.0.5">bzip2 and libbzip2 License v1.0.5</option>
+            <option value="bzip2-1.0.6">bzip2 and libbzip2 License v1.0.6</option>
+            <option value="Caldera">Caldera License</option>
+            <option value="CECILL-1.0">CeCILL Free Software License Agreement v1.0</option>
+            <option value="CECILL-1.1">CeCILL Free Software License Agreement v1.1</option>
+            <option value="CECILL-2.0">CeCILL Free Software License Agreement v2.0</option>
+            <option value="CECILL-2.1">CeCILL Free Software License Agreement v2.1</option>
+            <option value="CECILL-B">CeCILL-B Free Software License Agreement</option>
+            <option value="CECILL-C">CeCILL-C Free Software License Agreement</option>
+            <option value="ClArtistic">Clarified Artistic License</option>
+            <option value="MIT-CMU">CMU License</option>
+            <option value="CNRI-Jython">CNRI Jython License</option>
+            <option value="CNRI-Python">CNRI Python License</option>
+            <option value="CNRI-Python-GPL-Compatible">CNRI Python Open Source GPL Compatible License Agreement</option>
+            <option value="CPOL-1.02">Code Project Open License 1.02</option>
+            <option value="CDDL-1.0">Common Development and Distribution License 1.0</option>
+            <option value="CDDL-1.1">Common Development and Distribution License 1.1</option>
+            <option value="CPAL-1.0">Common Public Attribution License 1.0</option>
+            <option value="CPL-1.0">Common Public License 1.0</option>
+            <option value="CATOSL-1.1">Computer Associates Trusted Open Source License 1.1</option>
+            <option value="Condor-1.1">Condor Public License v1.1</option>
+            <option value="CC-BY-1.0">Creative Commons Attribution 1.0</option>
+            <option value="CC-BY-2.0">Creative Commons Attribution 2.0</option>
+            <option value="CC-BY-2.5">Creative Commons Attribution 2.5</option>
+            <option value="CC-BY-3.0">Creative Commons Attribution 3.0</option>
+            <option value="CC-BY-4.0">Creative Commons Attribution 4.0</option>
+            <option value="CC-BY-ND-1.0">Creative Commons Attribution No Derivatives 1.0</option>
+            <option value="CC-BY-ND-2.0">Creative Commons Attribution No Derivatives 2.0</option>
+            <option value="CC-BY-ND-2.5">Creative Commons Attribution No Derivatives 2.5</option>
+            <option value="CC-BY-ND-3.0">Creative Commons Attribution No Derivatives 3.0</option>
+            <option value="CC-BY-ND-4.0">Creative Commons Attribution No Derivatives 4.0</option>
+            <option value="CC-BY-NC-1.0">Creative Commons Attribution Non Commercial 1.0</option>
+            <option value="CC-BY-NC-2.0">Creative Commons Attribution Non Commercial 2.0</option>
+            <option value="CC-BY-NC-2.5">Creative Commons Attribution Non Commercial 2.5</option>
+            <option value="CC-BY-NC-3.0">Creative Commons Attribution Non Commercial 3.0</option>
+            <option value="CC-BY-NC-4.0">Creative Commons Attribution Non Commercial 4.0</option>
+            <option value="CC-BY-NC-ND-1.0">Creative Commons Attribution Non Commercial No Derivatives 1.0</option>
+            <option value="CC-BY-NC-ND-2.0">Creative Commons Attribution Non Commercial No Derivatives 2.0</option>
+            <option value="CC-BY-NC-ND-2.5">Creative Commons Attribution Non Commercial No Derivatives 2.5</option>
+            <option value="CC-BY-NC-ND-3.0">Creative Commons Attribution Non Commercial No Derivatives 3.0</option>
+            <option value="CC-BY-NC-ND-4.0">Creative Commons Attribution Non Commercial No Derivatives 4.0</option>
+            <option value="CC-BY-NC-SA-1.0">Creative Commons Attribution Non Commercial Share Alike 1.0</option>
+            <option value="CC-BY-NC-SA-2.0">Creative Commons Attribution Non Commercial Share Alike 2.0</option>
+            <option value="CC-BY-NC-SA-2.5">Creative Commons Attribution Non Commercial Share Alike 2.5</option>
+            <option value="CC-BY-NC-SA-3.0">Creative Commons Attribution Non Commercial Share Alike 3.0</option>
+            <option value="CC-BY-NC-SA-4.0">Creative Commons Attribution Non Commercial Share Alike 4.0</option>
+            <option value="CC-BY-SA-1.0">Creative Commons Attribution Share Alike 1.0</option>
+            <option value="CC-BY-SA-2.0">Creative Commons Attribution Share Alike 2.0</option>
+            <option value="CC-BY-SA-2.5">Creative Commons Attribution Share Alike 2.5</option>
+            <option value="CC-BY-SA-3.0">Creative Commons Attribution Share Alike 3.0</option>
+            <option value="CC-BY-SA-4.0">Creative Commons Attribution Share Alike 4.0</option>
+            <option value="CC0-1.0">Creative Commons Zero v1.0 Universal</option>
+            <option value="Crossword">Crossword License</option>
+            <option value="CrystalStacker">CrystalStacker License</option>
+            <option value="CUA-OPL-1.0">CUA Office Public License v1.0</option>
+            <option value="Cube">Cube License</option>
+            <option value="curl">curl License</option>
+            <option value="D-FSL-1.0">Deutsche Freie Software Lizenz</option>
+            <option value="diffmark">diffmark license</option>
+            <option value="WTFPL">Do What The F*ck You Want To Public License</option>
+            <option value="DOC">DOC License</option>
+            <option value="Dotseqn">Dotseqn License</option>
+            <option value="DSDP">DSDP License</option>
+            <option value="dvipdfm">dvipdfm License</option>
+            <option value="EPL-1.0">Eclipse Public License 1.0</option>
+            <option value="ECL-1.0">Educational Community License v1.0</option>
+            <option value="ECL-2.0">Educational Community License v2.0</option>
+            <option value="eGenix">eGenix.com Public License 1.1.0</option>
+            <option value="EFL-1.0">Eiffel Forum License v1.0</option>
+            <option value="EFL-2.0">Eiffel Forum License v2.0</option>
+            <option value="MIT-advertising">Enlightenment License (e16)</option>
+            <option value="MIT-enna">enna License</option>
+            <option value="Entessa">Entessa Public License v1.0</option>
+            <option value="ErlPL-1.1">Erlang Public License v1.1</option>
+            <option value="EUDatagrid">EU DataGrid Software License</option>
+            <option value="EUPL-1.0">European Union Public License 1.0</option>
+            <option value="EUPL-1.1">European Union Public License 1.1</option>
+            <option value="Eurosym">Eurosym License</option>
+            <option value="Fair">Fair License</option>
+            <option value="MIT-feh">feh License</option>
+            <option value="Frameworx-1.0">Frameworx Open License 1.0</option>
+            <option value="FreeImage">FreeImage Public License v1.0</option>
+            <option value="FTL">Freetype Project License</option>
+            <option value="FSFAP">FSF All Permissive License</option>
+            <option value="FSFUL">FSF Unlimited License</option>
+            <option value="FSFULLR">FSF Unlimited License (with License Retention)</option>
+            <option value="Giftware">Giftware License</option>
+            <option value="GL2PS">GL2PS License</option>
+            <option value="Glulxe">Glulxe License</option>
+            <option value="AGPL-3.0">GNU Affero General Public License v3.0</option>
+            <option value="GFDL-1.1">GNU Free Documentation License v1.1</option>
+            <option value="GFDL-1.2">GNU Free Documentation License v1.2</option>
+            <option value="GFDL-1.3">GNU Free Documentation License v1.3</option>
+            <option value="GPL-1.0">GNU General Public License v1.0 only</option>
+            <option value="GPL-2.0">GNU General Public License v2.0 only</option>
+            <option value="GPL-3.0">GNU General Public License v3.0 only</option>
+            <option value="LGPL-2.1">GNU Lesser General Public License v2.1 only</option>
+            <option value="LGPL-3.0">GNU Lesser General Public License v3.0 only</option>
+            <option value="LGPL-2.0">GNU Library General Public License v2 only</option>
+            <option value="gnuplot">gnuplot License</option>
+            <option value="gSOAP-1.3b">gSOAP Public License v1.3b</option>
+            <option value="HaskellReport">Haskell Language Report License</option>
+            <option value="HPND">Historic Permission Notice and Disclaimer</option>
+            <option value="IBM-pibs">IBM PowerPC Initialization and Boot Software</option>
+            <option value="IPL-1.0">IBM Public License v1.0</option>
+            <option value="ICU">ICU License</option>
+            <option value="ImageMagick">ImageMagick License</option>
+            <option value="iMatix">iMatix Standard Function Library Agreement</option>
+            <option value="Imlib2">Imlib2 License</option>
+            <option value="IJG">Independent JPEG Group License</option>
+            <option value="Info-ZIP">Info-ZIP License</option>
+            <option value="Intel-ACPI">Intel ACPI Software License Agreement</option>
+            <option value="Intel">Intel Open Source License</option>
+            <option value="Interbase-1.0">Interbase Public License v1.0</option>
+            <option value="IPA">IPA Font License</option>
+            <option value="ISC">ISC License</option>
+            <option value="JasPer-2.0">JasPer License</option>
+            <option value="JSON">JSON License</option>
+            <option value="LPPL-1.0">LaTeX Project Public License v1.0</option>
+            <option value="LPPL-1.1">LaTeX Project Public License v1.1</option>
+            <option value="LPPL-1.2">LaTeX Project Public License v1.2</option>
+            <option value="LPPL-1.3a">LaTeX Project Public License v1.3a</option>
+            <option value="LPPL-1.3c">LaTeX Project Public License v1.3c</option>
+            <option value="Latex2e">Latex2e License</option>
+            <option value="BSD-3-Clause-LBNL">Lawrence Berkeley National Labs BSD variant license</option>
+            <option value="Leptonica">Leptonica License</option>
+            <option value="LGPLLR">Lesser General Public License For Linguistic Resources</option>
+            <option value="Libpng">libpng License</option>
+            <option value="libtiff">libtiff License</option>
+            <option value="LAL-1.2">Licence Art Libre 1.2</option>
+            <option value="LAL-1.3">Licence Art Libre 1.3</option>
+            <option value="LiLiQ-P-1.1">Licence Libre du Québec – Permissive version 1.1</option>
+            <option value="LiLiQ-Rplus-1.1">Licence Libre du Québec – Réciprocité forte version 1.1</option>
+            <option value="LiLiQ-R-1.1">Licence Libre du Québec – Réciprocité version 1.1</option>
+            <option value="LPL-1.02">Lucent Public License v1.02</option>
+            <option value="LPL-1.0">Lucent Public License Version 1.0</option>
+            <option value="MakeIndex">MakeIndex License</option>
+            <option value="MTLL">Matrix Template Library License</option>
+            <option value="MS-PL">Microsoft Public License</option>
+            <option value="MS-RL">Microsoft Reciprocal License</option>
+            <option value="MirOS">MirOS Licence</option>
+            <option value="MITNFA">MIT +no-false-attribs license</option>
+            <option value="MIT">MIT License</option>
+            <option value="Motosoto">Motosoto License</option>
+            <option value="MPL-1.0">Mozilla Public License 1.0</option>
+            <option value="MPL-1.1">Mozilla Public License 1.1</option>
+            <option value="MPL-2.0">Mozilla Public License 2.0</option>
+            <option value="MPL-2.0-no-copyleft-exception">Mozilla Public License 2.0 (no copyleft exception)</option>
+            <option value="mpich2">mpich2 License</option>
+            <option value="Multics">Multics License</option>
+            <option value="Mup">Mup License</option>
+            <option value="NASA-1.3">NASA Open Source Agreement 1.3</option>
+            <option value="Naumen">Naumen Public License</option>
+            <option value="NBPL-1.0">Net Boolean Public License v1</option>
+            <option value="Net-SNMP">Net-SNMP License</option>
+            <option value="NetCDF">NetCDF license</option>
+            <option value="NGPL">Nethack General Public License</option>
+            <option value="NOSL">Netizen Open Source License</option>
+            <option value="NPL-1.0">Netscape Public License v1.0</option>
+            <option value="NPL-1.1">Netscape Public License v1.1</option>
+            <option value="Newsletr">Newsletr License</option>
+            <option value="NLPL">No Limit Public License</option>
+            <option value="Nokia">Nokia Open Source License</option>
+            <option value="NPOSL-3.0">Non-Profit Open Software License 3.0</option>
+            <option value="NLOD-1.0">Norwegian Licence for Open Government Data</option>
+            <option value="Noweb">Noweb License</option>
+            <option value="NRL">NRL License</option>
+            <option value="NTP">NTP License</option>
+            <option value="Nunit">Nunit License</option>
+            <option value="OCLC-2.0">OCLC Research Public License 2.0</option>
+            <option value="ODbL-1.0">ODC Open Database License v1.0</option>
+            <option value="PDDL-1.0">ODC Public Domain Dedication & License 1.0</option>
+            <option value="OCCT-PL">Open CASCADE Technology Public License</option>
+            <option value="OGTSL">Open Group Test Suite License</option>
+            <option value="OLDAP-2.2.2">Open LDAP Public License 2.2.2</option>
+            <option value="OLDAP-1.1">Open LDAP Public License v1.1</option>
+            <option value="OLDAP-1.2">Open LDAP Public License v1.2</option>
+            <option value="OLDAP-1.3">Open LDAP Public License v1.3</option>
+            <option value="OLDAP-1.4">Open LDAP Public License v1.4</option>
+            <option value="OLDAP-2.0">Open LDAP Public License v2.0 (or possibly 2.0A and 2.0B)</option>
+            <option value="OLDAP-2.0.1">Open LDAP Public License v2.0.1</option>
+            <option value="OLDAP-2.1">Open LDAP Public License v2.1</option>
+            <option value="OLDAP-2.2">Open LDAP Public License v2.2</option>
+            <option value="OLDAP-2.2.1">Open LDAP Public License v2.2.1</option>
+            <option value="OLDAP-2.3">Open LDAP Public License v2.3</option>
+            <option value="OLDAP-2.4">Open LDAP Public License v2.4</option>
+            <option value="OLDAP-2.5">Open LDAP Public License v2.5</option>
+            <option value="OLDAP-2.6">Open LDAP Public License v2.6</option>
+            <option value="OLDAP-2.7">Open LDAP Public License v2.7</option>
+            <option value="OLDAP-2.8">Open LDAP Public License v2.8</option>
+            <option value="OML">Open Market License</option>
+            <option value="OPL-1.0">Open Public License v1.0</option>
+            <option value="OSL-1.0">Open Software License 1.0</option>
+            <option value="OSL-1.1">Open Software License 1.1</option>
+            <option value="OSL-2.0">Open Software License 2.0</option>
+            <option value="OSL-2.1">Open Software License 2.1</option>
+            <option value="OSL-3.0">Open Software License 3.0</option>
+            <option value="OpenSSL">OpenSSL License</option>
+            <option value="OSET-PL-2.1">OSET Public License version 2.1</option>
+            <option value="PHP-3.0">PHP License v3.0</option>
+            <option value="PHP-3.01">PHP License v3.01</option>
+            <option value="Plexus">Plexus Classworlds License</option>
+            <option value="PostgreSQL">PostgreSQL License</option>
+            <option value="psfrag">psfrag License</option>
+            <option value="psutils">psutils License</option>
+            <option value="Python-2.0">Python License 2.0</option>
+            <option value="QPL-1.0">Q Public License 1.0</option>
+            <option value="Qhull">Qhull License</option>
+            <option value="Rdisc">Rdisc License</option>
+            <option value="RPSL-1.0">RealNetworks Public Source License v1.0</option>
+            <option value="RPL-1.1">Reciprocal Public License 1.1</option>
+            <option value="RPL-1.5">Reciprocal Public License 1.5</option>
+            <option value="RHeCos-1.1">Red Hat eCos Public License v1.1</option>
+            <option value="RSCPL">Ricoh Source Code Public License</option>
+            <option value="RSA-MD">RSA Message-Digest License</option>
+            <option value="Ruby">Ruby License</option>
+            <option value="SAX-PD">Sax Public Domain Notice</option>
+            <option value="Saxpath">Saxpath License</option>
+            <option value="SCEA">SCEA Shared Source License</option>
+            <option value="SWL">Scheme Widget Library (SWL) Software License Agreement</option>
+            <option value="SMPPL">Secure Messaging Protocol Public License</option>
+            <option value="Sendmail">Sendmail License</option>
+            <option value="SGI-B-1.0">SGI Free Software License B v1.0</option>
+            <option value="SGI-B-1.1">SGI Free Software License B v1.1</option>
+            <option value="SGI-B-2.0">SGI Free Software License B v2.0</option>
+            <option value="OFL-1.0">SIL Open Font License 1.0</option>
+            <option value="OFL-1.1">SIL Open Font License 1.1</option>
+            <option value="SimPL-2.0">Simple Public License 2.0</option>
+            <option value="Sleepycat">Sleepycat License</option>
+            <option value="SNIA">SNIA Public License 1.1</option>
+            <option value="Spencer-86">Spencer License 86</option>
+            <option value="Spencer-94">Spencer License 94</option>
+            <option value="Spencer-99">Spencer License 99</option>
+            <option value="SMLNJ">Standard ML of New Jersey License</option>
+            <option value="SugarCRM-1.1.3">SugarCRM Public License v1.1.3</option>
+            <option value="SISSL">Sun Industry Standards Source License v1.1</option>
+            <option value="SISSL-1.2">Sun Industry Standards Source License v1.2</option>
+            <option value="SPL-1.0">Sun Public License v1.0</option>
+            <option value="Watcom-1.0">Sybase Open Watcom Public License 1.0</option>
+            <option value="TCL">TCL/TK License</option>
+            <option value="TCP-wrappers">TCP Wrappers License</option>
+            <option value="Unlicense">The Unlicense</option>
+            <option value="TMate">TMate Open Source License</option>
+            <option value="TORQUE-1.1">TORQUE v2.5+ Software License v1.1</option>
+            <option value="TOSL">Trusster Open Source License</option>
+            <option value="Unicode-DFS-2015">Unicode License Agreement - Data Files and Software (2015)</option>
+            <option value="Unicode-DFS-2016">Unicode License Agreement - Data Files and Software (2016)</option>
+            <option value="Unicode-TOU">Unicode Terms of Use</option>
+            <option value="UPL-1.0">Universal Permissive License v1.0</option>
+            <option value="NCSA">University of Illinois/NCSA Open Source License</option>
+            <option value="Vim">Vim License</option>
+            <option value="VOSTROM">VOSTROM Public License for Open Source</option>
+            <option value="VSL-1.0">Vovida Software License v1.0</option>
+            <option value="W3C-20150513">W3C Software Notice and Document License (2015-05-13)</option>
+            <option value="W3C-19980720">W3C Software Notice and License (1998-07-20)</option>
+            <option value="W3C">W3C Software Notice and License (2002-12-31)</option>
+            <option value="Wsuipa">Wsuipa License</option>
+            <option value="Xnet">X.Net License</option>
+            <option value="X11">X11 License</option>
+            <option value="Xerox">Xerox License</option>
+            <option value="XFree86-1.1">XFree86 License 1.1</option>
+            <option value="xinetd">xinetd License</option>
+            <option value="xpp">XPP License</option>
+            <option value="XSkat">XSkat License</option>
+            <option value="YPL-1.0">Yahoo! Public License v1.0</option>
+            <option value="YPL-1.1">Yahoo! Public License v1.1</option>
+            <option value="Zed">Zed License</option>
+            <option value="Zend-2.0">Zend License v2.0</option>
+            <option value="Zimbra-1.3">Zimbra Public License v1.3</option>
+            <option value="Zimbra-1.4">Zimbra Public License v1.4</option>
+            <option value="Zlib">zlib License</option>
+            <option value="zlib-acknowledgement">zlib/libpng License with Acknowledgement</option>
+            <option value="ZPL-1.1">Zope Public License 1.1</option>
+            <option value="ZPL-2.0">Zope Public License 2.0</option>
+            <option value="ZPL-2.1">Zope Public License 2.1</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td width="200px">Name of the desktop file (without .desktop):</td>
+        <td>
+          <input type="text" id="id" value="myapp">
+        </td>
+      </tr>
+      <tr>
+        <td width="200px">Name of the application (proper capitalization):</td>
+        <td>
+          <input type="text" id="name" value="MyApp">
+        </td>
+      </tr>
+      <tr>
+        <td width="200px">Summary (no dot at the end):</td>
+        <td>
+          <textarea id="summary" rows="1" cols="50">Open, modify and create compressed archive files</textarea>
+        </td>
+      </tr>
+      <tr>
+        <td width="200px">Description (full sentence(s) with a dot at the end):</td>
+        <td>
+          <textarea id="description" rows="7" cols="50">Archive Manager (also known as File Roller) is the default GNOME application for opening, creating, and modifying archive and compressed archive files.</textarea>
+        </td>
+      </tr>
+      <tr>
+        <td width="200px">Homepage (full URL):</td>
+        <td>
+          <input type="text" id="homepage" value="https://myapp.org/">
+        </td>
+      </tr>
+      <tr>
+        <td width="200px">Screenshot (full URL)</td>
+        <td>
+          <input type="text" id="screenshot" value="https://myapp.org/img.png">
+        </td>
+      </tr>
+    </table>
+    
+    <p>For more information, please refer to the <a href="https://www.freedesktop.org/software/appstream/docs/chap-Quickstart.html#sect-Quickstart-DesktopApps">AppStream documentation's Quickstart section</a>.</p>
+    <button class="btn btn-neutral" id="DownloadButton">Generate file</button>
+
+    <div id="generated" style="display: none">
+      <h4 style="margin-top: 1em;"><code id="FileName">/usr/share/metainfo/%{id}.appdata.xml</code></h4>
+      <textarea id="ResultXml" style="width: 100%; height: 30em; font-family: monospace;" readonly="readonly"></textarea>
+      <a class="btn btn-neutral" style="margin-top: 1em;" href="#" id="DownloadLink">Download</a>
+    </div>
+  <script id="jsbin-javascript">
+$(function () {
+  $('#appstream-generator #DownloadButton').click(update);
+});
+
+var template = [
+  '<?xml version="1.0" encoding="UTF-8"?>',
+  '<component type="desktop-application">',
+  '	<id><?id?></id>',
+  '	<metadata_license><?metadata_license?></metadata_license>',
+  '	<project_license><?project_license?></project_license>',
+  '	<name><?name?></name>',
+  '	<summary><?summary?></summary>',
+  '	<description>',
+  '		<p><?description?></p>',
+  '	</description>',
+  '	<launchable type="desktop-id"><?id?>.desktop</launchable>',
+  '	<url type="homepage"><?homepage?></url>',
+  '	<screenshots>',
+  '		<screenshot type="default">',
+  '			<image><?screenshot?></image>',
+  '		</screenshot>',
+  '	</screenshots>',
+  '	<provides>',
+  '		<id><?id?>.desktop</id>',
+  '	</provides>',
+  '</component>'
+].join('\r\n');
+
+function update() {
+  var variables = {
+    'id': $('#appstream-generator #id').val(),
+    'name': $('#appstream-generator #name').val(),
+    'summary': $('#appstream-generator #summary').val(),
+    'description': $('#appstream-generator #description').val(),
+    'metadata_license': $('#appstream-generator #metadata_license').val(),
+    'project_license': $('#appstream-generator #project_license').val(),
+    'homepage': $('#appstream-generator #homepage').val(),
+    'screenshot': $('#appstream-generator #screenshot').val()
+  };
+  
+  var newXml = template.replace(/<\?(\w+)\?>/g,
+    function(match, name) {
+      return variables[name];
+    });
+
+  
+  $('#appstream-generator #ResultXml').val(newXml);
+  $('#appstream-generator #DownloadLink')
+    .attr('href', 'data:text/xml;base64,' + btoa(newXml))
+    .attr('download', $('#appstream-generator #id').val()+'.appdata.xml');
+  $('#appstream-generator #FileName').contents().first().replaceWith('/usr/share/metainfo/'+$('#id').val()+'.appdata.xml');
+  $('#appstream-generator #generated').show();
+}
+
+if (!window.btoa) {
+  // Source: http://www.koders.com/javascript/fid78168FE1380F7420FB7B7CD8BAEAE58929523C17.aspx
+  btoa = function (input) {
+    var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+    
+    var result = '';
+    var chr1, chr2, chr3;
+    var enc1, enc2, enc3, enc4;
+    var i = 0;
+    
+    do {
+      chr1 = input.charCodeAt(i++);
+      chr2 = input.charCodeAt(i++);
+      chr3 = input.charCodeAt(i++);
+      
+      enc1 = chr1 >> 2;
+      enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+      enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+      enc4 = chr3 & 63;
+      
+      if (isNaN(chr2)) {
+        enc3 = enc4 = 64;
+      } else if (isNaN(chr3)) {
+        enc4 = 64;
+      }
+      
+      result += chars.charAt(enc1) + chars.charAt(enc2) + chars.charAt(enc3) + chars.charAt(enc4);
+    } while (i < input.length);
+      
+    return result;
+  };
+}
+</script>
+
+
+</div>
+</section>
+<section id="embedding-the-appstream-metadata">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Embedding the AppStream metadata</a><a class="headerlink" href="#embedding-the-appstream-metadata" title="Link to this heading"></a></h2>
+<p>Once you have generated a suitable AppStream metainfo file, place it into <code class="code docutils literal notranslate"><span class="pre">usr/share/metainfo/myapp.appdata.xml</span></code> in your AppDir, and generate an AppImage from it. It is generally a good idea to check AppStream metainfo files for errors using the <code class="code docutils literal notranslate"><span class="pre">appstreamcli</span></code> and/or <code class="code docutils literal notranslate"><span class="pre">appstream-util</span></code> command line tools. <code class="code docutils literal notranslate"><span class="pre">appimagetool</span></code> will automatically attempt to validate the AppStream metainfo file if <code class="code docutils literal notranslate"><span class="pre">appstreamcli</span></code> and/or <code class="code docutils literal notranslate"><span class="pre">appstream-util</span></code> are available on the <code class="code docutils literal notranslate"><span class="pre">$PATH</span></code>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="signatures.html" class="btn btn-neutral float-left" title="Signing AppImages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../hosted-services/index.html" class="btn btn-neutral float-right" title="Hosted services" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2018-2022, The AppImage project。
+      <span class="commit">版本 <code>475547d</code>.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
