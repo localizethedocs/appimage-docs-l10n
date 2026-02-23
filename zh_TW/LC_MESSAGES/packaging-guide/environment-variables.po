@@ -1,0 +1,141 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2022, The AppImage project
+# This file is distributed under the same license as the AppImage package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AppImage master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-04 12:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/packaging-guide/environment-variables.rst:4
+msgid "Environment variables"
+msgstr "環境變數"
+
+#: ../../../source/packaging-guide/environment-variables.rst:6
+msgid ""
+"The AppImage runtimes make some environment variables available that can be "
+"used by applications bundled as AppImages during runtime, e.g., to recognize "
+"whether it's currently run from an AppImage, or to get some path information."
+msgstr ""
+
+#: ../../../source/packaging-guide/environment-variables.rst:9
+msgid ""
+"Depending on the type of the AppImage, the runtimes offer different feature "
+"sets."
+msgstr ""
+
+#: ../../../source/packaging-guide/environment-variables.rst:15
+#: ../../../source/packaging-guide/environment-variables.rst:26
+#: ../../../source/packaging-guide/environment-variables.rst:47
+msgid "Contents"
+msgstr ""
+
+#: ../../../source/packaging-guide/environment-variables.rst:18
+msgid "Type 1 AppImage runtime"
+msgstr ""
+
+#: ../../../source/packaging-guide/environment-variables.rst:22
+msgid ""
+"Type 1 is the deprecated/outdated AppImage type that is only in legacy "
+"support mode. It is not recommended to make new type 1 AppImages. We "
+"strongly recommend you to use :code:`appimagetool` to make type 2 AppImages."
+msgstr ""
+
+#: ../../../source/packaging-guide/environment-variables.rst:26
+#: ../../../source/packaging-guide/environment-variables.rst:47
+msgid "Variable name"
+msgstr "變數名稱"
+
+#: ../../../source/packaging-guide/environment-variables.rst:29
+#: ../../../source/packaging-guide/environment-variables.rst:50
+msgid ":code:`APPIMAGE`"
+msgstr ""
+
+#: ../../../source/packaging-guide/environment-variables.rst:29
+#: ../../../source/packaging-guide/environment-variables.rst:50
+msgid "(Absolute) path to AppImage file (with symlinks resolved)"
+msgstr ""
+
+#: ../../../source/packaging-guide/environment-variables.rst:32
+#: ../../../source/packaging-guide/environment-variables.rst:53
+msgid ":code:`APPDIR`"
+msgstr ""
+
+#: ../../../source/packaging-guide/environment-variables.rst:32
+msgid "Path of mountpoint of the ISO9660 image contained in the AppImage"
+msgstr ""
+
+#: ../../../source/packaging-guide/environment-variables.rst:35
+#: ../../../source/packaging-guide/environment-variables.rst:56
+msgid ":code:`OWD`"
+msgstr ""
+
+#: ../../../source/packaging-guide/environment-variables.rst:35
+#: ../../../source/packaging-guide/environment-variables.rst:56
+msgid "Path to working directory at the time the AppImage is called"
+msgstr ""
+
+#: ../../../source/packaging-guide/environment-variables.rst:42
+msgid "Type 2 AppImage runtime"
+msgstr ""
+
+#: ../../../source/packaging-guide/environment-variables.rst:44
+msgid ""
+"The type 2 AppImage runtime makes a few environment variables available for "
+"use in e.g., ``AppRun`` scripts:"
+msgstr ""
+
+#: ../../../source/packaging-guide/environment-variables.rst:53
+msgid "Path of mountpoint of the SquashFS image contained in the AppImage"
+msgstr ""
+
+#: ../../../source/packaging-guide/environment-variables.rst:59
+msgid ":code:`ARGV0`"
+msgstr ""
+
+#: ../../../source/packaging-guide/environment-variables.rst:59
+msgid ""
+"Name/path used to execute the script. This corresponds to the value you'd "
+"normally receive via the :code:`argv` argument passed to your :code:`main` "
+"method. Usually contains the filename or path to the AppImage, relative to "
+"the current working directory."
+msgstr ""
+
+#: ../../../source/packaging-guide/environment-variables.rst:68
+msgid ":code:`APPIMAGE` and :code:`ARGV0` have very different use cases."
+msgstr ""
+
+#: ../../../source/packaging-guide/environment-variables.rst:70
+msgid ""
+":code:`APPIMAGE` shall be used every time the full path of the AppImage is "
+"needed, e.g., if you need to touch the AppImage file, for example when you "
+"want to update it or read some meta information."
+msgstr ""
+
+#: ../../../source/packaging-guide/environment-variables.rst:73
+msgid ""
+":code:`ARGV0` provides information how the AppImage was called. When you "
+"call an AppImage through a symlink for instance, you can get the path to "
+"this symlink through :code:`ARGV0`, while :code:`APPIMAGE` would contain the "
+"absolute path to the file behind that symlink."
+msgstr ""
+
+#: ../../../source/packaging-guide/environment-variables.rst:77
+msgid ""
+"Scenarios where :code:`ARGV0` is really useful involve so-called multi-"
+"binary AppImages, where the filename in :code:`ARGV0` defines which program "
+"is called inside the AppImage. This concept is also known from single-binary "
+"tools like `BusyBox <https://en.wikipedia.org/wiki/BusyBox>`__, and can be "
+"implemented in a custom :code:`AppRun` script (see :ref:`Architecture <ref-"
+"architecture>` for more information)."
+msgstr ""

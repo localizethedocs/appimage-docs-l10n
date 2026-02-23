@@ -1,0 +1,107 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2022, The AppImage project
+# This file is distributed under the same license as the AppImage package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AppImage master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-04 12:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/contact.rst:4
+msgid "Contact"
+msgstr "聯絡方式"
+
+#: ../../../source/contact.rst:6
+msgid ""
+"The AppImage project documentation is brought to you by `the AppImage team "
+"<https://github.com/AppImage>`__. The source code is available `on GitHub "
+"<https://github.com/AppImage/docs.appimage.org>`__."
+msgstr ""
+"AppImage 專案文件由 `AppImage 團隊 <https://github.com/AppImage>`__ 提供。原"
+"始碼可於 `GitHub <https://github.com/AppImage/docs.appimage.org>`__ 取得。"
+
+#: ../../../source/contact.rst:8
+msgid ""
+"This page outlines how you can contact the team behind AppImage, e.g., to "
+"get additional support or have questions answered."
+msgstr ""
+"本頁說明您可以如何聯絡 AppImage 背後的團隊，例如取得額外支援或詢問問題。"
+
+#: ../../../source/contact.rst:12
+msgid "IRC"
+msgstr ""
+
+#: ../../../source/contact.rst:14
+msgid ""
+"If you have further questions, please feel free to contact the AppImage "
+"team. The easiest and fastest way is to join our `IRC channel #appimage "
+"<ircs://irc.libera.chat/appimage>`__ on `Libera.Chat <https://libera."
+"chat>`__ (`webchat <https://web.libera.chat/#AppImage>`__)."
+msgstr ""
+"若您有進一步的問題，歡迎聯絡 AppImage 團隊。最簡單且最快速的方式是加入我們在 "
+"`Libera.Chat <https://libera.chat>`__ 的 `IRC 頻道 #appimage <ircs://irc."
+"libera.chat/appimage>`__（`網頁聊天 <https://web.libera.chat/"
+"#AppImage>`__）。"
+
+#: ../../../source/contact.rst:16
+msgid "You can join the channel from Matrix, too: ``#appimage:libera.chat``."
+msgstr "您也可以從 Matrix 加入頻道：``#appimage:libera.chat``。"
+
+#: ../../../source/contact.rst:20
+msgid ""
+"Please beware that it might take a few minutes/hours until someone will "
+"check the chat and might be able to help you, so don't give up too quickly, "
+"and leave e.g., the tab open in the background if you can. You can also try "
+"at other times again. Please read `this article <https://workaround.org/"
+"getting-help-on-irc/>`__ before joining the IRC chat if you are new to IRC."
+msgstr ""
+"請注意，可能需要幾分鐘到幾小時才會有人查看聊天並能提供協助，所以不要太快放"
+"棄；如果可以，請將分頁在背景中保持開啟。您也可以改在其他時間再試。如果您是 "
+"IRC 新手，加入 IRC 聊天前請先閱讀\\ `這篇文章 <https://workaround.org/"
+"getting-help-on-irc/>`__。"
+
+#: ../../../source/contact.rst:24
+msgid ""
+"The :code:`#appimage` channel on freenode has been abandoned and is not "
+"maintained by the AppImage project. The channel :code:`##appimage` (which "
+"was created after :code:`#appimage` was forcefully removed because it "
+"mentioned our move) has never been official and has never been maintained by "
+"us."
+msgstr ""
+"freenode 上的 :code:`#appimage` 頻道已被棄用，且不再由 AppImage 專案維護。頻"
+"道 :code:`##appimage`（在 :code:`#appimage` 因提到我們的遷移而被強制移除後建"
+"立）從未是官方頻道，也從未由我們維護。"
+
+#: ../../../source/contact.rst:26
+msgid ""
+"Please see `this article <https://www.devever.net/~hl/freenode_abuse2>`__ "
+"for more information on what happened to our channel and why we planned to "
+"transition to a new network."
+msgstr ""
+"如需更多關於我們頻道發生了什麼以及為何計畫轉移到新網路的資訊，請參閱 `這篇文"
+"章 <https://www.devever.net/~hl/freenode_abuse2>`__。"
+
+#: ../../../source/contact.rst:30
+msgid "Forum"
+msgstr "論壇"
+
+#: ../../../source/contact.rst:32
+msgid ""
+"A slower but more sustainable way is to use the `Discourse forum <https://"
+"discourse.appimage.org>`__. You can log in using your existing Google or "
+"GitHub account, or alternatively register a local account with your email "
+"address."
+msgstr ""
+"較慢但更長久的方式是使用 `Discourse 論壇 <https://discourse.appimage."
+"org>`__。您可以使用既有的 Google 或 GitHub 帳號登入，或使用電子郵件註冊本機帳"
+"號。"

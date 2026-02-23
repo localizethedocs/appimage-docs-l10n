@@ -1,0 +1,60 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2022, The AppImage project
+# This file is distributed under the same license as the AppImage package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AppImage master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-04 12:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/packaging-guide/introduction.rst:2
+msgid "Introduction to Packaging"
+msgstr ""
+
+#: ../../../source/packaging-guide/introduction.rst:4
+msgid ""
+"So you decided to make an AppImage or two? Great! Or did you just come here "
+"to get some insights into how AppImages can be built? Let's have a look."
+msgstr ""
+
+#: ../../../source/packaging-guide/introduction.rst:6
+msgid ""
+"There are many different approaches how to build AppImages. Often, packaging "
+"an AppImage correctly depends on the application that you're trying to put "
+"into one, the so-called *payload*. Different programming languages (or, "
+"rather, different application types (i.e., native binaries, scripts, "
+"bytecode, etc.)) require different methods."
+msgstr ""
+
+#: ../../../source/packaging-guide/introduction.rst:8
+msgid ""
+"All application bundling attempts have one thing in common: the \"input "
+"format\" which is then turned into an AppImage using :ref:`appimagetool <ref-"
+"appimagetool>`. This input format is called AppDir, and is described in the :"
+"ref:`AppDir specification <ref-appdir-specification>`."
+msgstr ""
+
+#: ../../../source/packaging-guide/introduction.rst:10
+msgid ""
+"In a nutshell: packaging AppImages is building an AppDir. This AppDir is "
+"then simply turned into an AppImage. But if your AppDir is not built "
+"correctly, the AppImage won't work."
+msgstr ""
+
+#: ../../../source/packaging-guide/introduction.rst:12
+msgid ""
+"Of course, you're not left alone with this challenge. There are official as "
+"well as unofficial tools that allow you to create working AppDirs. These are "
+"described in the following sections. Just pick the one you think suits your "
+"needs, and start making AppImages."
+msgstr ""

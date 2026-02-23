@@ -1,0 +1,35 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2022, The AppImage project
+# This file is distributed under the same license as the AppImage package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AppImage master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-04 12:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/user-guide/index.rst:6
+msgid "Contents:"
+msgstr "目次："
+
+#: ../../../source/user-guide/index.rst:2
+msgid "User Guide"
+msgstr "使用者指南"
+
+#: ../../../source/user-guide/index.rst:4
+msgid ""
+"This chapter shows users what AppImages are from a user perspective, how "
+"they can be used, what desktop integration is and how it is accomplished, "
+"and what other tools are provided to manage, update etc. AppImages."
+msgstr ""
+"本章節從使用者角度說明 AppImage 是什麼、如何使用、什麼是桌面整合以及如何完"
+"成，並介紹可用於管理、更新等工作的其他工具。"

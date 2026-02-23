@@ -1,0 +1,364 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2022, The AppImage project
+# This file is distributed under the same license as the AppImage package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AppImage master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-04 12:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/packaging-guide/distribution.rst:4
+msgid "Distributing AppImages"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:6
+msgid ""
+"There are several ways to distribute AppImages to users. Most likely, "
+"AppImages are distributed from their creator to the users."
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:8
+msgid ""
+"The following section contains some details on how AppImages are commonly "
+"distributed."
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:14
+msgid "Contents"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:19
+msgid "Hosting AppImages"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:21
+msgid ""
+"Most commonly, AppImage creators host the files on a standard web server. "
+"This is the easiest and most accessible way."
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:23
+msgid ""
+"We recommend that you put the AppImage for Linux on your project's download "
+"page alongside the dmg for macOS and the exe for Windows, like so:"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:25
+msgid ""
+"Download page overview, showing Windows, MacOS, Linux and Source code "
+"downloads"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:30
+msgid ""
+"For open source projects, if your project is located on GitHub, we recommend "
+"that you publish your AppImage in addition on `GitHub Releases`_."
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:33
+msgid ""
+"For :ref:`AppImageUpdate <ref-appimageupdate>` to work properly, it is "
+"required that the web server supports HTTP range requests. Most web hosts "
+"support this, as the same technology is used for navigating an MP3 files, "
+"for example."
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:35
+msgid ""
+"Some hosted services are known not to support range requests right now. "
+"These involve:"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:37
+msgid "`Gitlab releases <https://gitlab.com>`_"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:39
+msgid ""
+"If you use such a service and wish to use :ref:`AppImageUpdate <ref-"
+"appimageupdate>` with it, please ask the providers to enable range requests."
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:47
+msgid "Complying with licenses"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:49
+msgid ""
+"Even under open source licenses, distributing and/or using code in source or "
+"binary form may create certain legal obligations, such as the distribution "
+"of the corresponding source code and build instructions for GPL licensed "
+"binaries, and displaying copyright statements and disclaimers. As the author "
+"of an application which you are distributing as an AppImage, you are "
+"responsible to obey all licenses for any third-party dependencies that you "
+"include in your AppImage, and ensure that their licenses and source code are "
+"made available, where required, together with the release binaries. "
+"AppImageKit itself is released under the permissive MIT license."
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:54
+msgid "Do not put \"Linux\" into the Appimage file name"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:56
+msgid ""
+"Please **DO NOT** put \"linux\" into the file name of an AppImage. It is "
+"abundantly clear that an :code:`.exe` is for Windows, a :code:`.dmg` is for "
+"the Mac and that :code:`.AppImage` is for Linux (and compatible systems such "
+"as Windows with WSL2 and FreeBSD with the Linuxulator). No need to duplicate."
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:61
+msgid "Do not put AppImages into other archives"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:63
+msgid ""
+"Please **DO NOT** put an AppImage into another archive like a :code:`.zip` "
+"or :code:`.tar.gz`."
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:65
+msgid ""
+"While it may be tempting to avoid users having to set permission, this "
+"breaks desktop integration with the optional :code:`appimaged` daemon, among "
+"other things. Besides, the beauty of the AppImage format is that you never "
+"need to unpack anything. Furthermore, packing an AppImage into some form of "
+"archive prevents the AppImage from being added to the central catalog of "
+"available AppImages at https://github.com/AppImage/appimage.github.io."
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:69
+msgid "Making your AppImages discoverable"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:71
+msgid ""
+"Now that you have produced your AppImage, you want users to be able to "
+"easily find it. To get users, you need to make your AppImage known to the "
+"world."
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:75
+msgid "Application website"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:77
+msgid ""
+"The most obvious place to advertise your AppImage is to prominently featured "
+"on your application’s download page."
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:80
+msgid "'Download as an AppImage' button"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:82
+msgid ""
+"You can use a \"Download as an AppImage\" button alongside other similar "
+"buttons:"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:84
+msgid "Download as an AppImage"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:87
+msgid ""
+"Link this button directly to the latest version of your AppImage, or to a "
+"download page containing the link to the latest version of your AppImage."
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:89
+msgid ""
+"Button by `Khushraj Rathod <https://github.com/Khushraj/>`__ under the `CC0 "
+"license <https://creativecommons.org/share-your-work/public-domain/cc0/>`_"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:92
+msgid "Social Media"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:94
+msgid ""
+"Also be sure to advertise your new AppImage on social media, for example on "
+"Twitter, blogs, etc. Be sure to use the :code:`#AppImage` hashtag for "
+"additional discoverability."
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:100
+msgid "AppImageHub"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:102
+msgid ""
+"You may want to add your AppImage to `AppImageHub <https://appimage.github."
+"io/apps/>`__, a crowd-sourced directory of available, automatically tested "
+"AppImages with data that 3rd party app stores and software centers can use. "
+"Given an URL to an AppImage, it inspects the AppImage and puts it into a "
+"community-maintained catalog."
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:104
+msgid ""
+"App stores and software centers can consume the metadata collected by this "
+"project. See `AppImage ecosystem`_."
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:106
+msgid "Projects already using this data include:"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:108
+msgid ""
+"Nitrux, NX Software Center: https://github.com/Nitrux/nx-software-center"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:109
+msgid "https://github.com/simoniz0r/spm"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:110
+msgid "https://github.com/sillasleal/appcenter"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:111
+msgid "https://github.com/lliurex/lliurex-store"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:112
+msgid ""
+"Please contact us if you are using this data so that we can list your "
+"project here"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:114
+msgid ""
+"To get your AppImage included, create a new file at https://github.com/"
+"AppImage/AppImageHub/new/master/data and send a pull request."
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:116
+msgid ""
+"The file should contain one line with a link to the GitHub repository that "
+"hosts AppImages on its Releases page."
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:118
+msgid "Alternatively, a link to the AppImage. Nothing else."
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:120
+msgid ""
+"Then send a pull request. Travis CI will instantly perform an automated "
+"review of the AppImage, and in case it succeeds, you will see a green result "
+"in your pull request. If you get a red result, check the log of the Travis "
+"CI build, and fix it."
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:122
+msgid ""
+"Once an application is added to AppImageHub, it is not updated automatically "
+"anymore unless its input file changes. In case you need to get your entry on "
+"AppImageHub updated (e.g., you provided new meta information in your latest "
+"AppImage release), you need to submit another pull request. At the bottom of "
+"your AppImageHub page, you will find a link named \"Edit the input for this "
+"page\" with which you can do this. If the URL has stayed the same, adding or "
+"removing a \"#\" character in a new line will trigger an update. Remember "
+"that AppImageHub does not keep track of versions, so it is not necessary to "
+"do this just because you released a new version of your application."
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:124
+msgid ""
+"As a format, AppImage is designed in a way that does not impose restrictions "
+"on the person generating AppImages. Basically you are free to put inside an "
+"AppImage whatever you want. For AppImageHub, however, additional rules "
+"apply. AppImages submitted to AppImage hub undergo automatic and possibly "
+"additional manual review."
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:126
+msgid ""
+"Must be downloadable from an URL. Our testing system fetches the AppImage "
+"using :code:`wget`. Currently we cannot get AppImages from locations behind "
+"authentication and/or cookie-protected locations. For commercial "
+"applications we recommend to have a generally downloadable demo/trial "
+"version. Please contact us if you would like to add your commercial AppImage "
+"to the directory and it is not available for general download"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:127
+msgid ""
+"Must run on the `oldest still-supported Ubuntu LTS release`_ (16.04 as of "
+"2019, for up to date information see https://en.wikipedia.org/wiki/"
+"Ubuntu#Releases) without the installation of additional packages. Targeting "
+"the oldest still-supported LTS is to ensure that the AppImage will run not "
+"only on the very latest, but also on older target systems, such as "
+"enterprise distributions (not limited to Ubuntu)"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:128
+msgid "Must execute in our Travis CI based testing environment"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:129
+msgid "Must pass `appdir-lint.sh`_"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:130
+msgid "Must have a desktop file that passes :code:`desktop-file-validate`"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:131
+msgid ""
+"Must run without active Internet connection (and at least show some "
+"information)"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:132
+msgid ""
+"Should have an `AppStream metainfo file`_ in :code:`usr/share/metainfo`. If "
+"it does, must pass :code:`appstreamcli` validation"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:133
+msgid ""
+"Should show a useful screen rather than some crude dialog box since the main "
+"window will be used for the main screenshots. Note that you can provide your "
+"own screenshots by using an `AppStream metainfo file`_"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:134
+msgid ""
+"Should be available under a constant URL that does not contain the version "
+"number. Alternatively, should be available on GitHub Releases or the "
+"openSUSE Build Service (you are free to suggest additional serices like "
+"these)"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:143
+msgid "Future catalogs"
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:145
+msgid ""
+"In the future, we may want to use decentralized peer-to-peer databases for "
+"the catalog of AppImages."
+msgstr ""
+
+#: ../../../source/packaging-guide/distribution.rst:147
+msgid ""
+"We are currently investigating technologies such as IPFS and would be happy "
+"to win contributors in this area."
+msgstr ""

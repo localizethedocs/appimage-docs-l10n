@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2022, The AppImage project
+# This file is distributed under the same license as the AppImage package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AppImage master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-04 12:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/user-guide/mac.rst:2
+msgid "AppImage for macOS switchers"
+msgstr "給 macOS 使用者轉換到 AppImage"
+
+#: ../../../source/user-guide/mac.rst:6
+msgid ""
+"This page compares the AppImage terms to its macOS equivalents. It should "
+"help macOS to Linux switchers to \"get\" AppImage concepts quickly."
+msgstr ""
+"本頁將 AppImage 的術語與 macOS 的對應概念做比較，可協助從 macOS 轉到 Linux 的"
+"使用者快速理解 AppImage 概念。"
+
+#: ../../../source/user-guide/mac.rst:10
+msgid "AppImage concept"
+msgstr "AppImage 概念"
+
+#: ../../../source/user-guide/mac.rst:10
+msgid "Rough macOS equivalent"
+msgstr "大致的 macOS 對應物"
+
+#: ../../../source/user-guide/mac.rst:12
+msgid "``.AppImage`` file"
+msgstr "``.AppImage`` 檔案"
+
+#: ../../../source/user-guide/mac.rst:12
+msgid ""
+"``.app`` inside a ``.dmg`` file that mounts itself automatically when "
+"executed"
+msgstr "位於 ``.dmg`` 檔案中的 ``.app``，執行時會自動掛載"
+
+#: ../../../source/user-guide/mac.rst:16
+msgid "``.AppDir`` directory"
+msgstr "``.AppDir`` 目錄"
+
+#: ../../../source/user-guide/mac.rst:16
+msgid "``.app`` directory"
+msgstr "``.app`` 目錄"
+
+#: ../../../source/user-guide/mac.rst:18
+msgid "``.desktop`` file"
+msgstr "``.desktop`` 檔案"
+
+#: ../../../source/user-guide/mac.rst:18
+msgid "``Info.plist`` file"
+msgstr "``Info.plist`` 檔案"
+
+#: ../../../source/user-guide/mac.rst:20
+msgid "``*.metainfo.xml`` file and  ``package.json`` file (for  Electron apps)"
+msgstr ""
+"``*.metainfo.xml`` 檔案與 ``package.json`` 檔案（適用於 Electron 應用程式）"
+
+#: ../../../source/user-guide/mac.rst:20
+msgid "``Info.plist`` file (more elaborate version thereof)"
+msgstr "``Info.plist`` 檔案（更完整的版本）"
+
+#: ../../../source/user-guide/mac.rst:22
+msgid "``usr/`` inside the AppDir"
+msgstr "AppDir 內的 ``usr/``"
+
+#: ../../../source/user-guide/mac.rst:22
+msgid "``Resources/`` inside the ``.app``"
+msgstr "``.app`` 內的 ``Resources/``"
+
+#: ../../../source/user-guide/mac.rst:24
+msgid "`AppImageUpdate`_"
+msgstr "`AppImageUpdate`_"
+
+#: ../../../source/user-guide/mac.rst:24
+msgid "`Sparkle Framework`_"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:26
+msgid ""
+"No direct equivalent, but `update information`_ in ELF section ``.upd_info``"
+msgstr "沒有直接對應物，但可使用 ELF 區段 ``.upd_info`` 中的 `更新資訊`_"
+
+#: ../../../source/user-guide/mac.rst:26
+msgid "`Sparkle appcast`_"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:28
+msgid "Optional ``appimaged`` daemon"
+msgstr "可選的 ``appimaged`` 常駐服務"
+
+#: ../../../source/user-guide/mac.rst:28
+msgid ""
+"`Launch Services`_ to register applications in the system (e.g., MIME types, "
+"icons, etc.)"
+msgstr "`Launch Services`_ 用於在系統中註冊應用程式（例如 MIME 類型、圖示等）"
+
+#: ../../../source/user-guide/mac.rst:30
+msgid ""
+"No direct equivalent, but AppImageHub_ central directory of available "
+"AppImages"
+msgstr "沒有直接對應物，但 AppImageHub_ 是可用 AppImage 的中央目錄"
+
+#: ../../../source/user-guide/mac.rst:30
+msgid "Mac App Store"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:32
+msgid "Optional signature in ELF section"
+msgstr "ELF 區段中的可選簽章"
+
+#: ../../../source/user-guide/mac.rst:32
+msgid "Signatures in ``/Contents/_MASReceipt/``"
+msgstr "``/Contents/_MASReceipt/`` 內的簽章"
+
+#: ../../../source/user-guide/mac.rst:34
+msgid ""
+"No direct equivalent (yet?), but use `linuxdeployqt`_ (for Qt, C++, C) or "
+"`electron-builder`_ for Electron apps in the build chain"
+msgstr ""
+"尚無直接對應物，但在建置流程中可使用 `linuxdeployqt`_（適用於 Qt、C++、C）或"
+"在 Electron 應用程式中使用 `electron-builder`_"
+
+#: ../../../source/user-guide/mac.rst:34
+msgid "**Xcode** IDE generates ``.app``  when you click \"compile\""
+msgstr "**Xcode** IDE 在您點擊「compile」時會產生 ``.app``"
+
+#: ../../../source/user-guide/mac.rst:37
+msgid "``appimagetool my.AppDir my.AppImage``"
+msgstr ""
+
+#: ../../../source/user-guide/mac.rst:37
+msgid ""
+"``hdiutil create -volname myApp -srcfolder my.app/../ -ov -format UDZO myApp."
+"dmg``"
+msgstr ""

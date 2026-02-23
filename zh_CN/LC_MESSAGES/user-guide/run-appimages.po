@@ -1,0 +1,294 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2022, The AppImage project
+# This file is distributed under the same license as the AppImage package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AppImage master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-04 12:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/user-guide/run-appimages.rst:2
+msgid "Running AppImages"
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:4
+msgid ""
+"This page shows how a user can run AppImages, on their favorite distribution "
+"using the desktop environment tools or via the terminal. Also, it explains "
+"the concept of desktop integration, and presents tools that can be used for "
+"this purpose."
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:10
+msgid "Contents"
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:15
+msgid "Download, make executable, run"
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:17
+msgid ""
+"It's quite simple to run AppImages. As the heading says, just download them, "
+"make them executable and run them. This can either be done using the GUI or "
+"via the command line."
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:21
+msgid ""
+"Information on how to run AppImages was moved into our :ref:`ref-quickstart` "
+"page."
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:23
+msgid "Please see :ref:`ref-how-to-run-appimage` for more information."
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:27
+msgid "Mount or extract AppImages"
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:29
+msgid ""
+"To inspect the contents of any AppImage, it is possible to either mount them "
+"without running them, or extract the contents to a directory in the current "
+"working directory.."
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:33
+msgid "Mount an AppImage"
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:35
+msgid ""
+"AppImages can be mounted in the system to provide *read-only* access for "
+"users to allow for inspecting the contents."
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:37
+msgid ""
+"To mount an AppImage temporarily, you have two options. The easiest way to "
+"do so is to call AppImages with the special parameter ``--appimage-mount``, "
+"for example::"
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:39
+msgid ""
+"> my.AppImage --appimage-mount\n"
+"/tmp/mount_myXXXX\n"
+"# now, use another terminal or file manager to inspect the contents in the "
+"directory printed by --appimage-mount"
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:43
+msgid ""
+"The AppImage is unmounted when the application called in the example is "
+"interrupted (e.g., by pressing :kbd:`Ctrl+C`, closing the terminal etc.)."
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:46
+msgid ""
+"This is only available for type 2 AppImages. Type 1 AppImages do not provide "
+"any self-mounting mechanism. To mount type 1 AppImages, use ``mount -o "
+"loop``."
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:48
+msgid ""
+"This method is to be preferable, as other methods have some major "
+"disadvantages explained below."
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:50
+msgid ""
+"Another way to mount AppImages is to use the normal ``mount`` command "
+"toolchain of your Linux distribution. Mounting and unmounting devices, "
+"files, images and also AppImages requires root permissions. Also, you need "
+"to provide a mountpoint. Please see the following example:"
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:52
+msgid "For type 1 AppImages::"
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:54
+msgid ""
+"> mkdir mountpoint\n"
+"> sudo mount my.AppImage mountpoint/\n"
+"# you can now inspect the contents\n"
+"> sudo umount mountpoint/"
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:59
+msgid "For type 2 AppImages::"
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:61
+msgid ""
+"> mkdir mountpoint\n"
+"> my.AppImage --appimage-offset\n"
+"> 123456\n"
+"> sudo mount my.AppImage mountpoint/ -o offset=123456\n"
+"# you can now inspect the contents\n"
+"> sudo umount mountpoint/"
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:68
+msgid ""
+"Note that the number `123456` is just an example here, you will likely see "
+"another number."
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:71
+msgid ""
+"AppImages mounted using this method are not unmounted automatically. Please "
+"do not forget to call ``umount`` the AppImage as soon as you don't need it "
+"mounted any more."
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:73
+msgid ""
+"If an AppImage is not unmounted properly, and is moved to a new location, a "
+"so-called \"dangling mount\" can be created. This should be avoided by "
+"properly unmounting the AppImages."
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:76
+msgid ""
+"Type 2 AppImages which are mounted using the ``--appimage-mount`` parameter "
+"are **not** affected by this problem!"
+msgstr ""
+
+#: ../../../source/user-guide/notes/external-tool-to-mount-and-extract-appimages.rst:2
+msgid ""
+"There is currently no way to use the former method without calling the "
+"target AppImage. This might not always be appropriate, e.g., if the AppImage "
+"is not trustworthy."
+msgstr ""
+
+#: ../../../source/user-guide/notes/external-tool-to-mount-and-extract-appimages.rst:4
+msgid ""
+"The AppImage team is working on implementing a mount option in :ref:`ref-"
+"appimagetool`. Please see the related `GitHub issue <https://github.com/"
+"AppImage/AppImageKit/issues/830>`__ for progress on this."
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:82
+msgid "Extract the contents of an AppImage"
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:84
+msgid ""
+"An alternative to mounting the AppImages is to extract their contents. This "
+"allows for modifying the contents. The resulting directory is a valid :ref:"
+"`AppDir <ref-appdir>`, and users can create AppImages from them again using :"
+"ref:`ref-appimagetool`."
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:86
+msgid ""
+"Analog to mounting AppImages, there is a simple commandline switch to "
+"extract the contents of type 2 AppImages without external tools. Just call "
+"the AppImage with the parameter :code:`--appimage-extract`. This will cause "
+"the :ref:`ref-runtime` to create a new directory called :code:`squashfs-"
+"root`, containing the contents of the AppImage's :ref:`AppDir <ref-appdir>`."
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:88
+msgid ""
+"Type 1 AppImages require the deprecated tool AppImageExtract_ to extract the "
+"contents of an AppImage. It's very limited functionality wise, and requires "
+"a GUI to run. It creates a new directory in the user's desktop directory."
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:98
+msgid "Integrating AppImages into the desktop"
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:100
+msgid ""
+"AppImages are standalone bundles, and do not need to be *installed*. "
+"However, some users may want their AppImages to be available like "
+"distribution provided applications. This primarily involves being able to "
+"launch desktop applications from their desktop environments' launchers. This "
+"concept is called *desktop integration*."
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:103
+msgid "appimaged"
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:105
+msgid ""
+"`appimaged <https://github.com/probonopd/go-appimage/releases>`__ is a "
+"daemon that monitors the system and integrates AppImages. It monitors a "
+"predefined set of directories on the user's system searching for AppImages, "
+"and integrates them into the system using :ref:`libappimage <ref-"
+"libappimage>`."
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:108
+msgid "More information on appimaged can be found in :ref:`appimaged`."
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:112
+msgid "AppImageLauncher"
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:114
+msgid ""
+"AppImageLauncher_ is a helper application for Linux distributions serving as "
+"a kind of \"entry point\" for running and integrating AppImages. It makes a "
+"user's system AppImage-ready™."
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:116
+msgid ""
+"AppImageLauncher must be installed into the system to be able to integrate "
+"into the system properly. It uses technologies that are independent from any "
+"desktop environment features, and therefore should be able to run on most "
+"distributions."
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:118
+msgid ""
+"After install AppImageLauncher, you can simply double-click AppImages in "
+"file managers, browsers etc. You will be prompted whether to integrate the "
+"AppImage, or run it just once. When you choose to integrate your AppImage, "
+"the file will be moved into the directory :code:`~/Applications`. This helps "
+"reducing the mess of AppImages on your file system and prevents you from "
+"having to search for the actual AppImage file if you want to e.g., remove it."
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:120
+msgid ""
+"To provide a complete solution for managing AppImages on the system, "
+"AppImageLauncher furthermore provides solutions for updating and removing "
+"AppImages from the system. These functions can be found in the context menus "
+"of the entries in the desktop's launcher."
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:125
+msgid ""
+"More information about AppImageLauncher can be found in :ref:`ref-"
+"appimagelauncher`."
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:129
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../../source/user-guide/run-appimages.rst:131
+msgid ""
+"Please refer to our :ref:`Troubleshooting page <ref-ug-troubleshooting>`."
+msgstr ""

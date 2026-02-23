@@ -1,0 +1,779 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2022, The AppImage project
+# This file is distributed under the same license as the AppImage package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AppImage master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-04 12:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:4
+msgid "pkg2appimage"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:6
+msgid ""
+"If you already have existing binaries (either in archive or :code:`.deb` "
+"format or a ppa) then the recommended way to convert these to an AppImage is "
+"to write a `.yml description file <https://github.com/AppImage/pkg2appimage/"
+"tree/master/recipes>`__ and run it with `pkg2appimage`_."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:12
+msgid "Contents"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:15
+msgid "Introduction"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:18
+msgid "To build an AppImage from a :code:`.yml` description file, simply run:"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:20
+msgid "bash -ex ./pkg2appimage recipes/XXX.yml"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:25
+msgid ""
+":code:`.yml` description files tell pkg2appimage where to get the "
+"ingredients from, and how to convert them to an AppImage (besides the "
+"general steps already included in pkg2appimage). Study some `examples "
+"<https://github.com/AppImage/pkg2appimage/tree/master/recipes>`__ to see how "
+"it works."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:30
+msgid "pkg2appimage suffers from a few notable issues:"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:32
+msgid ""
+"It is likely to add lots of bloat to the final AppImage. As it simply "
+"extracts the contents of packages, there is no check whether any of these "
+"resources are actually used by the application or not. You are recommended "
+"to check final AppImages, and add ``rm`` commands to your recipes to remove "
+"unused data."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:33
+msgid ""
+"pkg2appimage uses distribution packages downloaded using the package "
+"managers, however, the packages are not authenticated, as most security "
+"functionality has been deactivated. This is a major security issue. "
+"pkg2appimage is therefore recommended for personal use only. Upstream "
+"authors should consider :ref:`packaging from source <ref-from-source>`."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:36
+msgid ""
+"See `this GitHub issue <https://github.com/AppImage/pkg2appimage/"
+"issues/197>`__ for more information on the security issue."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:40
+msgid "``.yml`` files"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:42
+msgid ""
+"The easiest way to build an AppImage is to write a :code:`.yml` file. We "
+"developed a rather simple format that allows developers to write a :code:"
+"`app.yml` file that describes how to build an AppImage for :code:`app`, "
+"being able to reuse pre-built binaries, e.g. from Debian packages, both to "
+"save time for creating and building an AppImage."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:44
+msgid ""
+"This document provides an introduction to the :code:`.yml` files' purpose, "
+"their structure and a few examples describing how to use all the advanced "
+"features."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:48
+msgid "Purpose of ``.yml`` files"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:50
+msgid ""
+":code:`.yml` is the file extension commonly used for *YAML* (*Yet Another "
+"Markup Language*, nowadays also serves as an abbreviation for *YAML Ain’t "
+"Markup Language*)."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:52
+msgid ""
+"YAML's approach to describing data is to combine associative lists (known "
+"as :code:`dict` in Python or :code:`object literal` in JavaScript, for "
+"example), lists (arrays) and scalar values. This results in an easy to parse "
+"and also easy to read format."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:54
+msgid ""
+"The :code:`.yml` files are used by `pkg2appimage`_ which is used in the "
+"*AppImages* project to convert binary *ingredients* into AppImages for "
+"demonstration purposes. Their primary objective is to make it very simple to "
+"convert pre-existing binaries into the AppImage format. If you can build "
+"your software from source, you may generate AppImages directly as part of "
+"your build workflow; in this case you may not need a :code:`.yml` file (but "
+"a Travis CI :code:`.travis.yml` and/or a :code:`Makefile`, etc.)."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:56
+msgid ""
+"The :code:`.yml` file format is not part of the AppImage standard, which "
+"just describes the AppImage container format and is agnostic as to how the "
+"payload inside an AppImage gets generated. Neither it is part of "
+"AppImageKit, because AppImageKit is only concerned with taking a pre-"
+"existing *AppDir* and converting that into an AppImage. Such an AppDir is "
+"created from the instructions stored in the :code:`.yml` files, and "
+"converted to an AppImage using *AppImageKit*."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:60
+msgid "General anatomy of ``.yml`` files"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:62
+msgid "The general format of :code:`.yml` files is as follows:"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:64
+msgid ""
+"app: (name of the application)\n"
+"  (optional flags)\n"
+"\n"
+"ingredients:\n"
+"  (instructions that describe from where to get\n"
+"  the binary ingredients used for the AppImage)\n"
+"\n"
+"script:\n"
+"  (instructions on how to convert these ingredients to an AppImage)"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:77
+msgid "As you can see, the :code:`.yml` file consists of three sections:"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:79
+msgid ""
+"The **overall section** (containing the name of the application and optional "
+"flags)"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:80
+msgid ""
+"The **ingredients section** (describing from where to get the binary "
+"ingredients used for the AppImage)"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:81
+msgid ""
+"The **script section** (describing how to convert these ingredients to an "
+"AppImage)"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:83
+msgid ""
+"Note that the sections may contain sub-sections. For example, the "
+"ingredients section can also have a script section containing instructions "
+"on how to determine the most recent version of the ingredients and how to "
+"download them."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:87
+msgid "Overall section"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:90
+msgid "``app`` key"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:92
+msgid ""
+"Mandatory. Contains the name of the application. If the :code:`.yml` file "
+"uses ingredients from packages (e.g., :code:`.deb`), then the name must "
+"match the package name of the main executable."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:96
+msgid "Keys that enable ability to relocate"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:98
+msgid ""
+"Optional. Either :code:`binpatch: true` or :code:`union: true`. These keys "
+"enable workarounds that make it possible to run applications from different, "
+"changing places in the file system (i.e., make them relocateable) that are "
+"not made for this. For example, some applications contain hardcoded paths to "
+"a compile-time :code:`$PREFIX` such as :code:`/usr`. This is generally "
+"discouraged, and application authors are asked to use paths relative to the "
+"main executable instead. Libraries like *binreloc* exist to make this "
+"easier. Since many applications are not relocateable yet, there are "
+"workarounds which can be used by one of these keys:"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:100
+msgid ""
+":code:`binpatch: true`  indicates that binaries in the AppImage should be "
+"patched to replace the string :code:`/usr` by the string :code:`././`,  an :"
+"code:`AppRun` file should be put inside the AppImage that does a :code:"
+"`chdir()` to the :code:`usr/` directory of inside AppDir before executing "
+"the payload application. The net effect is this that applications can find "
+"their resources in the  :code:`usr/` directory inside the AppImage as long "
+"as they do not internally use :code:`chdir()` operations themselves."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:101
+msgid ""
+":code:`union: true` indicates that an :code:`AppRun` file should be put "
+"inside the AppImage that tries to create the impression of a union file "
+"system, effectively creating the impression to the payload application that "
+"the contents of the AppImage are overlayed over :code:`/`. This can be "
+"achieved, e.g., using :code:`LD_PRELOAD` and a library that redirects file "
+"system calls. This works as long as the payload application is a dynamically "
+"linked binary."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:105
+msgid "Ingredients section"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:107
+msgid ""
+"Describes how to acquire the binary ingredients that go into the AppImage. "
+"Binary ingredients can be archives like :code:`.zip` files, packages like :"
+"code:`.deb` files or APT repositories like Debian package archives or PPAs."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:111
+msgid ""
+"In the future, source ingredients could also be included in the :code:`.yml` "
+"file definition. Source ingredients could include tarballs and Git "
+"repositories. It would probably be advantageous if we could share the "
+"definition with other formats like snapcraft's :code:`.yaml` files. "
+"Proposals for this are welcome."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:114
+msgid ""
+":code:`.yml` files are supposed not to hardcode version numbers, but "
+"determine the latest version at runtime. If the  :code:`.yml` files "
+"describes the released version, it should determine the latest released "
+"version at runtime. If the  :code:`.yml` files describes the development "
+"version, it might reference the latest nightly or continuous build instead."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:118
+msgid "Using ingredients from a binary archive"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:120
+msgid ""
+"The following example ingredients section describes how to get the latest "
+"version of a binary archive:"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:122
+msgid ""
+"ingredients:\n"
+"  script:\n"
+"    - DLD=$(wget -q \"https://api.github.com/repos/atom/atom/releases/"
+"latest\" -O - | grep -E \"https.*atom-amd64.tar.gz\" | cut -d'\"' -f4)\n"
+"    - wget -c $DLD\n"
+"    - tar zxvf atom*tar.gz"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:131
+msgid ""
+"The :code:`script` section inside the :code:`ingredients` section determines "
+"its URL, downloads and extracts the binary archive."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:135
+msgid "Using ingredients from a debian repository"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:137
+msgid ""
+"The following example ingredients section describes how to get the latest "
+"version of a package from a Debian archive:"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:139
+msgid ""
+"ingredients:\n"
+"  dist: xenial\n"
+"  sources:\n"
+"    - deb http://archive.ubuntu.com/ubuntu/ xenial main universe\n"
+"    - deb http://download.opensuse.org/repositories/isv:/KDAB/"
+"xUbuntu_16.04/ /"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:148
+msgid ""
+"The :code:`dist` section inside the :code:`ingredients` section defines "
+"which Debian distribution should be used as a base. The :code:`sources` "
+"section inside the :code:`ingredients` section describes the repositories "
+"from which the package should be pulled. The entries are in the same format "
+"as lines in a debian :code:`sources.list` file. Note that the :code:`http://"
+"download.opensuse.org/repositories/isv:/KDAB/xUbuntu_16.04` repository needs "
+"the :code:`http://archive.ubuntu.com/ubuntu/` repository so that the "
+"dependencies can be resolved."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:152
+msgid ""
+"In the future, other types of packages like :code:`.rpm` could also be "
+"included in the :code:`.yml` file definition. Proposals for this are welcome "
+"if the proposer also implements support for this in the `pkg2appimage`_ "
+"script."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:156
+msgid "Using ingredients from an Ubuntu PPA"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:158
+msgid ""
+"This is a special case of a Debian repository. PPAs can be uniquely "
+"identified with the pattern :code:`owner/name` and can, for brevity, be "
+"specified like this:"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:160
+msgid ""
+"ingredients:\n"
+"  dist: xenial\n"
+"  sources:\n"
+"    - deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe\n"
+"  ppas:\n"
+"    - geany-dev/ppa"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:170
+msgid ""
+"The :code:`ppas` section inside the :code:`ingredients` section lets you "
+"specify one or more Ubuntu PPAs. This is equivalent to, but more elegant "
+"than, adding the corresponding :code:`sources.list` entries to the :code:"
+"`sources` section inside the :code:`ingredients` section."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:174
+msgid ""
+"In the future, similar shortcuts for other types of personal repositories, "
+"such as projects on openSUSE build service, could also be included in the :"
+"code:`.yml` file definition. Proposals for this are welcome if the proposer "
+"also implements support for this in the `pkg2appimage`_ script."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:178
+msgid "Using local deb files"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:180
+msgid ""
+"This allows the use of local deb files (rather than downloading the deb "
+"ingredients)"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:182
+msgid ""
+"ingredients:\n"
+"  dist: xenial\n"
+"  sources:\n"
+"    - deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe\n"
+"  debs:\n"
+"    - /home/area42/kdenlive.deb\n"
+"    - /home/area42/kdenlive/*"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:193
+msgid "As you can see, for a single file, just use"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:195
+msgid "- /path/to/file.deb"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:200
+msgid ""
+"And for all files in a directory (like local repository). Note that the end "
+"of the path ends with :code:`/*`:"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:202
+msgid "- /path/to/local/repo/*"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:209
+msgid ""
+"this is for personal use, if you use your recipe it will NOT work on another "
+"computer if the debs files are not in the specified directory"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:213
+msgid "Excluding certain packages"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:215
+msgid ""
+"Some packages declare dependencies that are not necessarily required to run "
+"the software. The :code:`.yml` format allow overriding these by pretending "
+"that the packages are installed already. To exclude these dependencies (and "
+"any dependencies they would otherwise pull in), the packages have to be "
+"added to the :code:`exclude` key in the :code:`ingredients` section:"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:217
+msgid ""
+"ingredients:\n"
+"  dist: xenial\n"
+"  packages:\n"
+"    - multisystem\n"
+"    - gksu\n"
+"  sources:\n"
+"    - deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe\n"
+"    - deb http://liveusb.info/multisystem/depot all main\n"
+"  exclude:\n"
+"    - qemu\n"
+"    - qemu-kvm\n"
+"    - cryptsetup\n"
+"    - libwebkitgtk-3.0-0\n"
+"    - dmsetup"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:235
+msgid ""
+"In this example, excluding :code:`qemu` means that the qemu package and all "
+"of its dependencies that it would normally pull into the AppImage will be "
+"excluded from the AppImage (unless something else in the AppImage pulls in "
+"some of those depdencies already)."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:239
+msgid "Pretending certain versions of dependencies being installed"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:241
+msgid ""
+"The dependency information in some packages may result in the package "
+"manager to refuse the application to be installed if some **exact** versions "
+"of dependencies are not present in the system. In this case, it may be "
+"necessary pretend the **exact** version of a dependency to be installed on "
+"the target system by using the :code:`pretend` key in the :code:"
+"`ingredients` section:"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:243
+msgid ""
+"ingredients:\n"
+"  dist: xenial\n"
+"  sources:\n"
+"    - deb http://archive.ubuntu.com/ubuntu/ xenial main universe\n"
+"  ppas:\n"
+"    - otto-kesselgulasch/gimp-edge\n"
+"  pretend:\n"
+"    - libcups2 1.7.2-0ubuntu1"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:255
+msgid ""
+"The assumption here is that every target system has at least the pretended "
+"version available, and that newer versions of the pretended package are able "
+"to run the application just as well as the pretended version itself *(if "
+"this is not the case, then the pretended package has broken downward "
+"compatibility and should be fixed)*."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:259
+msgid "Arbitrary scripts in the ingredients section"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:261
+msgid ""
+"You may add arbitrary shell commands to the :code:`script` section inside "
+"the :code:`ingredients` section in order to facilitate the retrieval of the "
+"binary ingredients. This allows building AppImages for complex situations as "
+"illustrated in the following example:"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:263
+msgid ""
+"ingredients:\n"
+"  script:\n"
+"    - URL=$(wget -q https://www.fosshub.com/JabRef.html -O - | grep jar | "
+"cut -d '\"' -f 10)\n"
+"    - wget -c \"$URL\"\n"
+"    - wget -c --no-check-certificate --no-cookies --header \"Cookie: "
+"oraclelicense=accept-securebackup-cookie\" http://download.oracle.com/otn-"
+"pub/java/jdk/8u66-b17/jre-8u66-linux-x64.tar.gz"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:272
+msgid ""
+"This downloads the payload application, JabRef, and the required JRE which "
+"requires to set a special cookie header."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:274
+msgid ""
+"The script could also be used to fetch pre-built Debian packages from a "
+"GitHub release page, or to override the version of a package."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:276
+msgid ""
+"Use :code:`post_script` instead of :code:`script` if you need this to run "
+"*after* the other ingredient processing has taken place."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:280
+msgid "Script section"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:282
+msgid ""
+"The :code:`script` section may contain arbitrary shell commands that are "
+"required to translate the binary ingredients to an :code:`AppDir` suitable "
+"for generating an AppImage."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:286
+msgid "The script section needs to copy ingredients into place"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:288
+msgid ""
+"If :code:`.deb` packages, Debian repositories or PPAs have been specified in "
+"the :code:`ingredients` section, then their dependencies are resolved "
+"automatically (taking a blacklist of packages that are assumed to be present "
+"on all target systems in a recent enough version into account, such as "
+"glibc) and the packages are extracted into an AppDir. The shell commands "
+"contained in the :code:`script` section are executed inside the root "
+"directory of this AppDir. However, some packages place things in non-"
+"standard locations, i.e. the main executable is outside of :code:`usr/bin`. "
+"In these cases, the commands contained in the :code:`script` section should "
+"normalize the file system structure. Sometimes it is also necessary to edit "
+"further files to reflect the changed file location. The following example "
+"illustrates this:"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:290
+msgid ""
+"ingredients:\n"
+"  dist: xenial\n"
+"  sources:\n"
+"    - deb http://archive.ubuntu.com/ubuntu/ xenial main universe\n"
+"\n"
+"  script:\n"
+"    - DLD=$(wget -q \"https://github.com/feross/webtorrent-desktop/releases/"
+"\" -O - | grep _amd64.deb | head -n 1 | cut -d '\"' -f 2)\n"
+"    - wget -c \"https://github.com/$DLD\"\n"
+"\n"
+"script:\n"
+"  - mv opt/webtorrent-desktop/* usr/bin/\n"
+"  - sed -i -e 's|/opt/webtorrent-desktop/||g' webtorrent-desktop.desktop"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:306
+msgid ""
+"In the :code:`ingredients` section, a :code:`.deb` package is downloaded. "
+"Then, in the :code:`script` section, the main executable is moved to its "
+"standard location in the AppDir. Finally, the :code:`.desktop` file is "
+"updated to reflect this."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:308
+msgid ""
+"If other types of binary ingredients have been specified, then the shell "
+"commands contained in the :code:`script` section need to retrieve these by "
+"copying them into place. Note that since the commands contained in the :code:"
+"`script` section are executed inside the root directory of the AppDir, the "
+"ingredients downloaded in the `ingredients` sections are one directory level "
+"above, i.e., in :code:`../`. The following example illustrates this:"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:310
+msgid ""
+"ingredients:\n"
+"  script:\n"
+"    - wget -c \"https://telegram.org/dl/desktop/linux\" --trust-server-"
+"names\n"
+"    - tar xf tsetup.*.tar.xz\n"
+"\n"
+"script:\n"
+"  - cp ../Telegram/Telegram ./usr/bin/telegram-desktop"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:321
+msgid ""
+"In the :code:`ingredients` section, an archive is downloaded and unpacked. "
+"Then, in the :code:`script` section, the main executable is copied into "
+"place inside the AppDir."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:325
+msgid "The script section needs to copy icon and `.desktop` file in place"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:327
+msgid ""
+"Since an AppImage may contain more than one executable binary (e.g. helper "
+"binaries launched by the main executable) and also may contain multiple :"
+"code:`.desktop` files, a clear entry point into the AppImage is required. "
+"For this reason, there is the convention that there should be exactly one :"
+"code:`$ID.desktop` file and corresponding icon file in the top-level "
+"directory of the AppDir."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:329
+msgid ""
+"The script running the :code:`.yml` file tries to do this automatically, "
+"which works if the name of the application specified in the :code:`app:` key "
+"matches the name of the :code:`$ID.desktop` file and the corresponding icon "
+"file. For example, if :code:`app: myapp` is set, and there is :code:`usr/bin/"
+"myapp`, :code:`usr/share/applications/myapp.desktop`, and :code:`usr/share/"
+"icons/*/myapp.png`, then the :code:`myapp.desktop` and :code:`myapp.png` "
+"files are automatically copied into the top-level directory of the AppDir. "
+"Unfortunately, many packages are  in their naming. In that case, the shell "
+"commands contained in the :code:`script` section must copy exactly one :code:"
+"`$ID.desktop` file and the corresponding icon file into the top-level "
+"directory of the AppDir. The following example illustrates this:"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:331
+msgid ""
+"script:\n"
+"  - tar xf ../fritzing* -C usr/bin/ --strip 1\n"
+"  - mv usr/bin/fritzing.desktop ."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:338
+msgid ""
+"Unfortunately, many applications don't include a :code:`$ID.desktop` file. "
+"If it is missing, the shell commands contained in the :code:`script` section "
+"need to create it. The following (simplified) example illustrates this:"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:340
+msgid ""
+"script:\n"
+"  - # Workaround for:\n"
+"  - # https://bugzilla.mozilla.org/show_bug.cgi?id=296568\n"
+"  - cat > firefox.desktop <<EOF\n"
+"  - [Desktop Entry]\n"
+"  - Type=Application\n"
+"  - Name=Firefox\n"
+"  - Icon=firefox\n"
+"  - Exec=firefox %u\n"
+"  - Categories=GNOME;GTK;Network;WebBrowser;\n"
+"  - MimeType=text/html;text/xml;application/xhtml+xml;\n"
+"  - StartupNotify=true\n"
+"  - EOF"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:359
+msgid ""
+"The optional :code:`desktopintegration` script assumes that the name of the "
+"application specified in the :code:`app:` key matches the name of the :code:"
+"`$ID.desktop` file and the corresponding main executable (case-sensitive). "
+"For example, if :code:`app: myapp` is set, it expects :code:`usr/bin/"
+"myapp`and :code:`usr/share/applications/myapp.desktop`. For this reason, if "
+"you want to use the optional :code:`desktopintegration` script, you may "
+"rearrange the AppDir. The following example illustrates this:"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:361
+msgid ""
+"script:\n"
+"  - cp ./usr/share/applications/FBReader.desktop fbreader.desktop\n"
+"  - sed -i -e 's|Exec=FBReader|Exec=fbreader|g' fbreader.desktop\n"
+"  - sed -i -e 's|Name=.*|Name=FBReader|g' fbreader.desktop\n"
+"  - sed -i -e 's|Icon=.*|Icon=fbreader|g' fbreader.desktop\n"
+"  - mv usr/bin/FBReader usr/bin/fbreader\n"
+"  - cp usr/share/pixmaps/FBReader.png fbreader.png"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:373
+msgid "Converting Python applications packaged with pip"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:375
+msgid ""
+"Let's say you have already packaged your Python application using :code:"
+"`pip`. in this case, you can use the :code:`pkg2appimage` tool to generate "
+"an AppImage. In the following example, we will convert a Python 3 "
+"application using :code:`pip3`."
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:377
+msgid ""
+"The following recipe will convert a Python 3 PyQt application using :code:"
+"`virtualenv` and :code:`pip3`:"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:379
+msgid ""
+"app: mu.codewith.editor\n"
+"ingredients:\n"
+"  dist: xenial\n"
+"  sources:\n"
+"    - deb http://us.archive.ubuntu.com/ubuntu/ xenial xenial-updates xenial-"
+"security main universe\n"
+"    - deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates main universe\n"
+"    - deb http://us.archive.ubuntu.com/ubuntu/ xenial-security main "
+"universe\n"
+"  packages:\n"
+"    - python3.4-venv\n"
+"  script:\n"
+"    -  wget -c https://raw.githubusercontent.com/mu-editor/mu/master/conf/mu."
+"codewith.editor.png\n"
+"    -  wget -c https://raw.githubusercontent.com/mu-editor/mu/master/conf/mu."
+"appdata.xml\n"
+"script:\n"
+"  - cp ../mu.codewith.editor.png ./usr/share/icons/hicolor/256x256/\n"
+"  - cp ../mu.codewith.editor.png .\n"
+"  - mkdir -p usr/share/metainfo/ ; cp ../mu.appdata.xml usr/share/metainfo/\n"
+"  - virtualenv --python=python3 usr\n"
+"  - ./usr/bin/pip3 install mu-editor\n"
+"  - cat > usr/share/applications/mu.codewith.editor.desktop <<\\EOF\n"
+"  - [Desktop Entry]\n"
+"  - Type=Application\n"
+"  - Name=Mu\n"
+"  - Comment=A Python editor for beginner programmers\n"
+"  - Icon=mu.codewith.editor\n"
+"  - Exec=python3 bin/mu-editor %F\n"
+"  - Terminal=false\n"
+"  - Categories=Application;Development;\n"
+"  - Keywords=Python;Editor;microbit;micro:bit;\n"
+"  - StartupWMClass=mu\n"
+"  - MimeType=text/x-python3;text/x-python3;\n"
+"  - EOF\n"
+"  - cp usr/share/applications/mu.codewith.editor.desktop .\n"
+"  - usr/bin/pip3 freeze | grep \"mu-editor\" | cut -d \"=\" -f 3 >> ../"
+"VERSION"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:416
+msgid "Source:"
+msgstr ""
+
+#: ../../../source/packaging-guide/converting-binary-packages/pkg2appimage.rst:417
+msgid ""
+"https://github.com/AppImage/pkg2appimage/"
+"blob/9249a99e653272416c8ee8f42cecdde12573ba3e/recipes/Mu.yml"
+msgstr ""

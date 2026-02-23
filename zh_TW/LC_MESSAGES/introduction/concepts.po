@@ -1,0 +1,251 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2018-2022, The AppImage project
+# This file is distributed under the same license as the AppImage package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AppImage master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-04 12:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../source/introduction/concepts.rst:2
+msgid "Concepts"
+msgstr "概念"
+
+#: ../../../source/introduction/concepts.rst:4
+msgid ""
+"The AppImage development follows a few easy-to-understand core principles "
+"and concepts that keep it simple to use for developers and users. In this "
+"section, the most prominent concepts are explained."
+msgstr ""
+"AppImage 的開發遵循一些容易理解的核心原則與概念，讓開發者與使用者都能輕鬆使"
+"用。本節說明其中最重要的概念。"
+
+#: ../../../source/introduction/concepts.rst:10
+msgid "Contents"
+msgstr "目次"
+
+#: ../../../source/introduction/concepts.rst:15
+msgid "One app = one file"
+msgstr "一個應用程式 = 一個檔案"
+
+#: ../../../source/introduction/concepts.rst:17
+msgid ""
+"AppImages are simple to understand. Every AppImage is a regular file, and "
+"every AppImage contains exactly one app with all its dependencies. Once the "
+"AppImage is :ref:`made executable <ref-download-make-executable-run>`, a "
+"user can just run it, either by double clicking it in their desktop "
+"environment's file manager, by running it from the console etc."
+msgstr ""
+"AppImage 非常容易理解。每個 AppImage 都是一般檔案，且每個 AppImage 只包含一個"
+"應用程式及其所有相依項目。當 AppImage :ref:`設為可執行 <ref-download-make-"
+"executable-run>` 後，使用者即可執行它，例如在桌面環境的檔案管理員中雙擊，或在"
+"主控台執行等。"
+
+#: ../../../source/introduction/concepts.rst:22
+msgid ""
+"On a regular basis, `users ask <https://github.com/AppImage/AppImageKit/"
+"issues/848>`__ about implementing support for some sort of \"reusable/shared "
+"frameworks\". These frameworks are supposed to contain bundles of libraries "
+"which are needed by more than one AppImage, and hence could save some disk "
+"space. For management, they suggest complex automagic systems that will "
+"automatically fetch the \"frameworks\" from the Internet if they're not "
+"available, or some complicated, mostly manual methods how to users could "
+"bundle frameworks together with the AppImages on portable disks like USB "
+"sticks."
+msgstr ""
+"經常有人 `詢問 <https://github.com/AppImage/AppImageKit/issues/848>`__ 是否能"
+"支援某種「可重複/共享框架」。這些框架預期包含多個 AppImage 會用到的函式庫集"
+"合，因而可節省磁碟空間。在管理上，有人建議使用複雜的自動化系統，在缺少時從網"
+"路自動抓取「框架」，或以一些複雜、且多半是手動的方式，讓使用者把框架與 "
+"AppImage 一起放在 USB 隨身碟等可攜式磁碟上。"
+
+#: ../../../source/introduction/concepts.rst:24
+msgid ""
+"These may be good ideas for some people, and even if they worked perfectly "
+"fine, they'd break with our most important concept: :ref:`one app = one file "
+"<one-app-one-file-principle>`. AppImages are so simple to understand "
+"*because* every application is a single file. There's no complexity in this "
+"approach, even grandma could understand it. And after all, disk space is "
+"cheap nowadays, right?"
+msgstr ""
+"這對部分人或許是好點子，即使運作良好，也會違背我們最重要的概念：:ref:`一個應"
+"用程式 = 一個檔案 <one-app-one-file-principle>`。AppImage 之所以容易理解，*正"
+"是因為* 每個應用程式都是單一檔案。這種做法沒有複雜性，連阿嬤都能理解。而且，"
+"現在磁碟空間也不貴，對吧？"
+
+#: ../../../source/introduction/concepts.rst:26
+msgid ""
+"If you prefer this approach or absolutely need it, please check out "
+"alternative approaches. AppImage will never implement such a feature."
+msgstr "若您偏好或確實需要此做法，請改用其他方案。AppImage 不會實作這類功能。"
+
+#: ../../../source/introduction/concepts.rst:32
+msgid "Do not depend on system-provided resources"
+msgstr "不要依賴系統提供的資源"
+
+#: ../../../source/introduction/concepts.rst:34
+msgid ""
+"The author of an AppImage needs to decide for which target systems (Linux "
+"distributions) they want to offer the AppImage.  Then, the author needs to "
+"bundle any dependencies that cannot reasonably be assumed to come with every "
+"target system (Linux distributions) in its default installation in a recent "
+"enough version."
+msgstr ""
+"AppImage 作者需要決定要支援哪些目標系統（Linux 散布版）。接著，必須把那些無法"
+"合理假設會隨每個目標系統（Linux 散布版）預設安裝、且版本足夠新的相依項目一併"
+"打包。"
+
+#: ../../../source/introduction/concepts.rst:36
+msgid ""
+"To be able to run on any Linux distribution, an AppImage should bundle all "
+"the resources it needs at runtime that cannot be reasonably expected to be "
+"\"there\" in the default installation of all still-supported target systems "
+"(Linux distributions). The most common resources are the actual binaries, "
+"shared library dependencies, icons and other graphics and of course one or "
+"more desktop files for desktop integration."
+msgstr ""
+"為了能在任何 Linux 散布版上執行，AppImage 應該打包所有在執行時需要、但無法合"
+"理期待所有仍受支援目標系統（Linux 散布版）預設安裝就「一定有」的資源。最常見"
+"的資源包含實際二進位檔、共享函式庫相依、圖示與其他圖形，以及用於桌面整合的一"
+"個或多個桌面檔。"
+
+#: ../../../source/introduction/concepts.rst:38
+msgid ""
+"This doesn't mean an AppImage must not use resources provided by the system, "
+"like for example basic libraries that can be assumed to be part of every "
+"target system (e.g., the C standard library or graphics libraries), user "
+"interface themes or the like. See the `excludelist <https://github.com/"
+"AppImage/pkg2appimage/blob/master/excludelist>`__ for a list of the "
+"libraries we consider to currently be part of each still-supported target "
+"system (distribution)."
+msgstr ""
+"這不代表 AppImage 不能使用系統提供的資源，例如可合理假設每個目標系統都具備的"
+"基礎函式庫（如 C 標準函式庫或圖形函式庫）、使用者介面主題等。可參考 "
+"`excludelist <https://github.com/AppImage/pkg2appimage/blob/master/"
+"excludelist>`__，了解我們認為目前各仍受支援目標系統（散布版）中已包含的函式庫"
+"清單。"
+
+#: ../../../source/introduction/concepts.rst:44
+msgid "Build on old systems, run on newer systems"
+msgstr "在舊系統上建置，在新系統上執行"
+
+#: ../../../source/introduction/concepts.rst:46
+msgid ""
+"It is considered best practice to develop and compile the application on the "
+"oldest still-supported Linux distribution that we can assume users to still "
+"use. For example, the oldest still-supported LTS release of Ubuntu is a good "
+"choice to develop applications against and build applications on."
+msgstr ""
+"最佳實務是：在可假設使用者仍在使用的最舊且仍受支援的 Linux 散布版上開發與編譯"
+"應用程式。例如，仍受支援的最舊 Ubuntu LTS 版本就是不錯的開發與建置選擇。"
+
+#: ../../../source/introduction/concepts.rst:48
+msgid ""
+"Applications should be built on the oldest possible system, allowing them to "
+"run on newer system. This allows the exclusion of certain \"base "
+"libraries\", which can be expected to be present on all major desktop Linux "
+"distributions, reducing the overhead of :ref:`one app = one file <one-app-"
+"one-file-principle>`. These dependencies are mostly shared libraries and "
+"involve low level libraries like :code:`libc.so.6` (the GNU C library, the C "
+"language standard library the majority of all Linux distributions use), but "
+"also common libraries like zlib_ or the GLib_ libraries are normally present."
+msgstr ""
+"應用程式應在盡可能舊的系統上建置，以便在較新的系統上執行。這樣就能排除某些"
+"「基礎函式庫」，因為可預期它們存在於所有主流桌面 Linux 散布版中，從而降低 :"
+"ref:`一個應用程式 = 一個檔案 <one-app-one-file-principle>` 的負擔。這些相依項"
+"目多為共享函式庫，包含如 :code:`libc.so.6`（GNU C 函式庫、也是多數 Linux 散布"
+"版的 C 標準函式庫），以及常見的 zlib_ 或 GLib_ 函式庫。"
+
+#: ../../../source/introduction/concepts.rst:50
+msgid ""
+"It may seem contradictory to :ref:`the previous section <no-external-"
+"dependencies>` to rely on distribution provided resources. This is a trade-"
+"off between trying to reduce redundancies while at the same time being as "
+"self-contained as possible."
+msgstr ""
+"依賴散布版提供的資源似乎與 :ref:`前一節 <no-external-dependencies>` 相矛盾。"
+"這是在降低重複與儘可能自包含之間的取捨。"
+
+#: ../../../source/introduction/concepts.rst:52
+msgid ""
+"In some cases, including the libraries might even break the AppImage on the "
+"target system. Those libraries involve, among others, hardware dependent "
+"libraries such as graphics card drivers provided libraries (e.g., :code:"
+"`libGL.so.1`, (`source <https://github.com/AppImage/pkg2appimage/"
+"blob/14c255b528dd88ef3e00ae0446ac6d84a20ac798/excludelist\\#L38-L41>`__)), "
+"or libraries that are build and linked differently on different "
+"distributions (e.g., :code:`libharfbuzz.so.0` and :code:`libfreetype.so.6` "
+"(`source <https://github.com/AppImage/pkg2appimage/"
+"blob/14c255b528dd88ef3e00ae0446ac6d84a20ac798/excludelist\\#L98-L102>`__)."
+msgstr ""
+"在某些情況下，反而會因為包含函式庫而導致 AppImage 在目標系統上無法運作。例如"
+"硬體相依的函式庫（像顯示卡驅動提供的函式庫，例如 :code:`libGL.so.1`（`來源 "
+"<https://github.com/AppImage/pkg2appimage/"
+"blob/14c255b528dd88ef3e00ae0446ac6d84a20ac798/excludelist\\#L38-L41>`__）），"
+"或在不同散布版上建置與連結方式不同的函式庫（例如 :code:`libharfbuzz.so.0` "
+"與 :code:`libfreetype.so.6`（`來源 <https://github.com/AppImage/pkg2appimage/"
+"blob/14c255b528dd88ef3e00ae0446ac6d84a20ac798/excludelist\\#L98-"
+"L102>`__））。"
+
+#: ../../../source/introduction/concepts.rst:54
+msgid ""
+"The list of libraries that can resp. have to be excluded, the so-called "
+"`excludelist <https://github.com/AppImage/pkg2appimage/blob/master/"
+"excludelist>`__, is carefully curated by the AppImage team, and is regularly "
+"updated."
+msgstr ""
+"可（或必須）排除的函式庫清單，即所謂的 `excludelist <https://github.com/"
+"AppImage/pkg2appimage/blob/master/excludelist>`__，由 AppImage 團隊仔細維護並"
+"定期更新。"
+
+#: ../../../source/introduction/concepts.rst:63
+msgid "AppImage specification"
+msgstr "AppImage 規範"
+
+#: ../../../source/introduction/concepts.rst:65
+msgid ""
+"The term *AppImage* does not refer to some software project, but is actually "
+"a standard specified in the :ref:`AppImage specification <ref-appimage-"
+"specification>`. Its reference implementation is called :ref:`ref-"
+"appimagekit`."
+msgstr ""
+"*AppImage* 一詞並非指某個軟體專案，而是 :ref:`AppImage 規範 <ref-appimage-"
+"specification>`中定義的一項標準。其參考實作稱為 :ref:`ref-appimagekit`。"
+
+#: ../../../source/introduction/concepts.rst:67
+msgid ""
+"Being designed as a standard with a reference implementation allows users to "
+"implement their own tools to build AppImages, and helps maintaining "
+"compatibility between different tools and components."
+msgstr ""
+"作為具備參考實作的標準設計，讓使用者可實作自己的 AppImage 建置工具，並有助於"
+"維持不同工具與元件之間的相容性。"
+
+#: ../../../source/introduction/concepts.rst:71
+msgid "AppDirs"
+msgstr "AppDir"
+
+#: ../../../source/introduction/concepts.rst:73
+msgid ""
+"The term *AppDir* refers to an application directory. These directories are "
+"the \"source\" of AppImages. When :ref:`ref-appimagetool` builds an "
+"AppImage, it creates a read-only image of such a directory, prepends the :"
+"ref:`ref-runtime`, and marks the file executable."
+msgstr ""
+"*AppDir* 指的是應用程式目錄。這些目錄是 AppImage 的「來源」。當 :ref:`ref-"
+"appimagetool` 建置 AppImage 時，會建立該目錄的唯讀映像，在前面加上 :ref:`ref-"
+"runtime`，並將檔案標記為可執行。"
+
+#: ../../../source/introduction/concepts.rst:75
+msgid "The AppDir format is described in the :ref:`ref-appdir-specification`."
+msgstr "AppDir 格式在 :ref:`ref-appdir-specification` 中說明。"
