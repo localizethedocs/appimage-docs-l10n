@@ -37,9 +37,9 @@
     "branch" : "master",
     "commit" : 
     {
-      "date" : "2025-12-16 21:23:46 +0100",
-      "hash" : "68816f5dbe1abf351a9ac21471d17df5917f70d3",
-      "title" : "Update dependencies to fix build with Python 3.14"
+      "date" : "2026-03-26 20:54:35 +0100",
+      "hash" : "e517ea40f11d98377d2b718b596a44cc453cf4ff",
+      "title" : "Bump requests from 2.32.5 to 2.33.0"
     }
   },
   "type" : "branch",
