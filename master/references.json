@@ -37,9 +37,9 @@
     "branch" : "master",
     "commit" : 
     {
-      "date" : "2025-12-16 21:23:46 +0100",
-      "hash" : "68816f5dbe1abf351a9ac21471d17df5917f70d3",
-      "title" : "Update dependencies to fix build with Python 3.14"
+      "date" : "2026-06-23 22:39:56 +0200",
+      "hash" : "d11102402b81fd2104d885ec1b8e7317b22ee96c",
+      "title" : "Add link to AppImageUpdate for validate tool"
     }
   },
   "type" : "branch",

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AppImage master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-09 09:37+0000\n"
+"POT-Creation-Date: 2026-06-29 13:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -131,10 +131,12 @@ msgstr ""
 msgid ""
 "To validate a signature of an an AppImage and to determine whether an "
 "AppImage has been compromised, an external tool needs to be used. There is a "
-"very simple tool called :code:`validate` that can do this."
+"very simple tool called :code:`validate` that can do this. It can be found "
+"in the `AppImageUpdate <https://github.com/AppImageCommunity/"
+"AppImageUpdate>`_ project."
 msgstr ""
 
-#: ../../../source/packaging-guide/optional/signatures.rst:70
+#: ../../../source/packaging-guide/optional/signatures.rst:72
 msgid ""
 "$ chmod a+x ./validate\n"
 "$ ./validate ./XChat_IRC-x86_64.AppImage\n"
@@ -144,7 +146,7 @@ msgid ""
 "gpg: Good signature from \"Testkey\" [ultimate]"
 msgstr ""
 
-#: ../../../source/packaging-guide/optional/signatures.rst:79
+#: ../../../source/packaging-guide/optional/signatures.rst:81
 msgid ""
 "Signature validation can also be integrated into higher level software such "
 "as the optional :code:`appimaged` daemon and/or :code:`AppImageUpdate`. For "
@@ -153,13 +155,13 @@ msgid ""
 "up accordingly."
 msgstr ""
 
-#: ../../../source/packaging-guide/optional/signatures.rst:81
+#: ../../../source/packaging-guide/optional/signatures.rst:83
 msgid "Todo"
 msgstr ""
 
-#: ../../../source/packaging-guide/optional/signatures.rst:83
+#: ../../../source/packaging-guide/optional/signatures.rst:85
 msgid ""
 "It may be desirable to integrate validate functionality into :code:"
-"`libappimage` and into tools like :code:`appimagetool`, the optional :code:"
-"`appimaged` demon and/or :code:`AppImageUpdate`."
+"`libappimage` and into tools like :code:`appimagetool` and the :code:"
+"`appimaged` demon."
 msgstr ""
