@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AppImage master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-09 09:37+0000\n"
+"POT-Creation-Date: 2026-09-07 15:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgid "Software Overview"
 msgstr ""
 
 #: ../../../source/introduction/software-overview.rst:6
-#: ../../../source/introduction/software-overview.rst:188
+#: ../../../source/introduction/software-overview.rst:190
 msgid "Todo"
 msgstr ""
 
@@ -91,7 +91,7 @@ msgid ""
 "information <https://github.com/AppImage/AppImageSpec/blob/master/draft."
 "md#update-information>`__, :ref:`signing <ref-signing>`, and some linting "
 "options to make sure the information in the AppImage is valid (for instance, "
-"it can validate :ref:`AppStream files <appstream-support>`)."
+"it can validate :ref:`AppStream files <ref-appstream>`)."
 msgstr ""
 
 #: ../../../source/introduction/software-overview.rst:45
@@ -100,11 +100,11 @@ msgid ""
 "appimagetool/releases/continuous."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:49
+#: ../../../source/introduction/software-overview.rst:51
 msgid "AppRun"
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:51
+#: ../../../source/introduction/software-overview.rst:53
 msgid ""
 "Every AppImage's AppDir must contain a file called :code:`AppRun`, providing "
 "the \"entry point\". When running the AppImage, the :ref:`runtime <ref-"
@@ -112,16 +112,16 @@ msgid ""
 "appdir>`."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:53
+#: ../../../source/introduction/software-overview.rst:55
 msgid ""
 ":code:`AppRun` doesn't necessarily have to be a regular file. If the "
-"application is :ref:`relocatable <relocatable-apps>`, it can just be a "
-"symlink to the main binary. Tools like :ref:`ref-linuxdeploy` can turn "
+"application is :ref:`relocatable <ref-binaries-no-abs-paths>`, it can just "
+"be a symlink to the main binary. Tools like :ref:`ref-linuxdeploy` can turn "
 "applications into relocatable applications, and therefore create such a "
 "symlink."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:55
+#: ../../../source/introduction/software-overview.rst:57
 msgid ""
 "In some cases, though, when an existing application must not be altered (e."
 "g., when the license prohibits any modifications) or tools like linuxdeploy "
@@ -132,7 +132,7 @@ msgid ""
 "ref:`AppDir <ref-appdir>` is mounted read-only."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:57
+#: ../../../source/introduction/software-overview.rst:59
 msgid ""
 "Using :code:`AppRun.c` is not a guarantee that an application will run, and "
 "the packager must provide all the resources an application could need "
@@ -144,7 +144,7 @@ msgid ""
 "parameters."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:60
+#: ../../../source/introduction/software-overview.rst:62
 msgid ""
 ":code:`AppRun.c`, the binary from AppImageKit, is legacy technology and "
 "should be avoided if possible. Tools like :ref:`linuxdeploy <ref-"
@@ -153,7 +153,7 @@ msgid ""
 "fine), and made using :code:`AppRun.c` obsolete in most cases."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:62
+#: ../../../source/introduction/software-overview.rst:64
 msgid ""
 "There are some edge cases where :code:`AppRun.c` is still in use, and there "
 "it might be useful. However, it suffers from many limitations and requires "
@@ -163,67 +163,67 @@ msgid ""
 "these before thinking about using :code:`AppRun.c` in your AppImage."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:64
+#: ../../../source/introduction/software-overview.rst:66
 msgid ""
 "**Download:** There is usually no reason to download this manually, but if "
 "you still want to, you can get it from https://github.com/AppImage/"
 "AppImageKit/releases/continuous."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:68
+#: ../../../source/introduction/software-overview.rst:70
 msgid "Helpers"
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:70
+#: ../../../source/introduction/software-overview.rst:72
 msgid ""
 "AppImageKit ships with a few helpers that can be used to verify and validate "
 "some AppImage features."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:74
+#: ../../../source/introduction/software-overview.rst:76
 msgid "validate"
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:76
+#: ../../../source/introduction/software-overview.rst:78
 msgid ":code:`validate` can validate the PGP signatures inside AppImages."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:78
-#: ../../../source/introduction/software-overview.rst:88
+#: ../../../source/introduction/software-overview.rst:80
+#: ../../../source/introduction/software-overview.rst:90
 msgid ""
 "Normally there is no need to use this directly, this is mainly for debugging "
 "for AppImage developers."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:80
-#: ../../../source/introduction/software-overview.rst:90
+#: ../../../source/introduction/software-overview.rst:82
+#: ../../../source/introduction/software-overview.rst:92
 msgid ""
 "**Download:** Currently this needs to be build from source. The source is in "
 "https://github.com/AppImage/AppImageKit/. In the future it may become "
 "bundled with or its functionality may become integrated into appimagetool."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:84
+#: ../../../source/introduction/software-overview.rst:86
 msgid "digest-md5"
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:86
+#: ../../../source/introduction/software-overview.rst:88
 msgid ""
 "Calculates the MD5 digest used for desktop integration purposes for a given "
 "AppImage. This digest depends on the path, not on the contents."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:95
+#: ../../../source/introduction/software-overview.rst:97
 msgid "AppImageUpdate"
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:97
+#: ../../../source/introduction/software-overview.rst:99
 msgid ""
 "AppImageUpdate_ lets you update AppImages in a decentralized way using "
 "information embedded in the AppImage itself."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:99
+#: ../../../source/introduction/software-overview.rst:101
 msgid ""
 "The project consists of two tools: :code:`appimageupdatetool`, a full-"
 "featured CLI tool for updating AppImages and dealing with `update "
@@ -231,17 +231,17 @@ msgid ""
 "AppImages written in Qt."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:104
+#: ../../../source/introduction/software-overview.rst:106
 msgid ""
 "**Download:** You can get it as an AppImage from https://github.com/AppImage/"
 "AppImageUpdate/releases/continuous."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:109
+#: ../../../source/introduction/software-overview.rst:111
 msgid "appimaged"
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:111
+#: ../../../source/introduction/software-overview.rst:113
 msgid ""
 "`appimaged <https://github.com/probonopd/go-appimage/releases>`__ is a "
 "daemon that monitors a predefined set of directories on the system, looking "
@@ -250,38 +250,38 @@ msgid ""
 "were removed) and (de)integrates these immediately."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:113
+#: ../../../source/introduction/software-overview.rst:115
 msgid "It is shipped as an AppImage."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:117
+#: ../../../source/introduction/software-overview.rst:119
 msgid ""
 "One of the monitored directories is ``~/Downloads``. If the directory is "
 "very large, appimaged usually needs quite long to visit all files. It is "
 "likely to slow down the system (specifically, the filesystem)."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:119
+#: ../../../source/introduction/software-overview.rst:121
 msgid ""
 "**Download:** You can get it as an AppImage from https://github.com/"
 "probonopd/go-appimage/releases."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:122
+#: ../../../source/introduction/software-overview.rst:124
 msgid "Third-party tools"
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:124
+#: ../../../source/introduction/software-overview.rst:126
 msgid ""
 "This section showcases a couple of third-party tools that can be used to "
 "create and handle AppImage files."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:130
+#: ../../../source/introduction/software-overview.rst:132
 msgid "linuxdeployqt"
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:132
+#: ../../../source/introduction/software-overview.rst:134
 msgid ""
 "`linuxdeployqt <https://github.com/probonopd/linuxdeployqt>`__ is a simple "
 "Qt-based command line tool that can be used to create AppDirs and AppImages. "
@@ -290,30 +290,30 @@ msgid ""
 "as well as applications written in other compiled languages."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:136
+#: ../../../source/introduction/software-overview.rst:138
 msgid ""
 "There is a copy-and-paste example for how to use it on Travis CI at https://"
 "github.com/probonopd/linuxdeployqt#using-linuxdeployqt-with-travis-ci."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:138
+#: ../../../source/introduction/software-overview.rst:140
 msgid ""
 "**Download:** You can get it as an AppImage from https://github.com/"
 "probonopd/linuxdeployqt/releases/tag/continuous."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:142
+#: ../../../source/introduction/software-overview.rst:144
 msgid "linuxdeploy"
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:144
+#: ../../../source/introduction/software-overview.rst:146
 msgid ""
 "linuxdeploy_ is a simple yet flexible, plugins-based to use tool that can be "
 "used to create AppDirs and AppImages. It has been developed in 2018, and "
 "describes itself as an \"AppDir creation and maintenance tool\"."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:146
+#: ../../../source/introduction/software-overview.rst:148
 msgid ""
 "linuxdeploy is planned to succeed of :ref:`linuxdeployqt <ref-"
 "linuxdeployqt>`, and can be used in all projects that use :ref:"
@@ -324,34 +324,34 @@ msgid ""
 "github.com/linuxdeploy/linuxdeploy-plugin-conda>`__."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:152
+#: ../../../source/introduction/software-overview.rst:154
 msgid ""
 "There's a guide on :ref:`native binary packaging <ref-packaging-native-"
 "binaries>` and a general :ref:`linuxdeploy user guide <ref-linuxdeploy>` in "
 "the :ref:`ref-packaging-guide`."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:154
+#: ../../../source/introduction/software-overview.rst:156
 msgid ""
 "**Download:** You can get it as an AppImage from https://github.com/"
 "linuxdeploy/linuxdeploy/releases/continuous."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:159
+#: ../../../source/introduction/software-overview.rst:161
 msgid "AppImageLauncher"
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:161
+#: ../../../source/introduction/software-overview.rst:163
 msgid ""
 "AppImageLauncher_ is a helper application for Linux distributions serving as "
 "a kind of \"entry point\" for running and integrating AppImages."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:163
+#: ../../../source/introduction/software-overview.rst:165
 msgid "Quoting the README:"
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:165
+#: ../../../source/introduction/software-overview.rst:167
 msgid ""
 "AppImageLauncher makes your Linux desktop AppImage ready™. By installing it, "
 "you won't ever have to worry about AppImages again. You can always double "
@@ -361,7 +361,7 @@ msgid ""
 "AppImages becomes as easy as never before."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:167
+#: ../../../source/introduction/software-overview.rst:169
 msgid ""
 "Due to its simple but efficient way to integrate into your system, it plays "
 "well with other applications that can be used to manage AppImages, for "
@@ -369,17 +369,17 @@ msgid ""
 "completely standalone."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:169
+#: ../../../source/introduction/software-overview.rst:171
 msgid ""
 "Install AppImageLauncher today for your distribution and enjoy using "
 "AppImages as easy as never before!"
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:171
+#: ../../../source/introduction/software-overview.rst:173
 msgid "https://github.com/TheAssassin/AppImageLauncher/blob/master/README.md"
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:173
+#: ../../../source/introduction/software-overview.rst:175
 msgid ""
 "AppImageLauncher doesn't provide any kind of \"app store\" software, but "
 "integrates into system-provided launchers' context menus. It provides tools "
@@ -387,29 +387,29 @@ msgid ""
 "removing AppImages."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:177
+#: ../../../source/introduction/software-overview.rst:179
 msgid ""
 "**Download:** You can get AppImageLauncher-Lite as an AppImage and the full "
 "version as a deb from https://github.com/TheAssassin/AppImageLauncher/"
 "releases/continuous."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:181
+#: ../../../source/introduction/software-overview.rst:183
 msgid "NX Software Center"
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:183
+#: ../../../source/introduction/software-overview.rst:185
 msgid ""
 "A portable Software Center for portable applications thanks to AppImage."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:186
+#: ../../../source/introduction/software-overview.rst:188
 msgid ""
 "**Download:** You can get NX Software Center as part of Nitrux OS from "
 "https://nxos.org/. There are currently no recent continuous standalone "
 "AppImage builds available."
 msgstr ""
 
-#: ../../../source/introduction/software-overview.rst:189
+#: ../../../source/introduction/software-overview.rst:191
 msgid "Describe the rest of the third-party tools"
 msgstr ""
