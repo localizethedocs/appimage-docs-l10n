@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AppImage master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-09 09:37+0000\n"
+"POT-Creation-Date: 2026-09-07 15:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -358,7 +358,7 @@ msgstr ""
 msgid ""
 "In order to be packaged as AppImages, applications must load the resources "
 "relative to their main binary, and not from a hardcoded path (usually ``/"
-"usr/...``). This is called :ref:`relocatability <ref-relocatablility>`."
+"usr/...``). This is called :ref:`relocatability <ref-binaries-no-abs-paths>`."
 msgstr ""
 
 #: ../../../source/packaging-guide/from-source/native-binaries.rst:175
@@ -423,7 +423,7 @@ msgid "``SIGN=1``"
 msgstr ""
 
 #: ../../../source/packaging-guide/from-source/native-binaries.rst:204
-msgid "Sign AppImage. See :ref:`ref-signing-appimages` for more information."
+msgid "Sign AppImage. See :ref:`ref-signing` for more information."
 msgstr ""
 
 #: ../../../source/packaging-guide/from-source/native-binaries.rst:206
