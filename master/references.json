@@ -37,9 +37,9 @@
     "branch" : "master",
     "commit" : 
     {
-      "date" : "2025-12-16 21:23:46 +0100",
-      "hash" : "68816f5dbe1abf351a9ac21471d17df5917f70d3",
-      "title" : "Update dependencies to fix build with Python 3.14"
+      "date" : "2026-08-10 03:01:57 +0200",
+      "hash" : "69bb5fe2310d5e7b5c8097f6e0858091ebd63c07",
+      "title" : "Bump gitpython from 3.1.57 to 3.1.58"
     }
   },
   "type" : "branch",
