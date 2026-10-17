@@ -172,12 +172,28 @@ message("")
 restore_cmake_message_indent()
 
 
-message(STATUS "Running 'conda install' command to install dependencies...")
+message(STATUS "Running 'conda install' command to install the requirements...")
+if     (VERSION_OF_PYTHON STREQUAL "[none]")
+    set(PACKAGE_OF_PYTHON "")
+elseif (VERSION_OF_PYTHON STREQUAL "")
+    set(PACKAGE_OF_PYTHON "conda-forge::python")
+else()
+    set(PACKAGE_OF_PYTHON "conda-forge::python=${VERSION_OF_PYTHON}")
+endif()
+if     (VERSION_OF_POETRY STREQUAL "[none]")
+    set(PACKAGE_OF_POETRY "")
+elseif (VERSION_OF_POETRY STREQUAL "")
+    set(PACKAGE_OF_POETRY "conda-forge::poetry")
+else()
+    set(PACKAGE_OF_POETRY "conda-forge::poetry=${VERSION_OF_POETRY}")
+endif()
 remove_cmake_message_indent()
 message("")
 execute_process(
     COMMAND ${Conda_EXECUTABLE} install
-            conda-forge::python=${VERSION_OF_PYTHON}
+            ${PACKAGE_OF_PYTHON}
+            ${PACKAGE_OF_POETRY}
+            conda-forge::poetry-plugin-export
             --prefix ${PROJ_CONDA_DIR}
             --channel conda-forge
             --yes
@@ -230,7 +246,47 @@ message("")
 restore_cmake_message_indent()
 
 
-message(STATUS "Running 'pip install' command to install 'requirements.txt'...")
+find_package(Poetry     MODULE REQUIRED)
+
+
+message(STATUS "Running 'poetry export' command to export the requirements...")
+set(REQUIREMENTS_TXT_PATH "${PROJ_OUT_REPO_DIR}/requirements.txt")
+remove_cmake_message_indent()
+message("")
+execute_process(
+    COMMAND ${CMAKE_COMMAND} -E env
+            ${ENV_VARS_OF_SYSTEM}
+            ${Poetry_EXECUTABLE} export
+            # --with dev,docs
+            --without-hashes
+            --format requirements.txt
+            --output ${REQUIREMENTS_TXT_PATH}
+    WORKING_DIRECTORY ${PROJ_OUT_REPO_DIR}
+    ECHO_OUTPUT_VARIABLE
+    ECHO_ERROR_VARIABLE
+    RESULT_VARIABLE RES_VAR
+    OUTPUT_VARIABLE OUT_VAR OUTPUT_STRIP_TRAILING_WHITESPACE
+    ERROR_VARIABLE  ERR_VAR ERROR_STRIP_TRAILING_WHITESPACE)
+if (RES_VAR EQUAL 0)
+    if (ERR_VAR)
+        string(CONCAT WARNING_REASON
+        "The command succeeded with warnings.\n\n"
+        "    result:\n\n${RES_VAR}\n\n"
+        "    stderr:\n\n${ERR_VAR}")
+        message("${WARNING_REASON}")
+    endif()
+else()
+    string(CONCAT FAILURE_REASON
+    "The command failed with fatal errors.\n"
+    "    result:\n${RES_VAR}\n"
+    "    stderr:\n${ERR_VAR}")
+    message(FATAL_ERROR "${FAILURE_REASON}")
+endif()
+message("")
+restore_cmake_message_indent()
+
+
+message(STATUS "Running 'python -m pip install' command to install the requirements...")
 if (CMAKE_HOST_LINUX)
     set(ENV_PATH                "${PROJ_CONDA_DIR}/bin:$ENV{PATH}")
     set(ENV_LD_LIBRARY_PATH     "${PROJ_CONDA_DIR}/lib:$ENV{LD_LIBRARY_PATH}")
@@ -247,20 +303,19 @@ elseif (CMAKE_HOST_WIN32)
 else()
     message(FATAL_ERROR "Invalid OS platform. (${CMAKE_HOST_SYSTEM_NAME})")
 endif()
-set(REQUIREMENTS_PATH "${PROJ_CMAKE_CUSTOM_DIR}/requirements.txt")
-file(READ "${REQUIREMENTS_PATH}" REQUIREMENTS_CNT)
+set(REQUIREMENTS_TXT_PATH "${PROJ_OUT_REPO_DIR}/requirements.txt")
 remove_cmake_message_indent()
 message("")
-message("${REQUIREMENTS_PATH}")
-message("${REQUIREMENTS_CNT}")
+message("${REQUIREMENTS_TXT_PATH}")
 message("")
 execute_process(
     COMMAND ${CMAKE_COMMAND} -E env
             ${ENV_VARS_OF_SYSTEM}
             ${Python_EXECUTABLE} -m pip install
-            --requirement=${REQUIREMENTS_PATH}
+            --requirement=${REQUIREMENTS_TXT_PATH}
             --progress-bar=off
             --verbose
+    WORKING_DIRECTORY ${PROJ_OUT_REPO_DIR}
     ECHO_OUTPUT_VARIABLE
     ECHO_ERROR_VARIABLE
     RESULT_VARIABLE RES_VAR
