@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AppImage master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-09 09:37+0000\n"
+"POT-Creation-Date: 2026-10-26 16:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,8 +23,8 @@ msgstr ""
 
 #: ../../../source/packaging-guide/from-source/native-binaries.rst:6
 msgid ""
-"The easiest packaging methods are available for *native binaries*, like e."
-"g., produced when compiling C++ or C code. Native binaries have a well "
+"The easiest packaging methods are available for *native binaries*, like "
+"e.g., produced when compiling C++ or C code. Native binaries have a well "
 "defined and reliable behavior to find their runtime dependencies, the so-"
 "called shared libraries. These are the primary dependencies you will have to "
 "ship with your application. Of course, some applications might require "
@@ -278,9 +278,9 @@ msgstr ""
 #: ../../../source/packaging-guide/from-source/native-binaries.rst:139
 msgid ""
 "If your application has installed itself properly, it should have installed "
-"a desktop file and an icon as well. The desktop file is used for :ref:"
-"`AppImage desktop integration <ref-desktop-integration>`, and since desktop "
-"files require icons, an icon is always required, too."
+"a desktop file and an icon as well. The desktop file is used "
+"for :ref:`AppImage desktop integration <ref-desktop-integration>`, and since "
+"desktop files require icons, an icon is always required, too."
 msgstr ""
 
 #: ../../../source/packaging-guide/from-source/native-binaries.rst:141
@@ -358,7 +358,7 @@ msgstr ""
 msgid ""
 "In order to be packaged as AppImages, applications must load the resources "
 "relative to their main binary, and not from a hardcoded path (usually ``/"
-"usr/...``). This is called :ref:`relocatability <ref-relocatablility>`."
+"usr/...``). This is called :ref:`relocatability <ref-binaries-no-abs-paths>`."
 msgstr ""
 
 #: ../../../source/packaging-guide/from-source/native-binaries.rst:175
@@ -423,7 +423,7 @@ msgid "``SIGN=1``"
 msgstr ""
 
 #: ../../../source/packaging-guide/from-source/native-binaries.rst:204
-msgid "Sign AppImage. See :ref:`ref-signing-appimages` for more information."
+msgid "Sign AppImage. See :ref:`ref-signing` for more information."
 msgstr ""
 
 #: ../../../source/packaging-guide/from-source/native-binaries.rst:206
