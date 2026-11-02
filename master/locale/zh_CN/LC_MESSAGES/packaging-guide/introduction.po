@@ -40,8 +40,8 @@ msgstr ""
 msgid ""
 "All application bundling attempts have one thing in common: the \"input "
 "format\" which is then turned into an AppImage using :ref:`appimagetool <ref-"
-"appimagetool>`. This input format is called AppDir, and is described in the :"
-"ref:`AppDir specification <ref-appdir-specification>`."
+"appimagetool>`. This input format is called AppDir, and is described in "
+"the :ref:`AppDir specification <ref-appdir-specification>`."
 msgstr ""
 
 #: ../../../source/packaging-guide/introduction.rst:10

@@ -125,8 +125,8 @@ msgstr ""
 
 #: ../../../source/packaging-guide/hosted-services/travis-ci.rst:60
 msgid ""
-"On Travis CI, go to the settings of your project at :code:`https://travis-ci."
-"org/yourusername/yourrepository/settings`"
+"On Travis CI, go to the settings of your project at :code:`https://travis-"
+"ci.org/yourusername/yourrepository/settings`"
 msgstr ""
 
 #: ../../../source/packaging-guide/hosted-services/travis-ci.rst:61
@@ -171,8 +171,8 @@ msgid ""
 "It's possible to use :code:`upload.sh` in a more complex manner by setting "
 "the environment variable :code:`UPLOADTOOL_SUFFIX`. If this variable is set "
 "to the name of the current tag, then :code:`upload.sh` will upload a release "
-"to the repository (basically reproducing the :code:`deploy:` feature in :"
-"code:`.travis.yml`)."
+"to the repository (basically reproducing the :code:`deploy:` feature "
+"in :code:`.travis.yml`)."
 msgstr ""
 
 #: ../../../source/packaging-guide/hosted-services/travis-ci.rst:84
@@ -197,15 +197,15 @@ msgstr ""
 
 #: ../../../source/packaging-guide/hosted-services/travis-ci.rst:95
 msgid ""
-"This will create builds tagged with :code:`continuous` for pushes/merges to :"
-"code:`master` and with :code:`continuous-<branch-name>` for pushes / merges "
-"to other branches."
+"This will create builds tagged with :code:`continuous` for pushes/merges "
+"to :code:`master` and with :code:`continuous-<branch-name>` for pushes / "
+"merges to other branches."
 msgstr ""
 
 #: ../../../source/packaging-guide/hosted-services/travis-ci.rst:97
 msgid ""
-"The two environment variables :code:`UPLOADTOOL_PR_BODY` and :code:"
-"`UPLOADTOOL_BODY` allow the calling script to customize the messages that "
-"are posted either for pull requests or merges/pushes. If these variables "
-"aren't set, generic default texts are used."
+"The two environment variables :code:`UPLOADTOOL_PR_BODY` "
+"and :code:`UPLOADTOOL_BODY` allow the calling script to customize the "
+"messages that are posted either for pull requests or merges/pushes. If these "
+"variables aren't set, generic default texts are used."
 msgstr ""

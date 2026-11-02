@@ -202,11 +202,11 @@ msgstr ""
 
 #: ../../../source/packaging-guide/distribution.rst:102
 msgid ""
-"You may want to add your AppImage to `AppImageHub <https://appimage.github."
-"io/apps/>`__, a crowd-sourced directory of available, automatically tested "
-"AppImages with data that 3rd party app stores and software centers can use. "
-"Given an URL to an AppImage, it inspects the AppImage and puts it into a "
-"community-maintained catalog."
+"You may want to add your AppImage to `AppImageHub <https://"
+"appimage.github.io/apps/>`__, a crowd-sourced directory of available, "
+"automatically tested AppImages with data that 3rd party app stores and "
+"software centers can use. Given an URL to an AppImage, it inspects the "
+"AppImage and puts it into a community-maintained catalog."
 msgstr ""
 
 #: ../../../source/packaging-guide/distribution.rst:104

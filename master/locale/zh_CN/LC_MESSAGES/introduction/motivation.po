@@ -78,8 +78,8 @@ msgid ""
 "have been developed, ranging from :ref:`efficient updates <ref-"
 "appimageupdate>` over so-called :ref:`desktop integration <ref-desktop-"
 "integration>` to :ref:`software catalogs <ref-appimagehub>`. None of these "
-"are required for the basic experience, though. AppImages are designed to :"
-"ref:`be run in three steps at most <ref-download-make-executable-run>`."
+"are required for the basic experience, though. AppImages are designed "
+"to :ref:`be run in three steps at most <ref-download-make-executable-run>`."
 msgstr ""
 
 #: ../../../source/introduction/motivation.rst:29

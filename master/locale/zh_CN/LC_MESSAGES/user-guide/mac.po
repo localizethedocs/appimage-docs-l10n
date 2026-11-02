@@ -138,6 +138,6 @@ msgstr ""
 
 #: ../../../source/user-guide/mac.rst:37
 msgid ""
-"``hdiutil create -volname myApp -srcfolder my.app/../ -ov -format UDZO myApp."
-"dmg``"
+"``hdiutil create -volname myApp -srcfolder my.app/../ -ov -format UDZO "
+"myApp.dmg``"
 msgstr ""

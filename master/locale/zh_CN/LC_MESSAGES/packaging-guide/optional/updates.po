@@ -27,8 +27,8 @@ msgstr ""
 
 #: ../../../source/packaging-guide/optional/updates.rst:8
 msgid ""
-"Via external tools (e.g., :code:`AppImageUpdate` or the :code:"
-"`appimageupdatetool` command line tool)"
+"Via external tools (e.g., :code:`AppImageUpdate` or "
+"the :code:`appimageupdatetool` command line tool)"
 msgstr ""
 
 #: ../../../source/packaging-guide/optional/updates.rst:9
@@ -54,10 +54,10 @@ msgid ""
 "To make an AppImage updateable, you need to embed information that describes "
 "where to check for updates and how into the AppImage. Unlike other Linux "
 "distribution methods, the information where to look for updates is not "
-"contained in separate repository description files such as :code:`sources."
-"list` that need to be managed by the user, but is directly embedded inside "
-"the AppImage by the author of the respective AppImage. This has the "
-"advantage that the update information always travels alongside the "
+"contained in separate repository description files such "
+"as :code:`sources.list` that need to be managed by the user, but is directly "
+"embedded inside the AppImage by the author of the respective AppImage. This "
+"has the advantage that the update information always travels alongside the "
 "application, so that the end user does not have to do anything special in "
 "order to be able to check for updates."
 msgstr ""
@@ -76,8 +76,8 @@ msgstr ""
 #: ../../../source/packaging-guide/optional/updates.rst:29
 msgid ""
 "appimagetool videocapture.AppDir/usr/share/applications/*.desktop -u \"zsync|"
-"https://lyrion.ch/opensource/repositories/videocapture/uv/videocapture."
-"AppImage.zsync\""
+"https://lyrion.ch/opensource/repositories/videocapture/uv/"
+"videocapture.AppImage.zsync\""
 msgstr ""
 
 #: ../../../source/packaging-guide/optional/updates.rst:34
@@ -86,8 +86,8 @@ msgstr ""
 
 #: ../../../source/packaging-guide/optional/updates.rst:36
 msgid ""
-"zsync|https://lyrion.ch/opensource/repositories/videocapture/uv/videocapture."
-"AppImage.zsync"
+"zsync|https://lyrion.ch/opensource/repositories/videocapture/uv/"
+"videocapture.AppImage.zsync"
 msgstr ""
 
 #: ../../../source/packaging-guide/optional/updates.rst:40
@@ -96,8 +96,8 @@ msgstr ""
 
 #: ../../../source/packaging-guide/optional/updates.rst:42
 msgid ""
-"Please see https://github.com/AppImage/AppImageSpec/blob/master/draft."
-"md#update-information for a description of allowable types of update "
+"Please see https://github.com/AppImage/AppImageSpec/blob/master/"
+"draft.md#update-information for a description of allowable types of update "
 "information."
 msgstr ""
 
@@ -145,11 +145,11 @@ msgstr ""
 
 #: ../../../source/packaging-guide/optional/updates.rst:64
 msgid ""
-"One way to inject the update information into the AppImage created with :"
-"code:`electron-builder` nevertheless is to extract the AppImage generated "
-"with :code:`electron-builder` to an AppDir using the --appimage-extract "
-"command line option of the AppImage, and then re-packing it as an AppImage "
-"by using :code:`appimagetool -u`."
+"One way to inject the update information into the AppImage created "
+"with :code:`electron-builder` nevertheless is to extract the AppImage "
+"generated with :code:`electron-builder` to an AppDir using the --appimage-"
+"extract command line option of the AppImage, and then re-packing it as an "
+"AppImage by using :code:`appimagetool -u`."
 msgstr ""
 
 #: ../../../source/packaging-guide/optional/updates.rst:68
@@ -175,9 +175,9 @@ msgid ""
 "You can bundle :code:`AppImageUpdate` itself inside the AppImage of your "
 "application. In order to have the bundled AppImageUpdate update your running "
 "AppImage when the user invokes some command in your application (e.g., an "
-"\"Update...\" menu) in your GUI, simply have your application invoke :code:"
-"`AppImageUpdate $APPIMAGE`. If :code:`AppImageUpdate` is bundled inside the "
-"AppImage and is on the :code:`$PATH`, this will work."
+"\"Update...\" menu) in your GUI, simply have your application "
+"invoke :code:`AppImageUpdate $APPIMAGE`. If :code:`AppImageUpdate` is "
+"bundled inside the AppImage and is on the :code:`$PATH`, this will work."
 msgstr ""
 
 #: ../../../source/packaging-guide/optional/updates.rst:80
@@ -213,9 +213,9 @@ msgid ""
 "that manages updates for the whole system, in which case any and all "
 "attempts to update the application from within itself should be skipped. "
 "**We need to define those flags for 1) per-system and 2) per-user "
-"configuration and 3) ENV** (similar to how the old :code:"
-"`desktopintegration` script was set up not to interfere with :code:"
-"`appimaged`)"
+"configuration and 3) ENV** (similar to how the "
+"old :code:`desktopintegration` script was set up not to interfere "
+"with :code:`appimaged`)"
 msgstr ""
 
 #: ../../../source/packaging-guide/optional/updates.rst:89
@@ -278,9 +278,9 @@ msgstr ""
 #: ../../../source/packaging-guide/optional/updates.rst:109
 msgid ""
 "There's two options how to add libappimageupdate to your project: Either you "
-"use a Git submodule (the preferred way), or you use CMake's :code:"
-"`ExternalProject`. The latter is a more complex issue and has some "
-"implications, therefore this guide focuses on the former option."
+"use a Git submodule (the preferred way), or you use "
+"CMake's :code:`ExternalProject`. The latter is a more complex issue and has "
+"some implications, therefore this guide focuses on the former option."
 msgstr ""
 
 #: ../../../source/packaging-guide/optional/updates.rst:111
@@ -330,17 +330,17 @@ msgstr ""
 
 #: ../../../source/packaging-guide/optional/updates.rst:139
 msgid ""
-"Next, instruct CMake that you want to use the library. Add :code:"
-"`add_subdirectory(AppImageUpdate)` to :code:`lib/CMakeLists.txt`."
+"Next, instruct CMake that you want to use the library. "
+"Add :code:`add_subdirectory(AppImageUpdate)` to :code:`lib/CMakeLists.txt`."
 msgstr ""
 
 #: ../../../source/packaging-guide/optional/updates.rst:143
 msgid ""
-"You need to call :code:`add_subdirectory(lib)` within the top-level :code:"
-"`CMakeLists.txt` near the top before defining executables etc. to make this "
-"work. Furthermore, somewhere below, CMakeLists.txt needs to include the :"
-"code:`src` directory. Like with the :code:`lib` directory, there should be "
-"a :code:`add_subdirectory(src)` call."
+"You need to call :code:`add_subdirectory(lib)` within the top-"
+"level :code:`CMakeLists.txt` near the top before defining executables etc. "
+"to make this work. Furthermore, somewhere below, CMakeLists.txt needs to "
+"include the :code:`src` directory. Like with the :code:`lib` directory, "
+"there should be a :code:`add_subdirectory(src)` call."
 msgstr ""
 
 #: ../../../source/packaging-guide/optional/updates.rst:146
@@ -456,12 +456,12 @@ msgstr ""
 
 #: ../../../source/packaging-guide/optional/updates.rst:201
 msgid ""
-"This can be found out using the built in status message system. Every :code:"
-"`Updater` instance contains a message queue. All methods within the updater "
-"and the systems it uses (like e.g., `ZSync2 <https://travis-ci.org/"
-"TheAssassin/zsync2/>`__, which is one of the backends for the binary delta "
-"updates) add messages to this queue, which means that all kinds of status "
-"messages ever generated by any of the libraries will end up there."
+"This can be found out using the built in status message system. "
+"Every :code:`Updater` instance contains a message queue. All methods within "
+"the updater and the systems it uses (like e.g., `ZSync2 <https://travis-"
+"ci.org/TheAssassin/zsync2/>`__, which is one of the backends for the binary "
+"delta updates) add messages to this queue, which means that all kinds of "
+"status messages ever generated by any of the libraries will end up there."
 msgstr ""
 
 #: ../../../source/packaging-guide/optional/updates.rst:205
@@ -475,8 +475,8 @@ msgstr ""
 #: ../../../source/packaging-guide/optional/updates.rst:208
 msgid ""
 "All messages are preserved, so if they are not fetched, they might stack up. "
-"However, that shouldn't be a problem really. Just make sure to clean up (:"
-"code:`delete`) your :code:`Updater` objects as soon as you don't need them "
+"However, that shouldn't be a problem really. Just make sure to clean up "
+"(:code:`delete`) your :code:`Updater` objects as soon as you don't need them "
 "any more."
 msgstr ""
 

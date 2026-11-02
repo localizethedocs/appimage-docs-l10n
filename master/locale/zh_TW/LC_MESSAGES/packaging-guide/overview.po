@@ -45,8 +45,8 @@ msgstr ""
 
 #: ../../../source/packaging-guide/overview.rst:19
 msgid ""
-"To learn more about how packaging from source works, please refer to :ref:"
-"`ref-packaging-from-source`."
+"To learn more about how packaging from source works, please refer "
+"to :ref:`ref-packaging-from-source`."
 msgstr ""
 
 #: ../../../source/packaging-guide/overview.rst:21
@@ -68,8 +68,8 @@ msgstr ""
 
 #: ../../../source/packaging-guide/overview.rst:31
 msgid ""
-"More information on using Travis CI for making AppImages can be found in :"
-"ref:`ref-travis-ci`."
+"More information on using Travis CI for making AppImages can be found "
+"in :ref:`ref-travis-ci`."
 msgstr ""
 
 #: ../../../source/packaging-guide/overview.rst:34
@@ -99,11 +99,11 @@ msgstr ""
 
 #: ../../../source/packaging-guide/overview.rst:47
 msgid ""
-"More information can be found in the `documentation on AppImage <https://www."
-"electron.build/configuration/appimage.html>`__ and `the documentation on "
+"More information can be found in the `documentation on AppImage <https://"
+"www.electron.build/configuration/appimage.html>`__ and `the documentation on "
 "distributable formats <https://www.electron.build/index.html#pack-only-in-a-"
-"distributable-format>`__ in the `electron-builder manual <https://www."
-"electron.build>`__."
+"distributable-format>`__ in the `electron-builder manual <https://"
+"www.electron.build>`__."
 msgstr ""
 
 #: ../../../source/packaging-guide/overview.rst:49

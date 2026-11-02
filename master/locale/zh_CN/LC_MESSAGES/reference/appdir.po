@@ -49,8 +49,8 @@ msgstr ""
 #: ../../../source/reference/appdir.rst:31
 msgid ""
 "As the name intends, AppDirs are normal directories with some special "
-"contents. The AppDir format is coming from ROX Filer  http://rox.sourceforge."
-"net/desktop/AppDirs.html:"
+"contents. The AppDir format is coming from ROX Filer  http://"
+"rox.sourceforge.net/desktop/AppDirs.html:"
 msgstr ""
 
 #: ../../../source/reference/appdir.rst:33
@@ -93,9 +93,9 @@ msgid ""
 "application. As AppImage is following the principle :ref:`one app = one file "
 "<one-app-one-file-principle>`, one desktop file is enough to describe the "
 "entire AppImage. There |must not| be more than one desktop file in the root "
-"directory. The name of the file doesn't matter, as long as it carries the ``."
-"desktop`` extension. Can be a symlink to subdirectories such as ``usr/share/"
-"applications/...``"
+"directory. The name of the file doesn't matter, as long as it carries the "
+"``.desktop`` extension. Can be a symlink to subdirectories such as ``usr/"
+"share/applications/...``"
 msgstr ""
 
 #: ../../../source/reference/appdir.rst:46
@@ -139,8 +139,8 @@ msgstr ""
 
 #: ../../../source/reference/appdir.rst:61
 msgid ""
-"A very good summary of the FHS can be found on `Wikipedia <https://en."
-"wikipedia.org/wiki/Filesystem_Hierarchy_Standard>`__."
+"A very good summary of the FHS can be found on `Wikipedia <https://"
+"en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard>`__."
 msgstr ""
 
 #: ../../../source/reference/appdir.rst:68
@@ -214,9 +214,9 @@ msgid ""
 "often a set of icons for the main application. The icons are referred to by "
 "the root desktop file, which means the :ref:`same constraints <root-icon>` "
 "apply. Example path: ``<root>/usr/share/icons/<theme>/<resolution>/apps/"
-"myapp.<ext>``, e.g., ``<root>/usr/share/icons/hicolor/256x256/apps/myapp."
-"png`` Icon themes placed in this directory are copied to the system during "
-"so-called :ref:`desktop integration <ref-desktop-integration>`."
+"myapp.<ext>``, e.g., ``<root>/usr/share/icons/hicolor/256x256/apps/"
+"myapp.png`` Icon themes placed in this directory are copied to the system "
+"during so-called :ref:`desktop integration <ref-desktop-integration>`."
 msgstr ""
 
 #: ../../../source/reference/appdir.rst:97

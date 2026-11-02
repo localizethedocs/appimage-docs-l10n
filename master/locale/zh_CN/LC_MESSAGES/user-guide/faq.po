@@ -93,18 +93,18 @@ msgstr ""
 
 #: ../../../source/user-guide/faq.rst:43
 msgid ""
-"If you don't want to leave them in :code:`$HOME/Downloads`, then :code:"
-"`$HOME/Applications` is a good choice. Many third-party tools (especially "
-"the ones managing desktop integration) use this location, too. Other options "
-"involve :code:`$HOME/.local/bin` and :code:`$HOME/bin`, which are useful "
-"mainly for CLI tools."
+"If you don't want to leave them in :code:`$HOME/Downloads`, "
+"then :code:`$HOME/Applications` is a good choice. Many third-party tools "
+"(especially the ones managing desktop integration) use this location, too. "
+"Other options involve :code:`$HOME/.local/bin` and :code:`$HOME/bin`, which "
+"are useful mainly for CLI tools."
 msgstr ""
 
 #: ../../../source/user-guide/faq.rst:45
 msgid ""
-"**On CentOS/RHEL and Fedora:** When you login, the script :code:`$HOME/."
-"bash_profile` is executed and this script adds :code:`$HOME/.local/bin:$HOME/"
-"bin` to your path."
+"**On CentOS/RHEL and Fedora:** When you login, the "
+"script :code:`$HOME/.bash_profile` is executed and this script "
+"adds :code:`$HOME/.local/bin:$HOME/bin` to your path."
 msgstr ""
 
 #: ../../../source/user-guide/faq.rst:47

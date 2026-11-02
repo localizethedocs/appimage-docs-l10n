@@ -42,8 +42,8 @@ msgstr ""
 msgid ""
 "If you have further questions, please feel free to contact the AppImage "
 "team. The easiest and fastest way is to join our `IRC channel #appimage "
-"<ircs://irc.libera.chat/appimage>`__ on `Libera.Chat <https://libera."
-"chat>`__ (`webchat <https://web.libera.chat/#AppImage>`__)."
+"<ircs://irc.libera.chat/appimage>`__ on `Libera.Chat <https://"
+"libera.chat>`__ (`webchat <https://web.libera.chat/#AppImage>`__)."
 msgstr ""
 
 #: ../../../source/contact.rst:16

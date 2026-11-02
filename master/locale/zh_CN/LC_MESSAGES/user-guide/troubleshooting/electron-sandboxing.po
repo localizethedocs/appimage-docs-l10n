@@ -28,9 +28,9 @@ msgid ""
 "as intended (specifically, the kernel needs to be allowed to provide "
 "\"unprivileged namespaces\"). Many distributions come with this configured "
 "out of the box (like `Ubuntu <https://ubuntu.com>`__ prior to `24.04 "
-"<https://discourse.ubuntu.com/t/ubuntu-24-04-lts-noble-numbat-release-"
-"notes/39890#unprivileged-user-namespace-restrictions-15>`__), but some do "
-"not (for example `Debian <https://debian.org>`__)."
+"<https://discourse.ubuntu.com/t/ubuntu-24-04-lts-noble-numbat-release-notes/"
+"39890#unprivileged-user-namespace-restrictions-15>`__), but some do not (for "
+"example `Debian <https://debian.org>`__)."
 msgstr ""
 
 #: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:10
@@ -115,8 +115,8 @@ msgstr ""
 #: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:52
 msgid ""
 "@gergof made a tool that automatically applies the `--no-sandbox` flag when "
-"the `unprivileged_userns_clone` kernel feature is not enabled: https://www."
-"npmjs.com/package/electron-builder-sandbox-fix"
+"the `unprivileged_userns_clone` kernel feature is not enabled: https://"
+"www.npmjs.com/package/electron-builder-sandbox-fix"
 msgstr ""
 
 #: ../../../source/user-guide/troubleshooting/electron-sandboxing.rst:57

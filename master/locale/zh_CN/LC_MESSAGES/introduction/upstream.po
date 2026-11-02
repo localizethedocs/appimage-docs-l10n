@@ -130,8 +130,8 @@ msgstr ""
 #: ../../../source/introduction/upstream.rst:49
 msgid ""
 "For closed source applications you can create a yml recipe that can be used "
-"to convert the existing Linux binaries into an AppImage using :ref:"
-"`pkg2appimage <ref-pkg2appimage>`."
+"to convert the existing Linux binaries into an AppImage "
+"using :ref:`pkg2appimage <ref-pkg2appimage>`."
 msgstr ""
 
 #: ../../../source/introduction/upstream.rst:51

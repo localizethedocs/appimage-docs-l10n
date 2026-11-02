@@ -52,8 +52,8 @@ msgstr ""
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:27
 msgid ""
-"In this case, FUSE is not properly set up on your system. You will have to :"
-"ref:`install FUSE <ref-install-fuse>` in order to fix the problem."
+"In this case, FUSE is not properly set up on your system. You will have "
+"to :ref:`install FUSE <ref-install-fuse>` in order to fix the problem."
 msgstr ""
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:30
@@ -95,9 +95,9 @@ msgstr ""
 #: ../../../source/user-guide/troubleshooting/fuse.rst:53
 msgid ""
 "This is valid only for distributions *not* having ``fuse3`` installed by "
-"default. To be sure, check whether the :code:`fuse3` package is installed, e."
-"g., by running :code:`dpkg -l | grep fuse3` in the terminal and checking for "
-"a line starting with :code:`ii  fuse3`."
+"default. To be sure, check whether the :code:`fuse3` package is installed, "
+"e.g., by running :code:`dpkg -l | grep fuse3` in the terminal and checking "
+"for a line starting with :code:`ii  fuse3`."
 msgstr ""
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:55
@@ -159,17 +159,17 @@ msgstr ""
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:85
 msgid ""
-"This is valid only for very recent (as of April 2022) distributions having :"
-"code:`fuse3` installed by default. To be sure, check whether the :code:"
-"`fuse3` package is installed, e.g., by running :code:`dpkg -l | grep fuse3` "
-"in the terminal and checking for a line starting with :code:`ii  fuse3` (if "
-"there is none, your distribution is not using :code:`fuse3`)."
+"This is valid only for very recent (as of April 2022) distributions "
+"having :code:`fuse3` installed by default. To be sure, check whether "
+"the :code:`fuse3` package is installed, e.g., by running :code:`dpkg -l | "
+"grep fuse3` in the terminal and checking for a line starting with :code:`ii  "
+"fuse3` (if there is none, your distribution is not using :code:`fuse3`)."
 msgstr ""
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:87
 msgid ""
-"If your distribution is not using :code:`fuse3`, please refer to the :ref:"
-"`previous section <ref-ug-troubleshooting-fuse-fuse2>`."
+"If your distribution is not using :code:`fuse3`, please refer to "
+"the :ref:`previous section <ref-ug-troubleshooting-fuse-fuse2>`."
 msgstr ""
 
 #: ../../../source/user-guide/troubleshooting/fuse.rst:89

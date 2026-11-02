@@ -74,8 +74,8 @@ msgid ""
 "AppImageSpec/issues>`__ if you encounter bugs or have ideas for additional "
 "features. Also, improvements on wording etc. are highly appreciated."
 msgstr ""
-"若您遇到錯誤或有新增功能的想法，歡迎在 `GitHub 上回報問題 <https://github."
-"com/AppImage/AppImageSpec/issues>`__。也非常感謝對措辭等內容的改進。"
+"若您遇到錯誤或有新增功能的想法，歡迎在 `GitHub 上回報問題 <https://"
+"github.com/AppImage/AppImageSpec/issues>`__。也非常感謝對措辭等內容的改進。"
 
 #: ../../../source/reference/specification.rst:31
 msgid "Reference implementation"

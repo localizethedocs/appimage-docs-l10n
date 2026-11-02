@@ -41,9 +41,9 @@ msgstr ""
 #: ../../../source/packaging-guide/optional/index.rst:8
 msgid ""
 "Also, you can add optional resources such as :ref:`AppStream metadata <ref-"
-"appstream>` to allow tools which work with AppImages such as :ref:"
-"`AppImageHub <ref-appimagehub>` to display additional information about your "
-"AppImage."
+"appstream>` to allow tools which work with AppImages such "
+"as :ref:`AppImageHub <ref-appimagehub>` to display additional information "
+"about your AppImage."
 msgstr ""
 
 #: ../../../source/packaging-guide/optional/index.rst:10

@@ -190,9 +190,9 @@ msgstr ""
 #: ../../../source/user-guide/run-appimages.rst:84
 msgid ""
 "An alternative to mounting the AppImages is to extract their contents. This "
-"allows for modifying the contents. The resulting directory is a valid :ref:"
-"`AppDir <ref-appdir>`, and users can create AppImages from them again using :"
-"ref:`ref-appimagetool`."
+"allows for modifying the contents. The resulting directory is a "
+"valid :ref:`AppDir <ref-appdir>`, and users can create AppImages from them "
+"again using :ref:`ref-appimagetool`."
 msgstr ""
 
 #: ../../../source/user-guide/run-appimages.rst:86

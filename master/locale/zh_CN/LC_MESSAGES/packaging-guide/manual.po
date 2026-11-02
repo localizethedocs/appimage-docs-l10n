@@ -90,8 +90,8 @@ msgstr ""
 msgid ""
 "Should this return something, then you need to modify your app "
 "programmatically (e.g., by using relative paths, using `binreloc <https://"
-"github.com/limbahq/binreloc>`__, or using :code:`QString QCoreApplication::"
-"applicationDirPath()`)."
+"github.com/limbahq/binreloc>`__, or using :code:`QString "
+"QCoreApplication::applicationDirPath()`)."
 msgstr ""
 
 #: ../../../source/packaging-guide/manual.rst:48
@@ -124,8 +124,8 @@ msgstr ""
 
 #: ../../../source/packaging-guide/manual.rst:61
 msgid ""
-"https://www.gnu.org/software/gnulib/manual/html_node/Supporting-Relocation."
-"html"
+"https://www.gnu.org/software/gnulib/manual/html_node/Supporting-"
+"Relocation.html"
 msgstr ""
 
 #: ../../../source/packaging-guide/manual.rst:64
@@ -171,8 +171,8 @@ msgstr ""
 #: ../../../source/packaging-guide/manual.rst:88
 msgid ""
 "Be sure to pick one of the `Registered Categories`_, and be sure that your "
-"desktop file passes validation by using :code:`desktop-file-validate your."
-"desktop`. If you are not deploying an application with a graphical user "
+"desktop file passes validation by using :code:`desktop-file-validate "
+"your.desktop`. If you are not deploying an application with a graphical user "
 "interface (GUI) but a command line tool (for the terminal), make sure to "
 "add :code:`Terminal=true`."
 msgstr ""
