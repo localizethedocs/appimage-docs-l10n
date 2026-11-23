@@ -143,10 +143,3 @@ msgstr ""
 #: ../../../source/reference/desktop-integration.rst:50
 msgid "`AppImageKit#662 <https://github.com/AppImage/AppImageKit/issues/662>`_"
 msgstr ""
-
-#~ msgid ""
-#~ ":ref:`appimagetool <ref-appimagetool>` and :ref:`libappimage <ref-"
-#~ "libappimage>` currently make use mostly of :code:`X-AppImage-Version`."
-#~ msgstr ""
-#~ ":ref:`appimagetool <ref-appimagetool>` 與 :ref:`libappimage <ref-"
-#~ "libappimage>`目前主要使用 :code:`X-AppImage-Version`。"
